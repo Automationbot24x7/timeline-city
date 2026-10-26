@@ -1,0 +1,123 @@
+city: Delhi
+country: India
+# The maker's working title (kept by the director); the hook is only an idea for the opening line
+title: One Ticket, 800 Years
+hook: Sit down, traveller. One ticket on my Yellow Line buys 800 years.
+line:
+  name: Yellow Line
+  ref: "2"
+  network: Delhi Metro
+  from: Chandni Chowk
+  to: Qutab Minar
+  # renderer tunnel + dawn: every stop to Saket is underground, Qutab Minar is elevated
+  # (facts.verified.json YL-02). `to` is the first station above ground: the train surfaces
+  # just before it (same as `last_underground: Saket`)
+  underground: { from: Chandni Chowk, to: Qutab Minar }
+bbox: [28.40, 76.83, 28.89, 77.35]
+language: en
+target_seconds: 160
+# contest limit 180 s: timing refuses a real film over 178 s (see director: below for the word budget)
+max_seconds: 178
+fps: 30
+aspects: ["16:9", "9:16"]
+
+narrator:
+  persona: >-
+    Delhi itself, an old male storyteller in the dastangoi tradition, speaking in the first
+    person to the listener with warmth, pride and gentle humour. English, with a few Hindi
+    "[personal memory removed at the maker's request]"
+  # Custom voice made with minimax/voice-design (out/voice_design/voice.json); chosen by the maker
+  voice_id: ttv-voice-2026102522391326-RZABst6E
+  speed: 0.92
+  emotion: neutral
+  # read years and figures as numbers ("sixteen thirty-nine"); audition one number-heavy scene first:
+  #   node bin/timeline.mjs assets projects/delhi-yellow-line --only s04
+  english_normalization: true
+  language_boost: English
+
+# The maker's own "me and this city" thread. [personal memory removed at the maker's request]
+# no names, no faces.
+personal_subject: "[personal memory removed at the maker's request]"
+# [personal memory removed at the maker's request]
+personal:
+  # [personal memory removed at the maker's request] The state was formed in 2000, so for 1982
+  # [personal memory removed at the maker's request]
+  - "[personal memory removed at the maker's request]"
+  - "[personal memory removed at the maker's request]"
+  # [personal memory removed at the maker's request]
+  - "[personal memory removed at the maker's request]"
+  - "[personal memory removed at the maker's request]"
+
+facts_file: facts.verified.json
+# approximate footprints of walled cities (hulls of surviving OSM wall fragments), drawn dashed
+footprints: footprints.geojson
+
+director:
+  notes: >-
+    "[personal memory removed at the maker's request]"
+  # measured on the custom voice at speed 0.92 (out/voice_design/test_line.mp3): 2.09 words/s of
+  # speech; 255-285 words project to about 150-165 s with the gaps below
+  words_per_second: 2.09
+  min_words: 255
+  max_words: 285
+  # review notes on the first verified script (2026-10-25), applied by the director in a repair round
+  review:
+    - scene: s03
+      note: >-
+        "Tradition says that is my name" is confusing: the moonlit pool is said to have given the
+        street its name, Chandni Chowk, the moonlit square, not the city's name. Make that clear.
+    - scene: s13
+      note: >-
+        The reveal lands flat. [personal memory removed at the maker's request]
+        "[personal memory removed at the maker's request]" Do not put words or opinions in his mouth beyond
+        "[personal memory removed at the maker's request]"
+    - scene: s14
+      note: >-
+        The ending reads like a list of unrelated facts. Drop the station count and the "south of
+        Central Secretariat" line. End on warmth: I am a city of arrivals and I keep being rebuilt,
+        "[personal memory removed at the maker's request]"
+        "[personal memory removed at the maker's request]"
+
+# gaps around each voice clip (the clips already carry ~0.6 s of silence at their ends)
+timing: { lead: 0.35, tail: 0.5 }
+
+# spend cap for the whole ledger (build/costs.jsonl, $0.164 so far): direct+verify redo ~$0.13,
+# voices ~$0.17, 8 images at 2K $0.48, music $0.15, plus room for one music fallback
+max_spend_usd: 1.70  # +0.05 2026-10-26 for re-voicing the cut ending; raised 2026-10-25 for 5 landmark paintings (~$0.40); SandBase balance $1.68
+# 2K images: the 9:16 cut crops a 16:9 frame, so 1K (1376 px) would be blown up ~2.5x
+image_resolution: 2K
+
+# end card: the tool's public repository and, optionally, one line in the maker's own words
+# (first person, no names), shown after the city's last line
+repo_url: https://github.com/Automationbot24x7/timeline-city
+# dedication: "..."
+
+style:
+  map: dark night map, the Yellow Line glowing gold, warm amber for history, teal Yamuna
+  illustration: >-
+    warm painterly illustration inspired by Indian miniature painting and old Delhi
+    lithographs, rich ochre, indigo and gold, soft light, no text or lettering, no
+    recognisable real people, faces small or turned away
+
+models:
+  director: minimax/minimax-m3.1-flash
+  image: google/nano-banana-2.1
+  tts: minimax/speech/2.8/hd
+  # music/2.6 has a hard is_instrumental switch (no vocals); music/3 and Lyria 3.5 are song models
+  # that can only be asked for "instrumental" in the prompt, so music/3 is only the fallback
+  music: minimax/music/2.6
+  music_fallback: minimax/music/3
+
+# [personal memory removed at the maker's request]
+# director.review changed; `verify --force` re-checked the whole script against both and passed
+# (30/30), so the director's plan is current for everything else.
+allow_stale_plan: true
+
+# Contest entry (stage `package`, build/final/entry.json)
+# the maker's own words (at most 50 characters)
+my_city_line: "Nothing beats Delhi street food for me."
+city_id: delhi
+# where the film opens: Chandni Chowk
+place: { lat: 28.6562, lng: 77.2310 }
+# the music was made for the 170.9 s cut; keep it after the maker's ending cut (no second $0.15)
+music_length_seconds: 170.9

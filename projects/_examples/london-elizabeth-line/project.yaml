@@ -1,0 +1,50 @@
+# Example: London, a ride on the Elizabeth line from Paddington to Custom House.
+# Not built: copy this folder to projects/<your-name>/, add your own personal lines, then
+#   node bin/timeline.mjs all projects/<your-name> --mock
+city: London
+country: United Kingdom     # search context only; no borders are ever drawn
+line:
+  # OpenStreetMap (checked 2026-10-26): route=train relations named "Elizabeth line: <from> → <to>",
+  # ref=Elizabeth, colour #9364cc, operator GTS Rail Operations. They are tagged network="National
+  # Rail", so `network` is left out on purpose: it would pull every National Rail route in the bbox.
+  name: Elizabeth line
+  ref: Elizabeth
+  from: Paddington          # stop names as in the central-section relations (e.g. 14773908)
+  to: Custom House
+  # Paddington to Canary Wharf runs in the new tunnels; the line comes up at the Victoria Dock
+  # portal just before Custom House, the first station above ground (tunnel + dawn in the film)
+  underground: { from: Paddington, to: Custom House }
+bbox: [51.47, -0.22, 51.55, 0.07]   # south, west, north, east (Overpass order)
+language: en
+target_seconds: 150
+max_seconds: 178            # contest limit 180 s
+fps: 30
+aspects: ["16:9"]
+
+narrator:
+  persona: >-
+    London itself, an old river-city storyteller, speaking in the first person to the
+    listener with dry humour and warmth.
+  voice_id: English_CaptivatingStoryteller   # a stock MiniMax voice; a custom one needs minimax/voice-design
+  speed: 0.95
+  emotion: neutral
+
+# The maker's own "me and this city" thread (their words, no names). The film's arc ends on it:
+# the director writes a personal last stop and verify checks it against these lines only, so add
+# 2-5 true lines of your own before running `direct`. Left empty in this example.
+personal: []
+
+# Contest entry (stage `package`): your own line about the city, at most 50 characters.
+# my_city_line: "..."
+city_id: london
+# place: { lat: 51.5154, lng: -0.1755 }   # default: the first station of the ride
+
+style:
+  map: dark night map, the Elizabeth line glowing purple, warm amber for history, the Thames in teal
+  illustration: >-
+    warm painterly illustration inspired by Victorian engravings and watercolours of the Thames,
+    soft gaslight and river mist, no text or lettering, no recognisable real people, faces small
+    or turned away
+
+# spend cap for the whole cost ledger (build/costs.jsonl); paid media stops before exceeding it
+max_spend_usd: 1.50

@@ -1,0 +1,578 @@
+{
+  "claims": [
+    {
+      "id": "c01",
+      "scene_id": "s01",
+      "kind": "personal",
+      "text": "The film frames a single metro ticket as the way into the city's long history; this is the maker's own title framing.",
+      "source_ids": [],
+      "status": "supported",
+      "note": "The testimony confirms the maker made the film, and the narration itself is the title framing of a single ticket opening onto the city's story, so the claim says no more than the testimony plus the on-screen wording.",
+      "quote": "[personal memory removed at the maker's request]",
+      "flags": [],
+      "by": "M3.1",
+      "round": 2
+    },
+    {
+      "id": "c02",
+      "scene_id": "s02",
+      "kind": "fact",
+      "text": "In 1639 Shah Jahan chose a site for a new capital, Shahjahanabad, today's Old Delhi, and began building the Red Fort.",
+      "source_ids": [
+        "src_141",
+        "src_142",
+        "src_143"
+      ],
+      "status": "supported",
+      "note": "All three cited excerpts state the 1639 choice of site for the new capital Shahjahanabad (today's Old Delhi) and the start of building the Red Fort, matching the caveat's prescribed 'founded 1639' framing; no unsupported detail added.",
+      "quote": "In 1639 Shah Jahan chose a site on the west bank of the Yamuna, just north of Purana Qila, for a new capital and began building its fort, the Red Fort.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 2
+    },
+    {
+      "id": "c03",
+      "scene_id": "s02",
+      "kind": "fact",
+      "text": "The Red Fort straddles the eastern fringes of Chandni Chowk, the old street market.",
+      "source_ids": [
+        "src_001"
+      ],
+      "status": "supported",
+      "note": "The cited excerpt says verbatim that the Red Fort straddles the eastern fringes of Chandni Chowk, and the map's 1.09 km station distance does not contradict the wording since Chandni Chowk is an extended area.",
+      "quote": "the Mughal-era Red Fort straddles the eastern fringes of Chandni Chowk",
+      "flags": [],
+      "by": "M3.1",
+      "round": 2
+    },
+    {
+      "id": "c04",
+      "scene_id": "s03",
+      "kind": "fact",
+      "text": "Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens; a canal ran down its middle and an octagonal pool reflected the moonlight.",
+      "source_ids": [
+        "src_147",
+        "src_139"
+      ],
+      "status": "supported",
+      "note": "Both excerpts state Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens, with a canal down the middle and an octagonal pool reflecting moonlight.",
+      "quote": "Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens. The street ran from the Red Fort's Lahore Gate to Fatehpuri Masjid. A canal ran down its middle, and an octagonal pool reflected the moonlight",
+      "flags": [],
+      "by": "M3.1",
+      "round": 1
+    },
+    {
+      "id": "c05",
+      "scene_id": "s03",
+      "kind": "fact",
+      "text": "Tradition gives Chandni Chowk its name from the moonlight reflected in that pool.",
+      "source_ids": [
+        "src_147",
+        "src_139",
+        "src_001"
+      ],
+      "status": "supported",
+      "note": "The excerpt explicitly frames the moonlight etymology as tradition, and the narration preserves that qualifier, so the caveat is respected.",
+      "quote": "an octagonal pool reflected the moonlight, which tradition says gave it the name 'Moonlight Square'",
+      "flags": [],
+      "by": "M3.1",
+      "round": 1
+    },
+    {
+      "id": "c06",
+      "scene_id": "s04",
+      "kind": "fact",
+      "text": "Shah Jahan's Jama Masjid was completed in 1656.",
+      "source_ids": [
+        "src_147",
+        "src_148",
+        "src_149"
+      ],
+      "status": "supported",
+      "note": "All three cited excerpts state the Jama Masjid was completed in 1656 (foundation laid 6 October 1650).",
+      "quote": "About 5,000 workers built it over six years, and it was completed in 1656.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c07",
+      "scene_id": "s04",
+      "kind": "fact",
+      "text": "About five thousand workers built the Jama Masjid.",
+      "source_ids": [
+        "src_147",
+        "src_148",
+        "src_149"
+      ],
+      "status": "supported",
+      "note": "All three cited excerpts give about 5,000 workers, matching the narration's 'about five thousand'.",
+      "quote": "About 5,000 workers built it over six years, and it was completed in 1656.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c08",
+      "scene_id": "s05",
+      "kind": "fact",
+      "text": "Jantar Mantar, near Patel Chowk station, was completed in 1724.",
+      "source_ids": [
+        "src_034",
+        "src_035",
+        "osm_ride"
+      ],
+      "status": "supported",
+      "note": "Wikipedia states it was completed in 1724 and Wikidata gives inception 1724; the map shows Jantar Mantar 0.52 km from Patel Chowk station.",
+      "quote": "Completed in 1724, the Delhi Jantar Mantar had decayed considerably by the time of the 1857 uprising.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 1
+    },
+    {
+      "id": "c09",
+      "scene_id": "s05",
+      "kind": "fact",
+      "text": "Jantar Mantar is an observatory of astronomical instruments for measuring the harmony of the heavens.",
+      "source_ids": [
+        "src_034"
+      ],
+      "status": "supported",
+      "note": "The excerpt states Jantar Mantar is an observatory whose name means 'instruments for measuring the harmony of the heavens'.",
+      "quote": "\"Jantar Mantar\" means 'instruments for measuring the harmony of the heavens'.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 1
+    },
+    {
+      "id": "c10",
+      "scene_id": "s06",
+      "kind": "fact",
+      "text": "New Delhi was formally inaugurated as the capital on 13 February 1931 by the Viceroy.",
+      "source_ids": [
+        "src_165",
+        "src_163",
+        "src_167",
+        "src_168"
+      ],
+      "status": "supported",
+      "note": "Multiple cited sources (including Outlook India/PTI and Britannica) state that Viceroy Lord Irwin formally inaugurated New Delhi as the capital on 13 February 1931.",
+      "quote": "Viceroy Lord Irwin formally inaugurated New Delhi as India's capital on 13 February 1931.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c11",
+      "scene_id": "s06",
+      "kind": "fact",
+      "text": "Up to 23,000 labourers worked on the Viceroy's House at the peak of construction.",
+      "source_ids": [
+        "src_162",
+        "src_169",
+        "src_170"
+      ],
+      "status": "supported",
+      "note": "The cited excerpts state that up to 23,000 labourers worked on it at the peak of construction.",
+      "quote": "up to 23,000 labourers worked on it at the peak of construction",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c12",
+      "scene_id": "s06",
+      "kind": "fact",
+      "text": "The Viceroy's House is now Rashtrapati Bhavan.",
+      "source_ids": [
+        "src_162",
+        "src_043"
+      ],
+      "status": "supported",
+      "note": "Rashtrapati Bhavan's own site describes it as built as the Viceroy's House, and Wikipedia confirms it was formerly Viceroy's House.",
+      "quote": "Rashtrapati Bhavan, built as the Viceroy's House to Lutyens's H-shaped plan",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c13",
+      "scene_id": "s07",
+      "kind": "fact",
+      "text": "About half a million refugees entered Delhi after Partition.",
+      "source_ids": [
+        "src_281",
+        "src_282",
+        "src_271"
+      ],
+      "status": "supported",
+      "note": "The cited sources state about half a million refugees entered Delhi after Partition; the narration and claim keep the 'about' qualifier as the caveat requires.",
+      "quote": "About half a million refugees entered Delhi after Partition, roughly 28% of the 1951 population",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c14",
+      "scene_id": "s07",
+      "kind": "fact",
+      "text": "Many of Delhi's Muslims left the city after Partition, so people moved in both directions.",
+      "source_ids": [
+        "src_174",
+        "src_281",
+        "src_282"
+      ],
+      "status": "supported",
+      "note": "The cited sources give estimates of those who left, from about 329,000 to about 0.45 million Muslims, and the claim cites both directions of movement.",
+      "quote": "Estimates of those who left range from about 329,000 Muslims (Sutton) to about 0.45 million (Bharadwaj et al.).",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c15",
+      "scene_id": "s08",
+      "kind": "fact",
+      "text": "Malviya Nagar was among the new colonies laid out to rehouse Partition refugees.",
+      "source_ids": [
+        "src_174",
+        "src_285",
+        "src_286",
+        "src_088"
+      ],
+      "status": "supported",
+      "note": "src_174/177 state that new colonies were laid out after Partition and explicitly name Malviya Nagar among them, and src_285/286 confirm it was used to rehouse Partition refugees.",
+      "quote": "New colonies were laid out, many named after independence leaders, among them Lajpat Nagar, Malviya Nagar, Tilak Nagar, Patel Nagar and Rajendra Nagar",
+      "flags": [],
+      "by": "M3.1",
+      "round": 1
+    },
+    {
+      "id": "c16",
+      "scene_id": "s08",
+      "kind": "fact",
+      "text": "The new colonies were planned with their own markets, schools, temples and gurdwaras.",
+      "source_ids": [
+        "src_174",
+        "src_177"
+      ],
+      "status": "supported",
+      "note": "Stated verbatim in src_174 and src_177.",
+      "quote": "The colonies were planned with their own markets, schools, temples and gurdwaras.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 1
+    },
+    {
+      "id": "c17",
+      "scene_id": "s09",
+      "kind": "fact",
+      "text": "From Chandni Chowk to Saket the Yellow Line runs underground, and the train comes up into daylight only as it nears Qutab Minar.",
+      "source_ids": [
+        "src_196",
+        "src_197",
+        "src_199"
+      ],
+      "status": "supported",
+      "note": "The excerpts state the Chandni Chowk–Saket stretch is underground and that the train emerges between Saket and the elevated Qutab Minar station.",
+      "quote": "Riding south, the whole stretch from Chandni Chowk to Saket is underground. Qutab Minar is the first elevated station going south, so the train comes out of the tunnel between Saket and Qutab Minar.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c18",
+      "scene_id": "s10",
+      "kind": "fact",
+      "text": "The Qutb Minar was begun around 1199 by Qutb ud-Din Aibak.",
+      "source_ids": [
+        "src_118",
+        "src_122",
+        "src_123",
+        "src_124",
+        "src_125"
+      ],
+      "status": "supported",
+      "note": "All cited excerpts give 'around 1199' and name Qutb ud-Din Aibak; the claim keeps the required 'around' qualifier.",
+      "quote": "Qutb ud-Din Aibak began the Qutb Minar around 1199",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c19",
+      "scene_id": "s10",
+      "kind": "fact",
+      "text": "Iltutmish completed the Qutb Minar.",
+      "source_ids": [
+        "src_118",
+        "src_123"
+      ],
+      "status": "supported",
+      "note": "Stated in src_118 and src_123.",
+      "quote": "his successor Iltutmish (ruled 1211-1236) completed it",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c20",
+      "scene_id": "s10",
+      "kind": "fact",
+      "text": "Iltutmish made Delhi the capital of the sultanate.",
+      "source_ids": [
+        "src_118",
+        "src_122"
+      ],
+      "status": "supported",
+      "note": "Stated in src_118 and src_122.",
+      "quote": "Iltutmish also made Delhi the sultanate's capital.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c21",
+      "scene_id": "s11",
+      "kind": "fact",
+      "text": "The iron pillar stands in the Qutb complex and dates from the 5th century.",
+      "source_ids": [
+        "src_096",
+        "src_097"
+      ],
+      "status": "supported",
+      "note": "src_097 gives inception as the 5th century CE and places it in the Qutb complex, matching src_096; the claim makes no assertion about Chandra's identity or the pillar's relocation, so no caveat is breached.",
+      "quote": "7.2 m pillar in the Qutb complex, Mehrauli, Delhi, India, erected in the 5th century CE.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 1
+    },
+    {
+      "id": "c22",
+      "scene_id": "s11",
+      "kind": "fact",
+      "text": "The pillar resists rust because its iron is rich in phosphorus; a thin protective layer forms next to the metal and greatly slows corrosion.",
+      "source_ids": [
+        "src_116"
+      ],
+      "status": "supported",
+      "note": "src_116 states the phosphorus-rich iron, the thin crystalline protective layer, and that it greatly slows corrosion; the claim avoids 'rustproof'.",
+      "quote": "The pillar resists rust because its iron is rich in phosphorus.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 1
+    },
+    {
+      "id": "c23",
+      "scene_id": "s12",
+      "kind": "personal",
+      "text": "[personal memory removed at the maker's request]",
+      "source_ids": [],
+      "status": "supported",
+      "note": "[personal memory removed at the maker's request]",
+      "quote": "[personal memory removed at the maker's request]",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c24",
+      "scene_id": "s12",
+      "kind": "personal",
+      "text": "[personal memory removed at the maker's request]",
+      "source_ids": [],
+      "status": "supported",
+      "note": "[personal memory removed at the maker's request]",
+      "quote": "[personal memory removed at the maker's request]",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c25",
+      "scene_id": "s12",
+      "kind": "personal",
+      "text": "[personal memory removed at the maker's request]",
+      "source_ids": [],
+      "status": "supported",
+      "note": "[personal memory removed at the maker's request]",
+      "quote": "[personal memory removed at the maker's request]",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c26",
+      "scene_id": "s12",
+      "kind": "fact",
+      "text": "[personal memory removed at the maker's request]",
+      "source_ids": [
+        "src_248",
+        "src_299",
+        "src_250"
+      ],
+      "status": "supported",
+      "note": "All three excerpts place the Ramlila and Dussehra Mela on an open ground beside JLN Stadium.",
+      "quote": "Ramlila and Dussehra Mela events are held on an open ground beside JLN Stadium, near the Gate No. 2 parking area on Lodhi Road.",
+      "flags": [],
+      "by": "M3.1",
+      "round": 0
+    },
+    {
+      "id": "c27",
+      "scene_id": "s13",
+      "kind": "personal",
+      "text": "[personal memory removed at the maker's request]",
+      "source_ids": [],
+      "status": "supported",
+      "note": "[personal memory removed at the maker's request]",
+      "quote": "[personal memory removed at the maker's request]",
+      "flags": [],
+      "by": "M3.1",
+      "round": 1
+    },
+    {
+      "id": "c28",
+      "scene_id": "s14",
+      "kind": "fact",
+      "text": "Delhi is a city of arrivals: by 2011 about four in ten people living there had last lived in another state or country.",
+      "source_ids": [
+        "src_306",
+        "src_307"
+      ],
+      "status": "supported",
+      "note": "The excerpts state 38.8% of Delhi residents were migrants by last residence from another Indian state or abroad, which the claim renders as 'about four in ten', matching the caveat's prescribed wording and framing (last residence, 2011).",
+      "quote": "6,330,065 (37.7%) had last lived in another Indian state and 177,900 abroad, together 38.8%",
+      "flags": [],
+      "by": "M3.1",
+      "round": 3
+    },
+    {
+      "id": "c29",
+      "scene_id": "s14",
+      "kind": "fact",
+      "text": "After Partition, new colonies were laid out for refugees with their own markets, schools, temples and gurdwaras, and many of Delhi's own Muslims left in the other direction, more than half of those resettled by the Ministry of Rehabilitation going into homes left behind by departing Muslims.",
+      "source_ids": [
+        "src_174",
+        "src_177"
+      ],
+      "status": "supported",
+      "note": "The excerpts support the colonies planned with their own markets, schools, temples and gurdwaras, the Ministry of Rehabilitation resettling nearly 300,000 by end-1950 with more than half in homes left behind by departing Muslims, and roughly 330,000 Muslims leaving after Partition, so both directions of migration are narrated.",
+      "quote": "more than half of them in homes left behind by departing Muslims. New colonies were laid out",
+      "flags": [],
+      "by": "M3.1",
+      "round": 3
+    },
+    {
+      "id": "c30",
+      "scene_id": "s14",
+      "kind": "personal",
+      "text": "[personal memory removed at the maker's request]",
+      "source_ids": [],
+      "status": "supported",
+      "note": "[personal memory removed at the maker's request]",
+      "quote": "[personal memory removed at the maker's request]",
+      "flags": [],
+      "by": "M3.1",
+      "round": 3
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "s11",
+      "issues": [
+        {
+          "type": "other",
+          "text": "And beside it, an iron pillar from the 5th century that resists rust.",
+          "note": "'beside it' overstates proximity: the map places the iron pillar 1.32 km from Qutab Minar station and the Qutb complex 1.3 km away, so it is not adjacent.",
+          "round": 1
+        }
+      ]
+    }
+  ],
+  "rounds": 3,
+  "passed": true,
+  "summary": {
+    "supported": 30,
+    "partial": 0,
+    "unsupported": 0,
+    "claims": 30,
+    "failing_scenes": [],
+    "words_before": 284,
+    "words_after": 285
+  },
+  "history": [
+    {
+      "round": 0,
+      "supported": 28,
+      "partial": 4,
+      "unsupported": 0,
+      "flagged": 0,
+      "scene_issues": 5,
+      "failing_scenes": [
+        "s01",
+        "s02",
+        "s03",
+        "s05",
+        "s08",
+        "s11",
+        "s13",
+        "s14"
+      ],
+      "repaired": [
+        "s01",
+        "s02",
+        "s03",
+        "s05",
+        "s08",
+        "s11",
+        "s13",
+        "s14"
+      ],
+      "cut": []
+    },
+    {
+      "round": 1,
+      "supported": 28,
+      "partial": 2,
+      "unsupported": 0,
+      "flagged": 0,
+      "scene_issues": 1,
+      "failing_scenes": [
+        "s01",
+        "s02",
+        "s14"
+      ],
+      "repaired": [
+        "s01",
+        "s02",
+        "s14"
+      ],
+      "cut": []
+    },
+    {
+      "round": 2,
+      "supported": 28,
+      "partial": 2,
+      "unsupported": 0,
+      "flagged": 1,
+      "scene_issues": 0,
+      "failing_scenes": [
+        "s14"
+      ],
+      "repaired": [
+        "s14"
+      ],
+      "cut": []
+    },
+    {
+      "round": 3,
+      "supported": 30,
+      "partial": 0,
+      "unsupported": 0,
+      "flagged": 0,
+      "scene_issues": 0,
+      "failing_scenes": []
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+[
+  {
+    "stage": "direct",
+    "step": "treatment",
+    "file": "treatment.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:00:18.367Z",
+    "cached": false,
+    "seconds": 65.5,
+    "usage": {
+      "prompt_tokens": 27729,
+      "completion_tokens": 14564,
+      "reasoning_tokens": 9156
+    },
+    "cost_usd": 0.0129
+  },
+  {
+    "stage": "direct",
+    "step": "treatment.retry",
+    "file": "treatment.retry.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:00:37.473Z",
+    "cached": false,
+    "seconds": 19.1,
+    "usage": {
+      "prompt_tokens": 31820,
+      "completion_tokens": 5755,
+      "reasoning_tokens": 314
+    },
+    "cost_usd": 0.00823
+  },
+  {
+    "stage": "direct",
+    "step": "script",
+    "file": "script.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:04:52.090Z",
+    "cached": false,
+    "seconds": 254.6,
+    "usage": {
+      "prompt_tokens": 118256,
+      "completion_tokens": 74218,
+      "reasoning_tokens": 66469
+    },
+    "cost_usd": 0.06227
+  },
+  {
+    "stage": "direct",
+    "step": "script.retry",
+    "file": "script.retry.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:05:18.678Z",
+    "cached": false,
+    "seconds": 26.6,
+    "usage": {
+      "prompt_tokens": 63756,
+      "completion_tokens": 10945,
+      "reasoning_tokens": 3217
+    },
+    "cost_usd": 0.01613
+  },
+  {
+    "stage": "direct",
+    "step": "critique",
+    "file": "critique.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:19:34.556Z",
+    "cached": false,
+    "seconds": 855.9,
+    "usage": {
+      "prompt_tokens": 67410,
+      "completion_tokens": 22694,
+      "reasoning_tokens": 12816
+    },
+    "cost_usd": 0.02373
+  },
+  {
+    "stage": "direct",
+    "step": "critique.retry",
+    "file": "critique.retry.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:20:43.001Z",
+    "cached": false,
+    "seconds": 68.4,
+    "usage": {
+      "prompt_tokens": 73512,
+      "completion_tokens": 8766,
+      "reasoning_tokens": 3167
+    },
+    "cost_usd": 0.01629
+  },
+  {
+    "stage": "verify",
+    "step": "verify-r0-b1",
+    "file": "verify-r0-b1.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:27:49.417Z",
+    "cached": true,
+    "seconds": 9,
+    "usage": {
+      "prompt_tokens": 5018,
+      "completion_tokens": 1931,
+      "reasoning_tokens": 1053
+    },
+    "cost_usd": 0.00191
+  },
+  {
+    "stage": "verify",
+    "step": "verify-r0-b2",
+    "file": "verify-r0-b2.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:28:20.163Z",
+    "cached": true,
+    "seconds": 30.7,
+    "usage": {
+      "prompt_tokens": 6336,
+      "completion_tokens": 1877,
+      "reasoning_tokens": 961
+    },
+    "cost_usd": 0.00208
+  },
+  {
+    "stage": "verify",
+    "step": "verify-r0-b3",
+    "file": "verify-r0-b3.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:28:31.355Z",
+    "cached": true,
+    "seconds": 11.2,
+    "usage": {
+      "prompt_tokens": 6424,
+      "completion_tokens": 1868,
+      "reasoning_tokens": 1099
+    },
+    "cost_usd": 0.00208
+  },
+  {
+    "stage": "verify",
+    "step": "verify-r0-b4",
+    "file": "verify-r0-b4.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:28:40.727Z",
+    "cached": true,
+    "seconds": 9.4,
+    "usage": {
+      "prompt_tokens": 4747,
+      "completion_tokens": 2361,
+      "reasoning_tokens": 1323
+    },
+    "cost_usd": 0.00213
+  },
+  {
+    "stage": "verify",
+    "step": "verify-r0-b5",
+    "file": "verify-r0-b5.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:28:50.329Z",
+    "cached": true,
+    "seconds": 9.6,
+    "usage": {
+      "prompt_tokens": 4795,
+      "completion_tokens": 1308,
+      "reasoning_tokens": 852
+    },
+    "cost_usd": 0.0015
+  },
+  {
+    "stage": "verify",
+    "step": "repair-r1",
+    "file": "repair-r1.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:31:38.532Z",
+    "cached": false,
+    "seconds": 31.9,
+    "usage": {
+      "prompt_tokens": 33086,
+      "completion_tokens": 8960,
+      "reasoning_tokens": 6666
+    },
+    "cost_usd": 0.01034
+  },
+  {
+    "stage": "verify",
+    "step": "verify-r1-b1",
+    "file": "verify-r1-b1.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:31:56.773Z",
+    "cached": false,
+    "seconds": 18.2,
+    "usage": {
+      "prompt_tokens": 5134,
+      "completion_tokens": 2665,
+      "reasoning_tokens": 1657
+    },
+    "cost_usd": 0.00237
+  },
+  {
+    "stage": "verify",
+    "step": "verify-r1-b2",
+    "file": "verify-r1-b2.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:32:11.848Z",
+    "cached": false,
+    "seconds": 15.1,
+    "usage": {
+      "prompt_tokens": 5623,
+      "completion_tokens": 2571,
+      "reasoning_tokens": 1551
+    },
+    "cost_usd": 0.00239
+  },
+  {
+    "stage": "verify",
+    "step": "repair-r2",
+    "file": "repair-r2.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:32:24.087Z",
+    "cached": false,
+    "seconds": 12.2,
+    "usage": {
+      "prompt_tokens": 28562,
+      "completion_tokens": 2796,
+      "reasoning_tokens": 1578
+    },
+    "cost_usd": 0.00596
+  },
+  {
+    "stage": "verify",
+    "step": "verify-r2-b1",
+    "file": "verify-r2-b1.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:32:43.910Z",
+    "cached": false,
+    "seconds": 19.8,
+    "usage": {
+      "prompt_tokens": 5231,
+      "completion_tokens": 3491,
+      "reasoning_tokens": 2677
+    },
+    "cost_usd": 0.00288
+  },
+  {
+    "stage": "verify",
+    "step": "repair-r3",
+    "file": "repair-r3.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:33:05.500Z",
+    "cached": false,
+    "seconds": 21.6,
+    "usage": {
+      "prompt_tokens": 25944,
+      "completion_tokens": 5323,
+      "reasoning_tokens": 4650
+    },
+    "cost_usd": 0.00709
+  },
+  {
+    "stage": "verify",
+    "step": "verify-r3-b1",
+    "file": "verify-r3-b1.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T17:33:09.264Z",
+    "cached": false,
+    "seconds": 3.8,
+    "usage": {
+      "prompt_tokens": 3990,
+      "completion_tokens": 881,
+      "reasoning_tokens": 462
+    },
+    "cost_usd": 0.00113
+  },
+  {
+    "stage": "art",
+    "step": "art",
+    "file": "art.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-25T18:26:43.633Z",
+    "cached": false,
+    "seconds": 16.6,
+    "usage": {
+      "prompt_tokens": 11521,
+      "completion_tokens": 3852,
+      "reasoning_tokens": 2122
+    },
+    "cost_usd": 0.00404
+  },
+  {
+    "stage": "package",
+    "step": "package",
+    "file": "package.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "medium",
+    "at": "2026-10-26T09:17:11.489Z",
+    "cached": false,
+    "seconds": 26.9,
+    "usage": {
+      "prompt_tokens": 5188,
+      "completion_tokens": 7063,
+      "reasoning_tokens": 6203
+    },
+    "cost_usd": 0.00502
+  }
+]

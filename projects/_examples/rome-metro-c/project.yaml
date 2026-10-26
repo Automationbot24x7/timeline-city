@@ -1,0 +1,52 @@
+# Example: Rome, a ride on Metro line C from San Giovanni out to Parco di Centocelle.
+# Not built: copy this folder to projects/<your-name>/, add your own personal lines, then
+#   node bin/timeline.mjs all projects/<your-name> --mock
+# The `geo` stage prints the line and stations it matched: check them before paying for anything.
+city: Rome
+country: Italy              # search context only; no borders are ever drawn
+line:
+  # OpenStreetMap route=subway relation(s) of line C ("Metro C: ..."). Matched by name and ref;
+  # `network` is optional and only adds to the match, so it is left out here.
+  name: Metro C
+  ref: C
+  from: San Giovanni        # beside the Aurelian Walls and the Lateran
+  to: Parco di Centocelle
+  # Line C is being extended from San Giovanni towards the Colosseum (Porta Metronia,
+  # Colosseo-Fori Imperiali); if OpenStreetMap maps those stations on the route, `from` can start there.
+  # Tunnel + dawn: line C runs underground in this inner section. Once you have checked which
+  # station is the first above ground, add: underground: { from: San Giovanni, to: <that station> }
+bbox: [41.84, 12.44, 41.92, 12.62]   # south, west, north, east (Overpass order)
+language: en
+target_seconds: 150
+max_seconds: 178            # contest limit 180 s
+fps: 30
+aspects: ["16:9"]
+
+narrator:
+  persona: >-
+    Rome itself, an old storyteller who has seen emperors, popes and commuters, speaking in the
+    first person to the listener with warmth and a little mischief. English, with a few Italian
+    words explained by context.
+  voice_id: English_CaptivatingStoryteller   # a stock MiniMax voice; a custom one needs minimax/voice-design
+  speed: 0.95
+  emotion: neutral
+
+# The maker's own "me and this city" thread (their words, no names). The film's arc ends on it:
+# the director writes a personal last stop and verify checks it against these lines only, so add
+# 2-5 true lines of your own before running `direct`. Left empty in this example.
+personal: []
+
+# Contest entry (stage `package`): your own line about the city, at most 50 characters.
+# my_city_line: "..."
+city_id: rome
+# place: { lat: 41.886, lng: 12.509 }   # default: the first station of the ride
+
+style:
+  map: dark night map, line C glowing green, warm amber for history, the Tiber in teal
+  illustration: >-
+    warm painterly illustration inspired by Roman fresco and old etchings of the Campagna,
+    terracotta, ochre and umber, soft evening light, no text or lettering, no recognisable real
+    people, faces small or turned away
+
+# spend cap for the whole cost ledger (build/costs.jsonl); paid media stops before exceeding it
+max_spend_usd: 1.50

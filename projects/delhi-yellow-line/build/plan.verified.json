@@ -1,0 +1,992 @@
+{
+  "title": "One Ticket, 800 Years",
+  "logline": "One Yellow Line ride from Chandni Chowk to Qutab Minar carries Delhi forward from Shah Jahan's city of 1639 to 1931 and 1947, then turns the clock back through the Tughlaq and Tomar ruins to the Qutb of around 1199 and an iron pillar older than any of them - a city that keeps being rebuilt by people who arrive.",
+  "music_prompt": "Instrumental only, no vocals and no singing: a soft tanpura drone opens the film as a warm invitation, joined by sarangi and light finger cymbals; a bansuri flute enters with the map ride and a slow, unhurried tabla pulse at about 72 bpm carries the journey, brightening slightly as the years leap from 1639 to 1931 and 1947, then thinning to sparse strings, drone and a single flute at the Qutb Minar and the iron pillar, before softening again for the personal story and the closing line; a brief, gentle swell sits under each year card, and the piece ends on a warm resolved chord that sustains under the last words, total length about 160 seconds.",
+  "cover_prompt": "Cover image: a deep night map-like view of Delhi seen from above as a painterly illustration, the river a glowing teal ribbon, and across it a single gold thread of metro line curving from the ochre rooftops of the old walled city down to a tall red-sandstone minar glowing warm at the lower edge, small points of amber lamplight along the route, a few distant domes and minarets in indigo silhouette, wide 16:9 with the gold line and the tower near the centre, deep night-ink sky, rich indigo and gold leaf. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+  "scenes": [
+    {
+      "id": "s01",
+      "kind": "title",
+      "narration": "Sit down, traveller. One ticket, and my whole long story. I am the city you are riding into.",
+      "on_screen": {
+        "headline": "One Ticket, Long Story",
+        "subtitle_lang": "en",
+        "year": ""
+      },
+      "image_prompt": "A dark underground metro platform in the old city at night: a sleek metro train arriving with warm gold-lit windows, amber platform lamps reflecting on the polished floor, beyond the platform edge a suggestion of domes, minarets and bazaar rooftops in deep indigo silhouette, a faint teal glow of a distant river, wide 16:9 composition with the train's front near the centre, low warm lamplight and deep shadow, no people. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+      "fact_ids": [],
+      "source_ids": []
+    },
+    {
+      "id": "s02",
+      "kind": "map",
+      "narration": "The bazaar smells of frying and spice. Shah Jahan founded this capital in 1639; the Red Fort straddles this bazaar's eastern fringe.",
+      "on_screen": {
+        "headline": "Chandni Chowk",
+        "year": "1639-1648",
+        "subtitle_lang": "en"
+      },
+      "map": {
+        "train_to": "st_chandni_chowk",
+        "focus_station": "st_chandni_chowk",
+        "focus_site_ids": [
+          "site_shahjahanabad",
+          "site_red_fort"
+        ],
+        "zoom": 14
+      },
+      "fact_ids": [
+        "fact_085",
+        "fact_086"
+      ],
+      "source_ids": [
+        "src_141",
+        "src_142",
+        "src_143",
+        "src_001"
+      ]
+    },
+    {
+      "id": "s03",
+      "kind": "illustration",
+      "narration": "Shah Jahan's daughter Jahanara laid out this street with its canal and moonlit pool. Tradition says the pool named Chandni Chowk.",
+      "on_screen": {
+        "headline": "Chandni Chowk",
+        "year": "1648",
+        "subtitle_lang": "en"
+      },
+      "image_prompt": "Mughal-era Delhi, the Chandni Chowk street at night: a long straight street with a narrow canal running down its centre, an octagonal pool in the middle catching pale moonlight, low walls and painted wooden balconies on either side, oil lamps and hanging lanterns, a few distant small silhouetted figures walking, warm ochre and indigo with gold leaf accents, wide 16:9 with the moonlit pool near the centre, soft lamplight and dusk glow. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+      "fact_ids": [
+        "fact_088"
+      ],
+      "source_ids": [
+        "src_147",
+        "src_139",
+        "src_001"
+      ]
+    },
+    {
+      "id": "s04",
+      "kind": "map",
+      "narration": "Next, Chawri Bazaar. Above the stalls stands the Jama Masjid, finished in 1656 by about five thousand workers.",
+      "on_screen": {
+        "headline": "Chawri Bazaar",
+        "year": "1656",
+        "subtitle_lang": "en"
+      },
+      "map": {
+        "train_to": "st_chawri_bazaar",
+        "focus_station": "st_chawri_bazaar",
+        "focus_site_ids": [
+          "site_jama_masjid"
+        ],
+        "zoom": 14
+      },
+      "fact_ids": [
+        "fact_087"
+      ],
+      "source_ids": [
+        "src_147",
+        "src_148",
+        "src_149"
+      ],
+      "landmark": {
+        "image_prompt": "Jama Masjid, Delhi, at night seen from the foot of the hill it stands on: a broad red sandstone mosque with white marble inlay, raised on a tall stone plinth of wide stairways, three marble domes with golden finials, and two tall minarets striped in red sandstone and white marble, each crowned by a marble chhatri, flanking the great eastern gate. The square courtyard glows with lamplight from rows of small lanterns, a rectangular marble ablution tank pale at its centre, corner chhatris above the arcades. Deep indigo night sky, thin crescent moon, warm amber lamplight washing the sandstone, a few small distant figures climbing the stairs. Wide 16:9, mosque centred, open sky in the upper corners, plain steps and dark street simple in the bottom fifth, quiet reverent mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+        "subject": "Jama Masjid",
+        "site_id": "site_jama_masjid",
+        "reveal_at": "named"
+      }
+    },
+    {
+      "id": "s05",
+      "kind": "map",
+      "narration": "Still forward in time. At Patel Chowk, Jantar Mantar: an observatory of instruments for measuring the heavens, finished in 1724.",
+      "on_screen": {
+        "headline": "Patel Chowk",
+        "year": "1724",
+        "subtitle_lang": "en"
+      },
+      "map": {
+        "train_to": "st_patel_chowk",
+        "focus_station": "st_patel_chowk",
+        "focus_site_ids": [
+          "site_jantar_mantar"
+        ],
+        "zoom": 15
+      },
+      "fact_ids": [
+        "fact_015"
+      ],
+      "source_ids": [
+        "src_034",
+        "src_035",
+        "osm_ride"
+      ],
+      "landmark": {
+        "image_prompt": "Jantar Mantar, New Delhi, at night: an observatory of stone instruments on a low rise. At the centre rises ONE huge right-triangular sundial, the Samrat Yantra: a single tall wedge of masonry seen side-on, one long straight staircase climbing its sloping hypotenuse to a small platform at the top, and one broad graduated quadrant arc curving down on each side of the wedge (a single triangle only, nothing crossing it). It is flanked by two open-topped cylindrical masonry instruments with slanted inner scales and a pair of hollow hemispherical bowls cut with concentric arcs. All the instruments are plastered in deep terracotta-red lime with crisp white-lined edges and scales. Warm lamplight from low lanterns at the base grazes the red plaster; the graduated arcs climb into a deep indigo sky with a thin crescent moon and first stars. Wide 16:9, the great triangle near the horizontal centre, calm open sky in both upper corners, dark raked gravel and low parapets simple in the bottom fifth. Only two or three tiny distant turned-away figures for scale; quiet, reverent, warm mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+        "subject": "Jantar Mantar",
+        "site_id": "site_jantar_mantar",
+        "reveal_at": "named"
+      }
+    },
+    {
+      "id": "s06",
+      "kind": "map",
+      "narration": "Forward, now. In 1931 the Viceroy inaugurated this capital. Tens of thousands of labourers raised the Viceroy's House, now Rashtrapati Bhavan.",
+      "on_screen": {
+        "headline": "Central Secretariat",
+        "year": "1931",
+        "subtitle_lang": "en"
+      },
+      "map": {
+        "train_to": "st_central_secretariat",
+        "focus_station": "st_central_secretariat",
+        "focus_site_ids": [
+          "site_rashtrapati_bhavan"
+        ],
+        "zoom": 13
+      },
+      "fact_ids": [
+        "fact_097",
+        "fact_098",
+        "fact_099"
+      ],
+      "source_ids": [
+        "src_141",
+        "src_163",
+        "src_165",
+        "src_162",
+        "src_169",
+        "src_170",
+        "src_167",
+        "src_168",
+        "src_043"
+      ],
+      "landmark": {
+        "image_prompt": "Rashtrapati Bhavan, New Delhi, seen at dusk from the lawns at the foot of Raisina Hill: a vast H-shaped palace of cream and red sandstone, long arcaded wings, a tall drum carrying a copper-faced dome, and a round chhatri-topped column rising in front of the great steps, with carved elephant statues and low fountain basins at the base. Warm lamplight in the arcades and along the terrace, deep indigo dusk sky with the last amber light on the dome, dark green lawns and long shadows in the foreground. Wide 16:9, the dome and column near the horizontal centre, calm open sky in the upper corners, the lawn plain and simple in the bottom fifth. A few tiny distant figures at the foot of the steps; quiet, reverent, warm mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+        "subject": "Rashtrapati Bhavan",
+        "site_id": "site_rashtrapati_bhavan",
+        "reveal_at": "arrival"
+      }
+    },
+    {
+      "id": "s07",
+      "kind": "illustration",
+      "narration": "About half a million refugees came to me, and many of my own left the other way. I remember canvas and dust.",
+      "on_screen": {
+        "headline": "Old Delhi",
+        "year": "1947",
+        "subtitle_lang": "en"
+      },
+      "image_prompt": "Delhi in 1947 at dusk: rows of canvas tents on open scrubland beside a newly laid-out colony street of low brick shops and a small temple spire, hand carts and cooking smoke, an awning of ochre cloth over a small market, distant small silhouetted families carrying bundles, dust in warm low light, indigo sky above, wide 16:9 with the tents and the new street near the centre, no text, no lettering, no signs, no logos, no flags. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+      "fact_ids": [
+        "fact_156",
+        "fact_103"
+      ],
+      "source_ids": [
+        "src_281",
+        "src_282",
+        "src_271",
+        "src_174"
+      ]
+    },
+    {
+      "id": "s08",
+      "kind": "map",
+      "narration": "Malviya Nagar was one of the new colonies for refugees: markets, schools, temples and gurdwaras.",
+      "on_screen": {
+        "headline": "Malviya Nagar",
+        "year": "1947-1950",
+        "subtitle_lang": "en"
+      },
+      "map": {
+        "train_to": "st_malviya_nagar",
+        "focus_station": "st_malviya_nagar",
+        "focus_site_ids": [],
+        "zoom": 14
+      },
+      "fact_ids": [
+        "fact_104",
+        "fact_158"
+      ],
+      "source_ids": [
+        "src_174",
+        "src_285",
+        "src_286",
+        "src_088",
+        "src_177"
+      ]
+    },
+    {
+      "id": "s09",
+      "kind": "map",
+      "narration": "Here I turn the clock back. <#0.6#> The train now comes up into daylight.",
+      "on_screen": {
+        "headline": "Saket",
+        "subtitle_lang": "en",
+        "year": ""
+      },
+      "map": {
+        "train_to": "st_saket",
+        "focus_station": "st_saket",
+        "focus_site_ids": [],
+        "zoom": 14
+      },
+      "fact_ids": [
+        "fact_118",
+        "fact_119"
+      ],
+      "source_ids": [
+        "src_195",
+        "src_196",
+        "src_197",
+        "src_199"
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "map",
+      "narration": "Qutb Minar was begun around 1199 by Qutb ud-Din Aibak and finished by Iltutmish, who made Delhi his capital.",
+      "on_screen": {
+        "headline": "Qutb Minar",
+        "year": "c. 1199",
+        "subtitle_lang": "en"
+      },
+      "map": {
+        "focus_station": "st_qutab_minar",
+        "focus_site_ids": [
+          "site_qutb_minar",
+          "site_qutub_minar_complex"
+        ],
+        "zoom": 14,
+        "train_to": "st_qutab_minar"
+      },
+      "fact_ids": [
+        "fact_072"
+      ],
+      "source_ids": [
+        "src_118",
+        "src_122",
+        "src_123",
+        "src_124",
+        "src_125"
+      ],
+      "landmark": {
+        "image_prompt": "Qutb Minar, Delhi, in early-morning golden light seen from inside the cloister courtyard of the Qutb complex: a tapering five-storey tower of red and grey sandstone, its shaft fluted with carved bands and stalactite bracketing, projecting balconies carried on muqarnas corbels between the storeys, rising from a low circular plinth banded with carved ornament. Soft pale-gold sky, long morning shadows across worn stone paving, warm haze over trimmed lawn and the low ruins of the surrounding complex, a few small distant figures at the tower's foot. Wide 16:9, the tower's shaft near the horizontal centre, pale open sky calm in both upper corners, plain paving simple in the bottom fifth. Quiet reverent morning mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+        "subject": "Qutb Minar",
+        "site_id": "site_qutb_minar",
+        "reveal_at": "arrival"
+      }
+    },
+    {
+      "id": "s11",
+      "kind": "map",
+      "narration": "And beside it, an iron pillar from the 5th century that resists rust. Phosphorus is the secret.",
+      "on_screen": {
+        "headline": "Qutb complex",
+        "year": "5th century",
+        "subtitle_lang": "en"
+      },
+      "map": {
+        "focus_station": "st_qutab_minar",
+        "focus_site_ids": [
+          "site_iron_pillar"
+        ],
+        "zoom": 15.5,
+        "train_to": "st_qutab_minar"
+      },
+      "fact_ids": [
+        "fact_068",
+        "fact_069",
+        "fact_057"
+      ],
+      "source_ids": [
+        "src_096",
+        "src_097",
+        "src_116"
+      ],
+      "landmark": {
+        "image_prompt": "The iron pillar of Delhi in the Qutb complex, seen close in early-morning golden light: a dark iron column about seven metres tall with a smooth fluted shaft and a spreading bell-pattern capital, standing on a low stone base on the paved courtyard, its blackened metal catching a warm rim of sunlight. Behind it the arcades and broken sandstone walls of the complex recede, with clipped grass and low garden walls; long soft shadows fall across the paving, pale gold sky and morning haze above. Wide 16:9, the pillar near the horizontal centre and filling most of the frame vertically, calm open sky in the upper corners, plain paving simple in the bottom fifth. One small distant turned-away figure for scale; quiet, reverent, warm mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+        "subject": "Delhi Iron Pillar",
+        "site_id": "site_iron_pillar",
+        "reveal_at": "named"
+      }
+    },
+    {
+      "id": "s14",
+      "kind": "end",
+      "narration": "A city of arrivals: colonies for those who came, my own leaving the other way. <#0.8#> Ride on, traveller.",
+      "on_screen": {
+        "headline": "Ride on",
+        "subtitle_lang": "en",
+        "year": ""
+      },
+      "image_prompt": "The Qutb Minar tower at golden dusk, red sandstone and pale marble banding, warm amber light raking its carved fluting, long soft shadows on dry grass, a few birds in the sky, at the far edge the slender piers of an elevated viaduct catching the last light, wide 16:9 with the tower near the centre, reverent and calm, indigo sky above and a gold horizon. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+      "fact_ids": [
+        "fact_167",
+        "fact_104",
+        "fact_153"
+      ],
+      "source_ids": [
+        "src_306",
+        "src_307",
+        "src_174",
+        "src_177"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "scene_id": "s01",
+      "text": "The film frames a single metro ticket as the way into the city's long history; this is the maker's own title framing.",
+      "kind": "personal",
+      "source_ids": []
+    },
+    {
+      "id": "c02",
+      "scene_id": "s02",
+      "text": "In 1639 Shah Jahan chose a site for a new capital, Shahjahanabad, today's Old Delhi, and began building the Red Fort.",
+      "kind": "fact",
+      "source_ids": [
+        "src_141",
+        "src_142",
+        "src_143"
+      ]
+    },
+    {
+      "id": "c03",
+      "scene_id": "s02",
+      "text": "The Red Fort straddles the eastern fringes of Chandni Chowk, the old street market.",
+      "kind": "fact",
+      "source_ids": [
+        "src_001"
+      ]
+    },
+    {
+      "id": "c04",
+      "scene_id": "s03",
+      "text": "Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens; a canal ran down its middle and an octagonal pool reflected the moonlight.",
+      "kind": "fact",
+      "source_ids": [
+        "src_147",
+        "src_139"
+      ]
+    },
+    {
+      "id": "c05",
+      "scene_id": "s03",
+      "text": "Tradition gives Chandni Chowk its name from the moonlight reflected in that pool.",
+      "kind": "fact",
+      "source_ids": [
+        "src_147",
+        "src_139",
+        "src_001"
+      ]
+    },
+    {
+      "id": "c06",
+      "scene_id": "s04",
+      "text": "Shah Jahan's Jama Masjid was completed in 1656.",
+      "kind": "fact",
+      "source_ids": [
+        "src_147",
+        "src_148",
+        "src_149"
+      ]
+    },
+    {
+      "id": "c07",
+      "scene_id": "s04",
+      "text": "About five thousand workers built the Jama Masjid.",
+      "kind": "fact",
+      "source_ids": [
+        "src_147",
+        "src_148",
+        "src_149"
+      ]
+    },
+    {
+      "id": "c08",
+      "scene_id": "s05",
+      "text": "Jantar Mantar, near Patel Chowk station, was completed in 1724.",
+      "kind": "fact",
+      "source_ids": [
+        "src_034",
+        "src_035",
+        "osm_ride"
+      ]
+    },
+    {
+      "id": "c09",
+      "scene_id": "s05",
+      "text": "Jantar Mantar is an observatory of astronomical instruments for measuring the harmony of the heavens.",
+      "kind": "fact",
+      "source_ids": [
+        "src_034"
+      ]
+    },
+    {
+      "id": "c10",
+      "scene_id": "s06",
+      "text": "New Delhi was formally inaugurated as the capital on 13 February 1931 by the Viceroy.",
+      "kind": "fact",
+      "source_ids": [
+        "src_165",
+        "src_163",
+        "src_167",
+        "src_168"
+      ]
+    },
+    {
+      "id": "c11",
+      "scene_id": "s06",
+      "text": "Up to 23,000 labourers worked on the Viceroy's House at the peak of construction.",
+      "kind": "fact",
+      "source_ids": [
+        "src_162",
+        "src_169",
+        "src_170"
+      ]
+    },
+    {
+      "id": "c12",
+      "scene_id": "s06",
+      "text": "The Viceroy's House is now Rashtrapati Bhavan.",
+      "kind": "fact",
+      "source_ids": [
+        "src_162",
+        "src_043"
+      ]
+    },
+    {
+      "id": "c13",
+      "scene_id": "s07",
+      "text": "About half a million refugees entered Delhi after Partition.",
+      "kind": "fact",
+      "source_ids": [
+        "src_281",
+        "src_282",
+        "src_271"
+      ]
+    },
+    {
+      "id": "c14",
+      "scene_id": "s07",
+      "text": "Many of Delhi's Muslims left the city after Partition, so people moved in both directions.",
+      "kind": "fact",
+      "source_ids": [
+        "src_174",
+        "src_281",
+        "src_282"
+      ]
+    },
+    {
+      "id": "c15",
+      "scene_id": "s08",
+      "text": "Malviya Nagar was among the new colonies laid out to rehouse Partition refugees.",
+      "kind": "fact",
+      "source_ids": [
+        "src_174",
+        "src_285",
+        "src_286",
+        "src_088"
+      ]
+    },
+    {
+      "id": "c16",
+      "scene_id": "s08",
+      "text": "The new colonies were planned with their own markets, schools, temples and gurdwaras.",
+      "kind": "fact",
+      "source_ids": [
+        "src_174",
+        "src_177"
+      ]
+    },
+    {
+      "id": "c17",
+      "scene_id": "s09",
+      "text": "From Chandni Chowk to Saket the Yellow Line runs underground, and the train comes up into daylight only as it nears Qutab Minar.",
+      "kind": "fact",
+      "source_ids": [
+        "src_196",
+        "src_197",
+        "src_199"
+      ]
+    },
+    {
+      "id": "c18",
+      "scene_id": "s10",
+      "text": "The Qutb Minar was begun around 1199 by Qutb ud-Din Aibak.",
+      "kind": "fact",
+      "source_ids": [
+        "src_118",
+        "src_122",
+        "src_123",
+        "src_124",
+        "src_125"
+      ]
+    },
+    {
+      "id": "c19",
+      "scene_id": "s10",
+      "text": "Iltutmish completed the Qutb Minar.",
+      "kind": "fact",
+      "source_ids": [
+        "src_118",
+        "src_123"
+      ]
+    },
+    {
+      "id": "c20",
+      "scene_id": "s10",
+      "text": "Iltutmish made Delhi the capital of the sultanate.",
+      "kind": "fact",
+      "source_ids": [
+        "src_118",
+        "src_122"
+      ]
+    },
+    {
+      "id": "c21",
+      "scene_id": "s11",
+      "text": "The iron pillar stands in the Qutb complex and dates from the 5th century.",
+      "kind": "fact",
+      "source_ids": [
+        "src_096",
+        "src_097"
+      ]
+    },
+    {
+      "id": "c22",
+      "scene_id": "s11",
+      "text": "The pillar resists rust because its iron is rich in phosphorus; a thin protective layer forms next to the metal and greatly slows corrosion.",
+      "kind": "fact",
+      "source_ids": [
+        "src_116"
+      ]
+    },
+    {
+      "id": "c28",
+      "scene_id": "s14",
+      "text": "Delhi is a city of arrivals: by 2011 about four in ten people living there had last lived in another state or country.",
+      "kind": "fact",
+      "source_ids": [
+        "src_306",
+        "src_307"
+      ]
+    },
+    {
+      "id": "c29",
+      "scene_id": "s14",
+      "text": "After Partition, new colonies were laid out for refugees with their own markets, schools, temples and gurdwaras, and many of Delhi's own Muslims left in the other direction, more than half of those resettled by the Ministry of Rehabilitation going into homes left behind by departing Muslims.",
+      "kind": "fact",
+      "source_ids": [
+        "src_174",
+        "src_177"
+      ]
+    }
+  ],
+  "brief_hash": "ff3948845651d01d",
+  "style_bible": {
+    "narrator_persona": "Delhi itself speaks: an old male storyteller in the dastangoi tradition, first person, warm, unhurried and dryly funny, always addressing the listener as 'traveller'. He is a city that likes to brag and then admits the truth. [personal memory removed at the maker's request]",
+    "illustration_style": "Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+    "palette": [
+      "Night Ink #0B1020",
+      "Yamuna Teal #2E7C86",
+      "Lamp Amber #F2A93B",
+      "Gold Leaf #D8B24A",
+      "Ochre Earth #C2703D",
+      "Haveli Cream #E7C9A6"
+    ],
+    "music_direction": "Instrumental only, no vocals: a soft tanpura drone, sarangi, bansuri flute and light finger cymbals, with a slow tabla pulse. Mood arc: warm invitation at the hook, curious and brighter through the ride, reverent and sparse at the Qutb, tender and gently hopeful for the personal close. Tempo 70-80 bpm, unhurried, with a brief swell on each year card.",
+    "title_options": [
+      "One Ticket, 800 Years",
+      "A Ticket to Eight Hundred Years",
+      "Dilli in One Line",
+      "The Line That Remembers",
+      "Six Stations, Eight Centuries"
+    ]
+  },
+  "director": {
+    "model": "minimax/minimax-m3.1-flash",
+    "logline": "One Yellow Line ride from Chandni Chowk to Qutab Minar carries Delhi from Shah Jahan's city of 1639 forward to the republic of 1931 and 1947, then backward through the Tughlaq and Tomar ruins to the Qutb of about 1199 and an iron pillar older than any of them - the story of a city that keeps being rebuilt by people who arrive.",
+    "hook": "Sit down, traveller. One ticket buys you eight hundred years.",
+    "time_direction": "The dates do not run one way along this ride, and the film will say so out loud. The first leg moves forward in time: Shahjahanabad (founded 1639, inaugurated 1648), the Jama Masjid (1656), Jantar Mantar (1724), New Delhi inaugurated (1931), the Partition colonies (1947-50). Then, after Malviya Nagar, the clock runs backwards: Khirki Masjid (1351), the Qutb Minar begun around 1199, and an iron pillar of the 5th century. So no stop here is simply older than the stop before it - some are much younger - and the narrator will name the direction of the years as we go, never claiming each stop takes us further into the past.",
+    "stops": [
+      {
+        "station_id": "st_chandni_chowk",
+        "era": "1639-1648 (with 1857 remembered)",
+        "why": "The ride begins inside Shah Jahan's new capital on the Yamuna: the fort founded 1639 and inaugurated 1648, and the street Jahanara laid out with a canal and a pool, whose traditional name means moonlight square. The same gates that carry 1648 also carry 1857, and the narration will say so without blaming anyone.",
+        "fact_ids": [
+          "fact_085",
+          "fact_086",
+          "fact_088",
+          "fact_127",
+          "fact_093"
+        ],
+        "site_ids": [
+          "site_red_fort",
+          "site_shahjahanabad",
+          "site_kashmiri_gate"
+        ]
+      },
+      {
+        "station_id": "st_chawri_bazaar",
+        "era": "1650-1656, and 2005-2010 for the line itself",
+        "why": "Two layers in one stop: the city's faith in stone - Shah Jahan's mosque, foundation 1650, five thousand workers, finished 1656 - and the modern layer, because from here the train runs underground under the old heart and only surfaces near the terminus. The bazaar below the mosque keeps the everyday Delhi of the street.",
+        "fact_ids": [
+          "fact_087",
+          "fact_118",
+          "fact_119"
+        ],
+        "site_ids": [
+          "site_jama_masjid",
+          "site_mirza_ghalib_ki_haveli"
+        ]
+      },
+      {
+        "station_id": "st_patel_chowk",
+        "era": "1664-1724",
+        "why": "Continuing the forward run of the clock: a gurdwara of 1664 and the stone observatory of giant instruments built in 1724, proof that this city kept measuring the sky and the seasons, and kept receiving new arrivals to pray in them.",
+        "fact_ids": [
+          "fact_019",
+          "fact_015"
+        ],
+        "site_ids": [
+          "site_jantar_mantar",
+          "site_sri_bangla_sahib_gurudwara"
+        ]
+      },
+      {
+        "station_id": "st_central_secretariat",
+        "era": "1911-1931",
+        "why": "The great leap forward in time, and the hinge of the film: at the 1911 Durbar the capital of British India was moved to Delhi; building began in 1912; on 13 February 1931 New Delhi was formally inaugurated, with the Viceroy's House of some 340 rooms put up by tens of thousands of labourers. Indian names stand on top of it now.",
+        "fact_ids": [
+          "fact_095",
+          "fact_097",
+          "fact_098",
+          "fact_099"
+        ],
+        "site_ids": [
+          "site_rashtrapati_bhavan",
+          "site_india_gate"
+        ]
+      },
+      {
+        "station_id": "st_malviya_nagar",
+        "era": "1947-1950 (with 1351 alongside)",
+        "why": "Where the film turns from time to people. This is one of the new colonies laid out after Partition, when about half a million refugees arrived and about 330,000 of the city's Muslims left - movement in both directions - and where a mosque from 1351 still stands, the first hint that the years are about to run backwards.",
+        "fact_ids": [
+          "fact_156",
+          "fact_103",
+          "fact_104",
+          "fact_102",
+          "fact_158",
+          "fact_054"
+        ],
+        "site_ids": [
+          "site_khirki_masjid"
+        ]
+      },
+      {
+        "station_id": "st_qutab_minar",
+        "era": "c.1199, and the 5th century before it",
+        "why": "The oldest stone the line reaches: the tower begun around 1199 by Qutb ud-Din Aibak and finished by Iltutmish, later repaired after a lightning strike, UNESCO-listed in 1993 - and beside it an iron pillar of the 5th century, about six tons, whose phosphorus-rich metal has slowed its rust for sixteen centuries. The film's title and its promise are cashed here.",
+        "fact_ids": [
+          "fact_072",
+          "fact_068",
+          "fact_069",
+          "fact_070"
+        ],
+        "site_ids": [
+          "site_qutb_minar",
+          "site_iron_pillar",
+          "site_qutub_minar_complex"
+        ]
+      }
+    ],
+    "arc": [
+      {
+        "part": "hook",
+        "purpose": "Land the promise and the intimacy of the conceit in five seconds: the city itself is the guide, one ticket, a very long memory.",
+        "beats": [
+          "Speaker: Delhi, first person, greeting the traveller like an old friend inviting them onto a train.",
+          "The promise of eight hundred years, said as a ticket, not a lecture.",
+          "Cut to the dark night map: the Yellow Line glows gold, the train pulls out of Chandni Chowk."
+        ]
+      },
+      {
+        "part": "ride",
+        "purpose": "The ride itself: the line goes underground under the old heart, the years first run forward and then turn back, and each stop lights up one layer of the city.",
+        "beats": [
+          "Underground from Chandni Chowk to the last station before daylight - the line's own history (2004 first underground section, 2005 under the old city, 2010 south to Qutab Minar).",
+          "Forward in time: Shahjahanabad founded 1639, inaugurated 1648; the moonlight street laid out by Jahanara; the Jama Masjid finished 1656; Jantar Mantar 1724.",
+          "Then the clock leaps forward to 1931: the 1911 announcement, Lutyens' New Delhi, Rashtrapati Bhavan with tens of thousands of labourers at the peak.",
+          "Honest turn, said aloud: 'here I turn the clock back' - Khirki Masjid 1351, Qutb Minar c.1199, and an iron pillar from the 5th century that will not rust."
+        ]
+      },
+      {
+        "part": "kept_coming",
+        "purpose": "The city as a place of arrivals: Partition moved people in both directions, the Games brought workers from other states, the hills sent sons for work, and the arrivals kept coming.",
+        "beats": [
+          "1947: about half a million refugees arrived, about 330,000 Muslims left; tents became colonies such as Malviya Nagar; forts and tombs served as camps in both directions.",
+          "1982: workers from Rajasthan, Uttar Pradesh and Odisha built the Asian Games city, and in 1982 India's Supreme Court held that paying below the minimum wage can be forced labour.",
+          "[personal memory removed at the maker's request]",
+          "Every day the line carries about eighteen lakh boardings and the heaviest rush-hour load of any Delhi line; the newest master plan, notified in 2026, draws a city of 32 million."
+        ]
+      },
+      {
+        "part": "personal",
+        "purpose": "[personal memory removed at the maker's request]",
+        "beats": [
+          "[personal memory removed at the maker's request]",
+          "[personal memory removed at the maker's request]",
+          "[personal memory removed at the maker's request]",
+          "[personal memory removed at the maker's request]"
+        ]
+      }
+    ],
+    "rejected": [
+      {
+        "fact_id": "fact_155",
+        "reason": "Accuracy trap: the Peshori Lal Lamba / Kwality Partition story is contradicted by The Week (the restaurant predates Partition). Not used."
+      },
+      {
+        "fact_id": "fact_160",
+        "reason": "Source was a reader's highlight of Dalrymple rather than the book; the Ramlila-at-Zafar detail is too risky to put on screen."
+      },
+      {
+        "fact_id": "fact_161",
+        "reason": "Ramlila committee founding dates conflict across sources and would be on-screen trivia; the Ramlila Maidan reference is dropped."
+      },
+      {
+        "fact_id": "fact_062",
+        "reason": "Indraprastha is tradition, not evidence, and a 1400 BCE frame would break the film's 800-year promise and its map logic."
+      },
+      {
+        "fact_id": "fact_063",
+        "reason": "Purana Qila excavation detail (nine cultural levels, 2,500 years) is too technical and needs a stop that does not exist on this ride."
+      },
+      {
+        "fact_id": "fact_064",
+        "reason": "Stratified PGW finds from 2023-24 are not confirmed in the evidence; the 900 BCE / 540 BCE dating would also overreach the title."
+      },
+      {
+        "fact_id": "fact_147",
+        "reason": "Asiad flyover counts are unverified (5-7 in secondary sources, PIB figure not tied to Asiad), so the flyover line is kept vague."
+      },
+      {
+        "fact_id": "fact_090",
+        "reason": "The Koh-i-Noor adds loot drama the film does not need; fact_089's 1739 sacking can carry the destruction in one clause without a diamond."
+      },
+      {
+        "fact_id": "fact_094",
+        "reason": "The 1858 demolition estimate ('about a third') is one tourism figure and would compete with the 1857 line for space; one war beat only."
+      },
+      {
+        "fact_id": "fact_110",
+        "reason": "The 2018 UN ranking and its 2028 projection are superseded by the 2025 figures and would put a stale number on screen."
+      },
+      {
+        "fact_id": "fact_151",
+        "reason": "1981 and 1991 census pair duplicates the 1941-51 growth fact; dropped to protect word budget."
+      },
+      {
+        "fact_id": "fact_100",
+        "reason": "India Gate's 13,000 inscribed names and the 1914-19 dedication is lovely but the 1931 inauguration and Rashtrapati Bhavan carry the New Delhi stop better."
+      },
+      {
+        "fact_id": "fact_114",
+        "reason": "The Delhi Triangle framing is a strong map device but the triangle's edges are not narratable facts for this ride; dropped from the narration."
+      }
+    ],
+    "risks": [
+      "Do not claim the stops get older as the train goes south. The first leg runs forward (1639-48, 1656, 1724, 1931, 1947); only from Malviya Nagar southward do the years run back (1351, c.1199, 5th century). The narrator will say the direction out loud.",
+      "Qutb Minar: say 'begun around 1199' / 'c. 1199', never 'in 1199'. Height 72.5 m only if used.",
+      "The station is not at the monument: the tower is about 1.3 km from Qutab Minar station. Never say the minar can be seen from the platform, and never call it 'a short walk'.",
+      "Iron pillar: it resists rust because its iron is rich in phosphorus; it still corrodes extremely slowly. Never say 'rustproof'. Identify Chandra with Chandragupta II as an identification, not a certainty.",
+      "Partition: say both directions - about half a million refugees came in, about 330,000 Muslims left - and use 'about'/'around', since these are estimates. Never draw or mention borders on the map, and never show the camps as only for arrivals from one side.",
+      "1857: keep the language factual and blameless - a siege, a gate blown with gunpowder, the city recaptured, both sides killing - and never name the contested term as fact or show any living or historical person.",
+      "[personal memory removed at the maker's request] Never say the family worked on the Asian Games sites - the Supreme Court judgment names Rajasthan, Uttar Pradesh and Orissa. [personal memory removed at the maker's request]",
+      "[personal memory removed at the maker's request] Say 'by' the stadium, never 'inside' it.",
+      "[personal memory removed at the maker's request] The safe claim is that it is loved here and that Partition-era cooks shaped how Delhi eats.",
+      "No living people by name, image or likeness: no modern politicians, no living architect of the Asian Games Village, no living historian. Jawaharlal Nehru and George V are long dead and may be named only if essential; better to say 'the Viceroy' and 'the King'.",
+      "Yellow Line claims: about 37 stations and roughly 47 km; about eighteen lakh boardings a day with the heaviest rush-hour load in the network - never 'the busiest line'.",
+      "Captions use current names: 'Seva Teerth' (formerly Udyog Bhawan, renamed 2026), 'Lok Kalyan Marg' (renamed 2016, not 2017), 'Qutab Minar' for the station and 'Qutb Minar' for the monument, 'Millennium City Centre Gurugram'.",
+      "Master Plan: call it the Master Plan for Delhi 2047, notified in the Gazette in August 2026 - never '2041'.",
+      "No text, lettering, signs, logos or flags in any illustration; no recognisable real faces; no national borders on the map - only the city, the Yamuna and the line."
+    ],
+    "critique": {
+      "scores": {
+        "accuracy": {
+          "score": 8,
+          "note": "Dates are hedged correctly (1639 founded, 1648 inaugurated, c. 1199), Partition is told in both directions, the pillar is never called rustproof, no living people are named or shown, and no borders appear. Two things still nag: the 'oldest thing the line reaches' is now the 5th-century pillar rather than the 1199 tower, and the claim that Delhi 'has always been a city of arrivals' is asserted from the city rather than from the census evidence in the pack. I have moved that line into the personal scene and tied it to Census 2011 in the claims."
+        },
+        "story_craft": {
+          "score": 8,
+          "note": "[personal memory removed at the maker's request] The map carries real work at every stop. [personal memory removed at the maker's request] - which is the emotional peak, and the 'what would yours say' question just before it invites the viewer in without weakening the reveal."
+        },
+        "warmth": {
+          "score": 8,
+          "note": "[personal memory removed at the maker's request] Still slightly cool in the middle, but the last three scenes have the affection and the small joke the brief asked for."
+        },
+        "pacing": {
+          "score": 8,
+          "note": "One idea per scene, one date and one other number each. The 1911 announcement sits on the era card rather than in the spoken line; the 1947-50 colonies are a single scene; the clock-turn gets its own pause. The final scene is 30 words with a beat before the reveal, which is the right shape."
+        },
+        "hook": {
+          "score": 9,
+          "note": "'Sit down, traveller. One ticket buys you eight hundred years.' - concrete, warm, a promise, and it lands inside five seconds."
+        },
+        "ending": {
+          "score": 9,
+          "note": "Fixed. [personal memory removed at the maker's request] That is 'me and this city' with the maker named and no face shown."
+        },
+        "positivity": {
+          "score": 8,
+          "note": "Partition is told in both directions with no blame, the camps are not shown as one-sided, and the arrival thread now runs through the family and the census rather than through slogans. The 'arrivals' line is honest about being the city's own account of itself."
+        },
+        "length": {
+          "score": 9,
+          "note": "267 words, 13 scenes, 5 image scenes, about 160 seconds, hook within five seconds - inside every limit of the brief."
+        }
+      },
+      "fixes": [
+        "[personal memory removed at the maker's request], and after a <#0.[personal memory removed at the maker's request] The separate end scene is folded in, so the reveal is genuinely last.",
+        "Move the 'city of arrivals' line out of the Qutb map scene and into the personal scene, where the family's own arrival lands it, and back it in the claims with the Census 2011 figures on migration by last residence.",
+        "Drop the '37 stations' count from the close so the last seconds carry no statistics at all.",
+        "[personal memory removed at the maker's request]",
+        "Tighten the Qutb map scene to one idea - the pillar and its phosphorus - and give the iron pillar and the Qutb complex separate map lighting.",
+        "Keep the honest turn of the clock explicit: 'Here I turn the clock back' with a pause, so no stop is implied to be simply older than the one before.",
+        "[personal memory removed at the maker's request]"
+      ],
+      "used": false
+    },
+    "checks": {
+      "problems": [],
+      "notes": [],
+      "map_notes": [
+        "s02: train_to st_chawri_bazaar -> st_chandni_chowk (arrive at the scene's station)",
+        "s04: train_to st_patel_chowk -> st_chawri_bazaar (arrive at the scene's station)",
+        "s05: train_to st_central_secretariat -> st_patel_chowk (arrive at the scene's station)",
+        "s06: train_to st_malviya_nagar -> st_central_secretariat (arrive at the scene's station)",
+        "s08: train_to st_saket -> st_malviya_nagar (arrive at the scene's station)",
+        "s09: train_to st_qutab_minar -> st_saket (arrive at the scene's station)",
+        "s10: train_to (none) -> st_qutab_minar (arrive at the scene's station)",
+        "s11: train_to (none) -> st_qutab_minar (arrive at the scene's station)"
+      ],
+      "stats": {
+        "scenes": 14,
+        "words": 284,
+        "chars": 1562,
+        "est_seconds": 162.1,
+        "cps": 11.5,
+        "hook": "Sit down, traveller.",
+        "hook_words": 3,
+        "map_scenes": 8,
+        "image_scenes": 6,
+        "claims": 32,
+        "per_scene": [
+          {
+            "id": "s01",
+            "kind": "title",
+            "words": 18,
+            "seconds": 10.1
+          },
+          {
+            "id": "s02",
+            "kind": "map",
+            "words": 22,
+            "seconds": 12
+          },
+          {
+            "id": "s03",
+            "kind": "illustration",
+            "words": 21,
+            "seconds": 11.5
+          },
+          {
+            "id": "s04",
+            "kind": "map",
+            "words": 18,
+            "seconds": 10.1
+          },
+          {
+            "id": "s05",
+            "kind": "map",
+            "words": 20,
+            "seconds": 11
+          },
+          {
+            "id": "s06",
+            "kind": "map",
+            "words": 21,
+            "seconds": 11.5
+          },
+          {
+            "id": "s07",
+            "kind": "illustration",
+            "words": 22,
+            "seconds": 12
+          },
+          {
+            "id": "s08",
+            "kind": "map",
+            "words": 15,
+            "seconds": 8.6
+          },
+          {
+            "id": "s09",
+            "kind": "map",
+            "words": 13,
+            "seconds": 8.3
+          },
+          {
+            "id": "s10",
+            "kind": "map",
+            "words": 19,
+            "seconds": 10.5
+          },
+          {
+            "id": "s11",
+            "kind": "map",
+            "words": 18,
+            "seconds": 10.1
+          },
+          {
+            "id": "s12",
+            "kind": "personal",
+            "words": 32,
+            "seconds": 16.8
+          },
+          {
+            "id": "s13",
+            "kind": "personal",
+            "words": 15,
+            "seconds": 9.4
+          },
+          {
+            "id": "s14",
+            "kind": "end",
+            "words": 30,
+            "seconds": 20.3
+          }
+        ]
+      }
+    },
+    "log": "director/index.json"
+  },
+  "verification": {
+    "passed": true,
+    "rounds": 3,
+    "supported": 24,
+    "partial": 0,
+    "unsupported": 0,
+    "failing_scenes": [],
+    "words": 224,
+    "est_seconds": 161.8,
+    "maker_cut": "[personal memory removed at the maker's request]",
+    "maker_cut_family": "2026-10-26: the maker cut the personal scenes s12 and s13 (claims c23, c24, c25, c26, c27); no text added"
+  }
+}

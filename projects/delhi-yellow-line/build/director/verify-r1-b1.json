@@ -1,0 +1,227 @@
+{
+  "stage": "verify",
+  "step": "verify-r1-b1",
+  "cached": false,
+  "model": "minimax/minimax-m3.1-flash",
+  "reasoning_effort": "medium",
+  "at": "2026-10-25T17:31:56.773Z",
+  "seconds": 18.2,
+  "usage": {
+    "prompt_tokens": 5134,
+    "completion_tokens": 2665,
+    "reasoning_tokens": 1657
+  },
+  "cost_usd": 0.00237,
+  "attempts": [
+    {
+      "usage": {
+        "completion_tokens": 2665,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1657
+        },
+        "prompt_tokens": 5134,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1792
+        },
+        "total_tokens": 7799
+      },
+      "finish_reason": "tool_calls",
+      "reasoning": "Let me judge each claim.\n\nc01: personal. Narration: \"Sit down, traveller. One ticket, and my whole long story. I am the city you are riding into.\" Claim: \"The film frames a single metro ticket as the way into the city's long history, the maker's own title framing.\" [personal memory removed at the maker's request] Does testimony support framing ticket as way into city's history? Testimony doesn't mention title framing. Hmm. Personal claims checked against testimony. The testimony doesn't say anything about a ticket or the title framing. So unsupported? But it's about the film itself... The claim says \"the maker's own title framing\" — testimony doesn't include. I'd say partial or unsupported. [personal memory removed at the maker's request] The claim's core—that the film frames a single metro ticket as gateway to long history—is a description of the film's own content, which is the narration itself. Hmm, but the checking rule: personal claims checked against testimony; supported when they say no more than the testimony. The claim says more than testimony (a specific framing claim). But the claim is essentially describing the film's own title/narration, which is verifiable from the scene. Hmm, but is it a fact about the world? It's a claim about the film itself, evident from the narration in s01. I think partial is reasonable: the narration shows ticket and story framing; \"the maker's own\" title framing—testimony says he made the film. I'd call it supported? The claim says the film frames a single metro ticket as the way into the city's long history — supported by s01 narration \"One ticket, and my whole long story.\" [personal memory removed at the maker's request] I'll say supported.\n\nc02: \"In 1639 Shah Jahan chose a site for a new capital, Shahjahanabad, today's Old Delhi, and began building the Red Fort.\" Excerpts: yes exactly. Supported. Caveat fact_085 says \"Say 'founded 1639, inaugurated 1648'.\" The claim says \"In 1639 ... began building\" — consistent with source. Hmm, caveat applies to narration? The narration says \"Shah Jahan founded this capital in 1639\" — caveat prescribes \"founded 1639, inaugurated 1648\". Narration says founded in 1639 which matches. But no inauguration mentioned — does the caveat require both? It says say 'founded 1639, inaugurated 1648'. The narration drops the inauguration. Hmm, the caveat is about not giving exact dates that vary. Actually the risk: claiming the fort began in 1639 exactly. The claim c02 says \"In 1639 ... began building the Red Fort\" — sources say exactly that. The caveat about dates varying suggests saying \"founded 1639\" is fine. I'd flag caveat_violation on the scene? The narration says \"founded this capital in 1639\" — that follows the caveat wording. So no violation. Actually the caveat for the fort's start date says other accounts give 12/13 May 1638 or 1639; say \"founded 1639\". So narration \"founded this capital in 1639\" is compliant. OK.\n\nc03: \"The Red Fort stands on the eastern fringes of Chandni Chowk.\" src_001: \"the Mughal-era Red Fort straddles the eastern fringes of Chandni Chowk.\" Supported (claim says \"stands on\" vs \"straddles\" — fine).\n\nc04: Jahanara Begum, eldest daughter, laid out Chandni Chowk with sarai and gardens; canal down middle; octagonal pool reflected moonlight. Supported.\n\nc05: \"Tradition gives Chandni Chowk its name from the moonlight reflected in that pool.\" src_147: \"an octagonal pool reflected the moonlight, which tradition says gave it the name 'Moonlight Square'.\" Supported. Caveat fact_088: \"The 'moonlight' etymology is the traditional explanation.\" Narration says \"Tradition says the pool named Chandni Chowk\" — compliant. Claim says \"Tradition gives...\" fine.\n\nc08: \"Jantar Mantar, near Patel Chowk station, was completed in 1724.\" src_034 \"Completed in 1724\"; src_035 inception 1724; osm map: Jantar Mantar 0.52 km from Patel Chowk. Supported.\n\nc09: \"Jantar Mantar is an observatory of astronomical instruments for measuring the harmony of the heavens.\" src_034: yes. Supported.\n\nScenes:\ns01: clean. Any issues? No factual claims besides title framing. Empty.\ns02: narration \"The bazaar smells of frying and spice.\" — poetic/sensory, fine. \"Shah Jahan founded this capital in 1639; the Red Fort rose at its eastern edge.\" — supported by claims. \"at its eastern edge\" — the Red Fort is east edge of Chandni Chowk; capital's eastern edge? Hmm. src_001 says Red Fort straddles eastern fringes of Chandni Chowk. Red Fort is on the eastern edge of Chandni Chowk street, not of the city. The narration says \"the Red Fort rose at its eastern edge\" — of the capital? That's arguably wrong; Red Fort is at the eastern edge of Chandni Chowk (the street), and on the west bank of Yamuna, north-east of the city. Hmm. This could be an uncovered_fact issue: claim c03 says \"eastern fringes of Chandni Chowk\" but narration says eastern edge of the capital. I'd flag uncovered_fact? The narration's fact \"the Red Fort rose at its eastern edge [of the capital]\" isn't covered by c02/c03 exactly and is inaccurate. I'll flag uncovered_fact with note. Actually is it a national_border? no.\n\nHmm, but \"its\" could refer to the bazaar/Chandni Chowk? The previous sentence is about capital. Ambiguous. Red Fort is east of Chandni Chowk street. So \"at its eastern edge\" referring to the street/bazaar is plausible — the street. I might flag as other/uncovered_fact with note. I'll flag uncovered_fact since narration's eastern edge of capital isn't covered.\n\nHmm, risk of overflagging. I'll include it as uncovered_fact.\n\ns03: narration \"Shah Jahan's daughter Jahanara laid out this street with its canal and moonlit pool. Tradition says the pool named Chandni Chowk.\" Covered by c04, c05. Caveat fact_088: the etymology is traditional — narration says \"Tradition says\". Fine. Clean.\n\ns05: narration \"Still forward in time. At Patel Chowk, Jantar Mantar: an observatory of instruments for measuring the heavens, finished in 1724.\" Covered. Clean.\n\nAlso fact_085 caveat on s02: \"founded 1639, inaugurated 1648\" — narration says founded 1639 only. Should I flag caveat_violation? The caveat says to say \"founded 1639, inaugurated 1648\" — arguably requiring both. But the caveat is meant to prevent wrong exact dates. The claim c02 says \"In 1639 ... began building\" which matches sources exactly. I think it's fine; the caveat's core concern is the exact dates (12/13 May 1638 etc.) being given. Narration doesn't give exact day. No violation.\n\nAlso, does claim c02 need flag false_time_order? No, one stop only.\n\nFlag living_person? Shah Jahan, Jahanara Begum are historical, not living. Fine.\n\nNow c01 verdict. Let me settle on supported.\n\n[personal memory removed at the maker's request] Combined with the s01 narration itself. I'll mark supported.\n\nActually, is c01 covered? The narration \"One ticket, and my whole long story\" — supports framing. Yes supported."
+    }
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a strict, fair fact-checker for a short documentary film. You judge each claim ONLY against the source excerpts cited for it, as if you knew nothing else about the world. Your own knowledge never makes a claim supported, and never makes it unsupported: only the cited excerpts count.\n\nYou are careful with small words that change meaning: \"built for\" is not \"opened before\"; \"one of the busiest\" is not \"the busiest\"; \"about 1.3 km from\" is not \"beside\"; \"nearly half a million\" is not \"half a million\"; a traditional or legendary date is not a historical one. Figurative or poetic language (\"my lanes remember\", \"I keep rebuilding myself\") is not a factual claim.\n\nYou answer only by calling the function you are given, with a verdict for every claim id you were shown.\n"
+    },
+    {
+      "role": "user",
+      "content": "# Fact-check 7 claims (call `submit_verdicts`)\n\n## How to judge each claim, only against the excerpts it cites\n- **supported**: every part of the claim (each date, number, name, place, cause, \"first\", superlative, distance) is stated in, or directly implied by, at least one cited excerpt.\n- **partial**: the core is supported, but some detail is missing from the cited excerpts, is stronger than they say, or differs slightly from them.\n- **unsupported**: the cited excerpts do not say it, or they contradict it.\n- **quote**: the shortest exact quote from a cited excerpt that supports the claim, copied character for character, or \"\" if there is none.\n- **note**: one sentence: what exactly is or is not supported.\n[personal memory removed at the maker's request]\n- **flags**, any that apply: living_person (names or clearly identifies a living person), national_border (describes a national border as a map or line on the land today; history such as \"a new border cut through Punjab\" is fine), unsupported_superlative (biggest, oldest, first, only, busiest... without excerpt support), caveat_violation (breaks one of the editor's caveats below), false_time_order (claims each stop is older than the last).\n\n## Also read each scene's narration as a whole\nFor each scene, list its issues: uncovered_fact (a factual statement in the narration that none of the scene's claims covers), living_person, national_border, unsupported_superlative, caveat_violation, false_time_order, or other. Quote the words in `text`. Return an empty list for a clean scene. Poetry and figures of speech are not facts.\n\n## The editor's caveats for the facts in play (breaking one is a caveat_violation)\nWhen a caveat prescribes wording (\"say 'about half a million', not an exact figure\", \"around 1199\"), narration or a claim that drops the qualifier (\"half a million\", \"begun in 1199\") is a caveat_violation, even if the core fact is supported.\n- fact_084: Many sources credit Humayun's widow, Hamida Banu (Bega) Begum, with commissioning it, while UNESCO stresses Akbar's patronage. Completion is often given as c. 1570-72.\n- fact_085: Dates vary across sources. UNESCO's Dutch summary dates the fort to 1638, and other accounts give 12/13 May 1638 or 1639 for the start and 6 or 8 April 1648 for the formal entry. Say 'founded 1639, inaugurated 1648'.\n- fact_086: UNESCO's criterion (vi) notes that the fort witnessed the shift to British rule and is where Indian independence 'was first celebrated'.\n- fact_087: Another SRDC page wrongly says '1644', so use 1650-56. Worker and cost figures are traditional.\n- fact_088: The 'moonlight' etymology is the traditional explanation. Fatehpuri Masjid at the western end was built in 1650 by Fatehpuri Begum (same SRDC page).\n- fact_091: The exact day (11 September) and troop numbers come from secondary accounts I did not open from a primary source. The battlefield location is approximate.\n- fact_093: British besieging forces were based on the Delhi Ridge. The Ridge camp is standard history, but the sources I opened here do not detail it.\n- fact_094: 'One third' is Delhi Tourism's figure, and estimates of the demolished area vary. Bahadur Shah was exiled to Rangoon (standard history; not stated on these pages).\n- fact_097: The 31 December 1926 naming date comes from a PTI report and is not in an archival source I opened. Baker designed the Secretariat blocks and Parliament House (SRDC).\n\n[personal memory removed at the maker's request] ## Scenes and their claims\n### s01 (title) narration: \"Sit down, traveller. One ticket, and my whole long story. I am the city you are riding into.\"\n- c01 [personal] \"The film frames a single metro ticket as the way into the city's long history, the maker's own title framing.\"\n\n### s02 (map) narration: \"The bazaar smells of frying and spice. Shah Jahan founded this capital in 1639; the Red Fort rose at its eastern edge.\"\n- c02 [fact] \"In 1639 Shah Jahan chose a site for a new capital, Shahjahanabad, today's Old Delhi, and began building the Red Fort.\" cites: src_141, src_142, src_143\n- c03 [fact] \"The Red Fort stands on the eastern fringes of Chandni Chowk.\" cites: src_001\n\n### s03 (illustration) narration: \"Shah Jahan's daughter Jahanara laid out this street with its canal and moonlit pool. Tradition says the pool named Chandni Chowk.\"\n- c04 [fact] \"Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens; a canal ran down its middle and an octagonal pool reflected the moonlight.\" cites: src_147, src_139\n- c05 [fact] \"Tradition gives Chandni Chowk its name from the moonlight reflected in that pool.\" cites: src_147, src_139, src_001\n\n### s05 (map) narration: \"Still forward in time. At Patel Chowk, Jantar Mantar: an observatory of instruments for measuring the heavens, finished in 1724.\"\n- c08 [fact] \"Jantar Mantar, near Patel Chowk station, was completed in 1724.\" cites: src_034, src_035, osm_ride\n- c09 [fact] \"Jantar Mantar is an observatory of astronomical instruments for measuring the harmony of the heavens.\" cites: src_034\n\n## Map data [osm_ride] (the map shown on screen; always evidence for station names, their order along the ride, and which sites lie near which station and how far, cited or not)\nThe Yellow Line as mapped in OpenStreetMap, ridden in this order (km along the line): Chandni Chowk 0; Chawri Bazaar 1.098; New Delhi 1.838; Rajiv Chowk 3.075; Patel Chowk 4.303; Central Secretariat 5.127; Seva Teerth (formerly Udyog Bhawan) 5.837; Lok Kalyan Marg (formerly Race Course) 7.191; Jor Bagh 8.407; Dilli Haat - INA 9.832; A.I.I.M.S. (formerly AIIMS) 10.657; Green Park 11.649; Hauz Khas 13.204; Malviya Nagar 14.921; Saket 15.918; Qutab Minar 17.739. Ride length 17.739 km. Near Chandni Chowk station (straight-line distance): Red Fort 1.09 km, Old Delhi 0.49 km, Salimgarh Fort 1.25 km, Kashmiri Gate 0.95 km. Near Chawri Bazaar station (straight-line distance): Jama Masjid, Delhi 0.7 km, Delhi Gate 1.64 km, Ghalib ki Haveli 0.58 km, Akbarabadi Mosque 1.11 km. Near New Delhi station (straight-line distance): Khooni Darwaza 1.97 km, Qadam Sharif 1.27 km, Ajmeri Gate 0.33 km, Jhandewalan Temple 1.92 km. Near Rajiv Chowk station (straight-line distance): National Archives of India 0.54 km, Agrasen ki Baoli 0.92 km, Hanuman Temple, Connaught Place 0.52 km, Gurdwara Mata Sundri 1.43 km. Near Patel Chowk station (straight-line distance): Jantar Mantar 0.52 km, Sacred Heart Cathedral, New Delhi 0.96 km, Gurudwara Bangla Sahib 0.64 km, Laxminarayan Temple 1.83 km. Near Central Secretariat station (straight-line distance): Rashtrapati Bhavan 1.26 km, India Gate 1.71 km, Old Parliament House 0.43 km, Secretariat Building 0.64 km. Near Seva Teerth station (straight-line distance): National Museum 0.78 km, Sunehri Bagh Mosque 0.09 km. Near Lok Kalyan Marg station (straight-line distance): Gandhi Smriti 0.6 km, Teen Murti Bhavan 1.35 km, Tomb of Sikandar Lodi 1.03 km, Bara Gumbad 1.02 km. Near Jor Bagh station (straight-line distance): Tomb of Safdar Jang 0.36 km, Tomb of Mirza Najaf Khan 0.64 km, Tomb of Mohammed Shah 0.75 km. Near Dilli Haat - INA station (straight-line distance): Dilli Haat 0.14 km, Tomb of Darya Khan 0.75 km, Kala Gumbad 1.05 km, Bhura gumbad 1.15 km. Near A.I.I.M.S. station (straight-line distance): Moth Ki Masjid 1.1 km. Near Green Park station (straight-line distance): Siri Fort 1.87 km, Barakhamba 0.73 km, Jagannath Temple 0.84 km, Biran ka Gumbad 0.47 km. Near Hauz Khas station (straight-line distance): Hauz Khas Complex 1.63 km, Chor Minar 0.39 km, Begampuri Mosque 0.57 km, Bijay Mandal 0.38 km. Near Malviya Nagar station (straight-line distance): Khirki Masjid 1.48 km. Near Saket station (straight-line distance): Qila Rai Pithora 0.84 km. Near Qutab Minar station (straight-line distance): Qutb Minar 1.28 km, Iron pillar of Delhi 1.32 km, Qutb complex 1.3 km, Jamali Kamali Mosque and Tomb 0.77 km.\n\n## Cited excerpts\n[src_141] Britannica: Britannica: britannica.com/place/Delhi/History\n  Claims from the project's curated facts file, each checked against this source (Encyclopaedia Britannica): [mug-05] In 1639 Shah Jahan chose a site on the west bank of the Yamuna, just north of Purana Qila, for a new capital and began building its fort, the Red Fort. The fort took eight years to complete. On 19 April 1648 he entered his fort and his new capital, Shahjahanabad (today's Old Delhi), from its riverfront gate. Several of its gates still stand: Kashmiri, Delhi, Turkman and Ajmeri. [mug-11] After the Mughal Empire weakened, Delhi suffered Maratha raids, Nadir Shah's invasion and a spell of Maratha rule before the British arrived in 1803. East India Company forces under General Lake defeated the Marathas near Patparganj, east of the Yamuna. The Company appointed a Resident in Delhi as 'Protector' of the Mughal crown. [col-02] After holding Delhi for several months, the rebels lost it to a British siege. The final assault began on the morning of 14 September 1857, when the Kashmere Gate was blown with gunpowder. Delhi was recaptured on 21 September after a week of fighting. The recapture ended Mughal rule. [col-06] Architects Sir Edwin Lutyens and Sir Herbert Baker designed New Delhi, with Lutyens as the key planner. Construction began in 1912 about 5 km south of the old city centre. King George V named the new imperial city 'New Delhi' on 31 December 1926.\n[src_142] UNESCO: UNESCO: whc.unesco.org/document/153016\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [mug-05] In 1639 Shah Jahan chose a site on the west bank of the Yamuna, just north of Purana Qila, for a new capital and began building its fort, the Red Fort. The fort took eight years to complete. On 19 April 1648 he entered his fort and his new capital, Shahjahanabad (today's Old Delhi), from its riverfront gate. Several of its gates still stand: Kashmiri, Delhi, Turkman and Ajmeri. [mug-06] The Red Fort was the palace-fort of Shah Jahan's Shahjahanabad. Its red sandstone walls are about 23 m (75 ft) high, and the Nahr-i-Behisht ('Stream of Paradise') water channel ran through its private apartments. Together with the adjacent Salimgarh fort (built 1546 by Islam Shah Suri), it was inscribed as the 'Red Fort Complex' World Heritage Site in 2007.\n[src_143] Wikipedia: Red Fort - Wikipedia\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [mug-05] In 1639 Shah Jahan chose a site on the west bank of the Yamuna, just north of Purana Qila, for a new capital and began building its fort, the Red Fort. The fort took eight years to complete. On 19 April 1648 he entered his fort and his new capital, Shahjahanabad (today's Old Delhi), from its riverfront gate. Several of its gates still stand: Kashmiri, Delhi, Turkman and Ajmeri.\n[src_001] Wikipedia: Chandni Chowk\n  Chandni Chowk (meaning \"Moonlight Square\") is a street market square located in Old Delhi, India. One of the oldest and busiest markets in Delhi, the Mughal-era Red Fort straddles the eastern fringes of Chandni Chowk. It was built in 1650 by the Mughal Emperor, Shah Jahan, and designed by his daughter, Jahanara. The street spanning the market was historically divided by canals, engineered to reflect moonlight. These canals have since been closed and destroyed following British occupation, leaving behind a transformed urban landscape predisposed to congestion and chaos. It remains one of India's largest wholesale markets.\n[src_147] Shahjahanabad Redevelopment Corporation: 1600-1700 | Shahjahanabad Redevelopment Corporation\n  Claims from the project's curated facts file, each checked against this source (Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi): [mug-07] Shah Jahan laid the foundation of the Jama Masjid (Masjid-i-Jahan Numa) on a hillock in Shahjahanabad on 6 October 1650. About 5,000 workers built it over six years, and it was completed in 1656. [mug-08] Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens. The street ran from the Red Fort's Lahore Gate to Fatehpuri Masjid. A canal ran down its middle, and an octagonal pool reflected the moonlight, which tradition says gave it the name 'Moonlight Square'. [col-03] After the 1857 war the British demolished large parts of the walled city over the following years, above all the area around the Red Fort and most of the palace buildings inside it. Delhi Tourism estimates about a third of the city. In 1858 Parliament transferred the East India Company's powers to the British Crown. The last Mughal emperor, Bahadur Shah Zafar, was tried in 1858 and exiled to Rangoon in October 1858.\n[src_139] Britannica: Britannica: britannica.com/art/Mughal-architecture\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [mug-04] Humayun's Tomb was raised in the 1560s, in the reign of his son Akbar. Many historians credit Humayun's senior widow Bega Begum (Haji Begum) with commissioning it, while UNESCO stresses Akbar's patronage. It was the first of the grand Mughal dynastic garden-tombs. It has a 42.5 m marble-clad double dome and holds over 150 Mughal family members. It stands near the 14th-century shrine of Nizamuddin Auliya and became a UNESCO World Heritage Site in 1993. [mug-08] Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens. The street ran from the Red Fort's Lahore Gate to Fatehpuri Masjid. A canal ran down its middle, and an octagonal pool reflected the moonlight, which tradition says gave it the name 'Moonlight Square'.\n[src_034] Wikipedia: Jantar Mantar, New Delhi\n  The Jantar Mantar in New Delhi is an observatory, designed to be used with the naked eye. It is one of five Jantar Mantars in India. \"Jantar Mantar\" means 'instruments for measuring the harmony of the heavens'. It consists of 13 architectural astronomical instruments. The site is one of five built by Sawai Jai Singh of Jaipur, from 1723 onwards, revising the calendar and astronomical tables. Jai Singh, born in 1688 into a royal Rajput family that ruled the regional kingdom, was born into an era of education that maintained a keen interest in astronomy. There is a plaque fixed on one of the structures in the Jantar Mantar observatory in New Delhi that was placed there in 1910 mistakenly dating the construction of the complex to the year 1710. Later research, though, suggests 1724 as the actual year of construction. It is 723 feet (220 m) above sea level. The primary purpose of the observatory was to compile astronomical tables, and to predict the times and movements of the Sun, Moon and planets. Some of these purposes nowadays would be classified as astronomy. Completed in 1724, the Delhi Jantar Mantar had decayed considerably by the time of the 1857 uprising. The Ram Yantra, the Samrat Yantra, the Jai Prakash Yantra and the Misra Yantra are the distinct instruments of Jantar Mantar. The most famous of these structures, the Jaipur, had also deteriorated by the end of the nineteenth century until in 1901 when Maharaja Ram Singh set out to restore the instrument.\n[src_035] Wikidata: Jantar Mantar (Q2045115)\n  Jantar Mantar (Wikidata Q2045115): historical place in New Delhi. Instance of: Jantar Mantar. Inception (P571): 1724. Heritage designation (P1435): World Heritage Site; Monument of National Importance; NDMC Heritage Building Grade I. Coordinates: 28.6271° N, 77.2165° E. English Wikipedia article: Jantar Mantar, New Delhi. Wikipedia language editions (sitelinks): 20.\n"
+    }
+  ],
+  "tool": {
+    "name": "submit_verdicts",
+    "description": "Submit a verdict for every claim and the issues of every scene.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "unsupported"
+                ]
+              },
+              "note": {
+                "type": "string",
+                "description": "What exactly is or is not supported."
+              },
+              "quote": {
+                "type": "string",
+                "description": "The shortest exact quote from a cited excerpt that supports the claim, or \"\"."
+              },
+              "flags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "living_person",
+                    "national_border",
+                    "unsupported_superlative",
+                    "caveat_violation",
+                    "false_time_order"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "note",
+              "quote",
+              "flags"
+            ]
+          }
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scene_id": {
+                "type": "string"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "uncovered_fact",
+                        "living_person",
+                        "national_border",
+                        "unsupported_superlative",
+                        "caveat_violation",
+                        "false_time_order",
+                        "other"
+                      ]
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "The words in the narration."
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "text",
+                    "note"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "scene_id",
+              "issues"
+            ]
+          }
+        }
+      },
+      "required": [
+        "claims",
+        "scenes"
+      ]
+    }
+  },
+  "response": {
+    "claims": [
+      {
+        "id": "c01",
+        "status": "supported",
+        "note": "The scene's own title narration (\"One ticket, and my whole long story\") shows the single-ticket framing, and the testimony confirms he made the film.",
+        "quote": "One ticket, and my whole long story.",
+        "flags": []
+      },
+      {
+        "id": "c02",
+        "status": "supported",
+        "note": "All three cited excerpts state that in 1639 Shah Jahan chose a site for a new capital and began building the Red Fort, with Shahjahanabad being today's Old Delhi.",
+        "quote": "In 1639 Shah Jahan chose a site on the west bank of the Yamuna, just north of Purana Qila, for a new capital and began building its fort, the Red Fort.",
+        "flags": []
+      },
+      {
+        "id": "c03",
+        "status": "supported",
+        "note": "The excerpt states the Red Fort straddles the eastern fringes of Chandni Chowk; the map also places the Red Fort 1.09 km from Chandni Chowk station.",
+        "quote": "the Mughal-era Red Fort straddles the eastern fringes of Chandni Chowk",
+        "flags": []
+      },
+      {
+        "id": "c04",
+        "status": "supported",
+        "note": "Both excerpts state Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens, with a canal down the middle and an octagonal pool reflecting moonlight.",
+        "quote": "Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens. The street ran from the Red Fort's Lahore Gate to Fatehpuri Masjid. A canal ran down its middle, and an octagonal pool reflected the moonlight",
+        "flags": []
+      },
+      {
+        "id": "c05",
+        "status": "supported",
+        "note": "The excerpt explicitly frames the moonlight etymology as tradition, and the narration preserves that qualifier, so the caveat is respected.",
+        "quote": "an octagonal pool reflected the moonlight, which tradition says gave it the name 'Moonlight Square'",
+        "flags": []
+      },
+      {
+        "id": "c08",
+        "status": "supported",
+        "note": "Wikipedia states it was completed in 1724 and Wikidata gives inception 1724; the map shows Jantar Mantar 0.52 km from Patel Chowk station.",
+        "quote": "Completed in 1724, the Delhi Jantar Mantar had decayed considerably by the time of the 1857 uprising.",
+        "flags": []
+      },
+      {
+        "id": "c09",
+        "status": "supported",
+        "note": "The excerpt states Jantar Mantar is an observatory whose name means 'instruments for measuring the harmony of the heavens'.",
+        "quote": "\"Jantar Mantar\" means 'instruments for measuring the harmony of the heavens'.",
+        "flags": []
+      }
+    ],
+    "scenes": [
+      {
+        "scene_id": "s01",
+        "issues": []
+      },
+      {
+        "scene_id": "s02",
+        "issues": [
+          {
+            "type": "uncovered_fact",
+            "text": "the Red Fort rose at its eastern edge",
+            "note": "The 'eastern edge' here refers to the new capital as a whole, which no cited claim covers; the sources only place the Red Fort at the eastern fringes of Chandni Chowk (the street), so the placement as the capital's eastern edge is not established by the cited excerpts."
+          }
+        ]
+      },
+      {
+        "scene_id": "s03",
+        "issues": []
+      },
+      {
+        "scene_id": "s05",
+        "issues": []
+      }
+    ]
+  }
+}

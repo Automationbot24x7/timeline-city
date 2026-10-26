@@ -1,0 +1,1051 @@
+{
+  "fps": 30,
+  "duration": 145.218,
+  "mock": false,
+  "title": "One Ticket, 800 Years",
+  "scenes": [
+    {
+      "id": "s01",
+      "kind": "title",
+      "start": 0,
+      "end": 10.44,
+      "voice": {
+        "file": "assets/voice/7254eeea36fa5826.mp3",
+        "start": 0.35,
+        "duration": 9.59
+      },
+      "image": "assets/images/2bac768c0d12d21c.png",
+      "plan": {
+        "id": "s01",
+        "kind": "title",
+        "narration": "Sit down, traveller. One ticket, and my whole long story. I am the city you are riding into.",
+        "on_screen": {
+          "headline": "One Ticket, Long Story",
+          "subtitle_lang": "en",
+          "year": ""
+        },
+        "image_prompt": "A dark underground metro platform in the old city at night: a sleek metro train arriving with warm gold-lit windows, amber platform lamps reflecting on the polished floor, beyond the platform edge a suggestion of domes, minarets and bazaar rooftops in deep indigo silhouette, a faint teal glow of a distant river, wide 16:9 composition with the train's front near the centre, low warm lamplight and deep shadow, no people. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+        "fact_ids": [],
+        "source_ids": []
+      }
+    },
+    {
+      "id": "s02",
+      "kind": "map",
+      "start": 10.44,
+      "end": 24.456,
+      "voice": {
+        "file": "assets/voice/4c8b822933af9f82.mp3",
+        "start": 0.35,
+        "duration": 13.166
+      },
+      "image": null,
+      "plan": {
+        "id": "s02",
+        "kind": "map",
+        "narration": "The bazaar smells of frying and spice. Shah Jahan founded this capital in 1639; the Red Fort straddles this bazaar's eastern fringe.",
+        "on_screen": {
+          "headline": "Chandni Chowk",
+          "year": "1639-1648",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_chandni_chowk",
+          "focus_station": "st_chandni_chowk",
+          "focus_site_ids": [
+            "site_shahjahanabad",
+            "site_red_fort"
+          ],
+          "zoom": 14
+        },
+        "fact_ids": [
+          "fact_085",
+          "fact_086"
+        ],
+        "source_ids": [
+          "src_141",
+          "src_142",
+          "src_143",
+          "src_001"
+        ]
+      },
+      "mentions": [
+        {
+          "site_id": "site_red_fort",
+          "t": 19.291
+        }
+      ],
+      "arrive": 10.44
+    },
+    {
+      "id": "s03",
+      "kind": "illustration",
+      "start": 24.456,
+      "end": 40.84,
+      "voice": {
+        "file": "assets/voice/9669838c4de6f4ee.mp3",
+        "start": 0.35,
+        "duration": 15.534
+      },
+      "image": "assets/images/0b13795b2fbbed70.png",
+      "plan": {
+        "id": "s03",
+        "kind": "illustration",
+        "narration": "Shah Jahan's daughter Jahanara laid out this street with its canal and moonlit pool. Tradition says the pool named Chandni Chowk.",
+        "on_screen": {
+          "headline": "Chandni Chowk",
+          "year": "1648",
+          "subtitle_lang": "en"
+        },
+        "image_prompt": "Mughal-era Delhi, the Chandni Chowk street at night: a long straight street with a narrow canal running down its centre, an octagonal pool in the middle catching pale moonlight, low walls and painted wooden balconies on either side, oil lamps and hanging lanterns, a few distant small silhouetted figures walking, warm ochre and indigo with gold leaf accents, wide 16:9 with the moonlit pool near the centre, soft lamplight and dusk glow. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+        "fact_ids": [
+          "fact_088"
+        ],
+        "source_ids": [
+          "src_147",
+          "src_139",
+          "src_001"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "kind": "map",
+      "start": 40.84,
+      "end": 52.627,
+      "voice": {
+        "file": "assets/voice/40b8928a9d76d426.mp3",
+        "start": 0.35,
+        "duration": 10.937
+      },
+      "image": "assets/images/c39cb777337d1891.png",
+      "plan": {
+        "id": "s04",
+        "kind": "map",
+        "narration": "Next, Chawri Bazaar. Above the stalls stands the Jama Masjid, finished in 1656 by about five thousand workers.",
+        "on_screen": {
+          "headline": "Chawri Bazaar",
+          "year": "1656",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_chawri_bazaar",
+          "focus_station": "st_chawri_bazaar",
+          "focus_site_ids": [
+            "site_jama_masjid"
+          ],
+          "zoom": 14
+        },
+        "fact_ids": [
+          "fact_087"
+        ],
+        "source_ids": [
+          "src_147",
+          "src_148",
+          "src_149"
+        ],
+        "landmark": {
+          "image_prompt": "Jama Masjid, Delhi, at night seen from the foot of the hill it stands on: a broad red sandstone mosque with white marble inlay, raised on a tall stone plinth of wide stairways, three marble domes with golden finials, and two tall minarets striped in red sandstone and white marble, each crowned by a marble chhatri, flanking the great eastern gate. The square courtyard glows with lamplight from rows of small lanterns, a rectangular marble ablution tank pale at its centre, corner chhatris above the arcades. Deep indigo night sky, thin crescent moon, warm amber lamplight washing the sandstone, a few small distant figures climbing the stairs. Wide 16:9, mosque centred, open sky in the upper corners, plain steps and dark street simple in the bottom fifth, quiet reverent mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+          "subject": "Jama Masjid",
+          "site_id": "site_jama_masjid",
+          "reveal_at": "named"
+        }
+      },
+      "mentions": [
+        {
+          "site_id": "site_jama_masjid",
+          "t": 46.567
+        }
+      ],
+      "arrive": 43.54,
+      "travel": {
+        "from": "st_chandni_chowk",
+        "to": "st_chawri_bazaar",
+        "t0": 41.14,
+        "t1": 43.54,
+        "km": 1.098
+      },
+      "reveal": 46.567,
+      "reveal_from": "named"
+    },
+    {
+      "id": "s05",
+      "kind": "map",
+      "start": 52.627,
+      "end": 66.225,
+      "voice": {
+        "file": "assets/voice/0388e9f9c0236e95.mp3",
+        "start": 0.35,
+        "duration": 12.748
+      },
+      "image": "assets/images/6ea3e6fecc1a3576.png",
+      "plan": {
+        "id": "s05",
+        "kind": "map",
+        "narration": "Still forward in time. At Patel Chowk, Jantar Mantar: an observatory of instruments for measuring the heavens, finished in 1724.",
+        "on_screen": {
+          "headline": "Patel Chowk",
+          "year": "1724",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_patel_chowk",
+          "focus_station": "st_patel_chowk",
+          "focus_site_ids": [
+            "site_jantar_mantar"
+          ],
+          "zoom": 15
+        },
+        "fact_ids": [
+          "fact_015"
+        ],
+        "source_ids": [
+          "src_034",
+          "src_035",
+          "osm_ride"
+        ],
+        "landmark": {
+          "image_prompt": "Jantar Mantar, New Delhi, at night: an observatory of stone instruments on a low rise. At the centre rises ONE huge right-triangular sundial, the Samrat Yantra: a single tall wedge of masonry seen side-on, one long straight staircase climbing its sloping hypotenuse to a small platform at the top, and one broad graduated quadrant arc curving down on each side of the wedge (a single triangle only, nothing crossing it). It is flanked by two open-topped cylindrical masonry instruments with slanted inner scales and a pair of hollow hemispherical bowls cut with concentric arcs. All the instruments are plastered in deep terracotta-red lime with crisp white-lined edges and scales. Warm lamplight from low lanterns at the base grazes the red plaster; the graduated arcs climb into a deep indigo sky with a thin crescent moon and first stars. Wide 16:9, the great triangle near the horizontal centre, calm open sky in both upper corners, dark raked gravel and low parapets simple in the bottom fifth. Only two or three tiny distant turned-away figures for scale; quiet, reverent, warm mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+          "subject": "Jantar Mantar",
+          "site_id": "site_jantar_mantar",
+          "reveal_at": "named"
+        }
+      },
+      "mentions": [
+        {
+          "site_id": "site_jantar_mantar",
+          "t": 56.908
+        }
+      ],
+      "arrive": 56.13,
+      "travel": {
+        "from": "st_chawri_bazaar",
+        "to": "st_patel_chowk",
+        "t0": 52.927,
+        "t1": 56.13,
+        "km": 3.205
+      },
+      "reveal": 57.33,
+      "reveal_from": "arrival"
+    },
+    {
+      "id": "s06",
+      "kind": "map",
+      "start": 66.225,
+      "end": 80.798,
+      "voice": {
+        "file": "assets/voice/e0adc3a6f33d0b03.mp3",
+        "start": 0.35,
+        "duration": 13.723
+      },
+      "image": "assets/images/f78c2f22b481b78b.png",
+      "plan": {
+        "id": "s06",
+        "kind": "map",
+        "narration": "Forward, now. In 1931 the Viceroy inaugurated this capital. Tens of thousands of labourers raised the Viceroy's House, now Rashtrapati Bhavan.",
+        "on_screen": {
+          "headline": "Central Secretariat",
+          "year": "1931",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_central_secretariat",
+          "focus_station": "st_central_secretariat",
+          "focus_site_ids": [
+            "site_rashtrapati_bhavan"
+          ],
+          "zoom": 13
+        },
+        "fact_ids": [
+          "fact_097",
+          "fact_098",
+          "fact_099"
+        ],
+        "source_ids": [
+          "src_141",
+          "src_163",
+          "src_165",
+          "src_162",
+          "src_169",
+          "src_170",
+          "src_167",
+          "src_168",
+          "src_043"
+        ],
+        "landmark": {
+          "image_prompt": "Rashtrapati Bhavan, New Delhi, seen at dusk from the lawns at the foot of Raisina Hill: a vast H-shaped palace of cream and red sandstone, long arcaded wings, a tall drum carrying a copper-faced dome, and a round chhatri-topped column rising in front of the great steps, with carved elephant statues and low fountain basins at the base. Warm lamplight in the arcades and along the terrace, deep indigo dusk sky with the last amber light on the dome, dark green lawns and long shadows in the foreground. Wide 16:9, the dome and column near the horizontal centre, calm open sky in the upper corners, the lawn plain and simple in the bottom fifth. A few tiny distant figures at the foot of the steps; quiet, reverent, warm mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+          "subject": "Rashtrapati Bhavan",
+          "site_id": "site_rashtrapati_bhavan",
+          "reveal_at": "arrival"
+        }
+      },
+      "mentions": [
+        {
+          "site_id": "site_rashtrapati_bhavan",
+          "t": 77.192
+        }
+      ],
+      "arrive": 68.925,
+      "travel": {
+        "from": "st_patel_chowk",
+        "to": "st_central_secretariat",
+        "t0": 66.525,
+        "t1": 68.925,
+        "km": 0.824
+      },
+      "reveal": 70.125,
+      "reveal_from": "arrival"
+    },
+    {
+      "id": "s07",
+      "kind": "illustration",
+      "start": 80.798,
+      "end": 89.299,
+      "voice": {
+        "file": "assets/voice/d51e0614a157a391.mp3",
+        "start": 0.35,
+        "duration": 7.651
+      },
+      "image": "assets/images/cef37ad9906ff044.png",
+      "plan": {
+        "id": "s07",
+        "kind": "illustration",
+        "narration": "About half a million refugees came to me, and many of my own left the other way. I remember canvas and dust.",
+        "on_screen": {
+          "headline": "Old Delhi",
+          "year": "1947",
+          "subtitle_lang": "en"
+        },
+        "image_prompt": "Delhi in 1947 at dusk: rows of canvas tents on open scrubland beside a newly laid-out colony street of low brick shops and a small temple spire, hand carts and cooking smoke, an awning of ochre cloth over a small market, distant small silhouetted families carrying bundles, dust in warm low light, indigo sky above, wide 16:9 with the tents and the new street near the centre, no text, no lettering, no signs, no logos, no flags. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+        "fact_ids": [
+          "fact_156",
+          "fact_103"
+        ],
+        "source_ids": [
+          "src_281",
+          "src_282",
+          "src_271",
+          "src_174"
+        ]
+      }
+    },
+    {
+      "id": "s08",
+      "kind": "map",
+      "start": 89.299,
+      "end": 99.274,
+      "voice": {
+        "file": "assets/voice/6e377c0d6c295a30.mp3",
+        "start": 0.35,
+        "duration": 9.125
+      },
+      "image": null,
+      "plan": {
+        "id": "s08",
+        "kind": "map",
+        "narration": "Malviya Nagar was one of the new colonies for refugees: markets, schools, temples and gurdwaras.",
+        "on_screen": {
+          "headline": "Malviya Nagar",
+          "year": "1947-1950",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_malviya_nagar",
+          "focus_station": "st_malviya_nagar",
+          "focus_site_ids": [],
+          "zoom": 14
+        },
+        "fact_ids": [
+          "fact_104",
+          "fact_158"
+        ],
+        "source_ids": [
+          "src_174",
+          "src_285",
+          "src_286",
+          "src_088",
+          "src_177"
+        ]
+      },
+      "arrive": 95.584,
+      "travel": {
+        "from": "st_central_secretariat",
+        "to": "st_malviya_nagar",
+        "t0": 89.599,
+        "t1": 95.584,
+        "km": 9.794
+      }
+    },
+    {
+      "id": "s09",
+      "kind": "map",
+      "start": 99.274,
+      "end": 106.088,
+      "voice": {
+        "file": "assets/voice/9de3662fb8321bc4.mp3",
+        "start": 0.35,
+        "duration": 5.964
+      },
+      "image": null,
+      "plan": {
+        "id": "s09",
+        "kind": "map",
+        "narration": "Here I turn the clock back. <#0.6#> The train now comes up into daylight.",
+        "on_screen": {
+          "headline": "Saket",
+          "subtitle_lang": "en",
+          "year": ""
+        },
+        "map": {
+          "train_to": "st_saket",
+          "focus_station": "st_saket",
+          "focus_site_ids": [],
+          "zoom": 14
+        },
+        "fact_ids": [
+          "fact_118",
+          "fact_119"
+        ],
+        "source_ids": [
+          "src_195",
+          "src_196",
+          "src_197",
+          "src_199"
+        ]
+      },
+      "arrive": 101.974,
+      "travel": {
+        "from": "st_malviya_nagar",
+        "to": "st_saket",
+        "t0": 99.574,
+        "t1": 101.974,
+        "km": 0.997
+      }
+    },
+    {
+      "id": "s10",
+      "kind": "map",
+      "start": 106.088,
+      "end": 119.686,
+      "voice": {
+        "file": "assets/voice/801f9901e3016a25.mp3",
+        "start": 0.35,
+        "duration": 12.748
+      },
+      "image": "assets/images/d615ebe71f425c33.png",
+      "plan": {
+        "id": "s10",
+        "kind": "map",
+        "narration": "Qutb Minar was begun around 1199 by Qutb ud-Din Aibak and finished by Iltutmish, who made Delhi his capital.",
+        "on_screen": {
+          "headline": "Qutb Minar",
+          "year": "c. 1199",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "focus_station": "st_qutab_minar",
+          "focus_site_ids": [
+            "site_qutb_minar",
+            "site_qutub_minar_complex"
+          ],
+          "zoom": 14,
+          "train_to": "st_qutab_minar"
+        },
+        "fact_ids": [
+          "fact_072"
+        ],
+        "source_ids": [
+          "src_118",
+          "src_122",
+          "src_123",
+          "src_124",
+          "src_125"
+        ],
+        "landmark": {
+          "image_prompt": "Qutb Minar, Delhi, in early-morning golden light seen from inside the cloister courtyard of the Qutb complex: a tapering five-storey tower of red and grey sandstone, its shaft fluted with carved bands and stalactite bracketing, projecting balconies carried on muqarnas corbels between the storeys, rising from a low circular plinth banded with carved ornament. Soft pale-gold sky, long morning shadows across worn stone paving, warm haze over trimmed lawn and the low ruins of the surrounding complex, a few small distant figures at the tower's foot. Wide 16:9, the tower's shaft near the horizontal centre, pale open sky calm in both upper corners, plain paving simple in the bottom fifth. Quiet reverent morning mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+          "subject": "Qutb Minar",
+          "site_id": "site_qutb_minar",
+          "reveal_at": "arrival"
+        }
+      },
+      "mentions": [
+        {
+          "site_id": "site_qutb_minar",
+          "t": 106.574
+        },
+        {
+          "site_id": "site_qutub_minar_complex",
+          "t": 106.574
+        }
+      ],
+      "arrive": 108.899,
+      "travel": {
+        "from": "st_saket",
+        "to": "st_qutab_minar",
+        "t0": 106.388,
+        "t1": 108.899,
+        "km": 1.821
+      },
+      "reveal": 110.099,
+      "reveal_from": "arrival"
+    },
+    {
+      "id": "s11",
+      "kind": "map",
+      "start": 119.686,
+      "end": 129.837,
+      "voice": {
+        "file": "assets/voice/6f59a520069e0ff7.mp3",
+        "start": 0.35,
+        "duration": 9.301
+      },
+      "image": "assets/images/56e26a8d11a38bac.png",
+      "plan": {
+        "id": "s11",
+        "kind": "map",
+        "narration": "And beside it, an iron pillar from the 5th century that resists rust. Phosphorus is the secret.",
+        "on_screen": {
+          "headline": "Qutb complex",
+          "year": "5th century",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "focus_station": "st_qutab_minar",
+          "focus_site_ids": [
+            "site_iron_pillar"
+          ],
+          "zoom": 15.5,
+          "train_to": "st_qutab_minar"
+        },
+        "fact_ids": [
+          "fact_068",
+          "fact_069",
+          "fact_057"
+        ],
+        "source_ids": [
+          "src_096",
+          "src_097",
+          "src_116"
+        ],
+        "landmark": {
+          "image_prompt": "The iron pillar of Delhi in the Qutb complex, seen close in early-morning golden light: a dark iron column about seven metres tall with a smooth fluted shaft and a spreading bell-pattern capital, standing on a low stone base on the paved courtyard, its blackened metal catching a warm rim of sunlight. Behind it the arcades and broken sandstone walls of the complex recede, with clipped grass and low garden walls; long soft shadows fall across the paving, pale gold sky and morning haze above. Wide 16:9, the pillar near the horizontal centre and filling most of the frame vertically, calm open sky in the upper corners, plain paving simple in the bottom fifth. One small distant turned-away figure for scale; quiet, reverent, warm mood. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+          "subject": "Delhi Iron Pillar",
+          "site_id": "site_iron_pillar",
+          "reveal_at": "named"
+        }
+      },
+      "mentions": [
+        {
+          "site_id": "site_iron_pillar",
+          "t": 121.855
+        }
+      ],
+      "arrive": 119.686,
+      "reveal": 121.855,
+      "reveal_from": "named"
+    },
+    {
+      "id": "s14",
+      "kind": "end",
+      "start": 129.837,
+      "end": 145.218,
+      "voice": {
+        "file": "assets/voice/1031a4ac84861efa.mp3",
+        "start": 0.35,
+        "duration": 10.031
+      },
+      "image": "assets/images/0c35b5e5c372e33b.png",
+      "plan": {
+        "id": "s14",
+        "kind": "end",
+        "narration": "A city of arrivals: colonies for those who came, my own leaving the other way. <#0.8#> Ride on, traveller.",
+        "on_screen": {
+          "headline": "Ride on",
+          "subtitle_lang": "en",
+          "year": ""
+        },
+        "image_prompt": "The Qutb Minar tower at golden dusk, red sandstone and pale marble banding, warm amber light raking its carved fluting, long soft shadows on dry grass, a few birds in the sky, at the far edge the slender piers of an elevated viaduct catching the last light, wide 16:9 with the tower near the centre, reverent and calm, indigo sky above and a gold horizon. Warm painterly illustration in the manner of Indian miniature painting and old Delhi lithographs: rich ochre, indigo and gold leaf, fine brushwork, soft lamplight and dusk glow, aged-paper warmth. No text or lettering of any kind; no recognisable real people; faces small, distant or turned away.",
+        "fact_ids": [
+          "fact_167",
+          "fact_104",
+          "fact_153"
+        ],
+        "source_ids": [
+          "src_306",
+          "src_307",
+          "src_174",
+          "src_177"
+        ]
+      }
+    }
+  ],
+  "cues": [
+    {
+      "start": 0.531,
+      "end": 2.151,
+      "text": "Sit down, traveller.",
+      "lines": [
+        "Sit down, traveller."
+      ],
+      "scene": "s01"
+    },
+    {
+      "start": 2.602,
+      "end": 6.324,
+      "text": "One ticket, and my whole long story.",
+      "lines": [
+        "One ticket, and my whole long story."
+      ],
+      "scene": "s01"
+    },
+    {
+      "start": 6.374,
+      "end": 9.985,
+      "text": "I am the city you are riding into.",
+      "lines": [
+        "I am the city you are riding into."
+      ],
+      "scene": "s01"
+    },
+    {
+      "start": 10.984,
+      "end": 14.005,
+      "text": "The bazaar smells of frying and spice.",
+      "lines": [
+        "The bazaar smells of frying and spice."
+      ],
+      "scene": "s02"
+    },
+    {
+      "start": 14.316,
+      "end": 18.848,
+      "text": "Shah Jahan founded this capital in 1639;",
+      "lines": [
+        "Shah Jahan founded this capital in 1639;"
+      ],
+      "scene": "s02"
+    },
+    {
+      "start": 18.898,
+      "end": 23.913,
+      "text": "the Red Fort straddles this\nbazaar's eastern fringe.",
+      "lines": [
+        "the Red Fort straddles this",
+        "bazaar's eastern fringe."
+      ],
+      "scene": "s02"
+    },
+    {
+      "start": 24.984,
+      "end": 29.83,
+      "text": "Shah Jahan's daughter\nJahanara laid out this",
+      "lines": [
+        "Shah Jahan's daughter",
+        "Jahanara laid out this"
+      ],
+      "scene": "s03"
+    },
+    {
+      "start": 29.88,
+      "end": 34.607,
+      "text": "street with its canal and moonlit pool.",
+      "lines": [
+        "street with its canal and moonlit pool."
+      ],
+      "scene": "s03"
+    },
+    {
+      "start": 34.914,
+      "end": 40.306,
+      "text": "Tradition says the pool\nnamed Chandni Chowk.",
+      "lines": [
+        "Tradition says the pool",
+        "named Chandni Chowk."
+      ],
+      "scene": "s03"
+    },
+    {
+      "start": 41.371,
+      "end": 44.052,
+      "text": "Next, Chawri Bazaar.",
+      "lines": [
+        "Next, Chawri Bazaar."
+      ],
+      "scene": "s04"
+    },
+    {
+      "start": 44.365,
+      "end": 47.432,
+      "text": "Above the stalls stands the Jama Masjid,",
+      "lines": [
+        "Above the stalls stands the Jama Masjid,"
+      ],
+      "scene": "s04"
+    },
+    {
+      "start": 47.482,
+      "end": 52.103,
+      "text": "finished in 1656 by about\nfive thousand workers.",
+      "lines": [
+        "finished in 1656 by about",
+        "five thousand workers."
+      ],
+      "scene": "s04"
+    },
+    {
+      "start": 53.153,
+      "end": 55.003,
+      "text": "Still forward in time.",
+      "lines": [
+        "Still forward in time."
+      ],
+      "scene": "s05"
+    },
+    {
+      "start": 55.604,
+      "end": 58.037,
+      "text": "At Patel Chowk, Jantar Mantar:",
+      "lines": [
+        "At Patel Chowk, Jantar Mantar:"
+      ],
+      "scene": "s05"
+    },
+    {
+      "start": 58.087,
+      "end": 65.788,
+      "text": "an observatory of instruments for\nmeasuring the heavens, finished in 1724.",
+      "lines": [
+        "an observatory of instruments for",
+        "measuring the heavens, finished in 1724."
+      ],
+      "scene": "s05"
+    },
+    {
+      "start": 66.748,
+      "end": 73.639,
+      "text": "Forward, now. In 1931 the Viceroy\ninaugurated this capital.",
+      "lines": [
+        "Forward, now. In 1931 the Viceroy",
+        "inaugurated this capital."
+      ],
+      "scene": "s06"
+    },
+    {
+      "start": 73.689,
+      "end": 80.361,
+      "text": "Tens of thousands of labourers raised the\nViceroy's House, now Rashtrapati Bhavan.",
+      "lines": [
+        "Tens of thousands of labourers raised the",
+        "Viceroy's House, now Rashtrapati Bhavan."
+      ],
+      "scene": "s06"
+    },
+    {
+      "start": 81.339,
+      "end": 86.627,
+      "text": "About half a million refugees came to me,\nand many of my own left the other way.",
+      "lines": [
+        "About half a million refugees came to me,",
+        "and many of my own left the other way."
+      ],
+      "scene": "s07"
+    },
+    {
+      "start": 86.677,
+      "end": 88.808,
+      "text": "I remember canvas and dust.",
+      "lines": [
+        "I remember canvas and dust."
+      ],
+      "scene": "s07"
+    },
+    {
+      "start": 89.815,
+      "end": 96.638,
+      "text": "Malviya Nagar was one of the new\ncolonies for refugees: markets, schools,",
+      "lines": [
+        "Malviya Nagar was one of the new",
+        "colonies for refugees: markets, schools,"
+      ],
+      "scene": "s08"
+    },
+    {
+      "start": 96.688,
+      "end": 98.78,
+      "text": "temples and gurdwaras.",
+      "lines": [
+        "temples and gurdwaras."
+      ],
+      "scene": "s08"
+    },
+    {
+      "start": 99.819,
+      "end": 101.701,
+      "text": "Here I turn the clock back.",
+      "lines": [
+        "Here I turn the clock back."
+      ],
+      "scene": "s09"
+    },
+    {
+      "start": 102.517,
+      "end": 105.585,
+      "text": "The train now comes up into daylight.",
+      "lines": [
+        "The train now comes up into daylight."
+      ],
+      "scene": "s09"
+    },
+    {
+      "start": 106.574,
+      "end": 115.792,
+      "text": "Qutb Minar was begun around 1199 by Qutb\nud-Din Aibak and finished by Iltutmish,",
+      "lines": [
+        "Qutb Minar was begun around 1199 by Qutb",
+        "ud-Din Aibak and finished by Iltutmish,"
+      ],
+      "scene": "s10"
+    },
+    {
+      "start": 115.842,
+      "end": 119.266,
+      "text": "who made Delhi his capital.",
+      "lines": [
+        "who made Delhi his capital."
+      ],
+      "scene": "s10"
+    },
+    {
+      "start": 120.213,
+      "end": 126.684,
+      "text": "And beside it, an iron pillar from\nthe 5th century that resists rust.",
+      "lines": [
+        "And beside it, an iron pillar from",
+        "the 5th century that resists rust."
+      ],
+      "scene": "s11"
+    },
+    {
+      "start": 126.734,
+      "end": 129.282,
+      "text": "Phosphorus is the secret.",
+      "lines": [
+        "Phosphorus is the secret."
+      ],
+      "scene": "s11"
+    },
+    {
+      "start": 130.39,
+      "end": 137.004,
+      "text": "A city of arrivals: colonies for those\nwho came, my own leaving the other way.",
+      "lines": [
+        "A city of arrivals: colonies for those",
+        "who came, my own leaving the other way."
+      ],
+      "scene": "s14"
+    },
+    {
+      "start": 137.972,
+      "end": 140.214,
+      "text": "Ride on, traveller.",
+      "lines": [
+        "Ride on, traveller."
+      ],
+      "scene": "s14"
+    }
+  ],
+  "citations": [
+    {
+      "start": 10.44,
+      "end": 24.456,
+      "text": "Sources: UNESCO · Britannica +1 more",
+      "source_ids": [
+        "src_141",
+        "src_142",
+        "src_143",
+        "src_001"
+      ],
+      "publishers": [
+        "UNESCO",
+        "Britannica",
+        "Wikipedia"
+      ],
+      "scene": "s02"
+    },
+    {
+      "start": 24.456,
+      "end": 52.627,
+      "text": "Sources: Shahjahanabad Redevelopment Corporation · Britannica +1 more",
+      "source_ids": [
+        "src_147",
+        "src_139",
+        "src_001",
+        "src_148",
+        "src_149"
+      ],
+      "publishers": [
+        "Shahjahanabad Redevelopment Corporation",
+        "Britannica",
+        "Wikipedia"
+      ],
+      "scene": "s03"
+    },
+    {
+      "start": 52.627,
+      "end": 66.225,
+      "text": "Sources: Wikipedia · Wikidata",
+      "source_ids": [
+        "src_034",
+        "src_035"
+      ],
+      "publishers": [
+        "Wikipedia",
+        "Wikidata"
+      ],
+      "scene": "s05"
+    },
+    {
+      "start": 66.225,
+      "end": 80.798,
+      "text": "Sources: Rashtrapati Bhavan · Britannica +5 more",
+      "source_ids": [
+        "src_141",
+        "src_163",
+        "src_165",
+        "src_162",
+        "src_169",
+        "src_170",
+        "src_167",
+        "src_168",
+        "src_043"
+      ],
+      "publishers": [
+        "Rashtrapati Bhavan",
+        "Britannica",
+        "Outlook India",
+        "archivesearch.lib.cam.ac.uk",
+        "Wikipedia",
+        "victorianweb",
+        "thepatriot.in"
+      ],
+      "scene": "s06"
+    },
+    {
+      "start": 80.798,
+      "end": 89.299,
+      "text": "Sources: Bharadwaj · D.R. Sutton +2 more",
+      "source_ids": [
+        "src_281",
+        "src_282",
+        "src_271",
+        "src_174"
+      ],
+      "publishers": [
+        "Bharadwaj",
+        "D.R. Sutton",
+        "The Hindu",
+        "The Wire"
+      ],
+      "scene": "s07"
+    },
+    {
+      "start": 89.299,
+      "end": 99.274,
+      "text": "Sources: The Wire · Romola Sanyal +2 more",
+      "source_ids": [
+        "src_174",
+        "src_285",
+        "src_286",
+        "src_088",
+        "src_177"
+      ],
+      "publishers": [
+        "The Wire",
+        "Romola Sanyal",
+        "Wikipedia",
+        "in.1947partitionarchive"
+      ],
+      "scene": "s08"
+    },
+    {
+      "start": 99.274,
+      "end": 106.088,
+      "text": "Sources: The Hindu · DMRC",
+      "source_ids": [
+        "src_195",
+        "src_196",
+        "src_197",
+        "src_199"
+      ],
+      "publishers": [
+        "The Hindu",
+        "DMRC"
+      ],
+      "scene": "s09"
+    },
+    {
+      "start": 106.088,
+      "end": 119.686,
+      "text": "Sources: UNESCO · Britannica +1 more",
+      "source_ids": [
+        "src_118",
+        "src_122",
+        "src_123",
+        "src_124",
+        "src_125"
+      ],
+      "publishers": [
+        "UNESCO",
+        "Britannica",
+        "Wikipedia"
+      ],
+      "scene": "s10"
+    },
+    {
+      "start": 119.686,
+      "end": 129.837,
+      "text": "Sources: R. Balasubramaniam · Wikipedia +1 more",
+      "source_ids": [
+        "src_096",
+        "src_097",
+        "src_116"
+      ],
+      "publishers": [
+        "R. Balasubramaniam",
+        "Wikipedia",
+        "Wikidata"
+      ],
+      "scene": "s11"
+    },
+    {
+      "start": 129.837,
+      "end": 137.304,
+      "text": "Sources: Census of India 2011 · The Wire +2 more",
+      "source_ids": [
+        "src_306",
+        "src_307",
+        "src_174",
+        "src_177"
+      ],
+      "publishers": [
+        "Census of India 2011",
+        "The Wire",
+        "Wikipedia",
+        "Drishti IAS"
+      ],
+      "scene": "s14"
+    }
+  ],
+  "attribution": "Map data © OpenStreetMap contributors (ODbL)",
+  "credits": [
+    "Directed and written by MiniMax M3.1 flash via SandBase",
+    "Voice: MiniMax Speech 2.8 HD (custom voice)",
+    "Illustrations: Google Nano Banana 2.1",
+    "Music: MiniMax Music 2.6",
+    "Fact-checked: 23 claims against 39 sources",
+    "Map data © OpenStreetMap contributors · openstreetmap.org/copyright",
+    "Some old-city blocks are illustrative fill where OpenStreetMap has no building data",
+    "Earth at night: NASA Earth Observatory (Black Marble)"
+  ],
+  "repo_url": "https://github.com/Automationbot24x7/timeline-city"
+}

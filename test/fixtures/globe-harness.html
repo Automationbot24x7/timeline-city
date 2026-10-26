@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Globe harness</title>
+<link rel="icon" href="data:,">
+<!-- Standalone harness for render/three/globe.js, served by test/fixtures/globe-render.mjs:
+     /fixtures/globe-harness.html?aspect=16:9|9:16[&overlay=0]
+     Mirrors the integration: three.js draws into an offscreen WebGL canvas, the visible 2D canvas
+     drawImage()s it and then paints overlays (here only the NASA credit), so capture is one canvas. -->
+<script type="importmap">
+{ "imports": { "three": "/node_modules/three/build/three.module.js", "three/addons/": "/node_modules/three/examples/jsm/" } }
+</script>
+<style>
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script type="module">
+import * as THREE from 'three'
+import { createGlobe, EARTH_CREDIT } from '/render/three/globe.js'
+
+const q = new URLSearchParams(location.search)
+const PORTRAIT = q.get('aspect') === '9:16'
+const [W, H] = PORTRAIT ? [1080, 1920] : [1920, 1080]
+const overlay = q.get('overlay') !== '0'
+const canvas = document.getElementById('c')
+canvas.width = W
+canvas.height = H
+const g = canvas.getContext('2d', { alpha: false })
+
+const glCanvas = document.createElement('canvas')
+const renderer = new THREE.WebGLRenderer({ canvas: glCanvas, antialias: false, alpha: false, powerPreference: 'high-performance', preserveDrawingBuffer: false })
+renderer.setPixelRatio(1)
+renderer.setSize(W, H, false)
+
+// real city layers from a project geo.json (what the integrator passes as opts.city); never the boundary layer
+const geo = q.get('geo') ? await (await fetch(q.get('geo'))).json() : null
+const city = geo && { bbox: geo.bbox, roads: geo.layers?.roads, water: geo.layers?.water, green: geo.layers?.green, line: geo.line?.coords, lineColor: geo.line?.color }
+// default target: centre of the ridden line (else Connaught Place)
+const lineBox = geo?.line?.coords?.reduce((b, [x, y]) => [Math.min(b[0], x), Math.min(b[1], y), Math.max(b[2], x), Math.max(b[3], y)], [180, 90, -180, -90])
+const target = {
+  lat: Number(q.get('lat') || (lineBox ? (lineBox[1] + lineBox[3]) / 2 : 28.6139)),
+  lon: Number(q.get('lon') || (lineBox ? (lineBox[0] + lineBox[2]) / 2 : 77.209)),
+}
+const opts = { textureUrl: '/render/assets/earth/earth_night_8k.jpg', target, ...(city && { city }) }
+if (q.get('opts')) Object.assign(opts, JSON.parse(q.get('opts')))
+const globe = createGlobe(THREE, renderer, opts)
+window.globe = globe // for debugging: poseAt / project / dispose
+
+const gl = renderer.getContext()
+const dbg = gl.getExtension('WEBGL_debug_renderer_info')
+window.globeReady = globe.ready.then((info) => ({
+  ...info,
+  webgl: dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER),
+  maxTexture: gl.getParameter(gl.MAX_TEXTURE_SIZE),
+  size: [W, H],
+}))
+
+window.drawGlobe = (p) => {
+  const pose = globe.renderAt(p, W, H)
+  g.drawImage(glCanvas, 0, 0, W, H)
+  if (overlay) {
+    const s = PORTRAIT ? 1.22 : 1
+    g.font = `500 ${Math.round(15 * s)}px "Segoe UI", Inter, sans-serif`
+    g.fillStyle = 'rgba(247,239,225,0.72)'
+    g.textBaseline = 'alphabetic'
+    g.fillText(EARTH_CREDIT, Math.round(48 * s), H - Math.round(40 * s))
+    const d = globe.project(target.lon, target.lat, 0)
+    if (q.get('pin') === '1' && d.visible) {
+      g.strokeStyle = '#e9b44c'
+      g.lineWidth = 2
+      g.beginPath()
+      g.arc(d.x, d.y, 10, 0, Math.PI * 2)
+      g.stroke()
+    }
+  }
+  return pose
+}
+</script>
+</body>
+</html>

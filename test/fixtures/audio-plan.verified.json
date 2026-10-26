@@ -1,0 +1,57 @@
+{
+  "title": "One Ticket, 800 Years",
+  "logline": "Fixture: five scenes to exercise assets, timing and mix.",
+  "music_prompt": "Warm, slow cinematic underscore for a documentary about Delhi: soft strings, bansuri flute, gentle tabla and a tanpura drone, about 70 BPM, wistful then hopeful, ending on a calm resolved chord.",
+  "cover_prompt": "A golden metro train crossing an old Delhi skyline of Mughal domes at dusk, the Qutub Minar on the horizon, kites in a warm sky",
+  "scenes": [
+    {
+      "id": "s01",
+      "kind": "title",
+      "narration": "I am Dilli. <#0.5#> Buy one ticket for my Yellow Line, and I will carry you through eight hundred years.",
+      "on_screen": { "headline": "One Ticket, 800 Years", "year": "", "subtitle_lang": "en" },
+      "image_prompt": "Night view over the rooftops of Old Delhi with a glowing golden metro train curving through the city, lanterns and kites",
+      "fact_ids": [],
+      "source_ids": []
+    },
+    {
+      "id": "s02",
+      "kind": "map",
+      "narration": "We board at Chandni Chowk. <#0.4#> In 1639, Shah Jahan began a walled city here, Shahjahanabad, with the Red Fort at its heart.",
+      "on_screen": { "headline": "Chandni Chowk", "year": "1639", "subtitle_lang": "en" },
+      "map": { "train_to": "st_chandni_chowk", "focus_station": "st_chandni_chowk", "focus_site_ids": ["site_red_fort"], "zoom": 14 },
+      "fact_ids": ["fact_001"],
+      "source_ids": ["src_001"]
+    },
+    {
+      "id": "s03",
+      "kind": "illustration",
+      "narration": "Further south lies Hauz Khas. Around 1295, Alauddin Khalji dug a great royal tank here to water his new city of Siri, and its stone steps still catch the evening light.",
+      "on_screen": { "headline": "Hauz Khas", "year": "c. 1295", "subtitle_lang": "en" },
+      "image_prompt": "The great stone water tank of Hauz Khas at dusk, ruined domed pavilions and arches along its bank, reflections in still water, birds over the trees",
+      "fact_ids": ["fact_002"],
+      "source_ids": ["src_002", "src_003"]
+    },
+    {
+      "id": "s04",
+      "kind": "personal",
+      "narration": "Personal memory removed at the maker’s request.",
+      "on_screen": { "headline": "1982", "year": "1982", "subtitle_lang": "en" },
+      "image_prompt": "A small family with a tin trunk stepping off a bus into 1980s Delhi, seen from behind, warm evening light, a street food stall with steaming pans",
+      "fact_ids": [],
+      "source_ids": []
+    },
+    {
+      "id": "s05",
+      "kind": "end",
+      "narration": "He made this film. <#0.5#> One ticket, eight hundred years, and I am still here, waiting for you at the next station.",
+      "on_screen": { "headline": "Dilli", "year": "", "subtitle_lang": "en" },
+      "image_prompt": "A lone traveller seen from behind on an elevated metro platform at dawn, a golden train arriving, the silhouette of the Qutub Minar in the distance",
+      "fact_ids": [],
+      "source_ids": []
+    }
+  ],
+  "claims": [
+    { "id": "c01", "scene_id": "s02", "text": "Shah Jahan began building Shahjahanabad in 1639.", "source_ids": ["src_001"] },
+    { "id": "c02", "scene_id": "s03", "text": "Alauddin Khalji built the Hauz Khas tank around 1295 to supply Siri.", "source_ids": ["src_002"] }
+  ]
+}

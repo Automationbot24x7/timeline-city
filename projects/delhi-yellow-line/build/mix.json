@@ -1,0 +1,62 @@
+{
+  "duration": 167.085,
+  "mock": false,
+  "voice": {
+    "clips": 14,
+    "input_lufs": -21.08,
+    "gain_db": 3.08,
+    "target_lufs": -18
+  },
+  "music": {
+    "file": "assets/music/48ad6e90cb5fa667.mp3",
+    "offset": -31.446,
+    "input_lufs": -14.76,
+    "gain_db": -15.24,
+    "alone_db": -12,
+    "under_voice_db": -20,
+    "ducking": {
+      "key": "voice-activity tone, -9 dBFS RMS",
+      "threshold": 0.0316,
+      "ratio": 1.54,
+      "attack": 120,
+      "release": 700,
+      "knee": 2
+    }
+  },
+  "master": {
+    "pre_gain_db": 4.19,
+    "normalization": "linear",
+    "lufs": -14.01,
+    "true_peak_dbtp": -2.94,
+    "lra": 4.5,
+    "target": {
+      "I": -14,
+      "TP": -1,
+      "LRA": 11
+    }
+  },
+  "outputs": [
+    {
+      "aspect": "16:9",
+      "file": "final/delhi-yellow-line_16x9.mp4",
+      "video_codec": "h264",
+      "width": 1920,
+      "height": 1080,
+      "duration": 167.1,
+      "size_mb": 80
+    },
+    {
+      "aspect": "9:16",
+      "file": "final/delhi-yellow-line_9x16.mp4",
+      "video_codec": "h264",
+      "width": 1080,
+      "height": 1920,
+      "duration": 167.1,
+      "size_mb": 79
+    }
+  ],
+  "missing_video": [],
+  "audio_only": null,
+  "srt": "final/delhi-yellow-line.srt",
+  "sources": "final/delhi-yellow-line.sources.txt"
+}

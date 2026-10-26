@@ -1,0 +1,181 @@
+{
+  "stage": "verify",
+  "step": "verify-r0-b5",
+  "cached": true,
+  "model": "minimax/minimax-m3.1-flash",
+  "reasoning_effort": "medium",
+  "at": "2026-10-25T17:28:50.329Z",
+  "seconds": 9.6,
+  "usage": {
+    "prompt_tokens": 4795,
+    "completion_tokens": 1308,
+    "reasoning_tokens": 852
+  },
+  "cost_usd": 0.0015,
+  "attempts": [
+    {
+      "usage": {
+        "completion_tokens": 1308,
+        "completion_tokens_details": {
+          "reasoning_tokens": 852
+        },
+        "prompt_tokens": 4795,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 896
+        },
+        "total_tokens": 6103
+      },
+      "finish_reason": "tool_calls",
+      "reasoning": "Let me judge.\n\nc30: \"The Yellow Line runs 37 stations.\" Supported by src_192/193/194: \"It runs 37 stations\". Supported.\n\nc31: \"South of Central Secretariat the Yellow Line passes successively older sites, ending at the Qutb complex.\" src_213/src_222 [YL-15] says from Central Secretariat southward it holds as a rough rule: New Delhi (1931), then Siri/Hauz Khas (c.1300), then Qutb Minar (begun 1199) and Lal Kot near Saket and Qutab Minar. But \"minor exceptions exist; Jahanpanah (1320s) near Malviya Nagar is younger than Siri.\" So \"successively older\" is a rough rule with exceptions. The claim says \"successively older sites\" — slightly stronger but consistent with caveat fact_131 which says going back works south of Central Secretariat. Excerpts say \"it holds as a rough rule\". Claim without qualifier \"successively older sites\" — the caveat fact_131 allows going back south of Central Secretariat. So supported? It says ending at the Qutb complex — yes, Qutb Minar and Lal Kot. I'd say supported, maybe partial due to \"successively\" ignoring exceptions. Hmm. The claim states as fact the rough rule; excerpts explicitly note exceptions. I'll say partial? The instruction: supported if directly implied. Excerpt says \"From Central Secretariat southward it holds as a rough rule: ... then the Qutb Minar (begun 1199...)\". Ending at Qutb complex - yes. The word \"successively older\" with explicit exceptions... Fact_131 caveat permits it. I'll go supported but note exceptions. Actually strictness: \"Minor exceptions exist\" means not every stop is older; the claim \"passes successively older sites\" as a general description is what the excerpt endorses as a rough rule. I'll mark partial? Hmm, the claim doesn't say \"every stop\". \"passes successively older sites\" — a sequence of sites that are successively older is fine even with one exception. I'll mark supported.\n\n[personal memory removed at the maker's request] Supported.\n\nScene s14 narration: \"Ride on, traveller. My Yellow Line threads 37 stations, and the oldest thing it reaches waits at the far end.\" The oldest thing it reaches — Qutb complex? Sir Qila? Qutb Minar 1199 is oldest among sites. Fine, covered by c31. [personal memory removed at the maker's request] But caveat: naming a living person? [personal memory removed at the maker's request] It's fine.\n\nNote the scene is \"end\" and mentions \"the oldest thing it reaches waits at the far end\" — Qutb complex at far end; oldest = Qutb Minar 1199. Fine.\n\nAny issues? The narration says \"threads 37 stations\" — but the ride on screen is only 17.739 km / 16 stations. Hmm, \"My Yellow Line threads 37 stations\" — the line has 37 stations, ok, supported. Map data shows only part. Could be considered an uncovered fact? The claim c30 covers it.\n\nPotential issue: \"the oldest thing it reaches waits at the far end\" — Qutb complex is indeed farthest and oldest. OK.\n\nSo scene s14 clean. Maybe flag living_person? [personal memory removed at the maker's request] I'll not flag.\n\nAlso check \"Qutab Minar\" vs \"Qutb\" — fact_135 concerns on-screen captions; narration doesn't mention. Fine.\n\nI'll submit."
+    }
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a strict, fair fact-checker for a short documentary film. You judge each claim ONLY against the source excerpts cited for it, as if you knew nothing else about the world. Your own knowledge never makes a claim supported, and never makes it unsupported: only the cited excerpts count.\n\nYou are careful with small words that change meaning: \"built for\" is not \"opened before\"; \"one of the busiest\" is not \"the busiest\"; \"about 1.3 km from\" is not \"beside\"; \"nearly half a million\" is not \"half a million\"; a traditional or legendary date is not a historical one. Figurative or poetic language (\"my lanes remember\", \"I keep rebuilding myself\") is not a factual claim.\n\nYou answer only by calling the function you are given, with a verdict for every claim id you were shown.\n"
+    },
+    {
+      "role": "user",
+      "content": "# Fact-check 3 claims (call `submit_verdicts`)\n\n## How to judge each claim, only against the excerpts it cites\n- **supported**: every part of the claim (each date, number, name, place, cause, \"first\", superlative, distance) is stated in, or directly implied by, at least one cited excerpt.\n- **partial**: the core is supported, but some detail is missing from the cited excerpts, is stronger than they say, or differs slightly from them.\n- **unsupported**: the cited excerpts do not say it, or they contradict it.\n- **quote**: the shortest exact quote from a cited excerpt that supports the claim, copied character for character, or \"\" if there is none.\n- **note**: one sentence: what exactly is or is not supported.\n[personal memory removed at the maker's request]\n- **flags**, any that apply: living_person (names or clearly identifies a living person), national_border (describes a national border as a map or line on the land today; history such as \"a new border cut through Punjab\" is fine), unsupported_superlative (biggest, oldest, first, only, busiest... without excerpt support), caveat_violation (breaks one of the editor's caveats below), false_time_order (claims each stop is older than the last).\n\n## Also read each scene's narration as a whole\nFor each scene, list its issues: uncovered_fact (a factual statement in the narration that none of the scene's claims covers), living_person, national_border, unsupported_superlative, caveat_violation, false_time_order, or other. Quote the words in `text`. Return an empty list for a clean scene. Poetry and figures of speech are not facts.\n\n## The editor's caveats for the facts in play (breaking one is a caveat_violation)\nWhen a caveat prescribes wording (\"say 'about half a million', not an exact figure\", \"around 1199\"), narration or a claim that drops the qualifier (\"half a million\", \"begun in 1199\") is a caveat_violation, even if the core fact is supported.\n- fact_117: The length depends on how it is measured. DMRC's line page shows 47.25 km, Wikipedia says 49.02 km, and the section lengths in contemporary reports add up to about 48.8 km (4 + 7 + 6.36 + 14.47 + 12.53 + 4.4). Narrate '37 stations' and either avoid a km figure or say 'about 47 km (DMRC)'. The station count of 37 matches across all sources.\n- fact_118: DMRC's data feed tags Azadpur 'Underground', but that refers to its Pink Line platforms. DMRC's own description and the 2009 Tribune report both say the Yellow Line platforms at Azadpur are elevated.\n- fact_119: Do not claim the Minar can be seen from the train or platform. That is not verified, and the station is about 1.3 km from the tower.\n- fact_120: The ceremony was on 19 Dec and public service began on 20 Dec. The report names the inaugurating official, but the film must not name or show real people.\n- fact_127: Distances are straight lines between OpenStreetMap/DMRC points; walking routes are longer. Red Fort and Jama Masjid are not 'at' the station. The Violet Line has closer stations named Lal Quila and Jama Masjid.\n- fact_130: The station is not at the monument. UNESCO's coordinate for the whole complex is about 1.4 km from the station. Do not call the tower 'a short walk' from the station: it is about 1.3 km, a short ride or about a 25-minute walk.\n- fact_131: Do not narrate 'every stop takes me further back in time' starting from Chandni Chowk. New Delhi is younger than Shahjahanabad. The 'going back' only works south of Central Secretariat.\n- fact_135: In on-screen captions, use 'Qutab Minar' for the station and 'Qutb Minar' for the monument.\n- fact_136: The Statesman report names a living political leader; do not name or show anyone in the film.\n\n[personal memory removed at the maker's request] ## Scenes and their claims\n### s14 (end) narration: \"Ride on, traveller. My Yellow Line threads 37 stations, and the oldest thing it reaches waits at the far end. [personal memory removed at the maker's request]\n- c30 [fact] \"The Yellow Line runs 37 stations.\" cites: src_192, src_193, src_194\n- c31 [fact] \"South of Central Secretariat the Yellow Line passes successively older sites, ending at the Qutb complex.\" cites: src_213, src_222, src_196\n[personal memory removed at the maker's request]\n\n## Map data [osm_ride] (the map shown on screen; always evidence for station names, their order along the ride, and which sites lie near which station and how far, cited or not)\nThe Yellow Line as mapped in OpenStreetMap, ridden in this order (km along the line): Chandni Chowk 0; Chawri Bazaar 1.098; New Delhi 1.838; Rajiv Chowk 3.075; Patel Chowk 4.303; Central Secretariat 5.127; Seva Teerth (formerly Udyog Bhawan) 5.837; Lok Kalyan Marg (formerly Race Course) 7.191; Jor Bagh 8.407; Dilli Haat - INA 9.832; A.I.I.M.S. (formerly AIIMS) 10.657; Green Park 11.649; Hauz Khas 13.204; Malviya Nagar 14.921; Saket 15.918; Qutab Minar 17.739. Ride length 17.739 km. Near Chandni Chowk station (straight-line distance): Red Fort 1.09 km, Old Delhi 0.49 km, Salimgarh Fort 1.25 km, Kashmiri Gate 0.95 km. Near Chawri Bazaar station (straight-line distance): Jama Masjid, Delhi 0.7 km, Delhi Gate 1.64 km, Ghalib ki Haveli 0.58 km, Akbarabadi Mosque 1.11 km. Near New Delhi station (straight-line distance): Khooni Darwaza 1.97 km, Qadam Sharif 1.27 km, Ajmeri Gate 0.33 km, Jhandewalan Temple 1.92 km. Near Rajiv Chowk station (straight-line distance): National Archives of India 0.54 km, Agrasen ki Baoli 0.92 km, Hanuman Temple, Connaught Place 0.52 km, Gurdwara Mata Sundri 1.43 km. Near Patel Chowk station (straight-line distance): Jantar Mantar 0.52 km, Sacred Heart Cathedral, New Delhi 0.96 km, Gurudwara Bangla Sahib 0.64 km, Laxminarayan Temple 1.83 km. Near Central Secretariat station (straight-line distance): Rashtrapati Bhavan 1.26 km, India Gate 1.71 km, Old Parliament House 0.43 km, Secretariat Building 0.64 km. Near Seva Teerth station (straight-line distance): National Museum 0.78 km, Sunehri Bagh Mosque 0.09 km. Near Lok Kalyan Marg station (straight-line distance): Gandhi Smriti 0.6 km, Teen Murti Bhavan 1.35 km, Tomb of Sikandar Lodi 1.03 km, Bara Gumbad 1.02 km. Near Jor Bagh station (straight-line distance): Tomb of Safdar Jang 0.36 km, Tomb of Mirza Najaf Khan 0.64 km, Tomb of Mohammed Shah 0.75 km. Near Dilli Haat - INA station (straight-line distance): Dilli Haat 0.14 km, Tomb of Darya Khan 0.75 km, Kala Gumbad 1.05 km, Bhura gumbad 1.15 km. Near A.I.I.M.S. station (straight-line distance): Moth Ki Masjid 1.1 km. Near Green Park station (straight-line distance): Siri Fort 1.87 km, Barakhamba 0.73 km, Jagannath Temple 0.84 km, Biran ka Gumbad 0.47 km. Near Hauz Khas station (straight-line distance): Hauz Khas Complex 1.63 km, Chor Minar 0.39 km, Begampuri Mosque 0.57 km, Bijay Mandal 0.38 km. Near Malviya Nagar station (straight-line distance): Khirki Masjid 1.48 km. Near Saket station (straight-line distance): Qila Rai Pithora 0.84 km. Near Qutab Minar station (straight-line distance): Qutb Minar 1.28 km, Iron pillar of Delhi 1.32 km, Qutb complex 1.3 km, Jamali Kamali Mosque and Tomb 0.77 km.\n\n## Cited excerpts\n[src_192] DMRC: Welcome to Delhi Metro Rail Corporation(DMRC) | Official Website\n  Claims from the project's curated facts file, each checked against this source (DMRC (official line page)): [YL-01] The Yellow Line is Delhi Metro Line 2. It runs 37 stations from Samaypur Badli (north) to Millennium City Centre Gurugram (south) and has 9 interchange stations. DMRC's line page gives its length as 47.25 km and the end-to-end trip as 69 minutes. Its official colour code is #f6d71a. [YL-20] Udyog Bhawan station was renamed Seva Teerth on 14 Feb 2026. DMRC's live station list now reads 'Seva Teerth (earlier Udyog Bhawan)'. Any map or caption saying 'Udyog Bhawan' is out of date.\n[src_193] DMRC: DMRC: backend.delhimetrorail.com/api/v2/en/metro_line/LN2\n  Claims from the project's curated facts file, each checked against this source (DMRC (data feed behind the official site)): [YL-01] The Yellow Line is Delhi Metro Line 2. It runs 37 stations from Samaypur Badli (north) to Millennium City Centre Gurugram (south) and has 9 interchange stations. DMRC's line page gives its length as 47.25 km and the end-to-end trip as 69 minutes. Its official colour code is #f6d71a.\n[src_194] Wikipedia: Yellow Line (Delhi Metro) - Wikipedia\n  Claims from the project's curated facts file, each checked against this source (Wikipedia (used only to find sources)): [YL-01] The Yellow Line is Delhi Metro Line 2. It runs 37 stations from Samaypur Badli (north) to Millennium City Centre Gurugram (south) and has 9 interchange stations. DMRC's line page gives its length as 47.25 km and the end-to-end trip as 69 minutes. Its official colour code is #f6d71a. [YL-04] First section: Vishwavidyalaya to Kashmere Gate, about 4 km with 4 stations (Vishwavidyalaya, Vidhan Sabha, Civil Lines, Kashmere Gate). It was the first underground section of the Delhi Metro. It was inaugurated on Sunday 19 Dec 2004 and opened to the public at 6 a.m. on 20 Dec 2004.\n[src_213] UNESCO: UNESCO: whc.unesco.org/en/list/231/\n  Claims from the project's curated facts file, each checked against this source (UNESCO World Heritage Centre, Red Fort Complex (N28 39 20, E77 14 27)): [YL-11] Straight-line distances from Chandni Chowk station: Chandni Chowk street about 0.27 km; Gurdwara Sis Ganj about 0.37 km; Fatehpuri Masjid 0.8 km; Red Fort nearest wall 0.66 km, centre 1.1 km; Jama Masjid 0.88 to 0.95 km. Chawri Bazar is about 0.65 km from Jama Masjid. DMRC gives the walk to Red Fort as 1.3 km, about 15 minutes. [YL-15] Do you pass progressively older city sites riding south from Chandni Chowk? Only partly. The first leg goes forward in time: Shahjahanabad (17th century) to New Delhi (1931). From Central Secretariat southward it holds as a rough rule: New Delhi (1931), then Siri and the Hauz Khas tank (c.1300) near Hauz Khas station, then the Qutb Minar (begun 1199, UNESCO) and Lal Kot / Qila Rai Pithora near Saket and Qutab Minar. Minor exceptions exist; for example, Jahanpanah (1320s) near Malviya Nagar is younger than Siri.\n[src_222] UNESCO: UNESCO: whc.unesco.org/en/list/233/\n  Claims from the project's curated facts file, each checked against this source (UNESCO World Heritage Centre, Qutb Minar and its Monuments (N28 31 33, E77 11 07)): [YL-14] Qutab Minar station (elevated, opened 21 Jun 2010) is about 1.3 km in a straight line from the Qutb Minar tower; DMRC lists Mehrauli Archaeological Park as 1.2 km, about a 16-minute walk. Other straight-line distances: nearest edge of Mehrauli Archaeological Park about 0.6 km; Lal Kot wall about 1.2 km; Qila Rai Pithora (park and walls) about 0.6 to 0.9 km. Saket station is in fact closer to the Qila Rai Pithora walls (about 0.2 to 0.5 km), and Malviya Nagar is about 0.13 km from one mapped wall segment. [YL-15] Do you pass progressively older city sites riding south from Chandni Chowk? Only partly. The first leg goes forward in time: Shahjahanabad (17th century) to New Delhi (1931). From Central Secretariat southward it holds as a rough rule: New Delhi (1931), then Siri and the Hauz Khas tank (c.1300) near Hauz Khas station, then the Qutb Minar (begun 1199, UNESCO) and Lal Kot / Qila Rai Pithora near Saket and Qutab Minar. Minor exceptions exist; for example, Jahanpanah (1320s) near Malviya Nagar is younger than Siri. [YL-19] Spelling: DMRC names the station 'Qutab Minar'. UNESCO and ASI call the monument 'Qutb Minar'. DMRC's own descriptive text also uses 'Qutub'.\n[src_196] DMRC: DMRC: backend.delhimetrorail.com/api/v2/en/station/QM\n  Claims from the project's curated facts file, each checked against this source (DMRC station data (Qutab Minar: Elevated)): [YL-02] 20 of the 37 stations are underground: every stop from Guru Tegh Bahadur Nagar to Saket. The other 17 are elevated: the seven northern stations (Samaypur Badli to Model Town) and the ten southern ones (Qutab Minar to Millennium City Centre Gurugram). So the line is 'mostly underground' by station count, but in track length it is roughly half and half. A 2010 report gave about 25 km underground and 20 km elevated, and the 4.4 km 2015 extension is elevated. [YL-03] Riding south, the whole stretch from Chandni Chowk to Saket is underground. Qutab Minar is the first elevated station going south, so the train comes out of the tunnel between Saket and Qutab Minar. [YL-14] Qutab Minar station (elevated, opened 21 Jun 2010) is about 1.3 km in a straight line from the Qutb Minar tower; DMRC lists Mehrauli Archaeological Park as 1.2 km, about a 16-minute walk. Other straight-line distances: nearest edge of Mehrauli Archaeological Park about 0.6 km; Lal Kot wall about 1.2 km; Qila Rai Pithora (park and walls) about 0.6 to 0.9 km. Saket station is in fact closer to the Qila Rai Pithora walls (about 0.2 to 0.5 km), and Malviya Nagar is about 0.13 km from one mapped wall segment. [YL-19] Spelling: DMRC names the station 'Qutab Minar'. UNESCO and ASI call the monument 'Qutb Minar'. DMRC's own descriptive text also uses 'Qutub'.\n"
+    }
+  ],
+  "tool": {
+    "name": "submit_verdicts",
+    "description": "Submit a verdict for every claim and the issues of every scene.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "unsupported"
+                ]
+              },
+              "note": {
+                "type": "string",
+                "description": "What exactly is or is not supported."
+              },
+              "quote": {
+                "type": "string",
+                "description": "The shortest exact quote from a cited excerpt that supports the claim, or \"\"."
+              },
+              "flags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "living_person",
+                    "national_border",
+                    "unsupported_superlative",
+                    "caveat_violation",
+                    "false_time_order"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "note",
+              "quote",
+              "flags"
+            ]
+          }
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scene_id": {
+                "type": "string"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "uncovered_fact",
+                        "living_person",
+                        "national_border",
+                        "unsupported_superlative",
+                        "caveat_violation",
+                        "false_time_order",
+                        "other"
+                      ]
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "The words in the narration."
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "text",
+                    "note"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "scene_id",
+              "issues"
+            ]
+          }
+        }
+      },
+      "required": [
+        "claims",
+        "scenes"
+      ]
+    }
+  },
+  "response": {
+    "claims": [
+      {
+        "id": "c30",
+        "status": "supported",
+        "note": "All three cited excerpts state the Yellow Line runs 37 stations, and no km figure is narrated in this scene.",
+        "quote": "It runs 37 stations from Samaypur Badli (north) to Millennium City Centre Gurugram (south)",
+        "flags": []
+      },
+      {
+        "id": "c31",
+        "status": "supported",
+        "note": "The excerpts endorse 'from Central Secretariat southward it holds as a rough rule' with the sequence ending at the Qutb Minar and Lal Kot near Qutab Minar, though the excerpts note minor exceptions (e.g. Jahanpanah near Malviya Nagar is younger than Siri), so the 'successively older' wording is a rough rule rather than absolute.",
+        "quote": "From Central Secretariat southward it holds as a rough rule: New Delhi (1931), then Siri and the Hauz Khas tank (c.1300) near Hauz Khas station, then the Qutb Minar (begun 1199, UNESCO) and Lal Kot / Qila Rai Pithora near Saket and Qutab Minar.",
+        "flags": []
+      },
+      {
+        "id": "c32",
+        "status": "supported",
+        "note": "[personal memory removed at the maker's request]",
+        "quote": "[personal memory removed at the maker's request]",
+        "flags": []
+      }
+    ],
+    "scenes": [
+      {
+        "scene_id": "s14",
+        "issues": []
+      }
+    ]
+  }
+}

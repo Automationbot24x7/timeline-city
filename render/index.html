@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TimeLine renderer</title>
+<link rel="icon" href="data:,">
+<!-- render/index.html?aspect=16:9|9:16[&map=2d] — Node injects window.TIMELINE, window.GEO, window.ASSET_BASE
+     (+ optional window.SITE_INFO, window.PROJECT, window.DETAIL_URL, window.GLOBE_URL, window.GLOBE_TEXTURE)
+     before load, awaits window.timelineReady, then calls window.drawFrame(t) per frame and grabs <canvas id="c">. -->
+<style>
+  /* OFL fonts (licences in fonts/*-OFL.txt); TL-prefixed so installed system fonts never win */
+  /* Fraunces, not Cormorant: canvas can't switch on lining figures, and old-style "8oo" reads badly */
+  @font-face { font-family: 'TL Serif'; src: url('fonts/Fraunces.ttf') format('truetype'); font-weight: 100 900; font-style: normal; }
+  @font-face { font-family: 'TL Serif'; src: url('fonts/Fraunces-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; }
+  @font-face { font-family: 'TL Sans'; src: url('fonts/Inter.ttf') format('truetype'); font-weight: 100 900; font-style: normal; }
+  @font-face { font-family: 'TL Deva'; src: url('fonts/NotoSansDevanagari.ttf') format('truetype'); font-weight: 100 900; font-style: normal; }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<!-- three.js (MIT) from node_modules/three, served at /three/ by src/stages/render.mjs; renderer.js
+     imports it (and three/city.js, three/globe.js) dynamically. ?map=2d keeps the flat map. -->
+<script type="importmap">{ "imports": { "three": "../three/build/three.module.js", "three/addons/": "../three/examples/jsm/" } }</script>
+<script src="renderer.js"></script>
+</body>
+</html>

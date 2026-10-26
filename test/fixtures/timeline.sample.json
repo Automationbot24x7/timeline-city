@@ -1,0 +1,519 @@
+{
+  "fps": 30,
+  "duration": 80,
+  "title": "One Ticket, 800 Years",
+  "scenes": [
+    {
+      "id": "s01",
+      "kind": "title",
+      "start": 0,
+      "end": 6,
+      "voice": {
+        "file": "assets/voice/s01.mp3",
+        "start": 0.5,
+        "duration": 4.8
+      },
+      "image": null,
+      "plan": {
+        "id": "s01",
+        "kind": "title",
+        "narration": "I am Dilli. Buy one ticket for my Yellow Line, and I will carry you through eight hundred years.",
+        "on_screen": {
+          "headline": "One Ticket, 800 Years",
+          "year": "",
+          "subtitle_lang": "en"
+        },
+        "fact_ids": [],
+        "source_ids": []
+      }
+    },
+    {
+      "id": "s02",
+      "kind": "map",
+      "start": 6,
+      "end": 16,
+      "voice": {
+        "file": "assets/voice/s02.mp3",
+        "start": 0.5,
+        "duration": 8.8
+      },
+      "image": null,
+      "plan": {
+        "id": "s02",
+        "kind": "map",
+        "narration": "We board at Chandni Chowk. In 1639, Shah Jahan began a walled city here, Shahjahanabad, with the Red Fort at its heart.",
+        "on_screen": {
+          "headline": "Chandni Chowk",
+          "year": "1639",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_chandni_chowk",
+          "focus_station": "st_chandni_chowk",
+          "focus_site_ids": [
+            "site_red_fort",
+            "site_jama_masjid"
+          ],
+          "zoom": 14.4
+        },
+        "fact_ids": [],
+        "source_ids": []
+      }
+    },
+    {
+      "id": "s03",
+      "kind": "map",
+      "start": 16,
+      "end": 26,
+      "voice": {
+        "file": "assets/voice/s03.mp3",
+        "start": 0.5,
+        "duration": 8.8
+      },
+      "image": null,
+      "plan": {
+        "id": "s03",
+        "kind": "map",
+        "narration": "Three centuries later, the British built a new capital to the south. New Delhi was inaugurated in 1931.",
+        "on_screen": {
+          "headline": "New Delhi",
+          "year": "1931",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_central_secretariat",
+          "focus_station": "st_central_secretariat",
+          "focus_site_ids": [
+            "site_rashtrapati_bhavan",
+            "site_india_gate"
+          ],
+          "zoom": 14
+        },
+        "fact_ids": [],
+        "source_ids": []
+      }
+    },
+    {
+      "id": "s04",
+      "kind": "map",
+      "start": 26,
+      "end": 35,
+      "voice": {
+        "file": "assets/voice/s04.mp3",
+        "start": 0.5,
+        "duration": 7.8
+      },
+      "image": null,
+      "plan": {
+        "id": "s04",
+        "kind": "map",
+        "narration": "Older still: the domed tombs of the Lodis, sultans who ruled me five centuries ago.",
+        "on_screen": {
+          "headline": "Lodi Gardens",
+          "year": "1494",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_jor_bagh",
+          "focus_station": "st_jor_bagh",
+          "focus_site_ids": [
+            "site_bara_gumbad",
+            "site_tomb_of_sikandar_lodhi"
+          ],
+          "zoom": 14.6
+        },
+        "fact_ids": [],
+        "source_ids": []
+      }
+    },
+    {
+      "id": "s05",
+      "kind": "map",
+      "start": 35,
+      "end": 44,
+      "voice": {
+        "file": "assets/voice/s05.mp3",
+        "start": 0.5,
+        "duration": 7.8
+      },
+      "image": null,
+      "plan": {
+        "id": "s05",
+        "kind": "map",
+        "narration": "At Hauz Khas, Alauddin Khalji dug a royal tank around 1295.",
+        "on_screen": {
+          "headline": "Hauz Khas",
+          "year": "c. 1295",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_hauz_khas",
+          "focus_station": "st_hauz_khas",
+          "focus_site_ids": [
+            "site_hauz_khas_complex"
+          ],
+          "zoom": 14.6
+        },
+        "fact_ids": [],
+        "source_ids": []
+      }
+    },
+    {
+      "id": "s06",
+      "kind": "illustration",
+      "start": 44,
+      "end": 53,
+      "voice": {
+        "file": "assets/voice/s06.mp3",
+        "start": 0.5,
+        "duration": 7.8
+      },
+      "image": "hauz-khas.png",
+      "plan": {
+        "id": "s06",
+        "kind": "illustration",
+        "narration": "Its stone steps still catch the evening light, and the students still come to sit by the water.",
+        "on_screen": {
+          "headline": "Hauz Khas",
+          "year": "c. 1295",
+          "subtitle_lang": "en"
+        },
+        "fact_ids": [],
+        "source_ids": []
+      }
+    },
+    {
+      "id": "s07",
+      "kind": "map",
+      "start": 53,
+      "end": 63,
+      "voice": {
+        "file": "assets/voice/s07.mp3",
+        "start": 0.5,
+        "duration": 8.8
+      },
+      "image": null,
+      "plan": {
+        "id": "s07",
+        "kind": "map",
+        "narration": "The last stop. Around 1199, the first sultans raised a tower of red stone, the Qutb Minar.",
+        "on_screen": {
+          "headline": "Qutb Minar",
+          "year": "c. 1199",
+          "subtitle_lang": "en"
+        },
+        "map": {
+          "train_to": "st_qutab_minar",
+          "focus_station": "st_qutab_minar",
+          "focus_site_ids": [
+            "site_qutb_minar",
+            "site_alai_darwaza",
+            "site_iron_pillar"
+          ],
+          "zoom": 14.8
+        },
+        "fact_ids": [],
+        "source_ids": []
+      }
+    },
+    {
+      "id": "s08",
+      "kind": "personal",
+      "start": 63,
+      "end": 72,
+      "voice": {
+        "file": "assets/voice/s08.mp3",
+        "start": 0.5,
+        "duration": 7.8
+      },
+      "image": "rooftops.png",
+      "plan": {
+        "id": "s08",
+        "kind": "personal",
+        "narration": "Personal memory removed at the maker’s request.",
+        "on_screen": {
+          "headline": "A personal memory",
+          "year": "1982",
+          "subtitle_lang": "en"
+        },
+        "fact_ids": [],
+        "source_ids": []
+      }
+    },
+    {
+      "id": "s09",
+      "kind": "end",
+      "start": 72,
+      "end": 80,
+      "voice": {
+        "file": "assets/voice/s09.mp3",
+        "start": 0.5,
+        "duration": 6.8
+      },
+      "image": "night.png",
+      "plan": {
+        "id": "s09",
+        "kind": "end",
+        "narration": "He made this film. Come ride with me.",
+        "on_screen": {
+          "headline": "One Ticket, 800 Years",
+          "year": "",
+          "subtitle_lang": "en"
+        },
+        "fact_ids": [],
+        "source_ids": []
+      }
+    }
+  ],
+  "cues": [
+    {
+      "start": 0.5,
+      "end": 1.006,
+      "text": "I am Dilli.",
+      "lines": [
+        "I am Dilli."
+      ],
+      "scene": "s01"
+    },
+    {
+      "start": 1.056,
+      "end": 5.25,
+      "text": "Buy one ticket for my Yellow Line,\nand I will carry you through eight hundred years.",
+      "lines": [
+        "Buy one ticket for my Yellow Line,",
+        "and I will carry you through eight hundred years."
+      ],
+      "scene": "s01"
+    },
+    {
+      "start": 6.5,
+      "end": 8.389,
+      "text": "We board at Chandni Chowk.",
+      "lines": [
+        "We board at Chandni Chowk."
+      ],
+      "scene": "s02"
+    },
+    {
+      "start": 8.439,
+      "end": 15.25,
+      "text": "In 1639, Shah Jahan began a walled city here,\nShahjahanabad, with the Red Fort at its heart.",
+      "lines": [
+        "In 1639, Shah Jahan began a walled city here,",
+        "Shahjahanabad, with the Red Fort at its heart."
+      ],
+      "scene": "s02"
+    },
+    {
+      "start": 16.5,
+      "end": 22.317,
+      "text": "Three centuries later, the British\nbuilt a new capital to the south.",
+      "lines": [
+        "Three centuries later, the British",
+        "built a new capital to the south."
+      ],
+      "scene": "s03"
+    },
+    {
+      "start": 22.367,
+      "end": 25.25,
+      "text": "New Delhi was inaugurated in 1931.",
+      "lines": [
+        "New Delhi was inaugurated in 1931."
+      ],
+      "scene": "s03"
+    },
+    {
+      "start": 26.5,
+      "end": 30.445,
+      "text": "Older still: the domed tombs of the Lodis,",
+      "lines": [
+        "Older still: the domed tombs of the Lodis,"
+      ],
+      "scene": "s04"
+    },
+    {
+      "start": 30.495,
+      "end": 34.25,
+      "text": "sultans who ruled me five centuries ago.",
+      "lines": [
+        "sultans who ruled me five centuries ago."
+      ],
+      "scene": "s04"
+    },
+    {
+      "start": 35.5,
+      "end": 43.25,
+      "text": "At Hauz Khas, Alauddin Khalji\ndug a royal tank around 1295.",
+      "lines": [
+        "At Hauz Khas, Alauddin Khalji",
+        "dug a royal tank around 1295."
+      ],
+      "scene": "s05"
+    },
+    {
+      "start": 44.5,
+      "end": 48.267,
+      "text": "Its stone steps still catch the evening light,",
+      "lines": [
+        "Its stone steps still catch the evening light,"
+      ],
+      "scene": "s06"
+    },
+    {
+      "start": 48.317,
+      "end": 52.25,
+      "text": "and the students still come to sit by the water.",
+      "lines": [
+        "and the students still come to sit by the water."
+      ],
+      "scene": "s06"
+    },
+    {
+      "start": 53.5,
+      "end": 56.12,
+      "text": "The last stop. Around 1199,",
+      "lines": [
+        "The last stop. Around 1199,"
+      ],
+      "scene": "s07"
+    },
+    {
+      "start": 56.17,
+      "end": 62.25,
+      "text": "the first sultans raised a tower of red stone,\nthe Qutb Minar.",
+      "lines": [
+        "the first sultans raised a tower of red stone,",
+        "the Qutb Minar."
+      ],
+      "scene": "s07"
+    },
+    {
+      "start": 63.5,
+      "end": 68.371,
+      "text": "Personal memory removed at the maker’s request.",
+      "lines": [
+        "Personal memory removed at the maker’s request."
+      ],
+      "scene": "s08"
+    },
+    {
+      "start": 68.421,
+      "end": 71.25,
+      "text": "A sample personal line.",
+      "lines": [
+        "A sample personal line."
+      ],
+      "scene": "s08"
+    },
+    {
+      "start": 72.5,
+      "end": 75.85,
+      "text": "He made this film.",
+      "lines": [
+        "He made this film."
+      ],
+      "scene": "s09"
+    },
+    {
+      "start": 75.9,
+      "end": 79.25,
+      "text": "Come ride with me.",
+      "lines": [
+        "Come ride with me."
+      ],
+      "scene": "s09"
+    }
+  ],
+  "citations": [
+    {
+      "start": 6,
+      "end": 16,
+      "text": "Source: UNESCO · Wikipedia",
+      "source_ids": []
+    },
+    {
+      "start": 16,
+      "end": 26,
+      "text": "Source: Wikipedia",
+      "source_ids": []
+    },
+    {
+      "start": 26,
+      "end": 35,
+      "text": "Source: ASI",
+      "source_ids": []
+    },
+    {
+      "start": 35,
+      "end": 53,
+      "text": "Source: ASI · Wikipedia",
+      "source_ids": []
+    },
+    {
+      "start": 53,
+      "end": 63,
+      "text": "Source: UNESCO",
+      "source_ids": []
+    }
+  ],
+  "attribution": "Map data © OpenStreetMap contributors (ODbL)",
+  "credits": [
+    "Director & script: minimax/minimax-m3.1-flash",
+    "Narration: minimax/speech/2.8/hd (English_CaptivatingStoryteller)",
+    "Illustrations: google/nano-banana-2.1",
+    "Music: minimax/music/3"
+  ],
+  "site_info": {
+    "site_red_fort": {
+      "label": "Red Fort",
+      "year": "1639–48"
+    },
+    "site_jama_masjid": {
+      "label": "Jama Masjid",
+      "year": "1650–56"
+    },
+    "site_rashtrapati_bhavan": {
+      "label": "Rashtrapati Bhavan",
+      "year": "1929"
+    },
+    "site_india_gate": {
+      "label": "India Gate",
+      "year": "1931"
+    },
+    "site_bara_gumbad": {
+      "label": "Bara Gumbad",
+      "year": "1494"
+    },
+    "site_tomb_of_sikandar_lodhi": {
+      "label": "Tomb of Sikandar Lodi",
+      "year": "1517"
+    },
+    "site_hauz_khas_complex": {
+      "label": "Hauz Khas",
+      "year": "c. 1295"
+    },
+    "site_qutb_minar": {
+      "label": "Qutb Minar",
+      "year": "c. 1199"
+    },
+    "site_alai_darwaza": {
+      "label": "Alai Darwaza",
+      "year": "1311"
+    },
+    "site_iron_pillar": {
+      "label": "Iron Pillar",
+      "year": "4th–5th c."
+    }
+  },
+  "project": {
+    "city": "Delhi",
+    "city_local": "दिल्ली",
+    "line": "Yellow Line",
+    "network": "Delhi Metro",
+    "underground": {
+      "from": "Chandni Chowk",
+      "to": "Qutab Minar"
+    }
+  }
+}

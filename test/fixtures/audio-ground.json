@@ -1,0 +1,9 @@
+{
+  "sources": [
+    { "id": "src_001", "url": "https://en.wikipedia.org/wiki/Shahjahanabad", "title": "Shahjahanabad", "publisher": "Wikipedia", "excerpt": "Fixture excerpt." },
+    { "id": "src_002", "url": "https://en.wikipedia.org/wiki/Hauz_Khas_Complex", "title": "Hauz Khas Complex", "publisher": "Wikipedia", "excerpt": "Fixture excerpt." },
+    { "id": "src_003", "url": "https://asi.nic.in/", "title": "Archaeological Survey of India", "excerpt": "Fixture excerpt (publisher derived from the URL)." }
+  ],
+  "stations": [],
+  "facts": []
+}

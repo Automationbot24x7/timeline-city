@@ -1,0 +1,216 @@
+{
+  "mock": false,
+  "voice": {
+    "s01": {
+      "file": "assets/voice/7254eeea36fa5826.mp3",
+      "duration": 9.59,
+      "chars": 92,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s02": {
+      "file": "assets/voice/4c8b822933af9f82.mp3",
+      "duration": 13.166,
+      "chars": 132,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s03": {
+      "file": "assets/voice/9669838c4de6f4ee.mp3",
+      "duration": 15.534,
+      "chars": 129,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s04": {
+      "file": "assets/voice/40b8928a9d76d426.mp3",
+      "duration": 10.937,
+      "chars": 110,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s05": {
+      "file": "assets/voice/0388e9f9c0236e95.mp3",
+      "duration": 12.748,
+      "chars": 128,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s06": {
+      "file": "assets/voice/e0adc3a6f33d0b03.mp3",
+      "duration": 13.723,
+      "chars": 142,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s07": {
+      "file": "assets/voice/d51e0614a157a391.mp3",
+      "duration": 7.651,
+      "chars": 108,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s08": {
+      "file": "assets/voice/6e377c0d6c295a30.mp3",
+      "duration": 9.125,
+      "chars": 96,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s09": {
+      "file": "assets/voice/9de3662fb8321bc4.mp3",
+      "duration": 5.964,
+      "chars": 65,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s10": {
+      "file": "assets/voice/801f9901e3016a25.mp3",
+      "duration": 12.748,
+      "chars": 108,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s11": {
+      "file": "assets/voice/6f59a520069e0ff7.mp3",
+      "duration": 9.301,
+      "chars": 95,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s12": {
+      "file": "assets/voice/b9489e5f5eab49bc.mp3",
+      "duration": 13.491,
+      "chars": 160,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s13": {
+      "file": "assets/voice/40432656fcd8208f.mp3",
+      "duration": 6.676,
+      "chars": 71,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    },
+    "s14": {
+      "file": "assets/voice/1031a4ac84861efa.mp3",
+      "duration": 10.031,
+      "chars": 98,
+      "model": "minimax/speech/2.8/hd",
+      "mock": false
+    }
+  },
+  "images": {
+    "s01": {
+      "file": "assets/images/2bac768c0d12d21c.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false
+    },
+    "s03": {
+      "file": "assets/images/0b13795b2fbbed70.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false
+    },
+    "s07": {
+      "file": "assets/images/cef37ad9906ff044.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false
+    },
+    "s12": {
+      "file": "assets/images/59cb581960f674ba.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false
+    },
+    "s13": {
+      "file": "assets/images/9556964d88608946.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false
+    },
+    "s14": {
+      "file": "assets/images/0c35b5e5c372e33b.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false
+    },
+    "s04": {
+      "file": "assets/images/c39cb777337d1891.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false,
+      "landmark": true,
+      "subject": "Jama Masjid",
+      "site_id": "site_jama_masjid"
+    },
+    "s05": {
+      "file": "assets/images/6ea3e6fecc1a3576.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false,
+      "landmark": true,
+      "subject": "Jantar Mantar",
+      "site_id": "site_jantar_mantar"
+    },
+    "s06": {
+      "file": "assets/images/f78c2f22b481b78b.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false,
+      "landmark": true,
+      "subject": "Rashtrapati Bhavan",
+      "site_id": "site_rashtrapati_bhavan"
+    },
+    "s10": {
+      "file": "assets/images/d615ebe71f425c33.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false,
+      "landmark": true,
+      "subject": "Qutb Minar",
+      "site_id": "site_qutb_minar"
+    },
+    "s11": {
+      "file": "assets/images/56e26a8d11a38bac.png",
+      "width": 2752,
+      "height": 1536,
+      "model": "google/nano-banana-2.1",
+      "mock": false,
+      "landmark": true,
+      "subject": "Delhi Iron Pillar",
+      "site_id": "site_iron_pillar"
+    }
+  },
+  "music": {
+    "file": "assets/music/48ad6e90cb5fa667.mp3",
+    "duration": 198.531,
+    "model": "minimax/music/2.6",
+    "requested": 180,
+    "raw": "assets/music/48ad6e90cb5fa667.mp3",
+    "raw_duration": 198.531,
+    "looped": false,
+    "offset": -31.446,
+    "mock": false
+  },
+  "cover": {
+    "file": "assets/cover/21cd1d1de8a7256f.png",
+    "width": 2752,
+    "height": 1536,
+    "model": "google/nano-banana-2.1",
+    "mock": false
+  },
+  "estimated_duration": 167.085
+}

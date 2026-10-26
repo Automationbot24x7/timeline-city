@@ -1,0 +1,2672 @@
+[
+  {
+    "id": "anc-01",
+    "claim": "In the Mahabharata, the Pandavas' capital Indraprastha stood in the Delhi area. Britannica reports a traditional founding date of about 1400 BCE but says nothing of Indraprastha survives. Purana Qila is the site traditionally identified with it.",
+    "year": null,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/eight_cities_delhi.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://www.penn.museum/sites/expedition/the-buried-past-of-dehli/",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "This is a claim about the legend, not about history. The 1400 BCE date is traditional, and no Indraprastha-period city has been found. Narrate it as 'they say' or 'the epic says'.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-02",
+    "claim": "ASI excavations at Purana Qila (B.B. Lal in 1954-55 and 1969-73; ASI teams in 2013-14, 2017-18 and from January 2023) found nine cultural levels: Pre-Mauryan, Mauryan, Sunga, Kushana, Gupta, Post-Gupta, Rajput, Sultanate and Mughal. They show continuous habitation for about 2,500 years.",
+    "year": -500,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1928410",
+        "publisher": "Press Information Bureau, Govt of India (ASI)"
+      },
+      {
+        "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1891800",
+        "publisher": "Press Information Bureau, Govt of India (ASI)"
+      },
+      {
+        "url": "https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The two PIB releases give different dates for Lal's first season: 1954 in one and 1955 in the other. '2,500 years' is the ASI's rounded figure.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-03",
+    "claim": "Earlier digs at Purana Qila found Painted Grey Ware (PGW) pottery, which an ASI press release dates to about 900 BCE. Those finds were not from a securely stratified deposit, so the 2023 season set out to find PGW 'in stratigraphical context'. The excavators' published report on the 2022-23 season says a test pit beneath the Mauryan levels produced a broken PGW bowl and PGW sherds from stratified Pre-Mauryan layers. Organic samples from those layers have radiocarbon dates as early as 540 BCE. Natural soil has not yet been reached, so earlier occupation remains possible. Linking the site to the Mahabharata's Indraprastha is still tradition, not proof.",
+    "year": -900,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1891800",
+        "publisher": "Press Information Bureau, Govt of India (ASI)"
+      },
+      {
+        "url": "https://www.penn.museum/sites/expedition/the-buried-past-of-dehli/",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Secondary sources date PGW variously (about 1200-600 BCE or 1000 BCE). The ASI calls the site 'Indraprastha', but archaeology has not proven that it was the Mahabharata city. I found no published confirmation that stratified PGW was recovered in 2023.",
+    "verdicts": [
+      "confirmed",
+      "corrected"
+    ]
+  },
+  {
+    "id": "anc-04",
+    "claim": "A version of Ashoka's Minor Rock Edict I is carved on an Aravalli rock outcrop at Bahapur (East of Kailash / Srinivaspuri), New Delhi. It has ten lines of Prakrit in Ashokan Brahmi script and dates to the 3rd century BCE. It was discovered when the site was being taken up for construction.",
+    "year": -300,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://en.vikaspedia.in/viewcontent/education/archaeological-survey-of-india/asokan-rock-edict,-bahapur-(kailash-colony),-new-delhi?lgn=en",
+        "publisher": "Vikaspedia (Govt of India / C-DAC), source: Archaeological Survey of India"
+      },
+      {
+        "url": "https://whc.unesco.org/en/tentativelists/6803",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The Vikaspedia/ASI text gives 1967 as the discovery year. Several other accounts say 23 March 1966. Coordinates come from OpenStreetMap.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-05",
+    "claim": "A polished sandstone pillar of Ashoka (3rd century BCE) stands on the palace ruins of Firoz Shah Kotla. Firoz Shah Tughlaq had it brought from Topra (Topra Kalan, now in Yamunanagar district, Haryana; historically part of Ambala) and re-erected it on his palace in the 1350s.",
+    "year": 1354,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1300-1400",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/firozabad.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://www.tribuneindia.com/news/archive/haryana/india-s-biggest-ashoka-chakra-unveiled-in-y-nagar-village-709307",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Delhi-Topra_pillar",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "SRDC says the pillar was moved 'from Punjab' (pre-1966 Punjab included Ambala), and Delhi Tourism says 'Ambala'. The Topra village name comes from standard histories. I could not open a primary source for it here. Delhi Tourism's height of '43 meters' is wrong and should not be used. The dates disagree (1354 vs 1356).",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "anc-06",
+    "claim": "A second Ashokan pillar, first erected at Meerut in the 3rd century BCE, was moved to Delhi by Firoz Shah Tughlaq in the mid-14th century. It now stands on the northern Delhi Ridge.",
+    "year": 1351,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Meerut",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/firozabad.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://www.britishmuseum.org/collection/object/A_1880-21",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Britannica gives no exact year. Delhi Tourism places one pillar 'at the ridge'. Coordinates come from OpenStreetMap.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-07",
+    "claim": "The Iron Pillar in the Qutb complex carries a Sanskrit inscription of a king 'Chandra', usually identified with the Gupta emperor Chandragupta II (c. AD 375-415). It is at least 1,600 years old and weighs about 6 tons. It was made elsewhere, possibly at Udayagiri in central India, and was later brought to Delhi, probably by the Tomar kings in the 11th century, though some accounts credit a later sultan.",
+    "year": 376,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://home.iitk.ac.in/~bala/journalpaper/journal/journalpaper_17.pdf",
+        "publisher": "R. Balasubramaniam, Corrosion Science 42 (2000), IIT Kanpur"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/quila_rai_pithora.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/233",
+        "publisher": "UNESCO World Heritage Centre"
+      },
+      {
+        "url": "https://www.britannica.com/place/pillar-of-Delhi",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Most scholars accept Chandra = Chandragupta II, but it is an identification. Udayagiri as the original site, and Anangpal Tomar as the person who moved it, are probable rather than proven. Delhi Tourism says 'perhaps'.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-08",
+    "claim": "The pillar resists rust because its iron is rich in phosphorus. Over time a thin protective layer of crystalline iron hydrogen phosphate hydrate forms next to the metal, helped by alternate wetting and drying, and this layer greatly slows corrosion.",
+    "year": 400,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://home.iitk.ac.in/~bala/journalpaper/journal/journalpaper_17.pdf",
+        "publisher": "R. Balasubramaniam, Corrosion Science 42 (2000) 2103-2129"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "This is peer-reviewed science. Later papers by the same author refine the layer chemistry (often reported as 'misawite'). Avoid calling it 'rustproof': it corrodes extremely slowly.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-09",
+    "claim": "Anangapala of the Tomara dynasty founded Anangpur as a royal resort around 1020 CE. Later the Tomaras built the walled citadel of Lal Kot about 10 km to the west, dated to around 1060 in India's UNESCO documents. They held it for about a century, until the Chauhans took over in the mid-12th century. Parts of its ramparts are still visible around the Qutb Minar area.",
+    "year": 1020,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/quila_rai_pithora.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://whc.unesco.org/en/tentativelists/5743/",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Exact dates for Lal Kot are uncertain, and Delhi Tourism says Anangpal 'possibly' built it. Which Anangpal (I or II) is meant varies by source. The year_end is approximate.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-10",
+    "claim": "The Chauhans, who took Delhi from the Tomaras in the mid-12th century, extended Lal Kot with massive ramparts. Tradition credits these to Prithviraj III (Prithviraj Chauhan, 'Rai Pithora'), and the city became known as Qila Rai Pithora. In 1192 Prithviraj was defeated by Muhammad of Ghur at the second battle of Tarain (Taraori), which brought the Delhi region under Turkic rule.",
+    "year": 1164,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.britannica.com/biography/Prithviraja-III",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/quila_rai_pithora.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Britannica's Delhi article dates the ramparts to 1164, but its biography gives Prithviraj's birth as c. 1166, so treat 1164 as doubtful and say 'late 12th century'. The Prithviraj-Sanyogita romance is of debated historicity.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-11",
+    "claim": "Qutb ud-Din Aibak began the Qutb Minar around 1199, and his successor Iltutmish (ruled 1211-1236) completed it. Iltutmish also made Delhi the sultanate's capital. The tower is 72.5 m tall. After lightning struck it in 1368, Firoz Shah Tughlaq replaced its top storey with two storeys faced partly in white marble. Sikandar Lodi carried out further restoration of the upper storeys in 1503. UNESCO inscribed the Qutb complex as a World Heritage Site in 1993.",
+    "year": 1199,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://whc.unesco.org/en/list/233",
+        "publisher": "UNESCO World Heritage Centre"
+      },
+      {
+        "url": "https://www.britannica.com/topic/Qutb-Minar",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.britannica.com/biography/Iltutmish",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://whc.unesco.org/document/153020",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Qutb_Minar",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The start date is approximate: say 'around 1199' in narration and 'c. 1199' on screen, never 'in 1199'. UNESCO's text gives the construction span as 1199-1503 because it includes later repairs. Height figures vary slightly between sources (72.5 m is the UNESCO and Britannica figure).",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "anc-12",
+    "claim": "Alauddin Khalji expanded the Qutb ensemble between 1296 and 1311, adding the Alai Darwaza gateway (1311) and a madrasa. He also began the Alai Minar, planned at twice the scale of the Qutb Minar, but only its first storey was built. It stands about 25 m high.",
+    "year": 1296,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://whc.unesco.org/en/list/233",
+        "publisher": "UNESCO World Heritage Centre"
+      },
+      {
+        "url": "https://www.britannica.com/topic/Qutb-Minar",
+        "publisher": "Encyclopaedia Britannica"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "None significant.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-13",
+    "claim": "After Mongol raiders ravaged Delhi's suburbs, Alauddin Khalji (ruled 1296-1316) built a new fortified city at Siri, northeast of the Qutb Minar. Britannica calls it the first completely new city built by the Muslim conquerors in India. Delhi Tourism dates its foundation to 1303 and says the Hauz Khas reservoir was dug to supply it.",
+    "year": 1303,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/siri.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://www.britannica.com/biography/Ala-al-Din-Khalji",
+        "publisher": "Encyclopaedia Britannica"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The 1303 year comes from Delhi Tourism, and Britannica gives no year. Siri's walls survive only in fragments. The Hauz Khas tank is at about 28.5540, 77.1923.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-14",
+    "claim": "Ghiyasuddin Tughlaq, founder of the Tughlaq dynasty, began the fortified city of Tughlaqabad in 1321. Its massive sloping rubble walls run for about 6.5 km and rise in places to around 25 m. The city was abandoned within a few years, and Britannica attributes this to a scarcity of water.",
+    "year": 1321,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1300-1400",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.incredibleindia.gov.in/en/delhi/delhi/tughlaqabad-fort",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Sources give different completion spans (1321-23, 1321-25, or 'four years'). SRDC's monument text appears adapted from Wikipedia, so cross-check fine details.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-15",
+    "claim": "A popular legend says the Sufi saint Nizamuddin Auliya cursed Tughlaqabad after Ghiyasuddin Tughlaq stopped work on the saint's stepwell. The curse foretold that the city would either be inhabited by Gujjars or lie deserted ('ya rahe ujar, ya base Gujjar').",
+    "year": 1321,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://delhitourism.gov.in/aboutus/tughlakabad.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Legend, not documented history. Delhi Tourism itself says 'Legend asserts'. The Hindustani phrasing is the popular oral form and does not appear in a contemporary chronicle. Present it explicitly as legend.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-16",
+    "claim": "Muhammad bin Tughlaq built the fortified city of Jahanpanah ('Refuge of the World') in 1326-27, against the Mongol threat. It enclosed the settlements between Qila Rai Pithora and Siri. Fragments of its walls survive at Begumpur, Khirki and Satpula in today's South Delhi.",
+    "year": 1326,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1300-1400",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/tughlakabad.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://whc.unesco.org/en/tentativelists/5743/",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Delhi Tourism places Jahanpanah's building after his return from Daulatabad (1334), while SRDC says 1326-27, so the dating conflicts. Britannica only says he extended the city northeast and built new fortifications.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-17",
+    "claim": "In 1327 Muhammad bin Tughlaq moved the capital from Delhi to Deogir, which he renamed Daulatabad, in the Deccan. Large numbers of Delhi's people migrated there, some by force. As an administrative measure it failed. Britannica credits it with spreading Urdu into the Deccan.",
+    "year": 1327,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/biography/Muhammad-ibn-Tughluq",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/tughlakabad.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The return date of 1334 comes from Delhi Tourism, and some secondary sources say 1335. How large and how forced the migration was are both debated.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-18",
+    "claim": "Firoz Shah Tughlaq moved his capital north in 1354 to a site near ancient Indraprastha and founded Firozabad. Its citadel, Kotla Firoz Shah (1354-70), now lies in ruins beside the Yamuna-side Bahadur Shah Zafar Marg area.",
+    "year": 1354,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.britannica.com/biography/Firuz-Shah-Tughluq",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/firozabad.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Firoz Shah ruled 1351-88.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "anc-19",
+    "claim": "Timur invaded India in 1398 and destroyed the army of Sultan Mahmud Tughluq on 17 December 1398. Delhi was then sacked and 'reduced to a mass of ruins', and Britannica says it took more than a century to recover. Delhi Tourism describes the plunder as a two-week nightmare in December 1398.",
+    "year": 1398,
+    "topic": "ancient_sultanate",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/biography/Timur",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/firozabad.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Britannica places the 17 December battle 'at Panipat'. Many other histories place it just outside Delhi, so say 'outside Delhi' or avoid naming the field. Casualty figures from chronicles are unreliable and not given here.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-01",
+    "claim": "Babur founded Mughal rule in 1526 but based himself at Agra. His son Humayun founded a new city, Dinpanah, on the bank of the Yamuna in 1533. What survives of it is the Purana Qila, a fort begun under Humayun and rebuilt and completed by Sher Shah Suri.",
+    "year": 1533,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1500-1600",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Purana_Qila",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The completion year (1538) comes only from SRDC.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-02",
+    "claim": "Sher Shah Suri overthrew Humayun in 1540 and built his own capital, Shergarh or 'Sher Shahi', on the Dinpanah site. Today this is the Purana Qila fort. His Qila-i-Kuhna mosque inside it dates from 1541. Humayun regained Delhi in 1555.",
+    "year": 1540,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1500-1600",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1891800",
+        "publisher": "Press Information Bureau (ASI)"
+      },
+      {
+        "url": "https://www.britannica.com/biography/Humayun-Mughal-emperor",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Purana_Qila",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Britannica says Sher Shah 'razed Din Panah'. SRDC says he renamed and added to it. The extent of demolition versus reuse is uncertain.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-03",
+    "claim": "In January 1556 Emperor Humayun fell down the steep stairs of his library, traditionally identified as the Sher Mandal, an octagonal red-sandstone tower in Purana Qila. He had paused to kneel at the call to prayer. He died of his injuries a few days later.",
+    "year": 1556,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1500-1600",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://www.britannica.com/biography/Humayun-Mughal-emperor",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Humayun",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Exact dates vary by a day or two between sources. I opened only this one official page for the event.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "mug-04",
+    "claim": "Humayun's Tomb was raised in the 1560s, in the reign of his son Akbar. Many historians credit Humayun's senior widow Bega Begum (Haji Begum) with commissioning it, while UNESCO stresses Akbar's patronage. It was the first of the grand Mughal dynastic garden-tombs. It has a 42.5 m marble-clad double dome and holds over 150 Mughal family members. It stands near the 14th-century shrine of Nizamuddin Auliya and became a UNESCO World Heritage Site in 1993.",
+    "year": 1560,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://whc.unesco.org/en/list/232",
+        "publisher": "UNESCO World Heritage Centre"
+      },
+      {
+        "url": "https://www.britannica.com/art/Mughal-architecture",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/232/",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Many sources credit Humayun's widow, Hamida Banu (Bega) Begum, with commissioning it, while UNESCO stresses Akbar's patronage. Completion is often given as c. 1570-72.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-05",
+    "claim": "In 1639 Shah Jahan chose a site on the west bank of the Yamuna, just north of Purana Qila, for a new capital and began building its fort, the Red Fort. The fort took eight years to complete. On 19 April 1648 he entered his fort and his new capital, Shahjahanabad (today's Old Delhi), from its riverfront gate. Several of its gates still stand: Kashmiri, Delhi, Turkman and Ajmeri.",
+    "year": 1639,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://whc.unesco.org/document/153016",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Red_Fort",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Dates vary across sources. UNESCO's Dutch summary dates the fort to 1638, and other accounts give 12/13 May 1638 or 1639 for the start and 6 or 8 April 1648 for the formal entry. Say 'founded 1639, inaugurated 1648'.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-06",
+    "claim": "The Red Fort was the palace-fort of Shah Jahan's Shahjahanabad. Its red sandstone walls are about 23 m (75 ft) high, and the Nahr-i-Behisht ('Stream of Paradise') water channel ran through its private apartments. Together with the adjacent Salimgarh fort (built 1546 by Islam Shah Suri), it was inscribed as the 'Red Fort Complex' World Heritage Site in 2007.",
+    "year": 1639,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://whc.unesco.org/en/list/231",
+        "publisher": "UNESCO World Heritage Centre"
+      },
+      {
+        "url": "https://www.britannica.com/topic/Red-Fort",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://whc.unesco.org/document/153016",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://www.britannica.com/print/article/494257",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "UNESCO's criterion (vi) notes that the fort witnessed the shift to British rule and is where Indian independence 'was first celebrated'.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-07",
+    "claim": "Shah Jahan laid the foundation of the Jama Masjid (Masjid-i-Jahan Numa) on a hillock in Shahjahanabad on 6 October 1650. About 5,000 workers built it over six years, and it was completed in 1656.",
+    "year": 1650,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1600-1700",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://www.britannica.com/place/Jami-Masjid-mosque-Delhi-India",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Jama_Masjid,_Delhi",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Another SRDC page wrongly says '1644', so use 1650-56. Worker and cost figures are traditional.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-08",
+    "claim": "Jahanara Begum, Shah Jahan's eldest daughter, laid out Chandni Chowk with a sarai and gardens. The street ran from the Red Fort's Lahore Gate to Fatehpuri Masjid. A canal ran down its middle, and an octagonal pool reflected the moonlight, which tradition says gave it the name 'Moonlight Square'.",
+    "year": 1648,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1600-1700",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://www.britannica.com/art/Mughal-architecture",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The 'moonlight' etymology is the traditional explanation. Fatehpuri Masjid at the western end was built in 1650 by Fatehpuri Begum (same SRDC page).",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-09",
+    "claim": "In 1739 Nadir Shah of Iran defeated the Mughal army at Karnal, entered Delhi and sacked it with a large-scale massacre and extensive looting. He carried home the jewelled Peacock Throne and vast treasure.",
+    "year": 1739,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/biography/Nadir-Shah",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.britannica.com/place/India/The-Sikh-uprisings",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://www.britannica.com/event/Battle-of-Karnal",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Death tolls in contemporary accounts vary widely and are not given here.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-10",
+    "claim": "The Koh-i-Noor diamond most likely formed part of Nadir Shah's loot when he sacked Delhi in 1739. The British acquired it on annexing the Punjab in 1849, and it has been part of the British crown jewels since then. India is among the countries that have demanded its return.",
+    "year": 1739,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/topic/Koh-i-noor",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.britannica.com/biography/Nadir-Shah",
+        "publisher": "Encyclopaedia Britannica"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Britannica's wording is 'most likely'. The diamond's early history is uncertain.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mug-11",
+    "claim": "After the Mughal Empire weakened, Delhi suffered Maratha raids, Nadir Shah's invasion and a spell of Maratha rule before the British arrived in 1803. East India Company forces under General Lake defeated the Marathas near Patparganj, east of the Yamuna. The Company appointed a Resident in Delhi as 'Protector' of the Mughal crown.",
+    "year": 1803,
+    "topic": "mughal",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/new-delhi.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Delhi_(1803)",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The exact day (11 September) and troop numbers come from secondary accounts I did not open from a primary source. The battlefield location is approximate.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "col-01",
+    "claim": "Sepoys at Meerut rose on 10 May 1857, shot their British officers and marched to Delhi. On 11 May they seized the city and nominally restored the Mughal emperor Bahadur Shah II to power. Britannica says the seizure of Delhi gave the whole rebellion its focus.",
+    "year": 1857,
+    "topic": "colonial",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/event/Indian-Mutiny",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://ncert.nic.in/textbook/pdf/hess205.pdf",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://web.archive.org/web/20260109130024/https://www.britannica.com/event/Indian-Rebellion-of-1857",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Terminology is contested ('Indian Mutiny', 'Rebellion of 1857', 'First War of Independence'). Both sides committed massacres.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "col-02",
+    "claim": "After holding Delhi for several months, the rebels lost it to a British siege. The final assault began on the morning of 14 September 1857, when the Kashmere Gate was blown with gunpowder. Delhi was recaptured on 21 September after a week of fighting. The recapture ended Mughal rule.",
+    "year": 1857,
+    "topic": "colonial",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/event/Indian-Mutiny",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1900-2000",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Delhi",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "British besieging forces were based on the Delhi Ridge. The Ridge camp is standard history, but the sources I opened here do not detail it.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "col-03",
+    "claim": "After the 1857 war the British demolished large parts of the walled city over the following years, above all the area around the Red Fort and most of the palace buildings inside it. Delhi Tourism estimates about a third of the city. In 1858 Parliament transferred the East India Company's powers to the British Crown. The last Mughal emperor, Bahadur Shah Zafar, was tried in 1858 and exiled to Rangoon in October 1858.",
+    "year": 1858,
+    "topic": "colonial",
+    "sources": [
+      {
+        "url": "https://delhitourism.gov.in/aboutus/new-delhi.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1600-1700",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://ranasafvi.com/shahjahanabad-post-1857/amp/",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "'One third' is Delhi Tourism's figure, and estimates of the demolished area vary. Bahadur Shah was exiled to Rangoon (standard history; not stated on these pages).",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "col-04",
+    "claim": "At the Delhi Durbar of 12 December 1911, held to mark the coronation of King George V and witnessed by around one lakh (100,000) people, it was announced that British India's capital would move from Calcutta to Delhi.",
+    "year": 1911,
+    "topic": "colonial",
+    "sources": [
+      {
+        "url": "https://rashtrapatibhavan.gov.in/making-rashtrapati-bhavan",
+        "publisher": "Rashtrapati Bhavan (President's Secretariat, Govt of India)"
+      },
+      {
+        "url": "https://delhitourism.gov.in/aboutus/new-delhi.html",
+        "publisher": "Delhi Tourism (Govt of NCT of Delhi)"
+      },
+      {
+        "url": "https://www.britannica.com/place/New-Delhi",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Coronation_Park,_Delhi",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The king is a historical (not living) figure. The crowd figure is approximate.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "col-05",
+    "claim": "The first choice for the new capital was in the north, near Kingsway Camp. Lutyens and his colleagues found that site highly vulnerable to Yamuna floods, so the government chose Raisina Hill in the south, with high ground and better drainage, for the Viceroy's House.",
+    "year": 1912,
+    "topic": "colonial",
+    "sources": [
+      {
+        "url": "https://rashtrapatibhavan.gov.in/making-rashtrapati-bhavan",
+        "publisher": "Rashtrapati Bhavan (President's Secretariat, Govt of India)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The page does not give an exact decision date.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "col-06",
+    "claim": "Architects Sir Edwin Lutyens and Sir Herbert Baker designed New Delhi, with Lutyens as the key planner. Construction began in 1912 about 5 km south of the old city centre. King George V named the new imperial city 'New Delhi' on 31 December 1926.",
+    "year": 1912,
+    "topic": "colonial",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/New-Delhi",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.britannica.com/place/Delhi/History",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.outlookindia.com/national/india-s-capital-new-delhi-was-inaugurated-91-years-ago-news-122515",
+        "publisher": "Outlook India (PTI)"
+      },
+      {
+        "url": "https://www.indiatvnews.com/news/india/from-dilli-to-new-delhi-a-capital-was-named-48546.html",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The 31 December 1926 naming date comes from a PTI report and is not in an archival source I opened. Baker designed the Secretariat blocks and Parliament House (SRDC).",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "col-07",
+    "claim": "Viceroy Lord Irwin formally inaugurated New Delhi as India's capital on 13 February 1931. The ceremonies ran for about a week from 10 February, and during that week he unveiled four red sandstone Dominion Columns, gifts from Australia, Canada, New Zealand and South Africa.",
+    "year": 1931,
+    "topic": "colonial",
+    "sources": [
+      {
+        "url": "https://www.outlookindia.com/national/india-s-capital-new-delhi-was-inaugurated-91-years-ago-news-122515",
+        "publisher": "Outlook India (PTI, citing Delhi Archives)"
+      },
+      {
+        "url": "https://www.britannica.com/place/New-Delhi",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://thepatriot.in/culture/history/irwin-and-the-making-of-new-delhi-89481",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://archivesearch.lib.cam.ac.uk/repositories/19/archival_objects/378636",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Britannica says only 'formally dedicated in 1931'. The exact day comes from PTI, which cites the Delhi Archives.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "col-08",
+    "claim": "Rashtrapati Bhavan, built as the Viceroy's House to Lutyens's H-shaped plan, has about 340 rooms on four floors. It used some 700 million bricks, and up to 23,000 labourers worked on it at the peak of construction. Building took more than 17 years, and Viceroy Irwin became its first occupant in 1929.",
+    "year": 1912,
+    "topic": "colonial",
+    "sources": [
+      {
+        "url": "https://rashtrapatibhavan.gov.in/making-rashtrapati-bhavan",
+        "publisher": "Rashtrapati Bhavan (President's Secretariat, Govt of India)"
+      },
+      {
+        "url": "https://victorianweb.org/victorian/art/architecture/lutyens/10.html",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://victorianweb.org/art/architecture/lutyens/10.html",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The official figures are rounded.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "col-09",
+    "claim": "India Gate, originally the All India War Memorial, is a sandstone arch about 42 m high designed by Lutyens for the Imperial War Graves Commission. It honours troops of British India who died in 1914-1919, including in the Third Afghan War. The Duke of Connaught laid its cornerstone in 1921, Lord Irwin dedicated it on 12 February 1931, and more than 13,000 soldiers' names are inscribed on it.",
+    "year": 1921,
+    "topic": "colonial",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/topic/India-Gate",
+        "publisher": "Encyclopaedia Britannica"
+      },
+      {
+        "url": "https://www.outlookindia.com/national/india-s-capital-new-delhi-was-inaugurated-91-years-ago-news-122515",
+        "publisher": "Outlook India (PTI)"
+      },
+      {
+        "url": "https://www.ww1cemeteries.com/ind-delhi-memorial-india-gate.html",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Some tourism pages say it 'commemorates 90,000' soldiers, but the inscribed names number more than 13,000 (CWGC via Britannica). The Amar Jawan Jyoti flame (1972) was merged with the National War Memorial flame in 2022.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-01",
+    "claim": "India became independent on 15 August 1947. Prime Minister Jawaharlal Nehru unfurled the national flag on the Red Fort for the first time the next day, 16 August 1947, beginning the Independence Day flag-hoisting tradition there.",
+    "year": 1947,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=29799&reg=48&lang=2",
+        "publisher": "Press Information Bureau, Ministry of Defence (2007)"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/231",
+        "publisher": "UNESCO World Heritage Centre"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Saying 'on 15 August 1947 the flag rose over the Red Fort' is a common error, because the first Red Fort hoisting was on 16 August. A Ministry of Defence page gives 15 August, but the PIB release gives 16 August, and I follow PIB.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-02",
+    "claim": "From August 1947, Purana Qila and the neighbouring Humayun's Tomb became camps for Muslims waiting to leave for Pakistan, including more than 12,000 government employees who had opted for service there. In September 1947 the Indian government took over both camps. Estimates of how many people crowded into Purana Qila range from tens of thousands to as many as 150,000-200,000. The Purana Qila camp ran until early 1948.",
+    "year": 1947,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://srdc.delhi.gov.in/en/srdc/1500-1600",
+        "publisher": "Shahjahanabad Redevelopment Corporation, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Purana_Qila",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The figures are approximate and come from one official page.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "mod-03",
+    "claim": "About 330,000 of Delhi's Muslims left after Partition, and between 1947 and 1950 roughly half a million Hindu and Sikh refugees, mostly Punjabi-speaking, arrived. Kingsway Camp, on the old durbar grounds, became the largest refugee camp, a tented city said to have sheltered as many as 300,000 people over time (other accounts give more than 35,000 at any one time).",
+    "year": 1947,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://thewire.in/history/how-partition-reshaped-delhis-demography-language-and-culture",
+        "publisher": "The Wire (excerpt from 'The Shortest History of Delhi', Pan Macmillan 2026, citing historian V.N. Datta)"
+      },
+      {
+        "url": "https://in.1947partitionarchive.org/node/1809",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Partition_of_India",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "These are historians' estimates published in a book excerpt, not census counts. Treat them as approximate ('around').",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "mod-04",
+    "claim": "A new Ministry of Rehabilitation resettled nearly 300,000 people by the end of 1950, more than half of them in homes left behind by departing Muslims. New colonies were laid out, many named after independence leaders, among them Lajpat Nagar, Malviya Nagar, Tilak Nagar, Patel Nagar and Rajendra Nagar, with others such as Vijay Nagar in the north. Older neighbourhoods such as Jangpura and Bhogal also took in refugees. The colonies were planned with their own markets, schools, temples and gurdwaras.",
+    "year": 1947,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://thewire.in/history/how-partition-reshaped-delhis-demography-language-and-culture",
+        "publisher": "The Wire (book excerpt, Pan Macmillan 2026)"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Jangpura",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The same source says more than half of those resettled moved into properties left behind by departing Muslims. Narrate both directions of the migration.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "mod-05",
+    "claim": "Delhi's population went from 917,939 in the 1941 Census to 1,744,072 in the 1951 Census, an increase of 90.0%. This is the largest decadal growth rate in Delhi's census series.",
+    "year": 1941,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/43340",
+        "publisher": "Office of the Registrar General & Census Commissioner, India (Table A-02)"
+      },
+      {
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/43340/download/47016/07A-2%20NCT%20Delhi.pdf",
+        "publisher": "Census of India 2011, A-02 Decadal Variation, NCT of Delhi"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The figures are adjusted to the 2011 boundary of NCT Delhi. The Wire's '1.8 million' is a rounded figure.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-06",
+    "claim": "The 1901 Census counted 405,819 people in the area of today's NCT of Delhi.",
+    "year": 1901,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/43340/download/47016/07A-2%20NCT%20Delhi.pdf",
+        "publisher": "Census of India 2011, A-02 Decadal Variation, NCT of Delhi"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "This figure is adjusted to the 2011 jurisdiction.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-07",
+    "claim": "The 2011 Census counted 16,787,941 people in the NCT of Delhi, up 21.21% from 13,850,507 in 2001.",
+    "year": 2011,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/43340/download/47016/07A-2%20NCT%20Delhi.pdf",
+        "publisher": "Census of India 2011, A-02 Decadal Variation, NCT of Delhi"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "2011 is still the latest published census. The next census, Census 2027, had not published population totals as of October 2026. This is the NCT count, not the wider urban agglomeration used by the UN.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-08",
+    "claim": "The Delhi Metro's first stretch was inaugurated on 24 December 2002. It was an 8.2 km section of the Red Line from Shahdara to Tis Hazari, with six stations. Commercial service began on 25 December 2002, and the first-day rush was so heavy that paper tickets had to be issued.",
+    "year": 2002,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://www.business-standard.com/article/current-affairs/beginning-as-six-station-journey-delhi-metro-completes-20-yrs-of-operation-122122400308_1.html",
+        "publisher": "Business Standard (PTI)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The inaugurating prime minister has died, so naming him is allowed, but the film does not need to. Tis Hazari station is at about 28.6671, 77.2166.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-09",
+    "claim": "As of 23 October 2026, the DMRC website shows a total network of 416 km, 12 lines and 303 stations. These totals include the Noida-Greater Noida Aqua Line and Rapid Metro Gurugram.",
+    "year": 2026,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://www.delhimetrorail.com/",
+        "publisher": "Delhi Metro Rail Corporation (official website)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The total includes lines DMRC does not own. Quote it with 'including Noida and Gurugram lines', or as 'more than 400 km'. The figure changes as Phase IV opens, so re-check before final render.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-10",
+    "claim": "The UN's World Urbanization Prospects 2018 ranked Delhi the world's second-largest city, with 29 million people after Tokyo's 37 million. It projected that Delhi would become the world's most populous city around 2028.",
+    "year": 2018,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://www.un.org/development/desa/en/news/population/2018-revision-of-world-urbanization-prospects.html",
+        "publisher": "UN DESA, Population Division"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "This 2018 projection has been superseded by WUP 2025 (see mod-11). Do not narrate it as current.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-11",
+    "claim": "The UN's World Urbanization Prospects 2025 uses the harmonised 'Degree of Urbanisation' definition. Under it, New Delhi ranks 4th in the world in 2025 with 30.2 million people, after Jakarta (41.9 million), Dhaka (36.6 million) and Tokyo (33.4 million). It is projected to stay 4th in 2050 with 33.9 million, with Dhaka becoming the largest city. Under the older country-specific definitions used in WUP 2018, Delhi would rank 2nd in 2025 with about 35 million.",
+    "year": 2025,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://population.un.org/wup/assets/Publications/undesa_pd_2025_wup2025_summary_of_results_final.pdf",
+        "publisher": "UN DESA Population Division, WUP 2025 Summary of Results"
+      },
+      {
+        "url": "https://population.un.org/wup/assets/Publications/undesa_pd_2024_key_messages_wup_2025.pdf",
+        "publisher": "UN DESA Population Division, WUP 2025 Key Messages"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "City size depends on definition. A safe line for narration: 'one of the largest cities on Earth — some UN counts put me second, the newest puts me fourth'.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-12",
+    "claim": "The draft Master Plan for Delhi 2041 was published for objections on 9 June 2021 but was never notified in that form. The DDA approved a revised Master Plan for Delhi 2047 on 12 August 2026. The Ministry of Housing and Urban Affairs notified MPD-2047 in the Gazette of India on 20 August 2026 (S.O. 4597(E)) as an extensive modification of MPD-2021, effective from publication. It plans for nearly 3.2 crore (32 million) people. Delhi's first Master Plan was promulgated in 1962 under the Delhi Development Act of 1957.",
+    "year": 2021,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://www.mohua.gov.in/static/uploads/2026/08/303b636fb03fdc0820ad9c7925339e0f.pdf",
+        "publisher": "Gazette of India, Ministry of Housing and Urban Affairs, S.O. 4597(E), 20 Aug 2026"
+      },
+      {
+        "url": "https://www.business-standard.com/india-news/dda-pushes-back-2041-deadline-approves-master-plan-delhi-2047-126081201301_1.html",
+        "publisher": "Business Standard"
+      },
+      {
+        "url": "https://www.tribuneindia.com/news/delhi/dda-approves-delhi-master-plan-2047/",
+        "publisher": "The Tribune"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Our concept's 'Master Plan 2041' line is out of date. Use 'Master Plan for Delhi 2047, notified August 2026'. DDA stakeholder consultations and plot-level land-use changes were still under way in September and October 2026.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-13",
+    "claim": "The Delhi Ridge is the northern extension of the Aravalli range. It is a reserved forest of about 7,784 ha, roughly 6% of NCT Delhi, made up of the Northern (87 ha), Central (864 ha), South-Central (626 ha), Southern (6,200 ha) and Nanakpura (7 ha) Ridges.",
+    "year": 1996,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://www.mohua.gov.in/static/uploads/2026/08/303b636fb03fdc0820ad9c7925339e0f.pdf",
+        "publisher": "Gazette of India, MPD-2047 (MoHUA)"
+      },
+      {
+        "url": "https://forest.delhi.gov.in/sites/default/files/generic_multiple_files/info-browcher-forest-dec2013-8.pdf",
+        "publisher": "Department of Forests & Wildlife, Govt of NCT of Delhi"
+      },
+      {
+        "url": "https://www.britannica.com/place/Delhi",
+        "publisher": "Encyclopaedia Britannica"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Some sources give 7,777 ha and 1994 for the notification, so the year varies. The Ridge is managed by several agencies, not only the Forest Department.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-14",
+    "claim": "All the earlier locations of Delhi fall within a triangle of about 180 sq km, the 'Delhi Triangle'. Two of its sides are rocky Aravalli hills, one to the south and the Delhi Ridge on the west, and the third is the shifting channel of the Yamuna, with broad alluvial plains between them. The territory's elevation ranges from about 200 to 300 m.",
+    "year": null,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Delhi",
+        "publisher": "Encyclopaedia Britannica"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "This is a strong framing device for the map animation, which can draw the triangle first.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "mod-15",
+    "claim": "The Yamuna runs about 1,376 km to join the Ganga near Prayagraj and feeds the Agra Canal at Delhi. According to Delhi's Master Plan, the 22 km stretch from Wazirabad to Okhla is under 2% of the river's length but carries about 76% of its pollution load. Below Wazirabad the river has no freshwater flow in the dry season.",
+    "year": 2026,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://www.mohua.gov.in/static/uploads/2026/08/303b636fb03fdc0820ad9c7925339e0f.pdf",
+        "publisher": "Gazette of India, MPD-2047 (citing GNCTD River Rejuvenation Committee)"
+      },
+      {
+        "url": "https://www.britannica.com/place/Yamuna-River",
+        "publisher": "Encyclopaedia Britannica"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The pollution figures are the Delhi government's, quoted in the gazetted plan.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "mod-16",
+    "claim": "Delhi's Master Plan 2047 counts 1,459 identified heritage assets in the city, including World Heritage Sites, protected monuments, heritage buildings and precincts. It says this built heritage is largely concentrated between the Yamuna and the Ridge, in the Walled City, Nizamuddin, Mehrauli, Tughlaqabad, Jahanpanah, Hauz Khas and Lutyens' Delhi.",
+    "year": 2026,
+    "topic": "modern_future",
+    "sources": [
+      {
+        "url": "https://www.mohua.gov.in/static/uploads/2026/08/303b636fb03fdc0820ad9c7925339e0f.pdf",
+        "publisher": "Gazette of India, MPD-2047 (MoHUA)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The plan also says many of these assets are threatened by encroachment, disrepair and inappropriate alteration.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-01",
+    "claim": "The Yellow Line is Delhi Metro Line 2. It runs 37 stations from Samaypur Badli (north) to Millennium City Centre Gurugram (south) and has 9 interchange stations. DMRC's line page gives its length as 47.25 km and the end-to-end trip as 69 minutes. Its official colour code is #f6d71a.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.delhimetrorail.com/line/LN2",
+        "publisher": "DMRC (official line page)"
+      },
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/metro_line/LN2",
+        "publisher": "DMRC (data feed behind the official site)"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Yellow_Line_(Delhi_Metro)",
+        "publisher": "Wikipedia (used only to find sources)"
+      }
+    ],
+    "narration_line": "My Yellow Line threads 37 stations, from Samaypur Badli in the north to Gurugram in the south.",
+    "caveats": "The length depends on how it is measured. DMRC's line page shows 47.25 km, Wikipedia says 49.02 km, and the section lengths in contemporary reports add up to about 48.8 km (4 + 7 + 6.36 + 14.47 + 12.53 + 4.4). Narrate '37 stations' and either avoid a km figure or say 'about 47 km (DMRC)'. The station count of 37 matches across all sources.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-02",
+    "claim": "20 of the 37 stations are underground: every stop from Guru Tegh Bahadur Nagar to Saket. The other 17 are elevated: the seven northern stations (Samaypur Badli to Model Town) and the ten southern ones (Qutab Minar to Millennium City Centre Gurugram). So the line is 'mostly underground' by station count, but in track length it is roughly half and half. A 2010 report gave about 25 km underground and 20 km elevated, and the 4.4 km 2015 extension is elevated.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/AZU",
+        "publisher": "DMRC station data (Azadpur: Yellow Line elevated, Pink Line underground)"
+      },
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/QM",
+        "publisher": "DMRC station data (Qutab Minar: Elevated)"
+      },
+      {
+        "url": "https://web.archive.org/web/20100905002221/http://www.thehindu.com/news/cities/Delhi/article611319.ece",
+        "publisher": "The Hindu, 3 Sep 2010"
+      },
+      {
+        "url": "https://www.tribuneindia.com/2009/20090204/delhi.htm",
+        "publisher": "The Tribune, 4 Feb 2009"
+      }
+    ],
+    "narration_line": "Underground through the old heart of the city, then up into the open air.",
+    "caveats": "DMRC's data feed tags Azadpur 'Underground', but that refers to its Pink Line platforms. DMRC's own description and the 2009 Tribune report both say the Yellow Line platforms at Azadpur are elevated.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-03",
+    "claim": "Riding south, the whole stretch from Chandni Chowk to Saket is underground. Qutab Minar is the first elevated station going south, so the train comes out of the tunnel between Saket and Qutab Minar.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://web.archive.org/web/20100905002221/http://www.thehindu.com/news/cities/Delhi/article611319.ece",
+        "publisher": "The Hindu, 3 Sep 2010 (nine underground stations to Saket, one elevated station at Qutab Minar)"
+      },
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/SAKT",
+        "publisher": "DMRC station data (Saket: Underground)"
+      },
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/QM",
+        "publisher": "DMRC station data (Qutab Minar: Elevated)"
+      }
+    ],
+    "narration_line": "From Chandni Chowk the train stays underground, and comes up into daylight only as it nears Qutab Minar.",
+    "caveats": "Do not claim the Minar can be seen from the train or platform. That is not verified, and the station is about 1.3 km from the tower.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-04",
+    "claim": "First section: Vishwavidyalaya to Kashmere Gate, about 4 km with 4 stations (Vishwavidyalaya, Vidhan Sabha, Civil Lines, Kashmere Gate). It was the first underground section of the Delhi Metro. It was inaugurated on Sunday 19 Dec 2004 and opened to the public at 6 a.m. on 20 Dec 2004.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.tribuneindia.com/2004/20041220/main5.htm",
+        "publisher": "The Tribune, 20 Dec 2004"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Yellow_Line_(Delhi_Metro)",
+        "publisher": "Wikipedia (used only to find sources)"
+      }
+    ],
+    "narration_line": "In December 2004 my first underground metro opened, running north from Kashmere Gate to the University.",
+    "caveats": "The ceremony was on 19 Dec and public service began on 20 Dec. The report names the inaugurating official, but the film must not name or show real people.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "YL-05",
+    "claim": "Kashmere Gate to Central Secretariat, about 7 km with 6 stations (Chandni Chowk, Chawri Bazar, New Delhi, Rajiv Chowk, Patel Chowk, Central Secretariat). The ceremony was on 2 Jul 2005 and revenue service began on 3 Jul 2005.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.railwaygazette.com/news/delhi-metro-completes-line-2/29910.article",
+        "publisher": "Railway Gazette International, 1 Aug 2005"
+      },
+      {
+        "url": "https://www.tribuneindia.com/2005/20050703/delhi.htm",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "By July 2005 the line ran under Chandni Chowk and Connaught Place to Central Secretariat.",
+    "caveats": "Wikipedia lists this section as 6.62 km. I did not find an Indian newspaper archive page for 3 Jul 2005, so the date rests on the trade press, which Wikipedia agrees with.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-06",
+    "claim": "Vishwavidyalaya to Jahangirpuri, 6.36 km. GTB Nagar is underground; Model Town, Azadpur, Adarsh Nagar and Jahangirpuri are elevated. It was inaugurated on 3 Feb 2009 and opened to commuters on the morning of 4 Feb 2009.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.tribuneindia.com/2009/20090204/delhi.htm",
+        "publisher": "The Tribune, 4 Feb 2009"
+      }
+    ],
+    "narration_line": "In 2009 the line pushed north to Jahangirpuri.",
+    "caveats": "The Tribune headline says 3.36 km, but the article body and DMRC spokesperson give 6.36 km.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-07",
+    "claim": "Qutab Minar to HUDA City Centre (Gurgaon), a 14.47 km elevated corridor. It opened to the public on Monday 21 Jun 2010, with trains starting at 8 a.m. Chhatarpur was the only station not ready and opened on 26 Aug 2010 (delayed by land acquisition, and built quickly with prefabricated structural steel).",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.tribuneindia.com/2010/20100621/haryana.htm",
+        "publisher": "The Tribune, 21 Jun 2010"
+      },
+      {
+        "url": "https://www.tribuneindia.com/2010/20100623/delhi.htm",
+        "publisher": "The Tribune, 23 Jun 2010 ('newly inaugurated' line)"
+      },
+      {
+        "url": "https://web.archive.org/web/20121103054816/http://articles.timesofindia.indiatimes.com/2010-08-26/delhi/28316715_1_metro-station-cmrs-metro-rail-safety",
+        "publisher": "Times of India, 26 Aug 2010 (archived)"
+      }
+    ],
+    "narration_line": "In June 2010 the line reached Gurgaon, now Gurugram.",
+    "caveats": "For about ten weeks (21 Jun to 3 Sep 2010) this southern stretch ran on its own, not yet joined to Central Secretariat.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-08",
+    "claim": "Central Secretariat to Qutab Minar, 12.53 km. It has nine underground stations (Udyog Bhawan, now Seva Teerth; Race Course, now Lok Kalyan Marg; Jor Bagh; INA, now Dilli Haat - INA; AIIMS; Green Park; Hauz Khas; Malviya Nagar; Saket) and connects to the elevated Qutab Minar station. It was inaugurated on Friday 3 Sep 2010 and opened to the public from 3 p.m., a month before the Commonwealth Games (3 to 14 Oct 2010), creating one 45 km Jahangirpuri to Gurgaon line.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://web.archive.org/web/20100905002221/http://www.thehindu.com/news/cities/Delhi/article611319.ece",
+        "publisher": "The Hindu, 3 Sep 2010"
+      },
+      {
+        "url": "https://web.archive.org/web/20121103054816/http://articles.timesofindia.indiatimes.com/2010-08-26/delhi/28316715_1_metro-station-cmrs-metro-rail-safety",
+        "publisher": "Times of India, 26 Aug 2010 (safety inspection 30 to 31 Aug)"
+      },
+      {
+        "url": "https://www.commonwealthsport.com/commonwealth-games/delhi-2010",
+        "publisher": "Commonwealth Sport (Games dates)"
+      },
+      {
+        "url": "https://www.tribuneindia.com/2010/20100904/delhi.htm",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "In September 2010, a month before the Commonwealth Games, new tunnels joined Central Secretariat to Qutab Minar station, and one line ran from north Delhi to Gurgaon.",
+    "caveats": "Wikipedia's table says 11.76 km. Contemporary reports say 12.53 km. 'Before the Commonwealth Games' is accurate; do not say it was built for the Games without a further source.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "YL-09",
+    "claim": "Jahangirpuri to Samaypur Badli, about 4.4 km with 3 elevated stations (Haiderpur, now Haiderpur Badli Mor; Rohini Sector 18, 19; Samaypur Badli). It was flagged off on 10 Nov 2015, with commercial service from 2 p.m. that day.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.business-standard.com/article/news-ani/naidu-kejriwal-to-flag-off-jahangirpuri-samaypur-badli-extension-of-delhi-metro-115111000117_1.html",
+        "publisher": "Business Standard / ANI, 10 Nov 2015"
+      },
+      {
+        "url": "https://themetrorailguy.com/2015/11/10/delhi-metros-samaypur-badli-line-starts-commercial-operations",
+        "publisher": "The Metro Rail Guy, 10 Nov 2015 (quotes DMRC; 4.373 km)"
+      }
+    ],
+    "narration_line": "In 2015 it stretched north again, to Samaypur Badli.",
+    "caveats": "The headline names politicians; do not use their names in the film. Haiderpur Badli Mor has since become an interchange with the Magenta Line extension (DMRC lists it as 'Magenta (Ext.)').",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-10",
+    "claim": "Ridership, latest DMRC sheet (September 2026, FY 2026-27): the Yellow Line averaged 1,796,291 passenger boardings a day in Sep 2026 (53,888,744 for the month) and 1,675,589 a day for Apr to Sep 2026. The Blue Line, which DMRC reports as Lines 3 and 4 combined, was slightly higher at 1,822,894 a day in Sep 2026 and 1,689,276 for the year so far. The Yellow Line had the highest peak-hour peak-direction traffic of any line: 55,979, against 44,327 for the Blue Line. So it is not strictly 'the busiest line' by daily boardings; it is about equal with the Blue Line and carries the heaviest rush-hour load.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/documents/11907/Passenger-Journey-September2026.pdf",
+        "publisher": "DMRC, Passenger Boarding for FY 2026-27 up to Sep 2026"
+      },
+      {
+        "url": "https://backend.delhimetrorail.com/documents/10937/Passenger-Journey-May2026.pdf",
+        "publisher": "DMRC, Passenger Journey for FY 2026-27 up to May 2026 (dated 4 Jun 2026)"
+      }
+    ],
+    "narration_line": "Nearly eighteen lakh boardings a day, and at rush hour no line in my Metro carries more people in one direction.",
+    "caveats": "The September 2026 sheet counts 'Passenger Boarding'; earlier sheets counted 'Passenger Journey', so do not compare across months. Peak-hour load is measured on the first Monday of each quarter. In May 2026 the Blue Line also edged out Yellow on daily average (1,560,645 against 1,552,152). Avoid saying 'busiest line in India' or 'busiest line' without qualification.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-11",
+    "claim": "Straight-line distances from Chandni Chowk station: Chandni Chowk street about 0.27 km; Gurdwara Sis Ganj about 0.37 km; Fatehpuri Masjid 0.8 km; Red Fort nearest wall 0.66 km, centre 1.1 km; Jama Masjid 0.88 to 0.95 km. Chawri Bazar is about 0.65 km from Jama Masjid. DMRC gives the walk to Red Fort as 1.3 km, about 15 minutes.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/CHK",
+        "publisher": "DMRC station data (station serves Chandni Chowk market; Red Fort and Jama Masjid in the surroundings)"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/231/",
+        "publisher": "UNESCO World Heritage Centre, Red Fort Complex (N28 39 20, E77 14 27)"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/264863907",
+        "publisher": "OpenStreetMap (Red Fort outline; Jama Masjid relation 3926057; Chandni Chowk way 80940694)"
+      },
+      {
+        "url": "https://www.britannica.com/place/Shahjahanabad",
+        "publisher": "Britannica"
+      },
+      {
+        "url": "https://www.delhimetrorail.com/station/CHK",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "I step out at Chandni Chowk, the great bazaar of Shah Jahan's city, laid out by his daughter Jahanara. The Red Fort and the Jama Masjid are a short walk away.",
+    "caveats": "Distances are straight lines between OpenStreetMap/DMRC points; walking routes are longer. Red Fort and Jama Masjid are not 'at' the station. The Violet Line has closer stations named Lal Quila and Jama Masjid.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "YL-12",
+    "claim": "Central Secretariat station is close to the New Delhi government core. Straight-line distances: Kartavya Path (nearest point) about 0.25 km; Vijay Chowk 0.3 km; North Block about 0.5 km; South Block about 0.55 to 0.6 km; Rashtrapati Bhavan about 1.2 km (nearest edge to centre); India Gate 1.7 km. DMRC's own station description names Parliament House, Krishi Bhawan, Shastri Bhawan and India Gate as nearby.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/CTST",
+        "publisher": "DMRC station data"
+      },
+      {
+        "url": "https://www.openstreetmap.org/relation/5354966",
+        "publisher": "OpenStreetMap (Rashtrapati Bhavan; North Block 5507630; South Block 5507631; Kartavya Path ways 359757123 and 1307222666)"
+      }
+    ],
+    "narration_line": "At Central Secretariat I come up beside Kartavya Path, a few hundred metres from North and South Block, with Rashtrapati Bhavan about a kilometre up Raisina Hill.",
+    "caveats": "Rashtrapati Bhavan is a kilometre-plus walk uphill, so say 'up the hill from', not 'at'. The 13 Feb 1931 inauguration date of New Delhi is for the history thread to verify.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-13",
+    "claim": "Hauz Khas station is the weak link. It is named for the area, but the medieval tank (Hauz Khas, also called Hauz-i-Alai) is about 1.7 km away to the nearest water's edge (1.85 km to the centre), and the Hauz Khas complex is about 1.55 km away. Green Park station is actually a little closer to both (about 1.3 km). The nearest surviving stretch of Siri's wall (mapped at Shahpur Jat) is about 0.65 km from Hauz Khas station; the Siri Fort Auditorium area is about 1.15 km.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/HKS",
+        "publisher": "DMRC station data"
+      },
+      {
+        "url": "https://www.openstreetmap.org/relation/2196532",
+        "publisher": "OpenStreetMap (Hauz Khas tank water body; complex way 153152576; Siri city-wall ways 80513412, 292824628, 80513399)"
+      }
+    ],
+    "narration_line": "Hauz Khas, 'the royal tank', is named for a reservoir dug around 1300 to water the new city of Siri; it lies about two kilometres north-west of the station.",
+    "caveats": "The Siri wall segments come from OpenStreetMap city-wall features with no name tag; their location inside the Shahpur Jat area is consistent with Siri, but ASI should confirm. Do not say the station is 'at' the tank or 'beside' Siri Fort. The Khalji dates for the tank and Siri are for the history thread.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "YL-14",
+    "claim": "Qutab Minar station (elevated, opened 21 Jun 2010) is about 1.3 km in a straight line from the Qutb Minar tower; DMRC lists Mehrauli Archaeological Park as 1.2 km, about a 16-minute walk. Other straight-line distances: nearest edge of Mehrauli Archaeological Park about 0.6 km; Lal Kot wall about 1.2 km; Qila Rai Pithora (park and walls) about 0.6 to 0.9 km. Saket station is in fact closer to the Qila Rai Pithora walls (about 0.2 to 0.5 km), and Malviya Nagar is about 0.13 km from one mapped wall segment.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.delhimetrorail.com/station/QM",
+        "publisher": "DMRC station page (nearby places)"
+      },
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/QM",
+        "publisher": "DMRC station data"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/233/",
+        "publisher": "UNESCO World Heritage Centre, Qutb Minar and its Monuments (N28 31 33, E77 11 07)"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/369140381",
+        "publisher": "OpenStreetMap (Qutb Minar; Lal Kot wall 632926842; Qila Rai Pithora 632857886; Mehrauli Archaeological Park 89583607)"
+      }
+    ],
+    "narration_line": "From Qutab Minar station, the Qutb Minar, begun around 1199, is a short auto ride or about a 25-minute walk away.",
+    "caveats": "The station is not at the monument. UNESCO's coordinate for the whole complex is about 1.4 km from the station. Do not call the tower 'a short walk' from the station: it is about 1.3 km, a short ride or about a 25-minute walk.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "YL-15",
+    "claim": "Do you pass progressively older city sites riding south from Chandni Chowk? Only partly. The first leg goes forward in time: Shahjahanabad (17th century) to New Delhi (1931). From Central Secretariat southward it holds as a rough rule: New Delhi (1931), then Siri and the Hauz Khas tank (c.1300) near Hauz Khas station, then the Qutb Minar (begun 1199, UNESCO) and Lal Kot / Qila Rai Pithora near Saket and Qutab Minar. Minor exceptions exist; for example, Jahanpanah (1320s) near Malviya Nagar is younger than Siri.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station_by_line_linepage/LN2",
+        "publisher": "DMRC (station order)"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/233/",
+        "publisher": "UNESCO (Qutb Minar, 1199 to 1503)"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/231/",
+        "publisher": "UNESCO (Red Fort, palace-fort of Shahjahanabad)"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/96679975",
+        "publisher": "OpenStreetMap (Jahanpanah ruins near Malviya Nagar)"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/4102885023",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "I start in Shah Jahan's city and pass through the New Delhi of 1931; then, heading south, I pass the ruins of older Delhis, Siri and, at last, the Qutb.",
+    "caveats": "Do not narrate 'every stop takes me further back in time' starting from Chandni Chowk. New Delhi is younger than Shahjahanabad. The 'going back' only works south of Central Secretariat.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "YL-16",
+    "claim": "Rajiv Chowk, under Connaught Place's Central Park, is the Yellow Line's interchange with the Blue Line. The two stations are stacked: the Blue Line is on the upper level and the Yellow Line below. DMRC calls it one of the busiest stations on the network.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/RCK",
+        "publisher": "DMRC station data"
+      },
+      {
+        "url": "https://www.delhimetrorail.com/station/RCK",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "Under Connaught Place, at Rajiv Chowk, my yellow and blue lines cross, one above the other.",
+    "caveats": "DMRC says 'one of the busiest', not 'the busiest'. Do not claim it is the busiest.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-17",
+    "claim": "Kashmere Gate station is named after the Kashmiri Gate, the north-facing gate of Shah Jahan's walled city on the road to Kashmir, which still stands about 0.1 to 0.2 km away. The station is an interchange for the Red Line (elevated platforms) and the Yellow and Violet lines (underground).",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/place/Shahjahanabad",
+        "publisher": "Britannica (Kashmiri, Delhi, Turkman and Ajmeri gates built in Shah Jahan's reign still stand)"
+      },
+      {
+        "url": "https://www.sahapedia.org/kashmiri-gate",
+        "publisher": "Sahapedia (named because it faced north toward the road to Kashmir)"
+      },
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/KG",
+        "publisher": "DMRC station data"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/464312292",
+        "publisher": "OpenStreetMap (Kashmiri Gate)"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Kashmere_Gate_metro_station",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "Kashmere Gate is named for the gate in my old walls that faced the road to Kashmir.",
+    "caveats": "The standing structure was altered by the British (a double gateway is usually dated to about 1835) and damaged in 1857, so avoid 'the 1639 gate'. Riding south from Chandni Chowk, Kashmere Gate is one stop behind you.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-18",
+    "claim": "Lok Kalyan Marg station was called Race Course until the road was renamed. The NDMC renamed Race Course Road to Lok Kalyan Marg on 21 Sep 2016, and DMRC began renaming the station on 24 Sep 2016. The '2017' date in the brief is not supported.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.ndtv.com/delhi-news/race-course-metro-station-to-be-renamed-lok-kalyan-marg-station-1465995",
+        "publisher": "NDTV / PTI, 24 Sep 2016"
+      },
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/LKM",
+        "publisher": "DMRC station data ('formerly also known as Race Course')"
+      }
+    ],
+    "narration_line": "Lok Kalyan Marg, once called Race Course.",
+    "caveats": "PTI says the process 'initiated' on 24 Sep 2016 and signs and announcements changed gradually after that. Say '2016', or just 'once called Race Course'.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-19",
+    "claim": "Spelling: DMRC names the station 'Qutab Minar'. UNESCO and ASI call the monument 'Qutb Minar'. DMRC's own descriptive text also uses 'Qutub'.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/QM",
+        "publisher": "DMRC station data (station_name QUTAB MINAR)"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/233/",
+        "publisher": "UNESCO ('Qutb Minar and its Monuments')"
+      },
+      {
+        "url": "https://asi.nic.in/pages/WorldHeritageQutbMinar",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "Qutab Minar station, named for the Qutb Minar.",
+    "caveats": "In on-screen captions, use 'Qutab Minar' for the station and 'Qutb Minar' for the monument.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-20",
+    "claim": "Udyog Bhawan station was renamed Seva Teerth on 14 Feb 2026. DMRC's live station list now reads 'Seva Teerth (earlier Udyog Bhawan)'. Any map or caption saying 'Udyog Bhawan' is out of date.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.thestatesman.com/cities/udyog-bhawan-metro-station-renamed-seva-teerth-1503556933.html",
+        "publisher": "The Statesman, 14 Feb 2026"
+      },
+      {
+        "url": "https://www.delhimetrorail.com/line/LN2",
+        "publisher": "DMRC line page"
+      }
+    ],
+    "narration_line": "Seva Teerth (formerly Udyog Bhawan).",
+    "caveats": "The Statesman report names a living political leader; do not name or show anyone in the film.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-21",
+    "claim": "The southern terminus opened in 2010 as HUDA City Centre and was renamed Millennium City Centre Gurugram on 3 Jul 2023, after being renamed three times that day.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://www.tribuneindia.com/news/haryana/huda-city-centre-station-renamed-3rd-time-in-a-day-522518/amp",
+        "publisher": "The Tribune, 3 to 4 Jul 2023"
+      },
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/HCC",
+        "publisher": "DMRC station data (current name)"
+      }
+    ],
+    "narration_line": "All the way to Millennium City Centre in Gurugram.",
+    "caveats": "Use the current name in captions.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "YL-22",
+    "claim": "DMRC calls Hauz Khas (Yellow/Magenta interchange, 7 technical levels) its deepest station; the depth (about 29 m) is on the Magenta Line platforms, while the Yellow Line platforms are about 17 m deep.",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station/HKS",
+        "publisher": "DMRC station data"
+      },
+      {
+        "url": "https://www.asianage.com/metros/delhi/250518/some-stations-to-have-car-and-auto-drop-points.html",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "At Hauz Khas, my newer Magenta Line runs nearly thirty metres down, among the deepest stations under my streets.",
+    "caveats": "This is DMRC's own wording and the depth figure is not given. Newer Phase IV stations may be deeper. If used, attribute it: 'DMRC calls it its deepest station'.",
+    "verdicts": [
+      "confirmed",
+      "corrected"
+    ]
+  },
+  {
+    "id": "YL-23",
+    "claim": "Station coordinates: DMRC's published coordinates match OpenStreetMap to within 100 m for 30 of the 37 stations. Four DMRC coordinates appear wrong by 0.2 to 0.85 km, where OpenStreetMap and Wikidata agree with each other: Rohini Sector 18, 19 (845 m), Jahangirpuri (557 m), Adarsh Nagar (420 m; DMRC's point is the Indian Railways station) and Green Park (199 m). For those four, structured_data uses the OSM/Wikidata coordinates. New Delhi (290 m), Seva Teerth (170 m) and Vidhan Sabha (165 m) differ moderately; DMRC's values are kept for those (Wikidata agrees with DMRC for Seva Teerth and Vidhan Sabha).",
+    "year": null,
+    "topic": "yellow-line",
+    "sources": [
+      {
+        "url": "https://backend.delhimetrorail.com/api/v2/en/station_by_line_linepage/LN2",
+        "publisher": "DMRC"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/2837147020",
+        "publisher": "OpenStreetMap (station nodes, e.g. Rohini Sector 18, 19)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "Coordinates are point markers for station buildings, good to about 100 m. Do not use them for precise walking-distance claims.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "asiad82_dates",
+    "claim": "The IX Asian Games were held in Delhi from 19 November to 4 December 1982. They were the first Asian Games run by the Olympic Council of Asia. Delhi was hosting for the second time, after the first Asian Games in 1951.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://oca.asia/games/99-new-delhi-1982.html",
+        "publisher": "Olympic Council of Asia"
+      }
+    ],
+    "narration_line": "In the winter of 1982, from the nineteenth of November to the fourth of December, I hosted the Asian Games for the second time.",
+    "caveats": "One Wikipedia medal-table page gives 12 November as the start date. The OCA page, the official source, says 19 November.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "asiad82_participation",
+    "claim": "Per the OCA, 3,411 athletes from 33 National Olympic Committees (including Hong Kong, then a British territory) took part. The mascot was Appu, a young elephant. Event and sport counts differ between sources.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://oca.asia/games/99-new-delhi-1982.html",
+        "publisher": "Olympic Council of Asia"
+      }
+    ],
+    "narration_line": "Thirty-three teams came from across Asia, and a little elephant named Appu welcomed them.",
+    "caveats": "Sources disagree on the athlete and event counts. The OCA gives 3,411 athletes and 147 events. Wikipedia, citing an Indian government report that we could not open (yas.nic.in refused the connection), gives 4,595 athletes and 196 events. Say '33 nations' and leave out the athlete count.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "jln_built_for_asiad",
+    "claim": "[personal memory removed at the maker's request] It was the main stadium of the 1982 Games, and the OCA lists it with the opening ceremony on 19 November 1982. SAI itself was set up in 1984 as a successor organisation of the IX Asian Games.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://sportsauthorityofindia.gov.in/sai/stadiaJln",
+        "publisher": "Sports Authority of India"
+      },
+      {
+        "url": "https://oca.asia/games/99-new-delhi-1982.html",
+        "publisher": "Olympic Council of Asia"
+      },
+      {
+        "url": "https://amp.scroll.in/article/680435/scroll_in",
+        "publisher": "Scroll.in (Flashback 1982, 25 Sep 2014)"
+      },
+      {
+        "url": "https://sportsauthorityofindia.gov.in/sai_new/stadiaJln",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "For them I built a great new stadium on Lodhi Road and named it after Jawaharlal Nehru. On the nineteenth of November 1982, the Games opened there.",
+    "caveats": "No exact inauguration date was found. The Wikipedia infobox says 'opened 1983', which conflicts with the stadium hosting the opening ceremony in November 1982, so don't state an opening date. The 1982 capacity is also unverified. Wikipedia says 78,000 and cites the OCA, but the OCA page we opened does not give that number. Olympics.com reportedly gives 75,000 at the opening ceremony, but the page timed out and we did not open it. Today's capacity is about 60,000. Narrate 'tens of thousands', not an exact number.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "jln_later_and_status",
+    "claim": "JLN Stadium was renovated for the 2010 Commonwealth Games and has since hosted athletics, football, concerts and national ceremonies. In November 2025 the Sports Ministry proposed dismantling it and rebuilding the 102-acre site as a 'Sports City'. All India Radio reported then that the timeline 'has not yet been worked out'. We found no 2026 report of a demolition date.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://sportsauthorityofindia.gov.in/sai/stadiaJln",
+        "publisher": "Sports Authority of India"
+      },
+      {
+        "url": "https://www.newsonair.gov.in/jawaharlal-nehru-stadium-in-delhi-to-be-redeveloped-as-sports-city-sports-ministry/",
+        "publisher": "News On AIR (Prasar Bharati), 10 Nov 2025"
+      },
+      {
+        "url": "https://www.businesstoday.in/amp/india/story/jawaharlal-nehru-stadium-in-delhi-to-be-dismantled-to-make-way-for-102-acre-sports-city-say-sources-501504-2025-11-10",
+        "publisher": "Business Today, 10 Nov 2025"
+      },
+      {
+        "url": "https://www.mykhel.com/football/punjab-fc-to-play-2026-27-isl-home-matches-at-delhis-jawaharlal-nehru-stadium-football-news-453007.html",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "That stadium still stands, renewed for the 2010 Commonwealth Games, and footballers still play there.",
+    "caveats": "As of 23 Oct 2026 the redevelopment is only a proposal. Don't say the stadium is gone or being demolished.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "jln_ramlila",
+    "claim": "Ramlila and Dussehra Mela events are held on an open ground beside JLN Stadium, near the Gate No. 2 parking area on Lodhi Road. The Delhi High Court's 4 Oct 2023 judgment in W.P.(C) 10690/2023 records the petitioner's statement that it has held Ramlila and Dussehra Mela there since 2000. The exceptions were 2010-2012 (Commonwealth Games) and 2017 (U-17 FIFA World Cup). The same statement says its Ramlila won the Navbharat Times competition for Best Ramlila in South Delhi in 2007. A Division Bench judgment of 18 Dec 2025 notes that the open space next to the stadium 'is customarily used for cultural events'. A rival committee, Shree Ram Dharmik Ramlila Samiti, booked the ground in 2023.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://verdictum.in/pdf_upload/judgement-2-1548143.pdf",
+        "publisher": "Delhi High Court, W.P.(C) 10690/2023, judgment 4 Oct 2023 (copy hosted by Verdictum)"
+      },
+      {
+        "url": "https://delhihighcourt.nic.in/app/showFileJudgment/75018122025LPA6832023_132252.txt",
+        "publisher": "Delhi High Court, LPA 683/2023 etc., judgment 18 Dec 2025"
+      },
+      {
+        "url": "https://www.tribuneindia.com/news/sports/sai-dragged-to-court-for-granting-concession-for-ramlila-562494/amp",
+        "publisher": "The Tribune, 15 Nov 2023"
+      },
+      {
+        "url": "https://www.barandbench.com/news/litigation/society-moves-supreme-court-against-92-lakh-fees-for-use-of-ground-near-jln-for-ramlila-celebrations",
+        "publisher": "Bar & Bench, 17 Aug 2026"
+      },
+      {
+        "url": "https://www.thequint.com/amp/story/news/india/dussehra-mela-2022-5-best-places-to-visit-in-delhi-for-ravan-dahan-ramlila-on-dussehra",
+        "publisher": "The Quint, 3 Oct 2022"
+      }
+    ],
+    "narration_line": "[personal memory removed at the maker's request]",
+    "caveats": "Ramlila at JLN is documented from 2000 to the 2020s. We found no source for Ramlila there in the 1980s-1990s, so treat earlier years as personal memory. The 'since 2000' date is the petitioner's statement as recorded by the court ('It is stated that...'), not a finding of the court. The judgment also has a typo: it says 'Commonwealth Games in the year 2012', but the Games were in 2010. The plays are staged on a ground next to the stadium, not inside the arena. We found nothing linking Shriram Bharatiya Kala Kendra or the Lav Kush Ramlila to JLN. Search results put Lav Kush at the Red Fort grounds.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "asian_games_village",
+    "claim": "The Delhi Development Authority commissioned the Asian Games Village after a 1980 design competition. It was built in 1980-82 with 500 units, 200 townhouses and 300 apartments, laid out in shaded pedestrian lanes modelled on the traditional mohalla. The units housed athletes of the 1982 Games and were later sold to the public. It stands in South Delhi, in the Siri Fort area near Hauz Khas.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://mplus.org.hk/en/collection/archives/drawings-asian-games-village-19801982-new-delhi-india-ca32-4",
+        "publisher": "M+ museum archive, Hong Kong"
+      },
+      {
+        "url": "https://www.centrepompidou.fr/en/ressources/oeuvre/cL9Xeja",
+        "publisher": "Centre Pompidou collection"
+      },
+      {
+        "url": "https://rajrewal.in/?p=4304",
+        "publisher": "Architect's practice website"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Asian_Games_Village_(New_Delhi)",
+        "publisher": "Wikipedia (pointer only, for the Siri Fort location)"
+      }
+    ],
+    "narration_line": "Near the broken walls of my old city of Siri, I built a village of lanes and courtyards for the athletes. Families have lived there since.",
+    "caveats": "The museum and architect sources say only 'southern New Delhi'. The Siri Fort location comes from Wikipedia and secondary sources. Wikipedia also gives 700 or 853 units, which conflicts with the architect's 500. The architect is a living person, so the film must not name him. The coordinates are approximate.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "siri_fort_complex",
+    "claim": "The Siri Fort Auditorium is said to date from the 1982 Asian Games, but that rests on Wikipedia and one recollection quoted by Scroll. The Siri Fort Sports Complex was begun by the DDA in 1989, after the Games, beside the Asian Games Village and the walls of Siri.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://amp.scroll.in/article/680435/scroll_in",
+        "publisher": "Scroll.in, 25 Sep 2014"
+      },
+      {
+        "url": "https://www.dda.gov.in/siri-fort-sports-complex",
+        "publisher": "Delhi Development Authority (facility page; does not state the 1982 date)"
+      },
+      {
+        "url": "https://sportsauthorityofindia.gov.in/sai_new/stadiaIgsc",
+        "publisher": "Sports Authority of India, Indira Gandhi Sports Complex page (does not state the 1982 date)"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Siri_Fort_Auditorium",
+        "publisher": "Wikipedia (pointer)"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Indira_Gandhi_Arena",
+        "publisher": "Wikipedia (pointer)"
+      },
+      {
+        "url": "https://dda.gov.in/sites/default/files/tender/forwardauctionforsportscomplexadvertisingrights2024.pdf",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "Beside the broken walls of Siri, my medieval city, the Games left me a village of new homes, and I kept building there for years after.",
+    "caveats": "The official DDA and SAI pages we opened don't give construction years. The 1982 dates rest on Scroll.in, Wikipedia and a 2025 Hindustan Times report that we could not open (403). Narrate 'built for the Games' broadly rather than giving exact dates per building. The coordinates are approximate.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "asiad_flyovers_hotels",
+    "claim": "The Supreme Court's 1982 Asiad workers judgment lists the Asian Games projects: 'fly-overs, stadia, swimming pool, hotels and Asian Games village complex'. These were carried out by the Delhi Administration, the Delhi Development Authority and the New Delhi Municipal Committee through contractors.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://indiankanoon.org/doc/496663/",
+        "publisher": "Supreme Court of India judgment text (via Indian Kanoon)"
+      },
+      {
+        "url": "https://amp.scroll.in/article/680435/scroll_in",
+        "publisher": "Scroll.in, 25 Sep 2014"
+      }
+    ],
+    "narration_line": "For the Games, in barely three years, I grew flyovers, stadiums and hotels.",
+    "caveats": "We could not verify an exact number of Asiad flyovers. Secondary sources say 5 to 7, and the 1981 Lok Sabha replies were unreachable (eparlib refused the connection). PIB said on 11 Oct 2002 that 12 flyovers were built between 1982 and 1998, but that figure is not tied to the Asiad. Pragati Power Station is not Asiad-era: search results put its commissioning in 2002-03 (not opened), so leave it out.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "colour_tv_1982",
+    "claim": "An I&B Ministry explainer published on PIB (15 Sep 2023) says: 'The first telecast in colour took place on August 15, 1982, when the national program started.' The NIOS mass communication lesson says Doordarshan's coverage of the Ninth Asian Games was the first national coverage via the INSAT-1A satellite, and 'for the first time, the transmission was in colour'. Doordarshan had begun a colour test run on 25 April 1982. The OCA says colour TV 'was introduced in India in a big way' for the Games.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/sep/doc2023915251801.pdf",
+        "publisher": "PIB / Ministry of Information & Broadcasting, 15 Sep 2023"
+      },
+      {
+        "url": "https://digital.nios.ac.in/content/335en/335_Mass_Communication_Eng_L13.pdf",
+        "publisher": "National Institute of Open Schooling (Govt of India)"
+      },
+      {
+        "url": "https://scroll.in/video/876844/watch-on-this-day-april-25-doordarshan-began-testing-colour-television-programmes-in-india",
+        "publisher": "Scroll.in, 25 Apr 2018 (quoting Doordarshan)"
+      },
+      {
+        "url": "https://oca.asia/games/99-new-delhi-1982.html",
+        "publisher": "Olympic Council of Asia"
+      },
+      {
+        "url": "https://www.csmonitor.com/1982/0224/022437.html",
+        "publisher": "Christian Science Monitor, 24 Feb 1982"
+      }
+    ],
+    "narration_line": "That year my television learned colour, and by winter the Games came into living rooms in colour, in the homes lucky enough to own a colour set.",
+    "caveats": "Don't say the Asian Games were 'the first colour broadcast'. The first regular colour broadcast was on Independence Day, 15 Aug 1982, after a 25 April test run. The Games were the first big national event shown in colour. Colour sets were expensive in 1982, so most families watched on black-and-white sets or at a neighbour's. Avoid implying everyone saw the Games in colour.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "asiad_workers_sc",
+    "claim": "In People's Union for Democratic Rights v. Union of India (judgment of 18 Sep 1982, Justices P.N. Bhagwati and Baharul Islam), the Supreme Court found that jamadars had brought workers 'from different parts of India', particularly Rajasthan, Uttar Pradesh and Orissa, to build the Asiad projects. The workers were entitled to a minimum wage of Rs 9.25 a day, but the jamadars deducted Re 1 per day as commission. The Court held that Article 23 bars forced labour by private parties as well as the State, and that working for less than the minimum wage can amount to forced labour.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://indiankanoon.org/doc/496663/",
+        "publisher": "Supreme Court of India judgment text (via Indian Kanoon)"
+      },
+      {
+        "url": "https://www.pudr.org/publications/in-the-name-of-national-pride-blatant-violation-of-workers-rights-at-the-commonwealth-games-site/",
+        "publisher": "People's Union for Democratic Rights, 29 Apr 2009"
+      },
+      {
+        "url": "https://indianlabourarchives.org/handle/20.500.14121/1968",
+        "publisher": "Indian Labour Archives (W. Fernandes, Social Action vol. 36, 1986)"
+      }
+    ],
+    "narration_line": "My stadiums were built by hands from Rajasthan, Uttar Pradesh and Orissa, and many were paid less than the law promised. In 1982 my Supreme Court said paying below the minimum wage can be forced labour.",
+    "caveats": "Call the state 'Orissa, now Odisha' (said as a clause: the voice reads parentheses flat). Name the court: 'India's Supreme Court'. We could not verify a 1982 PUDR report titled 'The Asiad 82'. PUDR's later material says it surveyed the sites and found 'gross violations of several labour laws'. A 1990 PUDR report says '2.5 lakh workers' built the Asiad venues. That is an advocacy estimate, so treat it as approximate and attribute it. PUDR's 2009 page calls Bhagwati 'Chief Justice', but in 1982 he was a puisne judge (he became Chief Justice in 1985), so don't repeat that. The scanned Fernandes article could not be read. We found no verified death toll, so make no claim about deaths.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "asiad_workers_scale",
+    "claim": "PUDR's 1990 report on Appu Ghar says the Asiad 'bequeathed to our city magnificent stadia and fly overs' and that 'No one knows what happened to all those 2.5 lakh workers who built them.'",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://www.pudr.org/publications/appu-ghar/",
+        "publisher": "People's Union for Democratic Rights, 15 Oct 1990"
+      }
+    ],
+    "narration_line": "By one rights group's estimate, a quarter of a million workers built my Asiad, and no one knows what became of most of them.",
+    "caveats": "This is an advocacy group's estimate with no primary count behind it. If used, say 'by one estimate, a quarter of a million', or say 'hundreds of thousands' only with attribution.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "delhi_population_1981_1991",
+    "claim": "Census population of Delhi: 6,220,406 in 1981 (urban 5,768,200; rural 452,206) and 9,420,644 in 1991 (urban 8,471,625; rural 949,019). Growth over 1981-91 was 51.45%.",
+    "year": null,
+    "topic": "asiad-1982",
+    "sources": [
+      {
+        "url": "https://delhiplanning.delhi.gov.in/sites/default/files/Planning/economic-survey-2001-02/table18_1.pdf",
+        "publisher": "Government of NCT of Delhi, Economic Survey of Delhi 2001-02, Tables 18.2-18.3 (source: Census Handbook 1991, Registrar General of India)"
+      }
+    ],
+    "narration_line": "In 1981 I was six point two million people. By 1991 I was nine point four million, half again as many in ten years.",
+    "caveats": "These figures cover the whole Union Territory of Delhi, not New Delhi alone. The population grew by about half, not 'doubled'. The figures appear in the 2001-02 survey's Table 18.2, in the same PDF as Table 18.1.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "FOOD-1",
+    "claim": "After Partition, about half a million refugees came to Delhi, a significant majority from western Punjab (The Hindu, 2018). [personal memory removed at the maker's request] Some Punjabi communities were already in Delhi before 1947.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://www.thehindu.com/opinion/open-page/capital-cuisine/article24541837.ece",
+        "publisher": "The Hindu (Open Page, Shashi Bhushan Deo, 29 Jul 2018)"
+      },
+      {
+        "url": "https://in.1947Partitionarchive.org/node/1597",
+        "publisher": "1947 Partition Archive (abstract of the same Hindu piece)"
+      },
+      {
+        "url": "https://motimahal.in/?p=791",
+        "publisher": "The Wire, 14 Aug 2017, 'Partition Changed India's Food Cultures Forever' (copy hosted by Moti Mahal; thewire.in itself would not load)"
+      },
+      {
+        "url": "https://www.theweek.in/magazine/theweek/leisure/2024/12/28/from-the-kings-table-to-street-food-a-food-history-of-delhi-by-pushpesh-pant.html",
+        "publisher": "[personal memory removed at the maker's request]"
+      }
+    ],
+    "narration_line": "From 1947, families came from Lahore, Peshawar and the villages of West Punjab, and they brought their kitchens with them. [personal memory removed at the maker's request]",
+    "caveats": "The Hindu piece runs on the reader-written 'Open Page', not as a staff report. [personal memory removed at the maker's request] A 2018 Central European University master's thesis by Mohini Mehta deals with Partition and Delhi's Punjabi cuisine, but its page redirected and I could not open it.",
+    "verdicts": [
+      "confirmed",
+      "corrected"
+    ]
+  },
+  {
+    "id": "FOOD-2",
+    "claim": "[personal memory removed at the maker's request] Popular accounts (OT Eats 2025, The Better India 2022, ThePrint 2023) tie its arrival in Delhi to Partition-era migrants from Lahore, and OT Eats itself calls these stories 'many versions and folklore'. The pre-Partition-Punjab attribution to Kunal Vijayakar and the eastern-UP attribution to a Galanakis-edited 2020 volume could not be checked in the original sources, so do not use them.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://oteats.outlooktraveller.[personal memory removed at the maker's request]",
+        "publisher": "Outlook Traveller / OT Eats (Himakshi Panwar, 3 Jul 2025)"
+      },
+      {
+        "url": "https://thebetterindia.[personal memory removed at the maker's request]",
+        "publisher": "The Better India (Krystelle Dsouza, 20 Aug 2022)"
+      },
+      {
+        "url": "https://en.wikipedia.[personal memory removed at the maker's request]",
+        "publisher": "Wikipedia (used only to find the underlying sources: The Statesman 2022, Hindustan Times 2018, Galanakis 2020)"
+      },
+      {
+        "url": "https://www.hindustantimes.[personal memory removed at the maker's request]html",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "[personal memory removed at the maker's request] ",
+    "caveats": "Outlook Traveller itself calls the origin stories 'many versions and folklore'. Never say the dish was 'born' or 'introduced' in Delhi in 1947. Saying it is loved in Delhi, and that Partition-era cooks shaped how Delhi eats, is safe.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "FOOD-3",
+    "claim": "Sita Ram Diwan Chand in Paharganj traces itself to a Partition migrant from Lahore. The founding details come from the business and conflict with each other: ThePrint says a cart in Paharganj in 1947, OT Eats (citing the company website) says a bicycle in 1950 with a move to Paharganj around the 1980s, and other reports give different years and family relationships.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://theprint.[personal memory removed at the maker's request]",
+        "publisher": "ThePrint (Nutan Manmohan, 24 Jun 2023)"
+      },
+      {
+        "url": "https://oteats.outlooktraveller.[personal memory removed at the maker's request]",
+        "publisher": "Outlook Traveller / OT Eats (3 Jul 2025)"
+      }
+    ],
+    "narration_line": "People who had lost everything across the new border set up carts and stalls in my lanes, and some of those stalls still feed Delhi today.",
+    "caveats": "The founding details come from the family business. The start year differs between 1947 and 1950. The current owner is a living person, so do not name or show him or the founding family. A generic refugee cart is safer than this specific brand.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "FOOD-4",
+    "claim": "The often-repeated story that Peshori (Pishori) Lal Lamba came to Delhi after Partition and opened Kwality in Connaught Place conflicts with The Week (2018). The Week says Lamba moved from Lahore to Delhi in 1940 and started Kwality as an ice-cream parlour in the Regal building, so the restaurant predates Partition.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://www.theweek.in/leisure/lifestyle/2018/12/08/delhi-iconic-kwality-restaurant-reopens-nostalgia-drenched-makeover.amp.html",
+        "publisher": "The Week (Sneha Bhura, 8 Dec 2018)"
+      },
+      {
+        "url": "https://thebetterindia.[personal memory removed at the maker's request]",
+        "publisher": "The Better India (repeats the Partition-era version)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "This is an accuracy trap. Do not use the Kwality/Lamba Partition story in the film.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "PART-1",
+    "claim": "About half a million refugees entered Delhi after Partition, roughly 28% of the 1951 population (Bharadwaj, Khwaja & Mian 2008; Sutton 2023). Estimates of those who left range from about 329,000 Muslims (Sutton) to about 0.45 million (Bharadwaj et al.).",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://appext.hks.harvard.edu/publications/getFile.aspx?Id=308",
+        "publisher": "Bharadwaj, Khwaja & Mian, 'The Big March: Migratory Flows after the Partition of India', Harvard Kennedy School working paper RWP08-029, June 2008 (based on the 1941 and 1951 censuses)"
+      },
+      {
+        "url": "https://www.cambridge.org/core/journals/urban-history/article/masjids-monuments-and-refugees-in-the-partition-city-of-delhi-19471959/72CF91AB4678C508FE897F92284442B2",
+        "publisher": "D.R. Sutton, Urban History 50(3), 2023, Cambridge University Press"
+      },
+      {
+        "url": "https://www.thehindu.com/opinion/open-page/capital-cuisine/article24541837.ece",
+        "publisher": "The Hindu, 29 Jul 2018 ('about half-a-million refugees')"
+      }
+    ],
+    "narration_line": "In 1947 a new border cut through Punjab. Nearly half a million people walked, rode and squeezed into me, and hundreds of thousands of my own left the other way.",
+    "caveats": "These are estimates. The 1951 Census counted 'displaced persons', but I did not open the original 1951 Census volume. Say 'nearly half a million' or 'about half a million', not an exact figure. The 470,000 figure appears in a French IRD paper I did not open.",
+    "verdicts": [
+      "corrected",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "PART-2",
+    "claim": "Census figures from the Delhi government: Delhi's population was 917,939 in 1941 and 1,744,072 in 1951, a 90% rise. This is the decade of Delhi's fastest growth, which the Economic Survey of Delhi 2008-09 puts at an average 6.42% a year and attributes to large-scale migration from Pakistan after Partition.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://delhiplanning.delhi.gov.in/sites/default/files/Planning/2016-17/chapter_2.pdf",
+        "publisher": "Government of NCT of Delhi, Economic Survey of Delhi 2016-17, Ch. 2 (Census series 1901-2011)"
+      },
+      {
+        "url": "https://delhiplanning.delhi.gov.in/sites/default/files/Planning/2008-09/demographic_profile.pdf",
+        "publisher": "Government of NCT of Delhi, Economic Survey of Delhi 2008-09, Ch. 3"
+      }
+    ],
+    "narration_line": "In just ten years, between 1941 and 1951, I almost doubled, from about nine lakh people to more than seventeen lakh.",
+    "caveats": "The figures are for the whole Delhi territory, not just the city. In the PDF the table columns are misaligned, but the year-by-year sequence (1901 405,819 ... 1941 917,939; 1951 1,744,072 ... 2011 16,787,941) is clear.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "PART-3",
+    "claim": "The Ministry of Rehabilitation used Lajpat Nagar, Malviya Nagar and Kalkaji, among other South Delhi colonies, to rehouse Partition refugees, and HT 2016 also names Nizamuddin and Jangpura. Refugee camps included Kingsway, Kalkaji Mandir and other non-Muslim camps. Monument sites such as Purana Qila and Humayun's Tomb first sheltered displaced Muslims in 1947 and later housed Hindu refugees, as did Safdarjung's Tomb and Ferozshah Kotla.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://blogs.lse.ac.uk/southasia/2014/11/17/the-continuing-legacy-of-partition-in-indias-urban-spaces",
+        "publisher": "Romola Sanyal, LSE South Asia blog, 17 Nov 2014"
+      },
+      {
+        "url": "https://in.1947partitionarchive.org/node/1792",
+        "publisher": "1947 Partition Archive abstract of Hindustan Times, 'Refugee colonies changed South Delhi's face' (Rajput & Lidhoo, 2016)"
+      },
+      {
+        "url": "https://www.cambridge.org/core/journals/urban-history/article/masjids-monuments-and-refugees-in-the-partition-city-of-delhi-19471959/72CF91AB4678C508FE897F92284442B2",
+        "publisher": "Sutton, Urban History (2023): camps"
+      }
+    ],
+    "narration_line": "Tents became colonies, and colonies became home: Lajpat Nagar, Malviya Nagar, Kalkaji. My south grew out of their courage.",
+    "caveats": "Muslim refugees were also housed in camps at Purana Qila and Humayun's Tomb before many of them left for Pakistan. If the film shows those camps, do not present them as only for refugees arriving from Pakistan.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "RAM-1",
+    "claim": "Ramlila, the staged performance of the Ramayana across northern India during Dussehra (autumn), was proclaimed by UNESCO in 2005 and inscribed on the Representative List in 2008. Performances mostly end with Ravana dahan: effigies of Ravana (often with Kumbhakarna and Meghanada) are burned at dusk on Dussehra (Britannica, 'Dussehra').",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://ich.unesco.org/en/RL/ramlila-the-traditional-performance-of-the-ramayana-00110",
+        "publisher": "UNESCO Intangible Cultural Heritage"
+      },
+      {
+        "url": "https://www.britannica.com/art/Ramlila",
+        "publisher": "Britannica (topic page with an AI-generated summary; Britannica has no full article)"
+      },
+      {
+        "url": "https://www.newsonair.gov.in/dussehra-celebrated-across-delhi-with-raavan-effigies-burnt-amid-grand-festivities",
+        "publisher": "fact-check evidence"
+      },
+      {
+        "url": "https://www.britannica.com/topic/Dussehra",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "Every autumn my grounds become stages: Ram, Sita, Hanuman. And on Dussehra, at dusk, Ravan goes up in flames.",
+    "caveats": "The effigy-burning detail comes from Britannica's AI-generated summary, not a full article. It is common knowledge, but if you need a citation for it, use a newspaper report on a Delhi Ravan Dahan.",
+    "verdicts": [
+      "confirmed",
+      "corrected"
+    ]
+  },
+  {
+    "id": "RAM-2",
+    "claim": "According to William Dalrymple's 'The Last Mughal' (2006), drawing on court records (seen here only through a reader's highlight), Bahadur Shah Zafar marked Dussehra with gifts to his Hindu officers and watched the Ram Lila in the evening. Rana Safvi writes that he permitted the Ram Leela Savari procession.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://www.goodreads.com/notes/19857891-last-mughal/8135996-shobhit-shubhankar",
+        "publisher": "Text from W. Dalrymple, The Last Mughal (Bloomsbury/Penguin 2006), seen through a reader's Kindle highlights on Goodreads"
+      },
+      {
+        "url": "https://m.thewire.in/article/culture/objectors-nawazuddins-participation-ram-leela-ignorant-indias-pluralistic-traditions",
+        "publisher": "The Wire (Rana Safvi, 10 Oct 2016)"
+      },
+      {
+        "url": "https://thepatriot.in/delhi-ncr/dussehra-in-old-delhi-ramlila-traditions-that-bind-generations-76543",
+        "publisher": "The Patriot (Yusra Nazim), quoting Rana Safvi"
+      }
+    ],
+    "narration_line": "Even my last Mughal emperor, the records of his court tell us, would watch the Ram Lila on Dussehra evening.",
+    "caveats": "I read Dalrymple's sentence in a reader's highlight, not in the book. Check the page in a print copy before you put it on screen. Present it as 'the court diary says', not as a well-known founding story. Rana Safvi is a living historian: you can cite her work, but do not show or name her on screen.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "RAM-3",
+    "claim": "The founding dates of Delhi's Ramlila committees are poorly documented and the sources conflict. For the Shri Ram Lila Committee: Zafar-era registration in 1860 (Safvi 2016, no source cited), or formed in 1923 and registered in 1938 (Anand Foundation essay 2008). The 1923/1924 dates in The Patriot and Local Samosa refer to the separate Shri Dharmik Leela Committee. Ramlila Maidan reportedly took shape as a ground in the early 1930s. The earlier Yamuna-bank venue is oral history.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://m.thewire.in/article/culture/objectors-nawazuddins-participation-ram-leela-ignorant-indias-pluralistic-traditions",
+        "publisher": "The Wire (Rana Safvi, 2016)"
+      },
+      {
+        "url": "https://anandfoundation.com/the-drama-around-rama-ramlila-delhi/",
+        "publisher": "Anand Foundation (Ankit Chadha, 2008)"
+      },
+      {
+        "url": "https://www.localsamosa.com/people-culture/delhi-ramleela-has-lost-its-shared-stage-12675837",
+        "publisher": "Local Samosa (Sahil Pradhan, 19 Oct 2026)"
+      },
+      {
+        "url": "https://www.livemint.com/Leisure/TkGWeWDM2xZPAxfncEjMBL/Delhis-Belly--The-ground-beneath-her-feet.html",
+        "publisher": "Mint (Mayank Austen Soofi, 5 Apr 2014)"
+      },
+      {
+        "url": "https://thepatriot.in/delhi-ncr/dussehra-in-old-delhi-ramlila-traditions-that-bind-generations-76543",
+        "publisher": "fact-check evidence"
+      }
+    ],
+    "narration_line": "There's even a ground in me named after the play itself: Ramlila Maidan.",
+    "caveats": "Do not put a founding year or 'founded by Zafar' on screen. The 1857 legend about a procession and royal patronage is folklore unless you attribute it.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "RAM-4",
+    "claim": "Since the early 2000s, by the organiser's account in a 2019 Delhi High Court plea, the Dakshin Delhi Dharmik Ramlila Samiti has staged a Ramleela and Dussehra mela on the ground at Gate No. [personal memory removed at the maker's request] Republic World (2020) calls the JLN Ravan Dahan very popular and says it draws big South Delhi sponsors. JLN was the main stadium of the 9th Asian Games (19 Nov to 4 Dec 1982). Its role as opening venue is not stated on the OCA page.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://www.business-standard.com/article/pti-stories/hc-seeks-sai-jln-stadium-replies-on-plea-for-conducting-ramleela-dussehra-mela-119071201124_1.html",
+        "publisher": "Business Standard / PTI, 12 Jul 2019"
+      },
+      {
+        "url": "https://www.republicworld.com/lifestyle/festivals/ravan-dahan-2020-places-in-delhi-where-the-festival-will-be-celebrated.html",
+        "publisher": "Republic World, 25 Oct 2020"
+      },
+      {
+        "url": "https://oca.asia/games/99-new-delhi-1982.html",
+        "publisher": "Olympic Council of Asia, New Delhi 1982"
+      }
+    ],
+    "narration_line": "[personal memory removed at the maker's request]",
+    "caveats": "The only documented start date for a Ramlila at JLN is the early 2000s, and that comes from the organiser. [personal memory removed at the maker's request] Showing crowds is fine; do not show identifiable real people.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "FEST-1",
+    "claim": "Dussehra (Vijayadashami) 2026 fell on Tuesday 20 October 2026 (Asvina 28, Saka). It has already passed, since today is 23 Oct 2026.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://dfe.gov.in/uploads/documents/list-of-gazetted-holidays-2026.pdf",
+        "publisher": "[personal memory removed at the maker's request]No.12/2/2023-JCA of 3 Jul 2025"
+      },
+      {
+        "url": "https://www.drikpanchang.com/festivals/vijayadashami/vijayadashami-date-time.html?year=2026",
+        "publisher": "Drik Panchang (New Delhi)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The rows in the holiday PDF's scanned text are shifted by one line, but the date, Saka date and weekday for Dussehra match Drik Panchang.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "FEST-2",
+    "claim": "Diwali (Deepavali / Lakshmi Puja) 2026 falls on Sunday 8 November 2026 (Kartika 17, Saka), with Dhanteras on Friday 6 November 2026. That is 16 days from today.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://dfe.gov.in/uploads/documents/list-of-gazetted-holidays-2026.pdf",
+        "publisher": "Gazetted holidays 2026 (per DoPT OM of 3 Jul 2025)"
+      },
+      {
+        "url": "https://www.drikpanchang.com/diwali/diwali-puja-calendar.html?year=2026",
+        "publisher": "Drik Panchang (New Delhi)"
+      }
+    ],
+    "narration_line": null,
+    "caveats": "The Bhai Dooj date varies by source (10 or 11 Nov), so don't cite it.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "GAR-1",
+    "claim": "[personal memory removed at the maker's request] In the 2018 Commission survey, livelihood or employment was the main reason for 50.16% of migration and lack of educational facilities for 15.21%. 28.72% of migrants went outside the state (34.15% from Pauri). 734 villages and hamlets were depopulated after 2011. The report does not name Delhi as a destination.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://www.[personal memory removed at the maker's request]com/pdf/English%20version.pdf",
+        "publisher": "[personal memory removed at the maker's request]"
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s41027-020-00291-w",
+        "publisher": "Awasthi & Mehta, Indian Journal of Labour Economics 63 (2020), Springer"
+      },
+      {
+        "url": "https://migrationletters.com/index.php/ml/article/view/957",
+        "publisher": "V.P. Sati, Migration Letters 18(3), 2021"
+      }
+    ],
+    "narration_line": "For generations, young men came down from these hills for work: into the army, into government offices, anywhere a steady wage could be found. [personal memory removed at the maker's request]",
+    "caveats": "[personal memory removed at the maker's request] The commission's report does not name Delhi as a destination. [personal memory removed at the maker's request] Do not use it.",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "GAR-2",
+    "claim": "[personal memory removed at the maker's request] 106,728 had lived in Delhi for 20 years or more.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://web.archive.org/web/20241227081440/https://censusindia.gov.in/nada/index.php/catalog/10753",
+        "publisher": "Census of India 2011, D-02 NCT of Delhi (archived copy of the ORGI catalogue; the live censusindia.gov.in site failed with a revoked-certificate error)"
+      }
+    ],
+    "narration_line": "[personal memory removed at the maker's request]",
+    "caveats": "This counts people by their previous place of residence, not by origin or heritage. [personal memory removed at the maker's request] ",
+    "verdicts": [
+      "corrected",
+      "corrected"
+    ]
+  },
+  {
+    "id": "MIG-1",
+    "claim": "Census 2011 table D-02 (NCT of Delhi): 7,224,514 people were migrants by last residence, 43.0% of Delhi's 16,787,941. Of these, 6,330,065 (37.7%) had last lived in another Indian state and 177,900 abroad, together 38.8%. The largest groups came from Uttar Pradesh (2,854,297), Bihar (1,106,629) and Haryana (666,331). 117,433 people listed Pakistan as their last residence, 105,121 of them resident in Delhi for 20+ years, consistent with the Partition generation. Secondary reporting of the place-of-birth table (Hindu BusinessLine via Drishti IAS, 2019) says nearly 40% of Delhiites in 2011 were born outside the city.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://web.archive.org/web/20241227081440/https://censusindia.gov.in/nada/index.php/catalog/10753",
+        "publisher": "Census of India 2011, D-02 NCT of Delhi (archived ORGI catalogue; data file DS-0700-D02-MDDS.XLSX)"
+      },
+      {
+        "url": "https://delhiplanning.delhi.gov.in/sites/default/files/Planning/2016-17/chapter_2.pdf",
+        "publisher": "GNCTD Economic Survey 2016-17 (2011 population 16,787,941)"
+      },
+      {
+        "url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/migrants-and-jobs",
+        "publisher": "Drishti IAS, 29 Jul 2019, citing Hindu BusinessLine"
+      }
+    ],
+    "narration_line": "By 2011, about four in ten of the people living in me had last lived in another state, or another country. I have always been a city of arrivals.",
+    "caveats": "I could not open the place-of-birth table (D-01) for Delhi, so 'born outside Delhi' rests on secondary reporting ('nearly 40%'). The exact figures above are by last residence. On screen, say 'about four in ten' and footnote it as 'Census 2011, D-02, migrants by last residence'. Treat the IMPRI '51% of 13.9 million' figure as a mistake: 13.9 million is roughly Delhi's 2001 population, not 2011.",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  },
+  {
+    "id": "MIG-2",
+    "claim": "Workers came from other states to build the 1982 Asian Games projects (flyovers, stadiums, a swimming pool, hotels). In People's Union for Democratic Rights v. Union of India (18 Sep 1982), the Supreme Court recorded that contractors' agents (jamadars) recruited workers from Rajasthan, Uttar Pradesh and Orissa. The case dealt with minimum wages and the Inter-State Migrant Workmen Act.",
+    "year": null,
+    "topic": "food-festival-migration",
+    "sources": [
+      {
+        "url": "https://indiankanoon.org/doc/496663/",
+        "publisher": "Supreme Court of India judgment, AIR 1982 SC 1473 (Indian Kanoon)"
+      },
+      {
+        "url": "https://oca.asia/games/99-new-delhi-1982.html",
+        "publisher": "Olympic Council of Asia (Games dates 19 Nov to 4 Dec 1982)"
+      }
+    ],
+    "narration_line": "In 1982, as stadiums and flyovers rose for the Asian Games, workers poured in from Rajasthan, Uttar Pradesh, Odisha and beyond. And they kept coming.",
+    "caveats": "Do not say the family from the hills worked on Asiad sites. [personal memory removed at the maker's request]",
+    "verdicts": [
+      "confirmed",
+      "confirmed"
+    ]
+  }
+]

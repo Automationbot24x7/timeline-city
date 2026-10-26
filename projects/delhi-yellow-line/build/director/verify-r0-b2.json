@@ -1,0 +1,223 @@
+{
+  "stage": "verify",
+  "step": "verify-r0-b2",
+  "cached": true,
+  "model": "minimax/minimax-m3.1-flash",
+  "reasoning_effort": "medium",
+  "at": "2026-10-25T17:28:20.163Z",
+  "seconds": 30.7,
+  "usage": {
+    "prompt_tokens": 6336,
+    "completion_tokens": 1877,
+    "reasoning_tokens": 961
+  },
+  "cost_usd": 0.00208,
+  "attempts": [
+    {
+      "usage": {
+        "completion_tokens": 1877,
+        "completion_tokens_details": {
+          "reasoning_tokens": 961
+        },
+        "prompt_tokens": 6336,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 128
+        },
+        "total_tokens": 8213
+      },
+      "finish_reason": "tool_calls",
+      "reasoning": "Let me judge each claim.\n\nc09: Jantar Mantar at Patel Chowk completed 1724. Excerpts: src_034 \"Completed in 1724\", src_035 inception 1724. \"At Patel Chowk\" — map data shows Jantar Mantar 0.52 km from Patel Chowk station. That's supported (nearby). Supported.\n\nc10: observatory of huge stone instruments for measuring the heavens. src_034: \"observatory, designed to be used with the naked eye\", \"instruments for measuring the harmony of the heavens\", 13 architectural astronomical instruments. \"huge stone\" — the excerpt says \"architectural astronomical instruments\" but \"stone\"? src_034 title says Jantar Mantar... \"giant instruments\"? The claim says \"huge stone instruments\". Excerpt doesn't say stone explicitly. Hmm, \"It consists of 13 architectural astronomical instruments\" — no stone. Wikipedia article mentions Samrat Yantra etc. Stone not supported. Partially. Also \"measuring the heavens\" is close to \"measuring the harmony of the heavens\". I'd say partial due to \"huge stone\".\n\nc11: New Delhi formally inaugurated as capital on 13 February 1931 by the Viceroy. Supported. Caveat fact_098 says Britannica says only \"formally dedicated in 1931\", exact day comes from PTI citing Delhi Archives. The claim as written includes the exact date; cited sources give date with attribution. Not a caveat violation since claim states exact date and it's supported by cited PTI sources. The caveat describes the sourcing, not forbidding the date. Hmm, caveat_098 prescribes wording? It says \"The exact day comes from PTI, which cites the Delhi Archives.\" That's provenance info, not wording prescription. So no violation. Supported.\n\nc12: Up to 23,000 labourers worked on the Viceroy's House at peak of construction. Supported.\n\nc13: Viceroy's House is now Rashtrapati Bhavan. Supported.\n\nc14: About half a million refugees entered Delhi after Partition. Supported (with qualifier \"about\").\n\nc15: Many of Delhi's Muslims left the city after Partition. src_174, 281, 282 support (329,000–0.45 million left). Supported.\n\nScenes:\ns05: \"Still forward in time.\" factual? \"At Patel Chowk, Jantar Mantar rises in stone: giant instruments for the sky, finished in 1724.\" — \"rises in stone\" — stone material not supported by excerpts? c10 covers \"huge stone\". So partially covered by c10. Should I flag uncovered_fact? The claim c10 covers stone. So covered. \"giant instruments\" - claim c10 says huge. OK. Scene s05 clean-ish. But \"rises in stone\" — \"in stone\" material claim covered by c10 partially. I'd list scene issue other/uncovered_fact for \"stone\" material? The claim c10 does cover \"huge stone instruments\". I'll leave s05 clean, or note partial. I'll add an issue \"other\" for \"rises in stone\" material not supported? Better: mark as uncovered_fact with note that material \"stone\" isn't in excerpts... but c10 includes stone. It's covered by c10 which is partial. I'll not flag; keep clean. Hmm, but \"Still forward in time\" is temporal direction — fine.\n\ns06: narration \"In 1931 the Viceroy inaugurated this capital.\" covered by c11. \"Tens of thousands of labourers raised the Viceroy's House, now Rashtrapati Bhavan\" — \"Tens of thousands\" is a rounding of \"up to 23,000\" — fine-ish; \"up to 23,000\" is a max, \"tens of thousands\" is a rounding — arguably fine. Covered by c12/c13. Scene clean? \"In 1931 the Viceroy inaugurated this capital\" — supported. Clean.\n\ns07: \"About half a million refugees came to me, and many of my own left the other way.\" Personal narration voice; covered by c14/c15. \"I remember canvas and dust\" — figurative. Clean.\n\nAlso note claim c15 says \"so people moved in both directions\" — fact_104 says narrate both directions; fine.\n\nc10 quote: \"'Jantar Mantar' means 'instruments for measuring the harmony of the heavens'\".\n\nFlags: c09 — no. Unsupported superlative? no. c09 \"completed in 1724\" - fine.\n\nLet me submit."
+    }
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a strict, fair fact-checker for a short documentary film. You judge each claim ONLY against the source excerpts cited for it, as if you knew nothing else about the world. Your own knowledge never makes a claim supported, and never makes it unsupported: only the cited excerpts count.\n\nYou are careful with small words that change meaning: \"built for\" is not \"opened before\"; \"one of the busiest\" is not \"the busiest\"; \"about 1.3 km from\" is not \"beside\"; \"nearly half a million\" is not \"half a million\"; a traditional or legendary date is not a historical one. Figurative or poetic language (\"my lanes remember\", \"I keep rebuilding myself\") is not a factual claim.\n\nYou answer only by calling the function you are given, with a verdict for every claim id you were shown.\n"
+    },
+    {
+      "role": "user",
+      "content": "# Fact-check 7 claims (call `submit_verdicts`)\n\n## How to judge each claim, only against the excerpts it cites\n- **supported**: every part of the claim (each date, number, name, place, cause, \"first\", superlative, distance) is stated in, or directly implied by, at least one cited excerpt.\n- **partial**: the core is supported, but some detail is missing from the cited excerpts, is stronger than they say, or differs slightly from them.\n- **unsupported**: the cited excerpts do not say it, or they contradict it.\n- **quote**: the shortest exact quote from a cited excerpt that supports the claim, copied character for character, or \"\" if there is none.\n- **note**: one sentence: what exactly is or is not supported.\n[personal memory removed at the maker's request]\n- **flags**, any that apply: living_person (names or clearly identifies a living person), national_border (describes a national border as a map or line on the land today; history such as \"a new border cut through Punjab\" is fine), unsupported_superlative (biggest, oldest, first, only, busiest... without excerpt support), caveat_violation (breaks one of the editor's caveats below), false_time_order (claims each stop is older than the last).\n\n## Also read each scene's narration as a whole\nFor each scene, list its issues: uncovered_fact (a factual statement in the narration that none of the scene's claims covers), living_person, national_border, unsupported_superlative, caveat_violation, false_time_order, or other. Quote the words in `text`. Return an empty list for a clean scene. Poetry and figures of speech are not facts.\n\n## The editor's caveats for the facts in play (breaking one is a caveat_violation)\nWhen a caveat prescribes wording (\"say 'about half a million', not an exact figure\", \"around 1199\"), narration or a claim that drops the qualifier (\"half a million\", \"begun in 1199\") is a caveat_violation, even if the core fact is supported.\n- fact_095: The king is a historical (not living) figure. The crowd figure is approximate.\n- fact_096: The page does not give an exact decision date.\n- fact_097: The 31 December 1926 naming date comes from a PTI report and is not in an archival source I opened. Baker designed the Secretariat blocks and Parliament House (SRDC).\n- fact_098: Britannica says only 'formally dedicated in 1931'. The exact day comes from PTI, which cites the Delhi Archives.\n- fact_099: The official figures are rounded.\n- fact_100: Some tourism pages say it 'commemorates 90,000' soldiers, but the inscribed names number more than 13,000 (CWGC via Britannica). The Amar Jawan Jyoti flame (1972) was merged with the National War Memorial flame in 2022.\n- fact_103: These are historians' estimates published in a book excerpt, not census counts. Treat them as approximate ('around').\n- fact_104: The same source says more than half of those resettled moved into properties left behind by departing Muslims. Narrate both directions of the migration.\n- fact_152: The Hindu piece runs on the reader-written 'Open Page', not as a staff report. [personal memory removed at the maker's request] A 2018 Central European University master's thesis by Mohini Mehta deals with Partition and Delhi's Punjabi cuisine, but its page redirected and I could not open it.\n- fact_156: These are estimates. The 1951 Census counted 'displaced persons', but I did not open the original 1951 Census volume. Say 'nearly half a million' or 'about half a million', not an exact figure. The 470,000 figure appears in a French IRD paper I did not open.\n- fact_158: Muslim refugees were also housed in camps at Purana Qila and Humayun's Tomb before many of them left for Pakistan. If the film shows those camps, do not present them as only for refugees arriving from Pakistan.\n\n[personal memory removed at the maker's request] ## Scenes and their claims\n### s05 (map) narration: \"Still forward in time. At Patel Chowk, Jantar Mantar rises in stone: giant instruments for the sky, finished in 1724.\"\n- c09 [fact] \"Jantar Mantar, at Patel Chowk, was completed in 1724.\" cites: src_034, src_035\n- c10 [fact] \"Jantar Mantar is an observatory of huge stone instruments for measuring the heavens.\" cites: src_034\n\n### s06 (map) narration: \"Forward, now. In 1931 the Viceroy inaugurated this capital. Tens of thousands of labourers raised the Viceroy's House, now Rashtrapati Bhavan.\"\n- c11 [fact] \"New Delhi was formally inaugurated as the capital on 13 February 1931 by the Viceroy.\" cites: src_165, src_163, src_167, src_168\n- c12 [fact] \"Up to 23,000 labourers worked on the Viceroy's House at the peak of construction.\" cites: src_162, src_169, src_170\n- c13 [fact] \"The Viceroy's House is now Rashtrapati Bhavan.\" cites: src_162, src_043\n\n### s07 (illustration) narration: \"About half a million refugees came to me, and many of my own left the other way. I remember canvas and dust.\"\n- c14 [fact] \"About half a million refugees entered Delhi after Partition.\" cites: src_281, src_282, src_271\n- c15 [fact] \"Many of Delhi's Muslims left the city after Partition, so people moved in both directions.\" cites: src_174, src_281, src_282\n\n## Map data [osm_ride] (the map shown on screen; always evidence for station names, their order along the ride, and which sites lie near which station and how far, cited or not)\nThe Yellow Line as mapped in OpenStreetMap, ridden in this order (km along the line): Chandni Chowk 0; Chawri Bazaar 1.098; New Delhi 1.838; Rajiv Chowk 3.075; Patel Chowk 4.303; Central Secretariat 5.127; Seva Teerth (formerly Udyog Bhawan) 5.837; Lok Kalyan Marg (formerly Race Course) 7.191; Jor Bagh 8.407; Dilli Haat - INA 9.832; A.I.I.M.S. (formerly AIIMS) 10.657; Green Park 11.649; Hauz Khas 13.204; Malviya Nagar 14.921; Saket 15.918; Qutab Minar 17.739. Ride length 17.739 km. Near Chandni Chowk station (straight-line distance): Red Fort 1.09 km, Old Delhi 0.49 km, Salimgarh Fort 1.25 km, Kashmiri Gate 0.95 km. Near Chawri Bazaar station (straight-line distance): Jama Masjid, Delhi 0.7 km, Delhi Gate 1.64 km, Ghalib ki Haveli 0.58 km, Akbarabadi Mosque 1.11 km. Near New Delhi station (straight-line distance): Khooni Darwaza 1.97 km, Qadam Sharif 1.27 km, Ajmeri Gate 0.33 km, Jhandewalan Temple 1.92 km. Near Rajiv Chowk station (straight-line distance): National Archives of India 0.54 km, Agrasen ki Baoli 0.92 km, Hanuman Temple, Connaught Place 0.52 km, Gurdwara Mata Sundri 1.43 km. Near Patel Chowk station (straight-line distance): Jantar Mantar 0.52 km, Sacred Heart Cathedral, New Delhi 0.96 km, Gurudwara Bangla Sahib 0.64 km, Laxminarayan Temple 1.83 km. Near Central Secretariat station (straight-line distance): Rashtrapati Bhavan 1.26 km, India Gate 1.71 km, Old Parliament House 0.43 km, Secretariat Building 0.64 km. Near Seva Teerth station (straight-line distance): National Museum 0.78 km, Sunehri Bagh Mosque 0.09 km. Near Lok Kalyan Marg station (straight-line distance): Gandhi Smriti 0.6 km, Teen Murti Bhavan 1.35 km, Tomb of Sikandar Lodi 1.03 km, Bara Gumbad 1.02 km. Near Jor Bagh station (straight-line distance): Tomb of Safdar Jang 0.36 km, Tomb of Mirza Najaf Khan 0.64 km, Tomb of Mohammed Shah 0.75 km. Near Dilli Haat - INA station (straight-line distance): Dilli Haat 0.14 km, Tomb of Darya Khan 0.75 km, Kala Gumbad 1.05 km, Bhura gumbad 1.15 km. Near A.I.I.M.S. station (straight-line distance): Moth Ki Masjid 1.1 km. Near Green Park station (straight-line distance): Siri Fort 1.87 km, Barakhamba 0.73 km, Jagannath Temple 0.84 km, Biran ka Gumbad 0.47 km. Near Hauz Khas station (straight-line distance): Hauz Khas Complex 1.63 km, Chor Minar 0.39 km, Begampuri Mosque 0.57 km, Bijay Mandal 0.38 km. Near Malviya Nagar station (straight-line distance): Khirki Masjid 1.48 km. Near Saket station (straight-line distance): Qila Rai Pithora 0.84 km. Near Qutab Minar station (straight-line distance): Qutb Minar 1.28 km, Iron pillar of Delhi 1.32 km, Qutb complex 1.3 km, Jamali Kamali Mosque and Tomb 0.77 km.\n\n## Cited excerpts\n[src_034] Wikipedia: Jantar Mantar, New Delhi\n  The Jantar Mantar in New Delhi is an observatory, designed to be used with the naked eye. It is one of five Jantar Mantars in India. \"Jantar Mantar\" means 'instruments for measuring the harmony of the heavens'. It consists of 13 architectural astronomical instruments. The site is one of five built by Sawai Jai Singh of Jaipur, from 1723 onwards, revising the calendar and astronomical tables. Jai Singh, born in 1688 into a royal Rajput family that ruled the regional kingdom, was born into an era of education that maintained a keen interest in astronomy. There is a plaque fixed on one of the structures in the Jantar Mantar observatory in New Delhi that was placed there in 1910 mistakenly dating the construction of the complex to the year 1710. Later research, though, suggests 1724 as the actual year of construction. It is 723 feet (220 m) above sea level. The primary purpose of the observatory was to compile astronomical tables, and to predict the times and movements of the Sun, Moon and planets. Some of these purposes nowadays would be classified as astronomy. Completed in 1724, the Delhi Jantar Mantar had decayed considerably by the time of the 1857 uprising. The Ram Yantra, the Samrat Yantra, the Jai Prakash Yantra and the Misra Yantra are the distinct instruments of Jantar Mantar. The most famous of these structures, the Jaipur, had also deteriorated by the end of the nineteenth century until in 1901 when Maharaja Ram Singh set out to restore the instrument.\n[src_035] Wikidata: Jantar Mantar (Q2045115)\n  Jantar Mantar (Wikidata Q2045115): historical place in New Delhi. Instance of: Jantar Mantar. Inception (P571): 1724. Heritage designation (P1435): World Heritage Site; Monument of National Importance; NDMC Heritage Building Grade I. Coordinates: 28.6271° N, 77.2165° E. English Wikipedia article: Jantar Mantar, New Delhi. Wikipedia language editions (sitelinks): 20.\n[src_165] Outlook India: India's Capital, New Delhi, Was Inaugurated 91 Years Ago | Outlook India\n  Claims from the project's curated facts file, each checked against this source (Outlook India (PTI)): [col-06] Architects Sir Edwin Lutyens and Sir Herbert Baker designed New Delhi, with Lutyens as the key planner. Construction began in 1912 about 5 km south of the old city centre. King George V named the new imperial city 'New Delhi' on 31 December 1926. [col-07] Viceroy Lord Irwin formally inaugurated New Delhi as India's capital on 13 February 1931. The ceremonies ran for about a week from 10 February, and during that week he unveiled four red sandstone Dominion Columns, gifts from Australia, Canada, New Zealand and South Africa. [col-09] India Gate, originally the All India War Memorial, is a sandstone arch about 42 m high designed by Lutyens for the Imperial War Graves Commission. It honours troops of British India who died in 1914-1919, including in the Third Afghan War. The Duke of Connaught laid its cornerstone in 1921, Lord Irwin dedicated it on 12 February 1931, and more than 13,000 soldiers' names are inscribed on it.\n[src_163] Britannica: Britannica: britannica.com/place/New-Delhi\n  Claims from the project's curated facts file, each checked against this source (Encyclopaedia Britannica): [col-04] At the Delhi Durbar of 12 December 1911, held to mark the coronation of King George V and witnessed by around one lakh (100,000) people, it was announced that British India's capital would move from Calcutta to Delhi. [col-06] Architects Sir Edwin Lutyens and Sir Herbert Baker designed New Delhi, with Lutyens as the key planner. Construction began in 1912 about 5 km south of the old city centre. King George V named the new imperial city 'New Delhi' on 31 December 1926. [col-07] Viceroy Lord Irwin formally inaugurated New Delhi as India's capital on 13 February 1931. The ceremonies ran for about a week from 10 February, and during that week he unveiled four red sandstone Dominion Columns, gifts from Australia, Canada, New Zealand and South Africa.\n[src_167] thepatriot.in: Irwin and the making of New Delhi\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [col-07] Viceroy Lord Irwin formally inaugurated New Delhi as India's capital on 13 February 1931. The ceremonies ran for about a week from 10 February, and during that week he unveiled four red sandstone Dominion Columns, gifts from Australia, Canada, New Zealand and South Africa.\n[src_168] archivesearch.lib.cam.ac.uk: archivesearch.lib.cam.ac.uk: archivesearch.lib.cam.ac.uk/repositories/19/archival_objects/378636\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [col-07] Viceroy Lord Irwin formally inaugurated New Delhi as India's capital on 13 February 1931. The ceremonies ran for about a week from 10 February, and during that week he unveiled four red sandstone Dominion Columns, gifts from Australia, Canada, New Zealand and South Africa.\n[src_162] Rashtrapati Bhavan: ABOUT US | Welcome to RASHTRAPATI BHAVAN - The Office and Residence of the President of India\n  Claims from the project's curated facts file, each checked against this source (Rashtrapati Bhavan (President's Secretariat, Govt of India)): [col-04] At the Delhi Durbar of 12 December 1911, held to mark the coronation of King George V and witnessed by around one lakh (100,000) people, it was announced that British India's capital would move from Calcutta to Delhi. [col-05] The first choice for the new capital was in the north, near Kingsway Camp. Lutyens and his colleagues found that site highly vulnerable to Yamuna floods, so the government chose Raisina Hill in the south, with high ground and better drainage, for the Viceroy's House. [col-08] Rashtrapati Bhavan, built as the Viceroy's House to Lutyens's H-shaped plan, has about 340 rooms on four floors. It used some 700 million bricks, and up to 23,000 labourers worked on it at the peak of construction. Building took more than 17 years, and Viceroy Irwin became its first occupant in 1929.\n[src_169] victorianweb.org: The Viceroy's House (Rashtrapati Bhavan), by E. L. Lutyens: Part I\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [col-08] Rashtrapati Bhavan, built as the Viceroy's House to Lutyens's H-shaped plan, has about 340 rooms on four floors. It used some 700 million bricks, and up to 23,000 labourers worked on it at the peak of construction. Building took more than 17 years, and Viceroy Irwin became its first occupant in 1929.\n[src_170] victorianweb.org: The Viceroy's House (Rashtrapati Bhavan), by E. L. Lutyens: Part I\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [col-08] Rashtrapati Bhavan, built as the Viceroy's House to Lutyens's H-shaped plan, has about 340 rooms on four floors. It used some 700 million bricks, and up to 23,000 labourers worked on it at the peak of construction. Building took more than 17 years, and Viceroy Irwin became its first occupant in 1929.\n[src_043] Wikipedia: Rashtrapati Bhavan\n  The Rashtrapati Bhavan (ISO: Rāṣṭrapati Bhavana; lit. 'President's House'), formerly Viceroy's House (1931–1947) and Government House (1947–1950) is the official residence of the President of India, located at the western end of Rajpath, Raisina Hill in New Delhi. The building was designed by Edwin Lutyens and Herbert Baker in Delhi Order based on Indo-Saracenic architecture. The construction began in 1912 and the building was completed in 1929. The building, initially known as Viceroy's House, housed the Viceroy of India from 1931 until India's independence. After Independence, it briefly served as the Government House, housing the Governor General of India from 1947 to 1950. … The main building is spread across four floors and a basement, consisting of 340 rooms and featuring a total of 2.50-kilometre-long corridors, spread across a floor area of 200,000 square metres (2,200,000 sq ft), including the President's official residence, reception halls, guest rooms and offices. It is situated in a 320 acres (130 hectares) presidential estate that includes gardens, open spaces, residences for security and staff, stables, offices and other utilities. With over 200,000 square metres (2,200,000 sq ft) of total usable floor area of the H-shaped main building, the Rashtrapati Bhavan is the largest official residence by total floor area of any head of state in the world, followed by, the Istana Nurul Iman in Brunei and the Quirinal Palace in Italy.\n[src_281] Bharadwaj: Bharadwaj: appext.hks.harvard.edu/publications/getFile.aspx?Id=308\n  Claims from the project's curated facts file, each checked against this source (Bharadwaj, Khwaja & Mian, 'The Big March: Migratory Flows after the Partition of India', Harvard Kennedy School working paper RWP08-029, June 2008 (based on the 1941 and 1951 censuses)): [PART-1] About half a million refugees entered Delhi after Partition, roughly 28% of the 1951 population (Bharadwaj, Khwaja & Mian 2008; Sutton 2023). Estimates of those who left range from about 329,000 Muslims (Sutton) to about 0.45 million (Bharadwaj et al.).\n[src_282] D.R. Sutton: Masjids, monuments and refugees in the Partition city of Delhi, 1947–1959 | Urban History | Cambridge Core\n  Claims from the project's curated facts file, each checked against this source (D.R. Sutton, Urban History 50(3), 2023, Cambridge University Press): [PART-1] About half a million refugees entered Delhi after Partition, roughly 28% of the 1951 population (Bharadwaj, Khwaja & Mian 2008; Sutton 2023). Estimates of those who left range from about 329,000 Muslims (Sutton) to about 0.45 million (Bharadwaj et al.). [PART-3] The Ministry of Rehabilitation used Lajpat Nagar, Malviya Nagar and Kalkaji, among other South Delhi colonies, to rehouse Partition refugees, and HT 2016 also names Nizamuddin and Jangpura. Refugee camps included Kingsway, Kalkaji Mandir and other non-Muslim camps. Monument sites such as Purana Qila and Humayun's Tomb first sheltered displaced Muslims in 1947 and later housed Hindu refugees, as did Safdarjung's Tomb and Ferozshah Kotla.\n[src_271] The Hindu: Capital cuisine - The Hindu\n  Claims from the project's curated facts file, each checked against this source (The Hindu (Open Page, Shashi Bhushan Deo, 29 Jul 2018)): [FOOD-1] After Partition, about half a million refugees came to Delhi, a significant majority from western Punjab (The Hindu, 2018). [personal memory removed at the maker's request] Some Punjabi communities were already in Delhi before 1947. [PART-1] About half a million refugees entered Delhi after Partition, roughly 28% of the 1951 population (Bharadwaj, Khwaja & Mian 2008; Sutton 2023). Estimates of those who left range from about 329,000 Muslims (Sutton) to about 0.45 million (Bharadwaj et al.).\n[src_174] The Wire: How Partition Reshaped Delhi's Demography, Language and Culture - The Wire\n  Claims from the project's curated facts file, each checked against this source (The Wire (excerpt from 'The Shortest History of Delhi', Pan Macmillan 2026, citing historian V.N. Datta)): [mod-03] About 330,000 of Delhi's Muslims left after Partition, and between 1947 and 1950 roughly half a million Hindu and Sikh refugees, mostly Punjabi-speaking, arrived. Kingsway Camp, on the old durbar grounds, became the largest refugee camp, a tented city said to have sheltered as many as 300,000 people over time (other accounts give more than 35,000 at any one time). [mod-04] A new Ministry of Rehabilitation resettled nearly 300,000 people by the end of 1950, more than half of them in homes left behind by departing Muslims. New colonies were laid out, many named after independence leaders, among them Lajpat Nagar, Malviya Nagar, Tilak Nagar, Patel Nagar and Rajendra Nagar, with others such as Vijay Nagar in the north. Older neighbourhoods such as Jangpura and Bhogal also took in refugees. The colonies were planned with their own markets, schools, temples and gurdwaras.\n"
+    }
+  ],
+  "tool": {
+    "name": "submit_verdicts",
+    "description": "Submit a verdict for every claim and the issues of every scene.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "unsupported"
+                ]
+              },
+              "note": {
+                "type": "string",
+                "description": "What exactly is or is not supported."
+              },
+              "quote": {
+                "type": "string",
+                "description": "The shortest exact quote from a cited excerpt that supports the claim, or \"\"."
+              },
+              "flags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "living_person",
+                    "national_border",
+                    "unsupported_superlative",
+                    "caveat_violation",
+                    "false_time_order"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "note",
+              "quote",
+              "flags"
+            ]
+          }
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scene_id": {
+                "type": "string"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "uncovered_fact",
+                        "living_person",
+                        "national_border",
+                        "unsupported_superlative",
+                        "caveat_violation",
+                        "false_time_order",
+                        "other"
+                      ]
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "The words in the narration."
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "text",
+                    "note"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "scene_id",
+              "issues"
+            ]
+          }
+        }
+      },
+      "required": [
+        "claims",
+        "scenes"
+      ]
+    }
+  },
+  "response": {
+    "claims": [
+      {
+        "id": "c09",
+        "status": "supported",
+        "note": "Wikipedia states 'Completed in 1724' and Wikidata gives inception 1724; the map shows Jantar Mantar 0.52 km from Patel Chowk station, so the location is accurate.",
+        "quote": "Completed in 1724, the Delhi Jantar Mantar had decayed considerably by the time of the 1857 uprising.",
+        "flags": []
+      },
+      {
+        "id": "c10",
+        "status": "partial",
+        "note": "The excerpt supports an observatory of astronomical instruments 'for measuring the harmony of the heavens', but it never describes them as huge or made of stone.",
+        "quote": "\"Jantar Mantar\" means 'instruments for measuring the harmony of the heavens'. It consists of 13 architectural astronomical instruments.",
+        "flags": []
+      },
+      {
+        "id": "c11",
+        "status": "supported",
+        "note": "Multiple cited sources (including Outlook India/PTI and Britannica) state that Viceroy Lord Irwin formally inaugurated New Delhi as the capital on 13 February 1931.",
+        "quote": "Viceroy Lord Irwin formally inaugurated New Delhi as India's capital on 13 February 1931.",
+        "flags": []
+      },
+      {
+        "id": "c12",
+        "status": "supported",
+        "note": "The cited excerpts state that up to 23,000 labourers worked on it at the peak of construction.",
+        "quote": "up to 23,000 labourers worked on it at the peak of construction",
+        "flags": []
+      },
+      {
+        "id": "c13",
+        "status": "supported",
+        "note": "Rashtrapati Bhavan's own site describes it as built as the Viceroy's House, and Wikipedia confirms it was formerly Viceroy's House.",
+        "quote": "Rashtrapati Bhavan, built as the Viceroy's House to Lutyens's H-shaped plan",
+        "flags": []
+      },
+      {
+        "id": "c14",
+        "status": "supported",
+        "note": "The cited sources state about half a million refugees entered Delhi after Partition; the narration and claim keep the 'about' qualifier as the caveat requires.",
+        "quote": "About half a million refugees entered Delhi after Partition, roughly 28% of the 1951 population",
+        "flags": []
+      },
+      {
+        "id": "c15",
+        "status": "supported",
+        "note": "The cited sources give estimates of those who left, from about 329,000 to about 0.45 million Muslims, and the claim cites both directions of movement.",
+        "quote": "Estimates of those who left range from about 329,000 Muslims (Sutton) to about 0.45 million (Bharadwaj et al.).",
+        "flags": []
+      }
+    ],
+    "scenes": [
+      {
+        "scene_id": "s05",
+        "issues": [
+          {
+            "type": "other",
+            "text": "rises in stone",
+            "note": "The narration's description of Jantar Mantar as stone and its instruments as giant is not stated in the cited excerpts (covered only partially by c10)."
+          }
+        ]
+      },
+      {
+        "scene_id": "s06",
+        "issues": []
+      },
+      {
+        "scene_id": "s07",
+        "issues": []
+      }
+    ]
+  }
+}

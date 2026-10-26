@@ -1,0 +1,178 @@
+{
+  "stage": "verify",
+  "step": "verify-r3-b1",
+  "cached": false,
+  "model": "minimax/minimax-m3.1-flash",
+  "reasoning_effort": "medium",
+  "at": "2026-10-25T17:33:09.264Z",
+  "seconds": 3.8,
+  "usage": {
+    "prompt_tokens": 3990,
+    "completion_tokens": 881,
+    "reasoning_tokens": 462
+  },
+  "cost_usd": 0.00113,
+  "attempts": [
+    {
+      "usage": {
+        "completion_tokens": 881,
+        "completion_tokens_details": {
+          "reasoning_tokens": 462
+        },
+        "prompt_tokens": 3990,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1280
+        },
+        "total_tokens": 4871
+      },
+      "finish_reason": "tool_calls",
+      "reasoning": "Let's evaluate.\n\nc28: \"by 2011 about four in ten people living there had last lived in another state or country.\" Excerpts: 38.8% last lived in another Indian state or abroad. \"About four in ten\" — caveat fact_167 says on screen say 'about four in ten' and footnote as 'Census 2011, D-02, migrants by last residence'. So the claim matches. Note the caveat says figures by last residence; claim says \"had last lived in another state or country\" — correct. Supported.\n\nc29: \"After Partition, new colonies were laid out for refugees with their own markets, schools, temples and gurdwaras, and many of Delhi's own Muslims left in the other direction, more than half of those resettled by the Ministry of Rehabilitation going into homes left behind by departing Muslims.\" Excerpts support: mod-04 colonies planned with own markets, schools, temples, gurdwaras; resettled nearly 300,000, more than half in homes left behind by departing Muslims; mod-03 ~330,000 Muslims left. \"After Partition\" — yes, 1947-1950. Supported. Caveat fact_104 requires narrating both directions — the claim does. Supported.\n\n[personal memory removed at the maker's request] Supported.\n\nScene s14: narration \"Ride on, traveller. A city of arrivals: colonies for those who came, my own leaving the other way. [personal memory removed at the maker's request] Any uncovered facts? \"my own leaving the other way\" - figurative, refers to Muslims leaving; covered by c29. No superlatives. No national border. Clean. Possibly \"A city of arrivals\" is figurative/general, supported by c28.\n\nAny living_person? No names.\n\nSo scenes: s14 empty list.\n\nAlso note the narration includes \"mine is the best\" — opinion, fine."
+    }
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a strict, fair fact-checker for a short documentary film. You judge each claim ONLY against the source excerpts cited for it, as if you knew nothing else about the world. Your own knowledge never makes a claim supported, and never makes it unsupported: only the cited excerpts count.\n\nYou are careful with small words that change meaning: \"built for\" is not \"opened before\"; \"one of the busiest\" is not \"the busiest\"; \"about 1.3 km from\" is not \"beside\"; \"nearly half a million\" is not \"half a million\"; a traditional or legendary date is not a historical one. Figurative or poetic language (\"my lanes remember\", \"I keep rebuilding myself\") is not a factual claim.\n\nYou answer only by calling the function you are given, with a verdict for every claim id you were shown.\n"
+    },
+    {
+      "role": "user",
+      "content": "# Fact-check 3 claims (call `submit_verdicts`)\n\n## How to judge each claim, only against the excerpts it cites\n- **supported**: every part of the claim (each date, number, name, place, cause, \"first\", superlative, distance) is stated in, or directly implied by, at least one cited excerpt.\n- **partial**: the core is supported, but some detail is missing from the cited excerpts, is stronger than they say, or differs slightly from them.\n- **unsupported**: the cited excerpts do not say it, or they contradict it.\n- **quote**: the shortest exact quote from a cited excerpt that supports the claim, copied character for character, or \"\" if there is none.\n- **note**: one sentence: what exactly is or is not supported.\n[personal memory removed at the maker's request]\n- **flags**, any that apply: living_person (names or clearly identifies a living person), national_border (describes a national border as a map or line on the land today; history such as \"a new border cut through Punjab\" is fine), unsupported_superlative (biggest, oldest, first, only, busiest... without excerpt support), caveat_violation (breaks one of the editor's caveats below), false_time_order (claims each stop is older than the last).\n\n## Also read each scene's narration as a whole\nFor each scene, list its issues: uncovered_fact (a factual statement in the narration that none of the scene's claims covers), living_person, national_border, unsupported_superlative, caveat_violation, false_time_order, or other. Quote the words in `text`. Return an empty list for a clean scene. Poetry and figures of speech are not facts.\n\n## The editor's caveats for the facts in play (breaking one is a caveat_violation)\nWhen a caveat prescribes wording (\"say 'about half a million', not an exact figure\", \"around 1199\"), narration or a claim that drops the qualifier (\"half a million\", \"begun in 1199\") is a caveat_violation, even if the core fact is supported.\n- fact_103: These are historians' estimates published in a book excerpt, not census counts. Treat them as approximate ('around').\n- fact_104: The same source says more than half of those resettled moved into properties left behind by departing Muslims. Narrate both directions of the migration.\n- fact_153: Outlook Traveller itself calls the origin stories 'many versions and folklore'. Never say the dish was 'born' or 'introduced' in Delhi in 1947. Saying it is loved in Delhi, and that Partition-era cooks shaped how Delhi eats, is safe.\n- fact_166: This counts people by their previous place of residence, not by origin or heritage. [personal memory removed at the maker's request] - fact_167: I could not open the place-of-birth table (D-01) for Delhi, so 'born outside Delhi' rests on secondary reporting ('nearly 40%'). The exact figures above are by last residence. On screen, say 'about four in ten' and footnote it as 'Census 2011, D-02, migrants by last residence'. Treat the IMPRI '51% of 13.9 million' figure as a mistake: 13.9 million is roughly Delhi's 2001 population, not 2011.\n\n[personal memory removed at the maker's request] ## Scenes and their claims\n### s14 (end) narration: \"Ride on, traveller. A city of arrivals: colonies for those who came, my own leaving the other way. [personal memory removed at the maker's request]\n- c28 [fact] \"Delhi is a city of arrivals: by 2011 about four in ten people living there had last lived in another state or country.\" cites: src_306, src_307\n- c29 [fact] \"After Partition, new colonies were laid out for refugees with their own markets, schools, temples and gurdwaras, and many of Delhi's own Muslims left in the other direction, more than half of those resettled by the Ministry of Rehabilitation going into homes left behind by departing Muslims.\" cites: src_174, src_177\n[personal memory removed at the maker's request]\n\n## Map data [osm_ride] (the map shown on screen; always evidence for station names, their order along the ride, and which sites lie near which station and how far, cited or not)\nThe Yellow Line as mapped in OpenStreetMap, ridden in this order (km along the line): Chandni Chowk 0; Chawri Bazaar 1.098; New Delhi 1.838; Rajiv Chowk 3.075; Patel Chowk 4.303; Central Secretariat 5.127; Seva Teerth (formerly Udyog Bhawan) 5.837; Lok Kalyan Marg (formerly Race Course) 7.191; Jor Bagh 8.407; Dilli Haat - INA 9.832; A.I.I.M.S. (formerly AIIMS) 10.657; Green Park 11.649; Hauz Khas 13.204; Malviya Nagar 14.921; Saket 15.918; Qutab Minar 17.739. Ride length 17.739 km. Near Chandni Chowk station (straight-line distance): Red Fort 1.09 km, Old Delhi 0.49 km, Salimgarh Fort 1.25 km, Kashmiri Gate 0.95 km. Near Chawri Bazaar station (straight-line distance): Jama Masjid, Delhi 0.7 km, Delhi Gate 1.64 km, Ghalib ki Haveli 0.58 km, Akbarabadi Mosque 1.11 km. Near New Delhi station (straight-line distance): Khooni Darwaza 1.97 km, Qadam Sharif 1.27 km, Ajmeri Gate 0.33 km, Jhandewalan Temple 1.92 km. Near Rajiv Chowk station (straight-line distance): National Archives of India 0.54 km, Agrasen ki Baoli 0.92 km, Hanuman Temple, Connaught Place 0.52 km, Gurdwara Mata Sundri 1.43 km. Near Patel Chowk station (straight-line distance): Jantar Mantar 0.52 km, Sacred Heart Cathedral, New Delhi 0.96 km, Gurudwara Bangla Sahib 0.64 km, Laxminarayan Temple 1.83 km. Near Central Secretariat station (straight-line distance): Rashtrapati Bhavan 1.26 km, India Gate 1.71 km, Old Parliament House 0.43 km, Secretariat Building 0.64 km. Near Seva Teerth station (straight-line distance): National Museum 0.78 km, Sunehri Bagh Mosque 0.09 km. Near Lok Kalyan Marg station (straight-line distance): Gandhi Smriti 0.6 km, Teen Murti Bhavan 1.35 km, Tomb of Sikandar Lodi 1.03 km, Bara Gumbad 1.02 km. Near Jor Bagh station (straight-line distance): Tomb of Safdar Jang 0.36 km, Tomb of Mirza Najaf Khan 0.64 km, Tomb of Mohammed Shah 0.75 km. Near Dilli Haat - INA station (straight-line distance): Dilli Haat 0.14 km, Tomb of Darya Khan 0.75 km, Kala Gumbad 1.05 km, Bhura gumbad 1.15 km. Near A.I.I.M.S. station (straight-line distance): Moth Ki Masjid 1.1 km. Near Green Park station (straight-line distance): Siri Fort 1.87 km, Barakhamba 0.73 km, Jagannath Temple 0.84 km, Biran ka Gumbad 0.47 km. Near Hauz Khas station (straight-line distance): Hauz Khas Complex 1.63 km, Chor Minar 0.39 km, Begampuri Mosque 0.57 km, Bijay Mandal 0.38 km. Near Malviya Nagar station (straight-line distance): Khirki Masjid 1.48 km. Near Saket station (straight-line distance): Qila Rai Pithora 0.84 km. Near Qutab Minar station (straight-line distance): Qutb Minar 1.28 km, Iron pillar of Delhi 1.32 km, Qutb complex 1.3 km, Jamali Kamali Mosque and Tomb 0.77 km.\n\n## Cited excerpts\n[src_306] Census of India 2011: India - D-02: Migrants classified by place of last residence, sex and duration of residence in place of enumeration, NCT of Delhi - 2011\n  Claims from the project's curated facts file, each checked against this source (Census of India 2011, D-02 NCT of Delhi (archived copy of the ORGI catalogue; the live censusindia.gov.[personal memory removed at the maker's request] 106,728 had lived in Delhi for 20 years or more. [MIG-1] Census 2011 table D-02 (NCT of Delhi): 7,224,514 people were migrants by last residence, 43.0% of Delhi's 16,787,941. Of these, 6,330,065 (37.7%) had last lived in another Indian state and 177,900 abroad, together 38.8%. The largest groups came from Uttar Pradesh (2,854,297), Bihar (1,106,629) and Haryana (666,331). 117,433 people listed Pakistan as their last residence, 105,121 of them resident in Delhi for 20+ years, consistent with the Partition generation. Secondary reporting of the place-of-birth table (Hindu BusinessLine via Drishti IAS, 2019) says nearly 40% of Delhiites in 2011 were born outside the city.\n[src_307] Drishti IAS: Migrants and Jobs - Drishiti IAS\n  Claims from the project's curated facts file, each checked against this source (Drishti IAS, 29 Jul 2019, citing Hindu BusinessLine): [MIG-1] Census 2011 table D-02 (NCT of Delhi): 7,224,514 people were migrants by last residence, 43.0% of Delhi's 16,787,941. Of these, 6,330,065 (37.7%) had last lived in another Indian state and 177,900 abroad, together 38.8%. The largest groups came from Uttar Pradesh (2,854,297), Bihar (1,106,629) and Haryana (666,331). 117,433 people listed Pakistan as their last residence, 105,121 of them resident in Delhi for 20+ years, consistent with the Partition generation. Secondary reporting of the place-of-birth table (Hindu BusinessLine via Drishti IAS, 2019) says nearly 40% of Delhiites in 2011 were born outside the city.\n[src_174] The Wire: How Partition Reshaped Delhi's Demography, Language and Culture - The Wire\n  Claims from the project's curated facts file, each checked against this source (The Wire (excerpt from 'The Shortest History of Delhi', Pan Macmillan 2026, citing historian V.N. Datta)): [mod-03] About 330,000 of Delhi's Muslims left after Partition, and between 1947 and 1950 roughly half a million Hindu and Sikh refugees, mostly Punjabi-speaking, arrived. Kingsway Camp, on the old durbar grounds, became the largest refugee camp, a tented city said to have sheltered as many as 300,000 people over time (other accounts give more than 35,000 at any one time). [mod-04] A new Ministry of Rehabilitation resettled nearly 300,000 people by the end of 1950, more than half of them in homes left behind by departing Muslims. New colonies were laid out, many named after independence leaders, among them Lajpat Nagar, Malviya Nagar, Tilak Nagar, Patel Nagar and Rajendra Nagar, with others such as Vijay Nagar in the north. Older neighbourhoods such as Jangpura and Bhogal also took in refugees. The colonies were planned with their own markets, schools, temples and gurdwaras.\n[src_177] Wikipedia: Jangpura - Wikipedia\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [mod-04] A new Ministry of Rehabilitation resettled nearly 300,000 people by the end of 1950, more than half of them in homes left behind by departing Muslims. New colonies were laid out, many named after independence leaders, among them Lajpat Nagar, Malviya Nagar, Tilak Nagar, Patel Nagar and Rajendra Nagar, with others such as Vijay Nagar in the north. Older neighbourhoods such as Jangpura and Bhogal also took in refugees. The colonies were planned with their own markets, schools, temples and gurdwaras.\n"
+    }
+  ],
+  "tool": {
+    "name": "submit_verdicts",
+    "description": "Submit a verdict for every claim and the issues of every scene.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "unsupported"
+                ]
+              },
+              "note": {
+                "type": "string",
+                "description": "What exactly is or is not supported."
+              },
+              "quote": {
+                "type": "string",
+                "description": "The shortest exact quote from a cited excerpt that supports the claim, or \"\"."
+              },
+              "flags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "living_person",
+                    "national_border",
+                    "unsupported_superlative",
+                    "caveat_violation",
+                    "false_time_order"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "note",
+              "quote",
+              "flags"
+            ]
+          }
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scene_id": {
+                "type": "string"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "uncovered_fact",
+                        "living_person",
+                        "national_border",
+                        "unsupported_superlative",
+                        "caveat_violation",
+                        "false_time_order",
+                        "other"
+                      ]
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "The words in the narration."
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "text",
+                    "note"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "scene_id",
+              "issues"
+            ]
+          }
+        }
+      },
+      "required": [
+        "claims",
+        "scenes"
+      ]
+    }
+  },
+  "response": {
+    "claims": [
+      {
+        "id": "c28",
+        "status": "supported",
+        "note": "The excerpts state 38.8% of Delhi residents were migrants by last residence from another Indian state or abroad, which the claim renders as 'about four in ten', matching the caveat's prescribed wording and framing (last residence, 2011).",
+        "quote": "6,330,065 (37.7%) had last lived in another Indian state and 177,900 abroad, together 38.8%"
+      },
+      {
+        "id": "c29",
+        "status": "supported",
+        "note": "The excerpts support the colonies planned with their own markets, schools, temples and gurdwaras, the Ministry of Rehabilitation resettling nearly 300,000 by end-1950 with more than half in homes left behind by departing Muslims, and roughly 330,000 Muslims leaving after Partition, so both directions of migration are narrated.",
+        "quote": "more than half of them in homes left behind by departing Muslims. New colonies were laid out"
+      },
+      {
+        "id": "c30",
+        "status": "supported",
+        "note": "[personal memory removed at the maker's request]",
+        "quote": "[personal memory removed at the maker's request]"
+      }
+    ],
+    "scenes": [
+      {
+        "scene_id": "s14",
+        "issues": []
+      }
+    ]
+  }
+}

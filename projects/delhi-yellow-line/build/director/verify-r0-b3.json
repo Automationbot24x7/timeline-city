@@ -1,0 +1,216 @@
+{
+  "stage": "verify",
+  "step": "verify-r0-b3",
+  "cached": true,
+  "model": "minimax/minimax-m3.1-flash",
+  "reasoning_effort": "medium",
+  "at": "2026-10-25T17:28:31.355Z",
+  "seconds": 11.2,
+  "usage": {
+    "prompt_tokens": 6424,
+    "completion_tokens": 1868,
+    "reasoning_tokens": 1099
+  },
+  "cost_usd": 0.00208,
+  "attempts": [
+    {
+      "usage": {
+        "completion_tokens": 1868,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1099
+        },
+        "prompt_tokens": 6424,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1280
+        },
+        "total_tokens": 8292
+      },
+      "finish_reason": "tool_calls",
+      "reasoning": "Let me judge each claim.\n\nc16: \"Malviya Nagar was one of the new colonies laid out after Partition for refugees.\" Sources support: new colonies laid out including Malviya Nagar; resettled refugees. Supported. Quote: \"New colonies were laid out, many named after independence leaders, among them Lajpat Nagar, Malviya Nagar\" — that plus \"resettled nearly 300,000 people\". Supported.\n\nc17: \"The new colonies were planned with their own markets, schools, temples and gurdwaras.\" Directly stated: \"The colonies were planned with their own markets, schools, temples and gurdwaras.\" Supported.\n\nc18: \"From Chandni Chowk to Saket the Yellow Line runs underground, and the train comes up into daylight only as it nears Qutab Minar.\" Excerpt: \"Riding south, the whole stretch from Chandni Chowk to Saket is underground. Qutab Minar is the first elevated station going south, so the train comes out of the tunnel between Saket and Qutab Minar.\" Supported. Note map data: \"Qutab Minar\" is the station name per DMRC, but caveat fact_135 says on-screen captions use 'Qutab Minar' for station and 'Qutb Minar' for monument. In narration, c18 says \"nears Qutab Minar\" — ambiguous; the claim says \"comes up into daylight only as it nears Qutab Minar\" — that could refer to monument. The train emerges between Saket and Qutab Minar station. Hmm, the claim refers to Qutab Minar (station) — since train emerges between Saket and Qutab Minar station. That's supported. Fine, no caveat violation since narration in s09 says \"The train now comes up into daylight.\" — no spelling issue there.\n\nc19: \"The Qutb Minar was begun around 1199 by Qutb ud-Din Aibak.\" Supported; caveat says say \"around 1199\" — claim says \"around 1199\". Supported.\n\nc20: \"Iltutmish completed the Qutb Minar.\" Supported.\n\nc21: \"Iltutmish made Delhi the capital of the sultanate.\" Supported: \"Iltutmish also made Delhi the sultanate's capital.\"\n\nScenes:\ns08 narration: \"Malviya Nagar was one of the new colonies: tents, then markets, schools, temples and gurdwaras.\" The \"tents\" part — refugee camps tented city (Kingsway Camp). Claim c17 covers markets, schools, temples, gurdwaras but not tents. \"tents\" for Malviya Nagar colony specifically? Excerpts say Malviya Nagar was populated by refugees in 1950s; tents not stated for Malviya Nagar. Kingsway Camp became tented city. Is \"tents\" an uncovered fact? Arguably the narration implies Malviya Nagar started as tents. Not covered by claims. Hmm, it's a factual statement \"tents\" — uncovered_fact. I'd flag it as uncovered_fact (tents). Though one might argue refugee colonies started as tents — sources: \"Kingsway Camp ... became the largest refugee camp, a tented city\". Not Malviya Nagar. I'll flag uncovered_fact with text \"tents\".\n\nAlso s08 narration: \"one of the new colonies\" is covered by c16.\n\ns09 narration: \"Here I turn the clock back. The train now comes up into daylight.\" The map scene: \"turn the clock back\" - fine. Train comes up into daylight covered by c18. Clean? Map data shows Qutab Minar station is last; the train comes up out of tunnel between Saket and Qutab Minar — fine. Any issue? Possibly nothing.\n\ns10 narration: \"Qutb Minar was begun around 1199 by Qutb ud-Din Aibak and finished by Iltutmish, who made Delhi his capital.\" Caveat fact_072: say 'around 1199' in narration — narration says \"around 1199\". OK. Caveat: UNESCO's construction span 1199-1503 due to repairs. Fine. Note also narration mentions \"his capital\" — Iltutmish made Delhi the sultanate's capital; \"made Delhi his capital\" fine.\n\nIs there a caveat about Iltutmish \"finished\" vs \"completed\"? Fine.\n\nSo s10 clean.\n\nFlags for claims: c19 names Qutb ud-Din Aibak and Iltutmish — historical, not living. No flags.\n\nFor c16-c21 quotes exact.\n\nc18 quote: \"Riding south, the whole stretch from Chandni Chowk to Saket is underground. Qutab Minar is the first elevated station going south, so the train comes out of the tunnel between Saket and Qutab Minar.\" — quote needs to be shortest exact quote; fine.\n\nNow s09: is there any concern? Narration \"Here I turn the clock back.\" figurative, fine.\n\nAlso check s08 caveat fact_104/103: not about these. fact_174 says ~half a million arrived; narration doesn't give numbers. Fine.\n\nSubmit."
+    }
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a strict, fair fact-checker for a short documentary film. You judge each claim ONLY against the source excerpts cited for it, as if you knew nothing else about the world. Your own knowledge never makes a claim supported, and never makes it unsupported: only the cited excerpts count.\n\nYou are careful with small words that change meaning: \"built for\" is not \"opened before\"; \"one of the busiest\" is not \"the busiest\"; \"about 1.3 km from\" is not \"beside\"; \"nearly half a million\" is not \"half a million\"; a traditional or legendary date is not a historical one. Figurative or poetic language (\"my lanes remember\", \"I keep rebuilding myself\") is not a factual claim.\n\nYou answer only by calling the function you are given, with a verdict for every claim id you were shown.\n"
+    },
+    {
+      "role": "user",
+      "content": "# Fact-check 6 claims (call `submit_verdicts`)\n\n## How to judge each claim, only against the excerpts it cites\n- **supported**: every part of the claim (each date, number, name, place, cause, \"first\", superlative, distance) is stated in, or directly implied by, at least one cited excerpt.\n- **partial**: the core is supported, but some detail is missing from the cited excerpts, is stronger than they say, or differs slightly from them.\n- **unsupported**: the cited excerpts do not say it, or they contradict it.\n- **quote**: the shortest exact quote from a cited excerpt that supports the claim, copied character for character, or \"\" if there is none.\n- **note**: one sentence: what exactly is or is not supported.\n[personal memory removed at the maker's request]\n- **flags**, any that apply: living_person (names or clearly identifies a living person), national_border (describes a national border as a map or line on the land today; history such as \"a new border cut through Punjab\" is fine), unsupported_superlative (biggest, oldest, first, only, busiest... without excerpt support), caveat_violation (breaks one of the editor's caveats below), false_time_order (claims each stop is older than the last).\n\n## Also read each scene's narration as a whole\nFor each scene, list its issues: uncovered_fact (a factual statement in the narration that none of the scene's claims covers), living_person, national_border, unsupported_superlative, caveat_violation, false_time_order, or other. Quote the words in `text`. Return an empty list for a clean scene. Poetry and figures of speech are not facts.\n\n## The editor's caveats for the facts in play (breaking one is a caveat_violation)\nWhen a caveat prescribes wording (\"say 'about half a million', not an exact figure\", \"around 1199\"), narration or a claim that drops the qualifier (\"half a million\", \"begun in 1199\") is a caveat_violation, even if the core fact is supported.\n- fact_068: Most scholars accept Chandra = Chandragupta II, but it is an identification. Udayagiri as the original site, and Anangpal Tomar as the person who moved it, are probable rather than proven. Delhi Tourism says 'perhaps'.\n- fact_072: The start date is approximate: say 'around 1199' in narration and 'c. 1199' on screen, never 'in 1199'. UNESCO's text gives the construction span as 1199-1503 because it includes later repairs. Height figures vary slightly between sources (72.5 m is the UNESCO and Britannica figure).\n- fact_073: None significant.\n- fact_103: These are historians' estimates published in a book excerpt, not census counts. Treat them as approximate ('around').\n- fact_104: The same source says more than half of those resettled moved into properties left behind by departing Muslims. Narrate both directions of the migration.\n- fact_118: DMRC's data feed tags Azadpur 'Underground', but that refers to its Pink Line platforms. DMRC's own description and the 2009 Tribune report both say the Yellow Line platforms at Azadpur are elevated.\n- fact_119: Do not claim the Minar can be seen from the train or platform. That is not verified, and the station is about 1.3 km from the tower.\n- fact_124: Wikipedia's table says 11.76 km. Contemporary reports say 12.53 km. 'Before the Commonwealth Games' is accurate; do not say it was built for the Games without a further source.\n- fact_130: The station is not at the monument. UNESCO's coordinate for the whole complex is about 1.4 km from the station. Do not call the tower 'a short walk' from the station: it is about 1.3 km, a short ride or about a 25-minute walk.\n- fact_135: In on-screen captions, use 'Qutab Minar' for the station and 'Qutb Minar' for the monument.\n- fact_158: Muslim refugees were also housed in camps at Purana Qila and Humayun's Tomb before many of them left for Pakistan. If the film shows those camps, do not present them as only for refugees arriving from Pakistan.\n\n[personal memory removed at the maker's request] ## Scenes and their claims\n### s08 (map) narration: \"Malviya Nagar was one of the new colonies: tents, then markets, schools, temples and gurdwaras.\"\n- c16 [fact] \"Malviya Nagar was one of the new colonies laid out after Partition for refugees.\" cites: src_174, src_285, src_286, src_088\n- c17 [fact] \"The new colonies were planned with their own markets, schools, temples and gurdwaras.\" cites: src_174, src_177\n\n### s09 (map) narration: \"Here I turn the clock back. The train now comes up into daylight.\"\n- c18 [fact] \"From Chandni Chowk to Saket the Yellow Line runs underground, and the train comes up into daylight only as it nears Qutab Minar.\" cites: src_196, src_197, src_199\n\n### s10 (map) narration: \"Qutb Minar was begun around 1199 by Qutb ud-Din Aibak and finished by Iltutmish, who made Delhi his capital.\"\n- c19 [fact] \"The Qutb Minar was begun around 1199 by Qutb ud-Din Aibak.\" cites: src_118, src_122, src_123, src_124, src_125\n- c20 [fact] \"Iltutmish completed the Qutb Minar.\" cites: src_118, src_123\n- c21 [fact] \"Iltutmish made Delhi the capital of the sultanate.\" cites: src_118, src_122\n\n## Map data [osm_ride] (the map shown on screen; always evidence for station names, their order along the ride, and which sites lie near which station and how far, cited or not)\nThe Yellow Line as mapped in OpenStreetMap, ridden in this order (km along the line): Chandni Chowk 0; Chawri Bazaar 1.098; New Delhi 1.838; Rajiv Chowk 3.075; Patel Chowk 4.303; Central Secretariat 5.127; Seva Teerth (formerly Udyog Bhawan) 5.837; Lok Kalyan Marg (formerly Race Course) 7.191; Jor Bagh 8.407; Dilli Haat - INA 9.832; A.I.I.M.S. (formerly AIIMS) 10.657; Green Park 11.649; Hauz Khas 13.204; Malviya Nagar 14.921; Saket 15.918; Qutab Minar 17.739. Ride length 17.739 km. Near Chandni Chowk station (straight-line distance): Red Fort 1.09 km, Old Delhi 0.49 km, Salimgarh Fort 1.25 km, Kashmiri Gate 0.95 km. Near Chawri Bazaar station (straight-line distance): Jama Masjid, Delhi 0.7 km, Delhi Gate 1.64 km, Ghalib ki Haveli 0.58 km, Akbarabadi Mosque 1.11 km. Near New Delhi station (straight-line distance): Khooni Darwaza 1.97 km, Qadam Sharif 1.27 km, Ajmeri Gate 0.33 km, Jhandewalan Temple 1.92 km. Near Rajiv Chowk station (straight-line distance): National Archives of India 0.54 km, Agrasen ki Baoli 0.92 km, Hanuman Temple, Connaught Place 0.52 km, Gurdwara Mata Sundri 1.43 km. Near Patel Chowk station (straight-line distance): Jantar Mantar 0.52 km, Sacred Heart Cathedral, New Delhi 0.96 km, Gurudwara Bangla Sahib 0.64 km, Laxminarayan Temple 1.83 km. Near Central Secretariat station (straight-line distance): Rashtrapati Bhavan 1.26 km, India Gate 1.71 km, Old Parliament House 0.43 km, Secretariat Building 0.64 km. Near Seva Teerth station (straight-line distance): National Museum 0.78 km, Sunehri Bagh Mosque 0.09 km. Near Lok Kalyan Marg station (straight-line distance): Gandhi Smriti 0.6 km, Teen Murti Bhavan 1.35 km, Tomb of Sikandar Lodi 1.03 km, Bara Gumbad 1.02 km. Near Jor Bagh station (straight-line distance): Tomb of Safdar Jang 0.36 km, Tomb of Mirza Najaf Khan 0.64 km, Tomb of Mohammed Shah 0.75 km. Near Dilli Haat - INA station (straight-line distance): Dilli Haat 0.14 km, Tomb of Darya Khan 0.75 km, Kala Gumbad 1.05 km, Bhura gumbad 1.15 km. Near A.I.I.M.S. station (straight-line distance): Moth Ki Masjid 1.1 km. Near Green Park station (straight-line distance): Siri Fort 1.87 km, Barakhamba 0.73 km, Jagannath Temple 0.84 km, Biran ka Gumbad 0.47 km. Near Hauz Khas station (straight-line distance): Hauz Khas Complex 1.63 km, Chor Minar 0.39 km, Begampuri Mosque 0.57 km, Bijay Mandal 0.38 km. Near Malviya Nagar station (straight-line distance): Khirki Masjid 1.48 km. Near Saket station (straight-line distance): Qila Rai Pithora 0.84 km. Near Qutab Minar station (straight-line distance): Qutb Minar 1.28 km, Iron pillar of Delhi 1.32 km, Qutb complex 1.3 km, Jamali Kamali Mosque and Tomb 0.77 km.\n\n## Cited excerpts\n[src_174] The Wire: How Partition Reshaped Delhi's Demography, Language and Culture - The Wire\n  Claims from the project's curated facts file, each checked against this source (The Wire (excerpt from 'The Shortest History of Delhi', Pan Macmillan 2026, citing historian V.N. Datta)): [mod-03] About 330,000 of Delhi's Muslims left after Partition, and between 1947 and 1950 roughly half a million Hindu and Sikh refugees, mostly Punjabi-speaking, arrived. Kingsway Camp, on the old durbar grounds, became the largest refugee camp, a tented city said to have sheltered as many as 300,000 people over time (other accounts give more than 35,000 at any one time). [mod-04] A new Ministry of Rehabilitation resettled nearly 300,000 people by the end of 1950, more than half of them in homes left behind by departing Muslims. New colonies were laid out, many named after independence leaders, among them Lajpat Nagar, Malviya Nagar, Tilak Nagar, Patel Nagar and Rajendra Nagar, with others such as Vijay Nagar in the north. Older neighbourhoods such as Jangpura and Bhogal also took in refugees. The colonies were planned with their own markets, schools, temples and gurdwaras.\n[src_285] Romola Sanyal: The continuing legacy of partition in India’s urban spaces - South Asia @ LSE\n  Claims from the project's curated facts file, each checked against this source (Romola Sanyal, LSE South Asia blog, 17 Nov 2014): [PART-3] The Ministry of Rehabilitation used Lajpat Nagar, Malviya Nagar and Kalkaji, among other South Delhi colonies, to rehouse Partition refugees, and HT 2016 also names Nizamuddin and Jangpura. Refugee camps included Kingsway, Kalkaji Mandir and other non-Muslim camps. Monument sites such as Purana Qila and Humayun's Tomb first sheltered displaced Muslims in 1947 and later housed Hindu refugees, as did Safdarjung's Tomb and Ferozshah Kotla.\n[src_286] in.1947partitionarchive.org: Refugee colonies changed South Delhi’s face | www.1947partitionarchive.org\n  Claims from the project's curated facts file, each checked against this source (1947 Partition Archive abstract of Hindustan Times, 'Refugee colonies changed South Delhi's face' (Rajput & Lidhoo, 2016)): [PART-3] The Ministry of Rehabilitation used Lajpat Nagar, Malviya Nagar and Kalkaji, among other South Delhi colonies, to rehouse Partition refugees, and HT 2016 also names Nizamuddin and Jangpura. Refugee camps included Kingsway, Kalkaji Mandir and other non-Muslim camps. Monument sites such as Purana Qila and Humayun's Tomb first sheltered displaced Muslims in 1947 and later housed Hindu refugees, as did Safdarjung's Tomb and Ferozshah Kotla.\n[src_088] Wikipedia: Malviya Nagar (Delhi)\n  Malviya Nagar is a residential locality in South Delhi. Situated between Saket and Hauz Khas, its namesake is the freedom fighter Madan Mohan Malviya. Malviya Nagar was initially a part of the Shahpur Jat village, in which after partition was populated in the 1950s by refugees from Pakistan, after the Partition of India. A large portion of the population were ethnic Rajasthani, U.P., Haryanvi, Punjabis and Sindhis, as well as Afghan refugees who were displaced during the Soviet–Afghan War in the 1970s and 1980s. Today, Malviya Nagar is bounded by Panchsheel Enclave in the north, Sheikh Sarai in the east, Saket in the south and Hauz Khas in the west. Sub localities that are part of Malviya Nagar include Geetanjali Enclave, Navjeevan Vihar, Bhavishya Nidhi Enclave, Shivalik colony, Begumpur, Sarvodaya Enclave and MMTC Colony. It is serviced by the Malviya Nagar station located on the Yellow Line of the Delhi Metro. Malviya Nagar is also home to Delhi Police's Training School. in 2026, A fire broke out which kills 21 people.\n[src_177] Wikipedia: Jangpura - Wikipedia\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [mod-04] A new Ministry of Rehabilitation resettled nearly 300,000 people by the end of 1950, more than half of them in homes left behind by departing Muslims. New colonies were laid out, many named after independence leaders, among them Lajpat Nagar, Malviya Nagar, Tilak Nagar, Patel Nagar and Rajendra Nagar, with others such as Vijay Nagar in the north. Older neighbourhoods such as Jangpura and Bhogal also took in refugees. The colonies were planned with their own markets, schools, temples and gurdwaras.\n[src_196] DMRC: DMRC: backend.delhimetrorail.com/api/v2/en/station/QM\n  Claims from the project's curated facts file, each checked against this source (DMRC station data (Qutab Minar: Elevated)): [YL-02] 20 of the 37 stations are underground: every stop from Guru Tegh Bahadur Nagar to Saket. The other 17 are elevated: the seven northern stations (Samaypur Badli to Model Town) and the ten southern ones (Qutab Minar to Millennium City Centre Gurugram). So the line is 'mostly underground' by station count, but in track length it is roughly half and half. A 2010 report gave about 25 km underground and 20 km elevated, and the 4.4 km 2015 extension is elevated. [YL-03] Riding south, the whole stretch from Chandni Chowk to Saket is underground. Qutab Minar is the first elevated station going south, so the train comes out of the tunnel between Saket and Qutab Minar. [YL-14] Qutab Minar station (elevated, opened 21 Jun 2010) is about 1.3 km in a straight line from the Qutb Minar tower; DMRC lists Mehrauli Archaeological Park as 1.2 km, about a 16-minute walk. Other straight-line distances: nearest edge of Mehrauli Archaeological Park about 0.6 km; Lal Kot wall about 1.2 km; Qila Rai Pithora (park and walls) about 0.6 to 0.9 km. Saket station is in fact closer to the Qila Rai Pithora walls (about 0.2 to 0.5 km), and Malviya Nagar is about 0.13 km from one mapped wall segment. [YL-19] Spelling: DMRC names the station 'Qutab Minar'. UNESCO and ASI call the monument 'Qutb Minar'. DMRC's own descriptive text also uses 'Qutub'.\n[src_197] The Hindu: The Hindu : Cities / Delhi : Metro to bridge Delhi-Gurgaon divide today\n  Claims from the project's curated facts file, each checked against this source (The Hindu, 3 Sep 2010): [YL-02] 20 of the 37 stations are underground: every stop from Guru Tegh Bahadur Nagar to Saket. The other 17 are elevated: the seven northern stations (Samaypur Badli to Model Town) and the ten southern ones (Qutab Minar to Millennium City Centre Gurugram). So the line is 'mostly underground' by station count, but in track length it is roughly half and half. A 2010 report gave about 25 km underground and 20 km elevated, and the 4.4 km 2015 extension is elevated. [YL-03] Riding south, the whole stretch from Chandni Chowk to Saket is underground. Qutab Minar is the first elevated station going south, so the train comes out of the tunnel between Saket and Qutab Minar. [YL-08] Central Secretariat to Qutab Minar, 12.53 km. It has nine underground stations (Udyog Bhawan, now Seva Teerth; Race Course, now Lok Kalyan Marg; Jor Bagh; INA, now Dilli Haat - INA; AIIMS; Green Park; Hauz Khas; Malviya Nagar; Saket) and connects to the elevated Qutab Minar station. It was inaugurated on Friday 3 Sep 2010 and opened to the public from 3 p.m., a month before the Commonwealth Games (3 to 14 Oct 2010), creating one 45 km Jahangirpuri to Gurgaon line.\n[src_199] DMRC: DMRC: backend.delhimetrorail.com/api/v2/en/station/SAKT\n  Claims from the project's curated facts file, each checked against this source (DMRC station data (Saket: Underground)): [YL-03] Riding south, the whole stretch from Chandni Chowk to Saket is underground. Qutab Minar is the first elevated station going south, so the train comes out of the tunnel between Saket and Qutab Minar.\n[src_118] UNESCO: UNESCO: whc.unesco.org/en/list/233\n  Claims from the project's curated facts file, each checked against this source (UNESCO World Heritage Centre): [anc-07] The Iron Pillar in the Qutb complex carries a Sanskrit inscription of a king 'Chandra', usually identified with the Gupta emperor Chandragupta II (c. AD 375-415). It is at least 1,600 years old and weighs about 6 tons. It was made elsewhere, possibly at Udayagiri in central India, and was later brought to Delhi, probably by the Tomar kings in the 11th century, though some accounts credit a later sultan. [anc-11] Qutb ud-Din Aibak began the Qutb Minar around 1199, and his successor Iltutmish (ruled 1211-1236) completed it. Iltutmish also made Delhi the sultanate's capital. The tower is 72.5 m tall. After lightning struck it in 1368, Firoz Shah Tughlaq replaced its top storey with two storeys faced partly in white marble. Sikandar Lodi carried out further restoration of the upper storeys in 1503. UNESCO inscribed the Qutb complex as a World Heritage Site in 1993. [anc-12] Alauddin Khalji expanded the Qutb ensemble between 1296 and 1311, adding the Alai Darwaza gateway (1311) and a madrasa. He also began the Alai Minar, planned at twice the scale of the Qutb Minar, but only its first storey was built. It stands about 25 m high.\n[src_122] Britannica: Britannica: britannica.com/topic/Qutb-Minar\n  Claims from the project's curated facts file, each checked against this source (Encyclopaedia Britannica): [anc-11] Qutb ud-Din Aibak began the Qutb Minar around 1199, and his successor Iltutmish (ruled 1211-1236) completed it. Iltutmish also made Delhi the sultanate's capital. The tower is 72.5 m tall. After lightning struck it in 1368, Firoz Shah Tughlaq replaced its top storey with two storeys faced partly in white marble. Sikandar Lodi carried out further restoration of the upper storeys in 1503. UNESCO inscribed the Qutb complex as a World Heritage Site in 1993. [anc-12] Alauddin Khalji expanded the Qutb ensemble between 1296 and 1311, adding the Alai Darwaza gateway (1311) and a madrasa. He also began the Alai Minar, planned at twice the scale of the Qutb Minar, but only its first storey was built. It stands about 25 m high.\n[src_123] Britannica: Britannica: britannica.com/biography/Iltutmish\n  Claims from the project's curated facts file, each checked against this source (Encyclopaedia Britannica): [anc-11] Qutb ud-Din Aibak began the Qutb Minar around 1199, and his successor Iltutmish (ruled 1211-1236) completed it. Iltutmish also made Delhi the sultanate's capital. The tower is 72.5 m tall. After lightning struck it in 1368, Firoz Shah Tughlaq replaced its top storey with two storeys faced partly in white marble. Sikandar Lodi carried out further restoration of the upper storeys in 1503. UNESCO inscribed the Qutb complex as a World Heritage Site in 1993.\n[src_124] UNESCO: UNESCO: whc.unesco.org/document/153020\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [anc-11] Qutb ud-Din Aibak began the Qutb Minar around 1199, and his successor Iltutmish (ruled 1211-1236) completed it. Iltutmish also made Delhi the sultanate's capital. The tower is 72.5 m tall. After lightning struck it in 1368, Firoz Shah Tughlaq replaced its top storey with two storeys faced partly in white marble. Sikandar Lodi carried out further restoration of the upper storeys in 1503. UNESCO inscribed the Qutb complex as a World Heritage Site in 1993.\n[src_125] Wikipedia: Qutb Minar - Wikipedia\n  Claims from the project's curated facts file, each checked against this source (fact-check evidence): [anc-11] Qutb ud-Din Aibak began the Qutb Minar around 1199, and his successor Iltutmish (ruled 1211-1236) completed it. Iltutmish also made Delhi the sultanate's capital. The tower is 72.5 m tall. After lightning struck it in 1368, Firoz Shah Tughlaq replaced its top storey with two storeys faced partly in white marble. Sikandar Lodi carried out further restoration of the upper storeys in 1503. UNESCO inscribed the Qutb complex as a World Heritage Site in 1993.\n"
+    }
+  ],
+  "tool": {
+    "name": "submit_verdicts",
+    "description": "Submit a verdict for every claim and the issues of every scene.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "unsupported"
+                ]
+              },
+              "note": {
+                "type": "string",
+                "description": "What exactly is or is not supported."
+              },
+              "quote": {
+                "type": "string",
+                "description": "The shortest exact quote from a cited excerpt that supports the claim, or \"\"."
+              },
+              "flags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "living_person",
+                    "national_border",
+                    "unsupported_superlative",
+                    "caveat_violation",
+                    "false_time_order"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "note",
+              "quote",
+              "flags"
+            ]
+          }
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scene_id": {
+                "type": "string"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "uncovered_fact",
+                        "living_person",
+                        "national_border",
+                        "unsupported_superlative",
+                        "caveat_violation",
+                        "false_time_order",
+                        "other"
+                      ]
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "The words in the narration."
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "text",
+                    "note"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "scene_id",
+              "issues"
+            ]
+          }
+        }
+      },
+      "required": [
+        "claims",
+        "scenes"
+      ]
+    }
+  },
+  "response": {
+    "claims": [
+      {
+        "id": "c16",
+        "status": "supported",
+        "note": "The cited excerpts state that Malviya Nagar was among the new colonies laid out to rehouse Partition refugees.",
+        "quote": "New colonies were laid out, many named after independence leaders, among them Lajpat Nagar, Malviya Nagar, Tilak Nagar, Patel Nagar and Rajendra Nagar",
+        "flags": []
+      },
+      {
+        "id": "c17",
+        "status": "supported",
+        "note": "Stated verbatim in src_174/src_177.",
+        "quote": "The colonies were planned with their own markets, schools, temples and gurdwaras.",
+        "flags": []
+      },
+      {
+        "id": "c18",
+        "status": "supported",
+        "note": "The excerpts state the Chandni Chowk–Saket stretch is underground and that the train emerges between Saket and the elevated Qutab Minar station.",
+        "quote": "Riding south, the whole stretch from Chandni Chowk to Saket is underground. Qutab Minar is the first elevated station going south, so the train comes out of the tunnel between Saket and Qutab Minar.",
+        "flags": []
+      },
+      {
+        "id": "c19",
+        "status": "supported",
+        "note": "All cited excerpts give 'around 1199' and name Qutb ud-Din Aibak; the claim keeps the required 'around' qualifier.",
+        "quote": "Qutb ud-Din Aibak began the Qutb Minar around 1199",
+        "flags": []
+      },
+      {
+        "id": "c20",
+        "status": "supported",
+        "note": "Stated in src_118 and src_123.",
+        "quote": "his successor Iltutmish (ruled 1211-1236) completed it",
+        "flags": []
+      },
+      {
+        "id": "c21",
+        "status": "supported",
+        "note": "Stated in src_118 and src_122.",
+        "quote": "Iltutmish also made Delhi the sultanate's capital.",
+        "flags": []
+      }
+    ],
+    "scenes": [
+      {
+        "scene_id": "s08",
+        "issues": [
+          {
+            "type": "uncovered_fact",
+            "text": "tents",
+            "note": "The tent phase of Malviya Nagar is not covered by c16 or c17; the excerpts only say Malviya Nagar was populated by refugees and that the tented city was Kingsway Camp, not Malviya Nagar."
+          }
+        ]
+      },
+      {
+        "scene_id": "s09",
+        "issues": []
+      },
+      {
+        "scene_id": "s10",
+        "issues": []
+      }
+    ]
+  }
+}
