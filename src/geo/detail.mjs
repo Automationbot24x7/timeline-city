@@ -276,6 +276,9 @@ export function lookTags(t = {}) {
   return out
 }
 
+// look tags a building:part takes from its outline when it has none of its own
+const INHERIT = ['k', 'use', 'col', 'mat', 'am', 'rel', 'hist', 'off', 'gov', 'tour', 'shop']
+
 // ---------- builders --------------------------------------------------------------------
 
 const ringOf = (el) => areaPolygons(el)[0]?.[0] || null
@@ -364,16 +367,23 @@ export function buildBuildings(docs, { outside, sites }) {
       out.push({ type: 'Feature', properties: props, geometry: { type: 'Polygon', coordinates: [ring] } })
     }
   }
-  // outlines that contain building:parts: flag them so a renderer draws the parts instead
+  // outlines that contain building:parts: flag them so a renderer draws the parts instead; a part
+  // takes its outline's type and look tags where it has none of its own (North Block's parts are
+  // still a government building)
   if (parts.length) {
     const outlines = out.filter((f) => !f.properties.part)
     const boxes = outlines.map((f) => bboxOf(f.geometry.coordinates[0]))
     for (const p of parts) {
       const c = ringCentroid(p.ring)
+      let host = null
       outlines.forEach((f, i) => {
         const b = boxes[i]
-        if (c[0] >= b[0] && c[0] <= b[2] && c[1] >= b[1] && c[1] <= b[3] && pointInRing(c, f.geometry.coordinates[0])) f.properties.has_parts = true
+        if (c[0] >= b[0] && c[0] <= b[2] && c[1] >= b[1] && c[1] <= b[3] && pointInRing(c, f.geometry.coordinates[0])) {
+          f.properties.has_parts = true
+          if (!host || ringAreaM2(f.geometry.coordinates[0]) < ringAreaM2(host.geometry.coordinates[0])) host = f
+        }
       })
+      if (host) for (const k of INHERIT) if (p.props[k] == null && host.properties[k] != null) p.props[k] = host.properties[k]
     }
   }
   return { features: out, stats }

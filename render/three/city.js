@@ -618,9 +618,356 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
   }
   void rail
 
-  // ---------- buildings: merged per spatial tile (frustum-culled), vertex-coloured, Lambert-lit
+  // ---------- buildings: merged per spatial tile (frustum-culled), vertex-coloured, Lambert-lit.
+  // Each building reads as what it is: its OSM tags (geo_detail look tags), its land use (`lu`) and, for an
+  // untyped building=yes, its neighbourhood (footprint, height, local building cover) pick a class; the
+  // class picks a day palette (honouring building:colour / roof:colour), toned down for the night with a
+  // per-building jitter, and the material adds procedural windows (a share lit by storey), floodlit civic
+  // and heritage facades, a darker base and a light parapet line. Domes and pitched roofs where
+  // roof:shape says so. Everything is a pure function of the data (hashes of OSM ids), never of time.
   const TILE = 640
+  const CLASSES = ['other', 'res', 'bung', 'com', 'off', 'civic', 'inst', 'rel', 'hist', 'ind', 'trans', 'fill', 'util', 'hotel']
+  const CI = Object.fromEntries(CLASSES.map((k, i) => [k, i]))
+  const RES_WALL = ['#e9e3d5', '#e6d9c0', '#d9ccb2', '#cfc9bd', '#d4a184', '#d8b884', '#dec5bb', '#c8c6c1', '#ecebe6', '#d1bd9c', '#bfc4c9', '#e2cfae']
+  const RES_ROOF = ['#bdb9b2', '#c6bcac', '#a9a39a', '#d8d5ce', '#b48f7c', '#a19d98', '#c2bab0', '#b3b6b8']
+  const COOL_ROOF = ['#a9adb2', '#9ea5ad', '#b5b7b9', '#8f969e']
+  // wall/roof: sRGB day albedo; lvh: storey height (m); win: [duty across, duty up, share lit, glass
+  // darkening]; light: window light (sRGB) x gain; flood: floodlit facade strength
+  const STYLE = {
+    other: { wall: RES_WALL, roof: RES_ROOF, lvh: 3.2, win: [0.38, 0.42, 0.24, 0.3], light: '#ffc274', gain: 0.8, flood: 0 },
+    res: { wall: RES_WALL, roof: RES_ROOF, lvh: 3.1, win: [0.36, 0.42, 0.26, 0.3], light: '#ffc070', gain: 0.8, flood: 0 },
+    bung: { wall: ['#f0ebe1', '#e9dcc3', '#e4d6ba', '#ded7c9', '#ead9bd'], roof: ['#d6d1c6', '#cfc7b8', '#c4bcae'], lvh: 3.6, win: [0.3, 0.46, 0.28, 0.3], light: '#ffc983', gain: 0.8, flood: 0 },
+    com: { wall: ['#aab3bf', '#97a3b2', '#b9bcbf', '#8fa1b5', '#b5ada3', '#c4c5c4'], roof: COOL_ROOF, lvh: 3.6, win: [0.55, 0.5, 0.3, 0.42], light: '#ffdcaa', gain: 0.85, flood: 0 },
+    off: { wall: ['#8ea4ba', '#7f96ae', '#9badbc', '#a7b3be'], roof: COOL_ROOF, lvh: 3.5, win: [0.72, 0.62, 0.34, 0.55], light: '#d5e3ff', gain: 0.75, flood: 0 },
+    civic: { wall: ['#e0cba6', '#dbc29c', '#e4d3b4', '#d8c09c'], base: '#a5553e', roof: ['#cfc6b6', '#c9bfae', '#d3cbbd'], lvh: 4.6, win: [0.34, 0.5, 0.18, 0.32], light: '#ffd296', gain: 0.75, flood: 0.3 },
+    inst: { wall: ['#b86a4f', '#dbc5a2', '#cba27a', '#e6e0d4', '#c98a6a'], roof: ['#c4b49c', '#b8ada0', '#cbc3b5'], lvh: 4.0, win: [0.42, 0.48, 0.22, 0.32], light: '#ffdfb0', gain: 0.75, flood: 0.08 },
+    rel: { wall: ['#f3efe7', '#efe4cc', '#ece8e0', '#f1e2c4'], roof: ['#ece8e0', '#e6dcc8'], lvh: 4.5, win: [0, 0, 0, 0], light: '#ffd9a0', gain: 0, flood: 0.45 },
+    hist: { wall: ['#a46c5a', '#aa826e', '#9e9282', '#a89e8e'], roof: ['#a47e6c', '#a39a8c'], lvh: 4.5, win: [0, 0, 0, 0], light: '#ffd9a0', gain: 0, flood: 0.3 },
+    ind: { wall: ['#908f8a', '#878b89', '#9c988f'], roof: ['#9a9da0', '#8c9196', '#a3a29c'], lvh: 6, win: [0.3, 0.25, 0.1, 0.2], light: '#e6eeff', gain: 0.7, flood: 0 },
+    trans: { wall: ['#aaaeb2', '#9aa0a7'], roof: COOL_ROOF, lvh: 5, win: [0.7, 0.4, 0.5, 0.4], light: '#fff0d4', gain: 0.85, flood: 0 },
+    fill: { wall: RES_WALL, roof: RES_ROOF, lvh: 3.1, win: [0.34, 0.42, 0.22, 0.3], light: '#ffc070', gain: 0.75, flood: 0 },
+    util: { wall: ['#8e8a83', '#99948b'], roof: ['#9a958d', '#8d8a85'], lvh: 3.2, win: [0, 0, 0, 0], light: '#ffc274', gain: 0, flood: 0 },
+    hotel: { wall: ['#e3d6c0', '#bac3cd', '#d8c5a9'], roof: COOL_ROOF, lvh: 3.2, win: [0.42, 0.5, 0.4, 0.35], light: '#ffcf8a', gain: 0.85, flood: 0.1 },
+  }
+  const hashStr = (s) => {
+    let h = 0x811c9dc5
+    for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 0x01000193) >>> 0
+    return hash1(h)
+  }
+  const lumOf = (c) => 0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b
+  // day albedo -> night vertex colour: lightness compressed toward a target, saturation lifted so the
+  // warm stone survives the blue moonlight
+  function nightTone(hex, target, k, sat, jit) {
+    const c = col(hex)
+    const L = Math.max(1e-4, lumOf(c))
+    const g = L
+    c.r = Math.max(0, g + (c.r - g) * sat)
+    c.g = Math.max(0, g + (c.g - g) * sat)
+    c.b = Math.max(0, g + (c.b - g) * sat)
+    const Lo = target * Math.pow(L / 0.42, k) * jit
+    c.multiplyScalar(Lo / Math.max(1e-4, lumOf(c)))
+    return c
+  }
+  const WALL_L = 0.105
+  const ROOF_L = 0.25
+  const pick = (arr, u) => arr[Math.min(arr.length - 1, Math.floor(u * arr.length))]
+
+  // local building cover (share of ground under buildings within ~100 m): reads the neighbourhood
+  const COVER_CELL = 40
+  const coverGrid = new Map()
+  const ck = (i, j) => i * 100003 + j
+  function coverAt(x, z) {
+    const i0 = Math.floor(x / COVER_CELL)
+    const j0 = Math.floor(z / COVER_CELL)
+    let s = 0
+    for (let i = i0 - 2; i <= i0 + 2; i++) for (let j = j0 - 2; j <= j0 + 2; j++) s += coverGrid.get(ck(i, j)) || 0
+    return s / (5 * COVER_CELL) ** 2
+  }
+
+  /** class of a building from its look tags, land use and neighbourhood */
+  function classify(b, area, cover, u) {
+    const p = b.p || {}
+    const k = String(p.k || '')
+    const use = String(p.use || '')
+    const am = String(p.am || '')
+    const lu = String(p.lu || '')
+    if (b.fill) return lu === 'commercial' || lu === 'retail' ? 'com' : 'fill'
+    if (/^(roof|toilets|construction|kiosk|container|carport|garage|garages|shed|hut|cabin|service|transformer_tower|gazebo|shelter|bunker|parking)$/.test(k) || am === 'shelter' || am === 'toilets') return 'util'
+    if (p.hist || /^(ruins|fort|tomb|mausoleum|city_gate|gate|castle|monument|wall)$/.test(k)) return 'hist'
+    if (/^(mosque|temple|church|cathedral|chapel|shrine|gurudwara|gurdwara|synagogue|monastery|mandir|religious)$/.test(k) || am === 'place_of_worship' || (p.rel && !am) || use === 'religious' || lu === 'religious') return 'rel'
+    if (/^(hotel)$/.test(k) || /^(hotel|guest_house|hostel)$/.test(p.tour || '') || use === 'hotel') return 'hotel'
+    if (p.off === 'government' || p.gov || /^(government|public|civic|courthouse|townhall|parliament)$/.test(k) || /^(townhall|courthouse|public_building|police|fire_station|post_office|library|conference_centre|community_centre|embassy)$/.test(am) || use === 'government' || p.off === 'diplomatic' || lu === 'military') return 'civic'
+    if (/^(school|college|university|kindergarten|hospital|clinic|museum)$/.test(k) || /^(school|college|university|hospital|clinic|prep_school|arts_centre|theatre|planetarium|social_facility|cinema)$/.test(am) || /^(education|hospital|gathering)$/.test(use) || /^(education|institutional)$/.test(lu) || p.tour === 'museum') return 'inst'
+    if (/^(industrial|warehouse|manufacture|factory|hangar|storage_tank)$/.test(k) || lu === 'industrial' || p.mm) return 'ind'
+    if (/^(train_station|transportation|station)$/.test(k) || lu === 'railway') return 'trans'
+    if (/^(office)$/.test(k) || use === 'office' || (p.off && p.off !== 'government')) return 'off'
+    if (/^(commercial|retail|supermarket|mall)$/.test(k) || /^(commercial|retail)$/.test(use) || p.shop || /^(commercial|retail)$/.test(lu)) return b.h > 30 && u < 0.6 ? 'off' : 'com'
+    if (/^(apartments|residential|house|detached|semidetached_house|terrace|bungalow|villa|dormitory)$/.test(k) || use === 'residential' || lu === 'residential') return cover < 0.14 && area > 150 && area < 2500 && b.h < 13 ? 'bung' : 'res'
+    // untyped building=yes: read the neighbourhood
+    if (b.h > 34) return u < 0.55 ? 'off' : 'res'
+    if (area > 2500 && cover < 0.32) return u < 0.7 ? 'inst' : 'com'
+    if (cover < 0.13 && area > 120 && b.h < 13) return 'bung'
+    if (area > 900 && u < 0.3) return 'com'
+    return 'res'
+  }
+
+  /** walls / roof / lower band colours, class and storey height of one building */
+  function lookOf(b, area, cover) {
+    const id = b.p?.osm_id || `${Math.round(b.ring[0][0] * 10)},${Math.round(b.ring[0][1] * 10)}`
+    const u = hashStr(id)
+    const u2 = hashStr(id + '#')
+    const u3 = hashStr(id + '%')
+    const cls = classify(b, area, cover, u)
+    const S = STYLE[cls]
+    const jit = 0.88 + 0.24 * u3
+    const ownWall = b.p?.col
+    const wallHex = ownWall || pick(S.wall, u2)
+    const wall = nightTone(wallHex, WALL_L, 0.55, ownWall ? 0.95 : 1.05, jit)
+    if (ownWall) wall.lerp(nightTone(pick(S.wall, u2), WALL_L, 0.55, 1.05, jit), 0.25) // honoured, softened toward the class
+    const roofHex = b.p?.rcol || (cls === 'rel' || cls === 'hist' || cls === 'civic' ? pick(S.roof, u3) : pick(S.roof, (u2 * 7.31) % 1))
+    const roof = nightTone(roofHex, ROOF_L, 0.5, 0.95, 0.9 + 0.2 * u)
+    // a whisper of the wall's hue on concrete roofs
+    if (!b.p?.rcol) roof.lerp(wall.clone().multiplyScalar(ROOF_L / Math.max(1e-4, lumOf(wall))), 0.1)
+    // Lutyens: red sandstone plinth under cream sandstone (civic buildings of some size)
+    let base = null
+    let band = 0
+    if (cls === 'civic' && !ownWall && b.h > 7 && area > 400) {
+      base = nightTone(S.base, WALL_L, 0.55, 1.15, jit)
+      band = Math.min(b.h * 0.3, 4.6 + 1.5 * u3)
+    }
+    if (b.fill) {
+      wall.multiplyScalar(0.84)
+      roof.multiplyScalar(0.86)
+    }
+    if (b.plinth) {
+      // the raised courtyard under a building drawn by its parts: paving, a step darker than the roofs
+      roof.lerp(groundC, 0.35)
+      wall.lerp(groundC, 0.2)
+    }
+    const lv = +b.p?.lv
+    const lvh = lv > 0 && b.h > 2 ? clamp(b.h / lv, 2.6, 6) : S.lvh * (0.94 + 0.12 * u3)
+    return { cls, ci: CI[cls], wall, roof, base, band, lvh, seed: Math.floor(u3 * 255), windows: S.win[2] > 0 }
+  }
+
+  // ---------- roof shapes (approximate): domes, onions, pyramids, hipped and gabled roofs
+  function centroidOf(ring) {
+    let a = 0
+    let cx = 0
+    let cz = 0
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const f = ring[j][0] * ring[i][1] - ring[i][0] * ring[j][1]
+      a += f
+      cx += (ring[j][0] + ring[i][0]) * f
+      cz += (ring[j][1] + ring[i][1]) * f
+    }
+    if (Math.abs(a) < 1e-6) {
+      cx = cz = 0
+      for (const p of ring) (cx += p[0]), (cz += p[1])
+      return [cx / ring.length, cz / ring.length]
+    }
+    return [cx / (3 * a), cz / (3 * a)]
+  }
+  function obb(ring) {
+    // minimum-area rectangle over the ring's edge directions: { c, ux, uz, hl, hw } (half length >= half width)
+    let best = null
+    for (let i = 0; i < ring.length; i++) {
+      const a = ring[i]
+      const b = ring[(i + 1) % ring.length]
+      const l = Math.hypot(b[0] - a[0], b[1] - a[1])
+      if (l < 0.5) continue
+      const ux = (b[0] - a[0]) / l
+      const uz = (b[1] - a[1]) / l
+      let s0 = Infinity
+      let s1 = -Infinity
+      let t0 = Infinity
+      let t1 = -Infinity
+      for (const p of ring) {
+        const s = p[0] * ux + p[1] * uz
+        const t = -p[0] * uz + p[1] * ux
+        s0 = Math.min(s0, s)
+        s1 = Math.max(s1, s)
+        t0 = Math.min(t0, t)
+        t1 = Math.max(t1, t)
+      }
+      const area = (s1 - s0) * (t1 - t0)
+      if (!best || area < best.area) best = { area, ux, uz, s: (s0 + s1) / 2, t: (t0 + t1) / 2, hs: (s1 - s0) / 2, ht: (t1 - t0) / 2 }
+    }
+    if (!best) return null
+    let { ux, uz, hs, ht } = best
+    const c = [best.s * ux - best.t * uz, best.s * uz + best.t * ux]
+    if (ht > hs) {
+      // the long axis along u
+      ;[ux, uz] = [-uz, ux]
+      ;[hs, ht] = [ht, hs]
+    }
+    return { c, ux, uz, hl: hs, hw: ht, area: best.area }
+  }
+  /** -> { top (wall top), tris: [[x,y,z, x,y,z, x,y,z], ...] flat-shaded, smooth: {pos, nor, idx} } or null */
+  function roofShapeOf(b) {
+    const shape = b.p?.roof
+    if (!shape || b.synthetic) return null
+    const ring = b.ring
+    const area = Math.abs(ringArea(ring))
+    if (area < 12) return null
+    const h0 = b.min_h
+    const total = b.p?.h_src === 'height' // OSM height includes the roof: the walls stop below it
+    const [cx, cz] = centroidOf(ring)
+    if (/^(dome|onion|round)$/.test(shape)) {
+      let r = Infinity
+      for (let i = 0; i < ring.length; i++) {
+        const a = ring[i]
+        const q = ring[(i + 1) % ring.length]
+        r = Math.min(r, segDist(cx, cz, a[0], a[1], q[0], q[1]))
+      }
+      if (!(r > 0.6)) return null
+      r *= 0.97
+      const onion = shape === 'onion'
+      let rh = b.p.roof_h || (onion ? r * 1.6 : r * 0.95)
+      let top = total ? Math.max(h0 + 1, b.h - rh) : b.h
+      if (total) rh = b.h - top
+      const prof = onion
+        ? [[1, 0], [1.13, 0.16], [1.16, 0.3], [1.06, 0.48], [0.8, 0.66], [0.48, 0.8], [0.2, 0.9], [0.06, 0.97], [0, 1]]
+        : [[1, 0], [0.97, 0.25], [0.87, 0.5], [0.71, 0.7], [0.5, 0.86], [0.26, 0.97], [0, 1]]
+      const seg = 16
+      const pos = []
+      const nor = []
+      const idx = []
+      for (let k = 0; k < prof.length; k++) {
+        const [pr, py] = prof[k]
+        const pa = prof[Math.max(0, k - 1)]
+        const pb = prof[Math.min(prof.length - 1, k + 1)]
+        // profile tangent (radius, height in metres) -> outward normal in the profile plane
+        const tr = (pb[0] - pa[0]) * r
+        const ty = (pb[1] - pa[1]) * rh
+        let nr = ty
+        let ny = -tr
+        const nl = Math.hypot(nr, ny) || 1
+        nr /= nl
+        ny /= nl
+        for (let s = 0; s < seg; s++) {
+          const a = (s / seg) * Math.PI * 2
+          pos.push(cx + Math.cos(a) * pr * r, top + py * rh, cz + Math.sin(a) * pr * r)
+          nor.push(Math.cos(a) * nr, ny, Math.sin(a) * nr)
+        }
+      }
+      for (let k = 0; k < prof.length - 1; k++)
+        for (let s = 0; s < seg; s++) {
+          const a = k * seg + s
+          const b2 = k * seg + ((s + 1) % seg)
+          idx.push(a, a + seg, b2, b2, a + seg, b2 + seg)
+        }
+      return { top, smooth: { pos, nor, idx }, tris: [] }
+    }
+    if (/^(pyramidal|hipped|gabled|half-hipped|gambrel|mansard)$/.test(shape)) {
+      const o = obb(ring)
+      if (!o) return null
+      const fillRatio = area / o.area
+      let rh = b.p.roof_h || clamp(o.hw * (shape === 'pyramidal' ? 0.9 : 0.75), 1.2, 7)
+      let top = total ? Math.max(h0 + 1, b.h - rh) : b.h
+      if (total) rh = b.h - top
+      const y1 = top + rh
+      const tris = []
+      if (shape === 'pyramidal' || fillRatio < 0.72) {
+        // a pyramid over the footprint (star-shaped footprints only look right; fine for towers and kiosks)
+        if (shape !== 'pyramidal' && fillRatio < 0.72) return null
+        for (let i = 0; i < ring.length; i++) {
+          const a = ring[i]
+          const q = ring[(i + 1) % ring.length]
+          tris.push([a[0], top, a[1], q[0], top, q[1], cx, y1, cz])
+        }
+        return { top, tris }
+      }
+      // a box roof on the minimum rectangle: eaves at the wall top, a ridge along the long axis
+      const { c, ux, uz, hl, hw } = o
+      const P = (s, t, y) => [c[0] + ux * s - uz * t, y, c[1] + uz * s + ux * t]
+      const ridge = shape === 'gabled' ? hl : Math.max(0, hl - hw)
+      const E = [P(-hl, -hw, top), P(hl, -hw, top), P(hl, hw, top), P(-hl, hw, top)]
+      const R0 = P(-ridge, 0, y1)
+      const R1 = P(ridge, 0, y1)
+      const T = (a, b2, d) => tris.push([...a, ...b2, ...d])
+      // the two long slopes
+      T(E[0], E[1], R1)
+      T(E[0], R1, R0)
+      T(E[2], E[3], R0)
+      T(E[2], R0, R1)
+      // the ends: hips or gable walls
+      T(E[1], E[2], R1)
+      T(E[3], E[0], R0)
+      return { top, tris, gable: shape === 'gabled' }
+    }
+    return null
+  }
+
+  const bldUniforms = {
+    uNight: { value: 1 },
+    uWin: { value: CLASSES.map((k) => new THREE.Vector4(...STYLE[k].win)) },
+    uWinC: {
+      value: CLASSES.map((k) => {
+        const c = col(STYLE[k].light).multiplyScalar(STYLE[k].gain)
+        return new THREE.Vector4(c.r, c.g, c.b, STYLE[k].flood)
+      }),
+    },
+  }
   const bldMat = new THREE.MeshLambertMaterial({ vertexColors: true })
+  bldMat.onBeforeCompile = (sh) => {
+    Object.assign(sh.uniforms, bldUniforms)
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', `#include <common>
+        attribute vec2 aW; attribute vec4 aB;
+        varying vec2 vWin; varying vec4 vBld; varying float vY;`)
+      .replace('#include <begin_vertex>', `#include <begin_vertex>
+        vWin = aW; vBld = aB; vY = position.y;`)
+    sh.fragmentShader = sh.fragmentShader
+      .replace('#include <common>', `#include <common>
+        uniform float uNight; uniform vec4 uWin[${CLASSES.length}]; uniform vec4 uWinC[${CLASSES.length}];
+        varying vec2 vWin; varying vec4 vBld; varying float vY;
+        // a box-filtered pulse train (duty d centred in each unit cell): windows that never alias
+        float pInt(float x, float d) { return floor(x) * d + clamp(fract(x) - 0.5 + 0.5 * d, 0.0, d); }
+        float pulse(float x, float w, float d) { return (pInt(x + 0.5 * w, d) - pInt(x - 0.5 * w, d)) / w; }
+        float h12(vec2 p) { vec3 q = fract(vec3(p.xyx) * 0.1031); q += dot(q, q.yzx + 33.33); return fract((q.x + q.y) * q.z); }`)
+      .replace('#include <color_fragment>', `#include <color_fragment>
+        vec3 cityE = vec3(0.0);
+        if (vWin.x > -3.0) {
+          // a wall: windows by storey, darker toward the street, a light parapet line on top
+          int ci = int(vBld.x + 0.5);
+          vec4 ws = uWin[ci];
+          vec4 wc = uWinC[ci];
+          float seed = vBld.y / 255.0;
+          float lvh = max(vBld.z / 20.0, 2.4);
+          float fade = vBld.w / 255.0;
+          float top = vWin.y;
+          float yf = clamp(vY / max(top, 1.0), 0.0, 1.0);
+          float fy = max(fwidth(vY), 1e-3);
+          float cap = clamp((vY - (top - 0.5)) / fy + 0.5, 0.0, 1.0);
+          diffuseColor.rgb *= mix(0.5, 1.0, smoothstep(0.0, 4.5, vY)) * (0.9 + 0.14 * yf) * (1.0 + 0.32 * cap);
+          if (vWin.x >= 0.0 && ws.z > 0.0) {
+            vec2 g = vec2(vWin.x, vY / lvh);
+            vec2 fw = max(fwidth(g), vec2(1e-4));
+            vec2 cell = floor(g);
+            float dx = ws.x;
+            float dy = ws.y;
+            float lp = ws.z * (0.3 + 1.4 * fract(seed * 7.13 + 0.17));
+            #if 1
+            if ((ci == ${CI.com} || ci == ${CI.hotel}) && cell.y < 0.5) { dx = 0.84; dy = 0.6; lp = 0.8; }  // shop fronts
+            #endif
+            float m = pulse(g.x, fw.x, dx) * pulse(g.y - 0.04, fw.y, dy);
+            m *= step((cell.y + 0.54 + 0.5 * dy) * lvh, top - 0.3);   // the parapet cuts no window
+            float r1 = h12(cell + seed * 113.0 + 0.5);
+            float r2 = h12(cell.yx * 1.7 + seed * 71.0 + 5.3);
+            float on = step(r1, lp);
+            vec3 lc = mix(wc.rgb, vec3(dot(wc.rgb, vec3(0.3333))) * vec3(0.82, 0.95, 1.18), step(0.86, r2) * 0.8);
+            float far = smoothstep(0.32, 0.85, max(fw.x, fw.y));
+            float glass = mix(m, dx * dy, far);
+            diffuseColor.rgb *= 1.0 - ws.w * glass;
+            cityE = mix(m * on * (0.5 + 0.95 * r2) * lc, dx * dy * lp * 0.97 * wc.rgb, far) * uNight * fade;
+          }
+          // floodlit civic and heritage facades: warm light from below
+          cityE += diffuseColor.rgb * wc.a * vec3(1.0, 0.84, 0.66) * (1.0 - 0.6 * yf) * uNight * fade;
+        }`)
+      .replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
+        totalEmissiveRadiance += cityE;`)
+  }
+  bldMat.customProgramCacheKey = () => 'city-buildings-v2'
   const tiles = new Map()
   const landmarkBld = new Map() // site id -> buildings claimed by a focus landmark
   const focusSitesAll = [...referenced].map((id) => SITES.get(id)).filter(Boolean)
@@ -640,10 +987,10 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
           // plinth of the outline (a mosque's raised courtyard, Jama Masjid: parts map only its domes)
           const h = +p.h > 0 ? +p.h : 9
           if (p.has_parts) {
-            out.push({ ring, h: Math.min(h * 0.4, 5.5), min_h: 0, kind: p.k || '', sites: p.site_ids || null, name: '' })
+            out.push({ ring, h: Math.min(h * 0.4, 5.5), min_h: 0, kind: p.k || '', sites: p.site_ids || null, name: '', p: { ...p, roof: null }, plinth: true })
             continue
           }
-          out.push({ ring, h, min_h: +p.min_h > 0 ? +p.min_h : 0, kind: p.k || p.building || '', sites: p.site_ids || null, name: p.name || '' })
+          out.push({ ring, h, min_h: +p.min_h > 0 ? +p.min_h : 0, kind: p.k || p.building || '', sites: p.site_ids || null, name: p.name || '', p, synthetic: !!p.synthetic })
         }
       }
       // procedural infill of under-mapped dense land use (NOT OpenStreetMap: geo_detail `fill`), a shade dimmer
@@ -652,7 +999,7 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
           const ring = ringXZ(rings[0] || [])
           if (ring.length < 3) continue
           const p = f.properties || {}
-          out.push({ ring, h: +p.h > 0 ? +p.h : 8, min_h: 0, kind: 'fill', sites: null, name: '', fill: true })
+          out.push({ ring, h: +p.h > 0 ? +p.h : 8, min_h: 0, kind: 'fill', sites: null, name: '', fill: true, p: { lu: p.lu || 'residential' } })
         }
       }
       return out
@@ -678,7 +1025,7 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
         const w = 12 + r() * 22
         const d = 12 + r() * 22
         const h = 5 + Math.pow(r(), 2.4) * 34
-        out.push({ ring: [[cx - w / 2, cz - d / 2], [cx + w / 2, cz - d / 2], [cx + w / 2, cz + d / 2], [cx - w / 2, cz + d / 2]], h, min_h: 0, kind: 'synthetic' })
+        out.push({ ring: [[cx - w / 2, cz - d / 2], [cx + w / 2, cz - d / 2], [cx + w / 2, cz + d / 2], [cx - w / 2, cz + d / 2]], h, min_h: 0, kind: 'synthetic', p: { osm_id: `syn/${out.length}` } })
       }
     return out
   }
@@ -689,37 +1036,62 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
     for (const s of claimable) if (Math.abs(cx - s.x) < s.r + 5 && Math.abs(cz - s.z) < s.r + 5 && inside(cx, cz, s.poly)) return s.id
     return null
   }
-  const wallC = col(LOOK.night.wall)
-  const roofC = col(LOOK.night.roof)
   const groundC = col(LOOK.night.ground)
   // counts -> typed arrays per tile (two passes keep memory flat for 10^5 buildings)
   function addBuildingsTo(acc, b, fade, seed) {
     const ring = b.ring
     const n = ring.length
+    if (b.roofShape === undefined) b.roofShape = roofShapeOf(b)
+    const rs = b.roofShape
+    const split = b.look?.band > 0 ? 2 : 1
     acc.list.push({ b, fade, seed })
-    acc.nv += n * 4 + n
-    acc.ni += n * 6 + Math.max(0, n - 2) * 3
+    acc.nv += n * 4 * split + n
+    acc.ni += n * 6 * split + Math.max(0, n - 2) * 3
+    if (rs?.smooth) {
+      acc.nv += rs.smooth.pos.length / 3
+      acc.ni += rs.smooth.idx.length
+    }
+    if (rs?.tris) {
+      acc.nv += rs.tris.length * 3
+      acc.ni += rs.tris.length * 3
+    }
   }
   function fillGeometry(acc, wallBase, roofBase, flood = false) {
     const pos = new Float32Array(acc.nv * 3)
     const nor = new Int8Array(acc.nv * 3)
-    const cols = new Uint8Array(acc.nv * 3)
+    const cols = new Uint16Array(acc.nv * 3)
+    const aw = new Float32Array(acc.nv * 2)
+    const ab = new Uint8Array(acc.nv * 4)
     const idx = new Uint32Array(acc.ni)
     let v = 0
     let k = 0
     const c = new THREE.Color()
-    const setC = (i, cc) => {
-      cols[i * 3] = Math.round(clamp(cc.r) * 255)
-      cols[i * 3 + 1] = Math.round(clamp(cc.g) * 255)
-      cols[i * 3 + 2] = Math.round(clamp(cc.b) * 255)
+    let cur = null // the current vertex colour
+    let curW = [-4, 0] // aW of the next vertices
+    let curB = [0, 0, 64, 255]
+    const put = (x, y, z, nx, ny, nz) => {
+      pos[v * 3] = x
+      pos[v * 3 + 1] = y
+      pos[v * 3 + 2] = z
+      nor[v * 3] = Math.round(nx * 127)
+      nor[v * 3 + 1] = Math.round(ny * 127)
+      nor[v * 3 + 2] = Math.round(nz * 127)
+      cols[v * 3] = Math.round(clamp(cur.r) * 65535)
+      cols[v * 3 + 1] = Math.round(clamp(cur.g) * 65535)
+      cols[v * 3 + 2] = Math.round(clamp(cur.b) * 65535)
+      aw[v * 2] = curW[0]
+      aw[v * 2 + 1] = curW[1]
+      ab.set(curB, v * 4)
+      return v++
     }
     for (const { b, fade, seed } of acc.list) {
       const ring = b.ring
       const n = ring.length
       const ccw = ringArea(ring) > 0
       const h0 = b.min_h
-      let h1 = Math.max(b.h, h0 + 1)
-      const sh = (0.86 + 0.24 * seed) * (b.fill ? 0.84 : 1) // per-building tone (procedural infill a shade dimmer)
+      const rs = b.roofShape
+      let h1 = Math.max(rs ? rs.top : b.h, h0 + 1)
+      const L = b.look
       // slender towers (minars) taper toward the top
       let cx = 0
       let cz = 0
@@ -730,10 +1102,29 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
       for (const p of ring) rad = Math.max(rad, Math.hypot(p[0] - cx, p[1] - cz))
       const taper = h1 > 6 * rad && h1 > 30 ? 0.42 : 1
       const top = (p) => (taper < 1 ? [cx + (p[0] - cx) * taper, cz + (p[1] - cz) * taper] : p)
-      // the city dissolves into the dark ground at the corridor edge
-      const wb = flood ? c.copy(wallBase).multiplyScalar(1.15).clone() : c.copy(wallBase).multiplyScalar(sh * 0.55).lerp(groundC, 0.55 * (1 - fade)).clone()
-      const wt = flood ? c.copy(wallBase).multiplyScalar(h1 > 40 ? 0.95 : 0.72).clone() : c.copy(wallBase).multiplyScalar(sh * (1 + Math.min(0.25, h1 / 160))).lerp(groundC, 0.62 * (1 - fade)).clone()
-      const rc = flood ? c.copy(roofBase).multiplyScalar(0.62).clone() : c.copy(roofBase).multiplyScalar(0.92 + 0.16 * seed).lerp(groundC, 0.62 * (1 - fade)).clone()
+      // colours: the floodlit landmark keeps its stone; the city dissolves into the dark ground at the corridor edge
+      let wallC
+      let baseC
+      let roofC
+      if (flood) {
+        wallC = c.copy(wallBase).multiplyScalar(h1 > 40 ? 0.95 : 0.72).clone()
+        baseC = c.copy(wallBase).multiplyScalar(1.15).clone()
+        roofC = c.copy(roofBase).multiplyScalar(0.62).clone()
+      } else if (L) {
+        wallC = L.wall.clone().lerp(groundC, 0.58 * (1 - fade))
+        baseC = (L.base || L.wall).clone().lerp(groundC, 0.58 * (1 - fade))
+        roofC = L.roof.clone().lerp(groundC, 0.62 * (1 - fade))
+      } else {
+        const sh = 0.86 + 0.24 * seed
+        wallC = c.copy(wallBase).multiplyScalar(sh * 0.8).clone()
+        baseC = wallC
+        roofC = c.copy(roofBase).multiplyScalar(0.92 + 0.16 * seed).clone()
+      }
+      const ciB = L ? L.ci : CI.other
+      const winOK = !flood && L?.windows && !b.plinth && !b.synthetic
+      curB = [ciB, L ? L.seed : Math.floor(seed * 255), Math.round(clamp((L ? L.lvh : 3.2) * 20, 0, 255)), Math.round(clamp(fade) * 255)]
+      const band = flood ? 0 : L?.band > 0 ? Math.min(h0 + L.band, h1 - 1) : 0
+      const levels = band > h0 + 0.3 ? [[h0, band, baseC], [band, h1, wallC]] : [[h0, h1, flood ? null : wallC]]
       for (let i = 0; i < n; i++) {
         const a = ring[i]
         const bq = ring[(i + 1) % n]
@@ -743,40 +1134,48 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
         const dz = bq[1] - a[1]
         const l = Math.hypot(dx, dz) || 1
         // outward normal in (x, z): CCW (math sense) rings -> (dz, -dx)
-        let nx = ccw ? dz / l : -dz / l
-        let nz = ccw ? -dx / l : dx / l
-        const q = v
-        const P = [[a[0], h0, a[1]], [bq[0], h0, bq[1]], [bt[0], h1, bt[1]], [at[0], h1, at[1]]]
-        for (let j = 0; j < 4; j++) {
-          pos[v * 3] = P[j][0]
-          pos[v * 3 + 1] = P[j][1]
-          pos[v * 3 + 2] = P[j][2]
-          nor[v * 3] = Math.round(nx * 127)
-          nor[v * 3 + 1] = 0
-          nor[v * 3 + 2] = Math.round(nz * 127)
-          setC(v, j < 2 ? wb : wt)
-          v++
+        const nx = ccw ? dz / l : -dz / l
+        const nz = ccw ? -dx / l : dx / l
+        // windows: a whole number of bays along this wall (none on short corner walls)
+        const bays = winOK && taper === 1 ? Math.round(l / (L.cls === 'off' ? 3.0 : L.cls === 'bung' ? 4.6 : L.cls === 'civic' ? 4.2 : L.cls === 'ind' ? 6 : 3.5)) : 0
+        for (const [ya, yb, cc] of levels) {
+          const q = v
+          const fa = (ya - h0) / (h1 - h0)
+          const fb = (yb - h0) / (h1 - h0)
+          const P = [
+            [a[0], ya, a[1], 0],
+            [bq[0], ya, bq[1], 1],
+            [lerp(bq[0], bt[0], fb), yb, lerp(bq[1], bt[1], fb), 1],
+            [lerp(a[0], at[0], fb), yb, lerp(a[1], at[1], fb), 0],
+          ]
+          if (fa > 0) {
+            P[0][0] = lerp(a[0], at[0], fa)
+            P[0][2] = lerp(a[1], at[1], fa)
+            P[1][0] = lerp(bq[0], bt[0], fa)
+            P[1][2] = lerp(bq[1], bt[1], fa)
+          }
+          for (let j = 0; j < 4; j++) {
+            // flood path: the old vertical shading (base lit hotter than the top)
+            cur = cc || (j < 2 ? baseC : wallC)
+            curW = [bays > 0 ? P[j][3] * bays : -2, h1]
+            put(P[j][0], P[j][1], P[j][2], nx, 0, nz)
+          }
+          // triangle (a0, b0, b1) faces (-dz, 0, dx): keep it when that is outward
+          if (!ccw) idx.set([q, q + 1, q + 2, q, q + 2, q + 3], k)
+          else idx.set([q, q + 2, q + 1, q, q + 3, q + 2], k)
+          k += 6
         }
-        // triangle (a0, b0, b1) faces (-dz, 0, dx): keep it when that is outward
-        if (!ccw) idx.set([q, q + 1, q + 2, q, q + 2, q + 3], k)
-        else idx.set([q, q + 2, q + 1, q, q + 3, q + 2], k)
-        k += 6
       }
-      // roof
+      // roof (flat; under a dome or a pitched roof too)
       const contour = ring.map((p) => new THREE.Vector2(...top(p)))
       let tris = []
       try {
         tris = THREE.ShapeUtils.triangulateShape(contour, [])
       } catch {}
+      cur = roofC
+      curW = [-4, h1]
       const base = v
-      for (const p of contour) {
-        pos[v * 3] = p.x
-        pos[v * 3 + 1] = h1
-        pos[v * 3 + 2] = p.y
-        nor[v * 3 + 1] = 127
-        setC(v, rc)
-        v++
-      }
+      for (const p of contour) put(p.x, h1, p.y, 0, 1, 0)
       for (let i = 0; i < n - 2; i++) {
         const t = tris[i]
         if (!t) {
@@ -791,15 +1190,56 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
         }
         k += 3
       }
+      if (rs?.smooth) {
+        const { pos: sp, nor: sn, idx: si } = rs.smooth
+        const b0 = v
+        for (let i = 0; i < sp.length; i += 3) put(sp[i], sp[i + 1], sp[i + 2], sn[i], sn[i + 1], sn[i + 2])
+        for (const ii of si) idx[k++] = b0 + ii
+      }
+      if (rs?.tris) {
+        for (const t of rs.tris) {
+          // flat-shaded: face normal (up-facing slopes; gable ends stand vertical)
+          const ux = t[3] - t[0]
+          const uy = t[4] - t[1]
+          const uz = t[5] - t[2]
+          const wx = t[6] - t[0]
+          const wy = t[7] - t[1]
+          const wz = t[8] - t[2]
+          let nx = uy * wz - uz * wy
+          let ny = uz * wx - ux * wz
+          let nz = ux * wy - uy * wx
+          const nl = Math.hypot(nx, ny, nz) || 1
+          nx /= nl
+          ny /= nl
+          nz /= nl
+          let order = [0, 1, 2]
+          if (ny < 0 || (Math.abs(ny) < 1e-3 && (nx * (t[0] - cx) + nz * (t[2] - cz)) < 0)) {
+            nx = -nx
+            ny = -ny
+            nz = -nz
+            order = [0, 2, 1]
+          }
+          const vertical = Math.abs(ny) < 0.05
+          cur = vertical ? wallC : roofC
+          curW = vertical ? [-2, h1] : [-4, h1]
+          const b0 = v
+          for (let j = 0; j < 3; j++) put(t[j * 3], t[j * 3 + 1], t[j * 3 + 2], nx, ny, nz)
+          idx.set([b0 + order[0], b0 + order[1], b0 + order[2]], k)
+          k += 3
+        }
+      }
     }
     const g = new THREE.BufferGeometry()
     g.setAttribute('position', new THREE.BufferAttribute(pos, 3))
     g.setAttribute('normal', new THREE.BufferAttribute(nor, 3, true))
     g.setAttribute('color', new THREE.BufferAttribute(cols, 3, true))
+    g.setAttribute('aW', new THREE.BufferAttribute(aw, 2))
+    g.setAttribute('aB', new THREE.BufferAttribute(ab, 4))
     g.setIndex(new THREE.BufferAttribute(idx, 1))
     g.computeBoundingSphere()
     return g
   }
+  const treeSpots = [] // building footprints' boxes (no tree inside a building)
   {
     const list = buildingList()
     buildingCount = list.length
@@ -815,21 +1255,44 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
       if (!(b.h > 6 * rad && b.h > 30)) continue
       for (const fr of [0.4, 0.7, 0.855, 0.94]) {
         const k = (1 - 0.58 * fr) * 1.22
-        list.push({ ...b, ring: b.ring.map((p) => [cx + (p[0] - cx) * k, cz + (p[1] - cz) * k]), min_h: b.h * fr - 1.6, h: b.h * fr + 0.5, name: '' })
+        list.push({ ...b, ring: b.ring.map((p) => [cx + (p[0] - cx) * k, cz + (p[1] - cz) * k]), min_h: b.h * fr - 1.6, h: b.h * fr + 0.5, name: '', p: { ...b.p, roof: null } })
       }
     }
-    list.forEach((b, i) => {
+    // neighbourhood cover first (every building's footprint at its centre)
+    const meta = list.map((b) => {
       let cx = 0
       let cz = 0
-      for (const p of b.ring) (cx += p[0]), (cz += p[1])
+      let x0 = Infinity
+      let z0 = Infinity
+      let x1 = -Infinity
+      let z1 = -Infinity
+      for (const p of b.ring) {
+        cx += p[0]
+        cz += p[1]
+        x0 = Math.min(x0, p[0])
+        z0 = Math.min(z0, p[1])
+        x1 = Math.max(x1, p[0])
+        z1 = Math.max(z1, p[1])
+      }
       cx /= b.ring.length
       cz /= b.ring.length
+      const area = Math.abs(ringArea(b.ring))
+      if (!(b.min_h > 0)) {
+        const key = ck(Math.floor(cx / COVER_CELL), Math.floor(cz / COVER_CELL))
+        coverGrid.set(key, (coverGrid.get(key) || 0) + area)
+        treeSpots.push([x0, z0, x1, z1])
+      }
+      return { cx, cz, area }
+    })
+    list.forEach((b, i) => {
+      const { cx, cz, area } = meta[i]
       const claim = claimFor(cx, cz, b.sites)
       if (claim) {
         if (!landmarkBld.has(claim)) landmarkBld.set(claim, { nv: 0, ni: 0, list: [] })
         addBuildingsTo(landmarkBld.get(claim), b, 1, hash1(i))
         return
       }
+      b.look = lookOf(b, area, coverAt(cx, cz))
       const dl = lineDist(cx, cz)
       const ds = Math.min(Infinity, ...siteFadeCentres.map(([x, z]) => Math.hypot(x - cx, z - cz)))
       const fade = Math.max(1 - smooth(ramp(dl, 700, 1250)), 1 - smooth(ramp(ds, 450, 850)))
@@ -839,9 +1302,291 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
     })
     for (const acc of tiles.values()) {
       if (!acc.list.length) continue
-      const mesh = new THREE.Mesh(fillGeometry(acc, wallC, roofC), bldMat)
+      const mesh = new THREE.Mesh(fillGeometry(acc), bldMat)
       mesh.renderOrder = 0
       mesh.castShadow = mesh.receiveShadow = true
+      scene.add(mesh)
+    }
+  }
+
+  // ---------- trees: instanced low-poly crowns in parks, gardens and the Ridge forest, and in rows along
+  // the avenues of garden suburbs (Lutyens' Delhi); deterministic (hashed grid), per tile (frustum-culled)
+  const treeMats = []
+  let treeCount = 0
+  {
+    const MAX_TREES = 90000
+    const MAX_AVENUE = 22000
+    // where the city is drawn: the corridor fade, on a 100 m grid
+    const FG = 100
+    const xs = RAW.map((p) => p[0])
+    const zs = RAW.map((p) => p[1])
+    const gx0 = Math.min(...xs, ...siteFadeCentres.map((s) => s[0])) - 1400
+    const gz0 = Math.min(...zs, ...siteFadeCentres.map((s) => s[1])) - 1400
+    const gx1 = Math.max(...xs, ...siteFadeCentres.map((s) => s[0])) + 1400
+    const gz1 = Math.max(...zs, ...siteFadeCentres.map((s) => s[1])) + 1400
+    const GW = Math.ceil((gx1 - gx0) / FG) + 1
+    const GH = Math.ceil((gz1 - gz0) / FG) + 1
+    const fadeGrid = new Float32Array(GW * GH)
+    for (let j = 0; j < GH; j++)
+      for (let i = 0; i < GW; i++) {
+        const x = gx0 + i * FG
+        const z = gz0 + j * FG
+        const dl = lineDist(x, z)
+        let ds = Infinity
+        for (const [sx, sz] of siteFadeCentres) ds = Math.min(ds, Math.hypot(sx - x, sz - z))
+        fadeGrid[j * GW + i] = Math.max(1 - smooth(ramp(dl, 700, 1250)), 1 - smooth(ramp(ds, 450, 850)))
+      }
+    const fadeAt = (x, z) => {
+      const fi = (x - gx0) / FG
+      const fj = (z - gz0) / FG
+      const i = Math.floor(fi)
+      const j = Math.floor(fj)
+      if (i < 0 || j < 0 || i >= GW - 1 || j >= GH - 1) return 0
+      const u = fi - i
+      const w = fj - j
+      const f = (a, b2) => fadeGrid[b2 * GW + a]
+      return lerp(lerp(f(i, j), f(i + 1, j), u), lerp(f(i, j + 1), f(i + 1, j + 1), u), w)
+    }
+    // spatial buckets: building boxes, street segments (with their clearance), water
+    const bucket = (cell) => {
+      const m = new Map()
+      return {
+        add(x0, z0, x1, z1, item) {
+          for (let i = Math.floor(x0 / cell); i <= Math.floor(x1 / cell); i++)
+            for (let j = Math.floor(z0 / cell); j <= Math.floor(z1 / cell); j++) {
+              const kk = ck(i, j)
+              if (!m.has(kk)) m.set(kk, [])
+              m.get(kk).push(item)
+            }
+        },
+        at: (x, z) => m.get(ck(Math.floor(x / cell), Math.floor(z / cell))) || [],
+      }
+    }
+    const bB = bucket(32)
+    for (const s of treeSpots) bB.add(s[0] - 1.2, s[1] - 1.2, s[2] + 1.2, s[3] + 1.2, s)
+    const inBuilding = (x, z) => bB.at(x, z).some((s) => x > s[0] - 1.2 && x < s[2] + 1.2 && z > s[1] - 1.2 && z < s[3] + 1.2)
+    const CLEAR = { major: 10, minor: 5.2, path: 1.6, rail: 5 }
+    const sB = bucket(40)
+    const avenues = []
+    for (const f of streets) {
+      const P = f.properties || {}
+      if (P.tunnel) continue
+      const clear = CLEAR[P.cls] ?? 4
+      for (const l of geomLines(f.geometry)) {
+        const pts = l.map((c) => toXZ(c[0], c[1]))
+        for (let i = 1; i < pts.length; i++) {
+          const a = pts[i - 1]
+          const b2 = pts[i]
+          sB.add(Math.min(a[0], b2[0]) - clear, Math.min(a[1], b2[1]) - clear, Math.max(a[0], b2[0]) + clear, Math.max(a[1], b2[1]) + clear, { a, b: b2, clear })
+        }
+        if ((P.cls === 'major' || P.cls === 'minor') && !P.bridge) avenues.push({ pts, clear, major: P.cls === 'major' })
+      }
+    }
+    for (const f of roadsGeo) {
+      for (const l of geomLines(f.geometry)) {
+        const pts = l.map((c) => toXZ(c[0], c[1]))
+        for (let i = 1; i < pts.length; i++) {
+          const a = pts[i - 1]
+          const b2 = pts[i]
+          sB.add(Math.min(a[0], b2[0]) - 10, Math.min(a[1], b2[1]) - 10, Math.max(a[0], b2[0]) + 10, Math.max(a[1], b2[1]) + 10, { a, b: b2, clear: 10 })
+        }
+      }
+    }
+    const onStreet = (x, z) => sB.at(x, z).some((s) => segDist(x, z, s.a[0], s.a[1], s.b[0], s.b[1]) < s.clear)
+    const wB = bucket(200)
+    for (const rs of waterPolys) {
+      const ring = ringXZ(rs[0] || [])
+      if (ring.length < 3) continue
+      let x0 = Infinity
+      let z0 = Infinity
+      let x1 = -Infinity
+      let z1 = -Infinity
+      for (const p of ring) (x0 = Math.min(x0, p[0])), (z0 = Math.min(z0, p[1])), (x1 = Math.max(x1, p[0])), (z1 = Math.max(z1, p[1]))
+      if (x1 < gx0 || x0 > gx1 || z1 < gz0 || z0 > gz1) continue
+      const item = { ring, box: [x0 - 3, z0 - 3, x1 + 3, z1 + 3] }
+      wB.add(Math.max(x0, gx0), Math.max(z0, gz0), Math.min(x1, gx1), Math.min(z1, gz1), item)
+    }
+    const inWater = (x, z) => wB.at(x, z).some((w) => x > w.box[0] && x < w.box[2] && z > w.box[1] && z < w.box[3] && inside(x, z, w.ring))
+    // occupancy: one crown per 6 m cell (overlapping green layers never double the density)
+    const occ = new Set()
+    const OC = 6
+    const free = (x, z) => {
+      const i = Math.floor(x / OC)
+      const j = Math.floor(z / OC)
+      for (let a = i - 1; a <= i + 1; a++) for (let b2 = j - 1; b2 <= j + 1; b2++) if (occ.has(ck(a, b2))) return false
+      return true
+    }
+    // smooth value noise (~70 m): clumps and clearings
+    const vn = (x, z, s = 70) => {
+      const fx = x / s
+      const fz = z / s
+      const i = Math.floor(fx)
+      const j = Math.floor(fz)
+      const u = fx - i
+      const w = fz - j
+      const hh = (a, b2) => hash1(ck(a, b2) ^ 0x5bd1e995)
+      const su = u * u * (3 - 2 * u)
+      const sw = w * w * (3 - 2 * w)
+      return lerp(lerp(hh(i, j), hh(i + 1, j), su), lerp(hh(i, j + 1), hh(i + 1, j + 1), su), sw)
+    }
+    const TREES = [] // [x, z, crown radius, height, colour index, fade]
+    const plant = (x, z, r, hgt, kind, fade) => {
+      occ.add(ck(Math.floor(x / OC), Math.floor(z / OC)))
+      TREES.push([x, z, r, hgt, kind, fade])
+    }
+    // per green kind: grid spacing (m), keep share, crown radius range, height range, palette
+    const GREEN = {
+      forest: [9, 0.95, 0.5, 3.2, 5, 8, 12, 0],
+      wood: [9, 0.95, 0.5, 3.2, 5, 8, 12, 0],
+      reserve: [9.5, 0.9, 0.6, 3, 4.8, 7, 11, 0],
+      scrub: [10.5, 0.7, 0.9, 2.4, 3.8, 5, 8, 1],
+      park: [12, 0.6, 1.2, 3.2, 5.4, 8, 13, 2],
+      garden: [11, 0.55, 1.2, 3, 4.8, 7, 11, 2],
+      cemetery: [12, 0.55, 1, 3, 4.8, 7, 11, 0],
+      grass: [20, 0.3, 1.4, 3.2, 5.2, 8, 12, 2],
+      golf: [22, 0.32, 1.4, 3.4, 5.6, 9, 13, 2],
+    }
+    const greens = [...(L.green?.features || []), ...(detail?.green?.features || [])]
+      .map((f) => ({ f, kind: f.properties?.kind || 'park', polys: geomPolys(f.geometry) }))
+      .filter((g) => GREEN[g.kind])
+    for (const g of greens) {
+      const [sp, keep, nw, r0, r1, hA, hB, pal] = GREEN[g.kind]
+      for (const rings of g.polys) {
+        const rs = rings.map(ringXZ).filter((r) => r.length >= 3)
+        if (!rs.length) continue
+        let x0 = Infinity
+        let z0 = Infinity
+        let x1 = -Infinity
+        let z1 = -Infinity
+        for (const p of rs[0]) (x0 = Math.min(x0, p[0])), (z0 = Math.min(z0, p[1])), (x1 = Math.max(x1, p[0])), (z1 = Math.max(z1, p[1]))
+        x0 = Math.max(x0, gx0)
+        z0 = Math.max(z0, gz0)
+        x1 = Math.min(x1, gx1)
+        z1 = Math.min(z1, gz1)
+        if (x0 >= x1 || z0 >= z1) continue
+        // scanline fill on a global grid (the same lattice for every polygon of this spacing)
+        for (let z = Math.ceil(z0 / sp) * sp; z <= z1; z += sp) {
+          const cr = []
+          for (const r of rs)
+            for (let i = 0, j = r.length - 1; i < r.length; j = i++) {
+              const [xi, zi] = r[i]
+              const [xj, zj] = r[j]
+              if (zi > z !== zj > z) cr.push(xi + ((z - zi) * (xj - xi)) / (zj - zi))
+            }
+          if (cr.length < 2) continue
+          cr.sort((a, b2) => a - b2)
+          for (let q = 0; q + 1 < cr.length; q += 2) {
+            const xa = Math.max(cr[q], x0)
+            const xb = Math.min(cr[q + 1], x1)
+            for (let x = Math.ceil(xa / sp) * sp; x <= xb; x += sp) {
+              const fd = fadeAt(x, z)
+              if (fd < 0.04) continue
+              const hk = ck(Math.round(x / sp), Math.round(z / sp)) ^ Math.imul(sp, 83492791)
+              const h1 = hash1(hk)
+              const h2 = hash1(hk ^ 0x68e31da4)
+              const h3 = hash1(hk ^ 0x1b873593)
+              const nz = vn(x, z)
+              if (h1 > keep * clamp(1 - nw * 0.5 + nw * nz) || h3 > fd + 0.15) continue
+              const tx = x + (h2 - 0.5) * sp * 0.8
+              const tz = z + (h3 - 0.5) * sp * 0.8
+              if (!free(tx, tz) || inBuilding(tx, tz) || onStreet(tx, tz) || inWater(tx, tz)) continue
+              plant(tx, tz, lerp(r0, r1, h2) * (0.85 + 0.3 * nz), lerp(hA, hB, hash1(hk ^ 0x2545f491)), pal, fd)
+            }
+          }
+        }
+      }
+    }
+    // avenue trees: rows along the streets of leafy, low-cover neighbourhoods (Lutyens' bungalow zone)
+    let nAve = 0
+    for (const av of avenues) {
+      const step = av.major ? 11 : 12.5
+      const off = av.clear + 2.6
+      let acc = 0
+      for (let i = 1; i < av.pts.length && nAve < MAX_AVENUE; i++) {
+        const a = av.pts[i - 1]
+        const b2 = av.pts[i]
+        const l = Math.hypot(b2[0] - a[0], b2[1] - a[1])
+        if (l < 1) continue
+        const ux = (b2[0] - a[0]) / l
+        const uz = (b2[1] - a[1]) / l
+        for (let s = (step - (acc % step)) % step; s < l; s += step) {
+          const px = a[0] + ux * s
+          const pz = a[1] + uz * s
+          const fd = fadeAt(px, pz)
+          if (fd < 0.1) continue
+          const cv = coverAt(px, pz)
+          if (cv < 0.02 || cv > 0.2) continue
+          for (const sd of [-1, 1]) {
+            const tx = px - uz * off * sd
+            const tz = pz + ux * off * sd
+            const hk = ck(Math.round(tx), Math.round(tz))
+            if (hash1(hk) > 0.86 || !free(tx, tz) || inBuilding(tx, tz) || onStreet(tx, tz) || inWater(tx, tz)) continue
+            plant(tx, tz, 3.4 + 1.6 * hash1(hk ^ 0x9e37), 8.5 + 3.5 * hash1(hk ^ 0x7f4a), 3, fd)
+            nAve++
+          }
+        }
+        acc += l
+      }
+    }
+    // over the cap: thin evenly (deterministic)
+    let trees = TREES
+    if (trees.length > MAX_TREES) {
+      const keepShare = MAX_TREES / trees.length
+      trees = trees.filter((t) => hash1(ck(Math.round(t[0] * 3), Math.round(t[1] * 3)) ^ 0x3c6ef372) < keepShare)
+    }
+    treeCount = trees.length
+    // crowns: a squashed icosahedron (flat-shaded low-poly), standing a little off the ground
+    const crown = new THREE.IcosahedronGeometry(1, 0)
+    crown.translate(0, 1, 0)
+    const PAL = [
+      ['#4a6b3e', '#55744a', '#3f6040', '#5b7247', '#486a4b'], // forest
+      ['#6a7348', '#5d6a42', '#737a4c', '#62703f'], // scrub / ridge (kikar olive)
+      ['#4f7442', '#5a7d4a', '#46693f', '#62804e', '#53734f'], // parks
+      ['#4b6e40', '#557846', '#4f7048'], // avenues (neem, jamun)
+    ].map((p) => p.map((h) => nightTone(h, 0.15, 0.5, 1.0, 1)))
+    const treeMat = new THREE.MeshLambertMaterial({ flatShading: true })
+    const treeU = { uTreeK: { value: 1 } }
+    treeMat.onBeforeCompile = (sh) => {
+      Object.assign(sh.uniforms, treeU)
+      sh.vertexShader = sh.vertexShader.replace('#include <common>', '#include <common>\nuniform float uTreeK;').replace('#include <begin_vertex>', '#include <begin_vertex>\ntransformed *= uTreeK;')
+    }
+    treeMat.customProgramCacheKey = () => 'city-trees'
+    treeMats.push({ m: treeMat, u: treeU })
+    const byTile = new Map()
+    for (const t of trees) {
+      const key = `${Math.floor(t[0] / TILE)},${Math.floor(t[1] / TILE)}`
+      if (!byTile.has(key)) byTile.set(key, [])
+      byTile.get(key).push(t)
+    }
+    const UP = new V3(0, 1, 0)
+    const m4 = new THREE.Matrix4()
+    const q0 = new THREE.Quaternion()
+    const sc = new V3()
+    const ps = new V3()
+    const cc = new THREE.Color()
+    for (const list of byTile.values()) {
+      const mesh = new THREE.InstancedMesh(crown, treeMat, list.length)
+      list.forEach(([x, z, r, hgt, pal, fd], i) => {
+        const hk = ck(Math.round(x * 2), Math.round(z * 2))
+        const k = 0.6 + 0.4 * fd
+        // crown from ~30% of the height to the top; a tilt-free spin
+        q0.setFromAxisAngle(UP, hash1(hk) * Math.PI * 2)
+        ps.set(x, hgt * 0.3, z)
+        sc.set(r * k, hgt * 0.35 * k, r * k)
+        m4.compose(ps, q0, sc)
+        mesh.setMatrixAt(i, m4)
+        const P = PAL[pal]
+        cc.copy(pick(P, hash1(hk ^ 0x51ed27)))
+          .multiplyScalar(0.86 + 0.28 * hash1(hk ^ 0x2f1b))
+          .lerp(groundC, 0.6 * (1 - fd))
+        mesh.setColorAt(i, cc)
+      })
+      mesh.instanceMatrix.needsUpdate = true
+      if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true
+      mesh.computeBoundingSphere()
+      mesh.castShadow = true
+      mesh.receiveShadow = false
+      mesh.renderOrder = 0
       scene.add(mesh)
     }
   }
@@ -1354,6 +2099,14 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
     renderer.toneMappingExposure = 1
     // lights fade into building tint (colors baked at night; dawn brightens through the lights)
     bldMat.color.setScalar(lerp(1, 1.45, dawn))
+    // windows and floodlights go out as the day comes; trees (sub-pixel from high up) shrink away on the dive
+    bldUniforms.uNight.value = 1 - 0.9 * dawn
+    for (const tm of treeMats) {
+      const kT = 1 - smooth(ramp(st.d, 6500, 11000))
+      tm.u.uTreeK.value = kT
+      tm.m.visible = kT > 0.002
+      tm.m.color.setScalar(lerp(1, 1.12, dawn))
+    }
     void camH
 
     // train
@@ -1484,6 +2237,6 @@ export function createCity(THREE, renderer, { geo, detail = null, timeline, aspe
     trainAt,
     siteAnchor,
     stationAt,
-    stats: { buildings: buildingCount, tiles: tiles.size, landmarks: LM.size, synthetic: !detail?.buildings?.features?.length && synthetic },
+    stats: { buildings: buildingCount, tiles: tiles.size, landmarks: LM.size, trees: treeCount, synthetic: !detail?.buildings?.features?.length && synthetic },
   }
 }

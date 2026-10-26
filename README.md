@@ -11,18 +11,19 @@ music prompt, and the code renders the ride over a 3D OpenStreetMap city.
 
 The first film is **"One Ticket, 800 Years"**: Delhi's Yellow Line, from Chandni Chowk to Qutab Minar.
 
-- **170.9 s**, 1920x1080 (16:9) and 1080x1920 (9:16), English narration with burned-in subtitles,
-  citation chips on screen and a full sources list.
+- **145.2 s** in the maker's final cut (12 scenes), 1920x1080 (16:9) and 1080x1920 (9:16), English
+  narration with burned-in subtitles, citation chips on screen and a full sources list.
 - **A NASA night-Earth opening**: the globe (Black Marble 2016) dives from orbit to Old Delhi and hands
   over to a **3D OpenStreetMap city** (20,273 OSM buildings, 11,433 street pieces along the ride).
   The train rides the real 17.7 km of track through 16 stations; it runs in the tunnel at night and
   the light turns to dawn as it comes up before Qutab Minar.
 - **A custom narrator voice**: Delhi itself, an old dastangoi storyteller, designed with MiniMax Voice
   Design and spoken by MiniMax Speech 2.8 HD.
-- **11 paintings** by Google Nano Banana 2.1 (6 scenes, 5 landmarks that take over from the map when the
+- **9 paintings** by Google Nano Banana 2.1 (4 scenes, 5 landmarks that take over from the map when the
   train arrives) and an instrumental score by MiniMax Music 2.6.
 - **Directed and fact-checked by MiniMax M3.1 flash**: 19 logged director calls, 30 of 30 claims
-  supported after 3 repair rounds, every one traceable to a cited excerpt.
+  supported after 3 repair rounds. The maker then cut his personal scenes (no text added), so the
+  film carries 24 of those claims; each of its 23 historical facts traces to a cited excerpt.
 
 How it was made, who did what and what it cost: [docs/HOW_IT_WAS_MADE.md](docs/HOW_IT_WAS_MADE.md).
 
@@ -109,7 +110,9 @@ Delhi: the first check found 28 of 32 claims supported, 4 partial and 5 blocking
 uncovered facts and the maker's three review notes). After 3 repair rounds: **30 of 30 supported**
 (24 historical facts against 42 distinct source pages, 6 personal lines against the maker's words),
 from an evidence pack of 307 sources that includes a curated file of 107 researched claims
-(`projects/delhi-yellow-line/facts.verified.json`).
+(`projects/delhi-yellow-line/facts.verified.json`). The maker later cut a personal line and the two
+family scenes, removing 6 claims and adding no text: the final cut carries 24 checked claims (23
+historical facts against 39 distinct source pages, 1 personal claim).
 
 ## Cost discipline
 
@@ -127,18 +130,19 @@ from an evidence pack of 307 sources that includes a curated file of 107 researc
   and names the film `<slug>-MOCK`. The M3.1 chat stages still run for real (they are cheap) and
   write their outputs (`plan.json`, `verify.json`, ...) to `build/` as usual.
 
-The Delhi ledger (`projects/delhi-yellow-line/build/costs.jsonl`, 26 Oct 2026; it holds every take
-and test while the tool was built on this film):
+The Delhi ledger (`projects/delhi-yellow-line/build/costs.jsonl`, 26 Oct 2026, after the first test
+of `package`; it holds every take and test while the tool was built on this film):
 
-| | calls | cost |
+| | paid requests | cost |
 |---|---:|---:|
 | MiniMax M3.1 flash (1,223,617 prompt + 419,943 completion tokens) | 77 | $0.436 |
-| MiniMax Speech 2.8 HD (narration) | 14 | $0.161 |
+| MiniMax Speech 2.8 HD (narration; the last scene voiced twice) | 15 | $0.172 |
 | Google Nano Banana 2.1 (paintings and cover, 2K) | 13 | $0.864 |
 | MiniMax Music 2.6 | 1 | $0.150 |
-| **total** | **105** | **$1.611** |
+| **total** | **106** | **$1.621** |
 
-The 19 director calls behind the final film cost $0.185 of that. The custom voice was designed once
+The 19 director calls behind the final film cost $0.185 of that, and the first test of `package`
+$0.009. The custom voice was designed once
 with `minimax/voice-design`, outside the ledger (SandBase price card: $3.00 plus $0.03 per 1,000
 prompt characters).
 
@@ -227,8 +231,10 @@ Optional: `title` (kept by the director), `hook`, `personal_subject`, `director`
    sources and caveats, ranked first in the evidence the director sees.
 6. **Run `--mock` first**, read `plan.verified.json` and `verify.json`, then the real run.
 
-Examples (not built): [`projects/_examples/london-elizabeth-line`](projects/_examples/london-elizabeth-line/project.yaml)
-and [`projects/_examples/rome-metro-c`](projects/_examples/rome-metro-c/project.yaml).
+Examples (not built; both need your own `personal` lines and `my_city_line` first):
+[`projects/_examples/london-elizabeth-line`](projects/_examples/london-elizabeth-line/project.yaml)
+(line tags checked in OpenStreetMap) and [`projects/_examples/rome-metro-c`](projects/_examples/rome-metro-c/project.yaml)
+(not yet checked: look the route up before the first run).
 For AI coding agents (Claude Code, Codex) there is a Skill: [SKILL.md](SKILL.md).
 
 ## Outputs

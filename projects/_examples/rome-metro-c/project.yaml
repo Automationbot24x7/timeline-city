@@ -5,14 +5,16 @@
 city: Rome
 country: Italy              # search context only; no borders are ever drawn
 line:
-  # OpenStreetMap route=subway relation(s) of line C ("Metro C: ..."). Matched by name and ref;
+  # NOT checked against OpenStreetMap yet (Overpass was unreachable when this was written): look the
+  # route up on openstreetmap.org first. `geo` queries routes whose name contains `name` or whose ref
+  # is `ref`, and drops any route whose ref is not C, so the name may differ ("Metro C: ...", "Linea C").
   # `network` is optional and only adds to the match, so it is left out here.
   name: Metro C
   ref: C
   from: San Giovanni        # beside the Aurelian Walls and the Lateran
   to: Parco di Centocelle
-  # Line C is being extended from San Giovanni towards the Colosseum (Porta Metronia,
-  # Colosseo-Fori Imperiali); if OpenStreetMap maps those stations on the route, `from` can start there.
+  # Line C's extension from San Giovanni towards the Colosseum (Porta Metronia,
+  # Colosseo-Fori Imperiali): if OpenStreetMap maps those stations on the route, `from` can start there.
   # Tunnel + dawn: line C runs underground in this inner section. Once you have checked which
   # station is the first above ground, add: underground: { from: San Giovanni, to: <that station> }
 bbox: [41.84, 12.44, 41.92, 12.62]   # south, west, north, east (Overpass order)

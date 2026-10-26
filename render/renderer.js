@@ -2310,7 +2310,18 @@
       y += 38 * U
       c.font = font(500, 22 * U, FONT.sans)
       c.fillStyle = COL.ink
-      c.fillText(String(T.repo_url).replace(/^https?:\/\//, ''), cx, y)
+      // Inter's contextual alternates draw "4x7" as "4×7" within one text run, so the address is
+      // drawn as separate runs split around each digit-x-digit "x" and laid out by measured width
+      const parts = String(T.repo_url).replace(/^https?:\/\//, '').split(/(?<=\d)(x)(?=\d)/i)
+      const widths = parts.map((p) => c.measureText(p).width)
+      const align = c.textAlign
+      c.textAlign = 'left'
+      let x = cx - widths.reduce((a, b) => a + b, 0) / 2
+      parts.forEach((p, i) => {
+        c.fillText(p, x, y)
+        x += widths[i]
+      })
+      c.textAlign = align
     }
     y += 46 * U
     c.font = font(400, (PORTRAIT ? 22 : 20) * U, FONT.sans)

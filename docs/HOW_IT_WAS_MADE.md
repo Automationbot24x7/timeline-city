@@ -17,10 +17,10 @@ files in `projects/delhi-yellow-line/` (paths given), as of 26 October 2026.
 
 ### The maker's decisions (`HUMAN_LOG.md`, `project.yaml`)
 
-- Chose the city: Delhi, his birthplace; asked for a positive story rather than "the city that died
+- Chose the city: Delhi; asked for a positive story rather than "the city that died
   seven times".
 - Accepted the Yellow Line ride as the frame (proposed by Claude Code).
-- Gave his own memories for a personal thread at the end of the film, and asked for one change of
+- [personal memory removed at the maker's request]
   wording in them. (He later cut that thread from the film, below.)
 - Asked for a male narrator, then approved the custom voice made with MiniMax Voice Design.
 - Reviewed the first verified script: three notes (scenes s03, s13, s14), which went to the director
@@ -119,7 +119,7 @@ while the tool was being built on this film (106 rows on 26 October, after the f
   `plan.verified.json` (`verification`) records the cuts.
 - Paid media is refused for a script that has not passed (`assets`), so no voice or painting was
   bought for an unchecked line.
-- Note: after `direct`, the personal thread and the review notes changed in the
+- [personal memory removed at the maker's request]
   brief; `verify --force` re-checked the whole script against both, and `project.yaml` sets
   `allow_stale_plan: true` with that reason.
 

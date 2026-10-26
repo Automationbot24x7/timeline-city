@@ -59,12 +59,7 @@ One Ticket, 800 Years: sources, by time in the film
   - Wikidata: Iron pillar of Delhi (Q543419) <https://www.wikidata.org/wiki/Q543419>
   - R. Balasubramaniam <https://home.iitk.ac.in/~bala/journalpaper/journal/journalpaper_17.pdf>
 
-02:09-02:17 (s12)
-  - Delhi High Court <https://verdictum.in/pdf_upload/judgement-2-1548143.pdf>
-  - Olympic Council of Asia: OCA » New Delhi 1982 <https://oca.asia/games/99-new-delhi-1982.html>
-  - The Tribune: SAI dragged to court for granting concession for Ramlila - The Tribune <https://www.tribuneindia.com/news/sports/sai-dragged-to-court-for-granting-concession-for-ramlila-562494/amp>
-
-02:31-02:39 (s14)
+02:09-02:17 (s14)
   - Census of India 2011: India - D-02: Migrants classified by place of last residence, sex and duration of residence in place of enumeration, NCT of Delhi - 2011 <https://web.archive.org/web/20241227081440/https://censusindia.gov.in/nada/index.php/catalog/10753>
   - Drishti IAS: Migrants and Jobs - Drishiti IAS <https://www.drishtiias.com/daily-updates/daily-news-analysis/migrants-and-jobs>
   - The Wire: How Partition Reshaped Delhi's Demography, Language and Culture - The Wire <https://thewire.in/history/how-partition-reshaped-delhis-demography-language-and-culture>
@@ -75,7 +70,7 @@ Directed and written by MiniMax M3.1 flash via SandBase
 Voice: MiniMax Speech 2.8 HD (custom voice)
 Illustrations: Google Nano Banana 2.1
 Music: MiniMax Music 2.6
-Fact-checked: 24 claims against 42 sources
+Fact-checked: 23 claims against 39 sources
 Map data © OpenStreetMap contributors · openstreetmap.org/copyright
 Some old-city blocks are illustrative fill where OpenStreetMap has no building data
 Earth at night: NASA Earth Observatory (Black Marble)

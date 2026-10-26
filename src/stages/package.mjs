@@ -23,8 +23,8 @@ import { BOT_TITLE } from '../ground/facts.mjs'
 import { authority, modelName } from './timing.mjs'
 
 export const PIPELINE = ['geo', 'ground', 'direct', 'verify', 'art', 'assets', 'timing', 'render', 'mix', 'package']
-const CAP_USD = 0.01 // the whole step: the call and at most one retry
-const MAX_TOKENS = 6000 // per attempt (reasoning included)
+const CAP_USD = 0.03 // the whole step: the call and at most one retry
+const MAX_TOKENS = 16000 // per attempt (reasoning included; 6000 ran out mid-JSON)
 // The director is asked for words, not characters: asked to count characters, M3.1 flash spent its
 // whole 6,000-token budget reasoning about the count (2026-10-26). Code measures the characters.
 const LIMIT = { title: 80, summary: 200, summaryWords: 28, notes: 1600, notesWords: 200, cityLine: 50, sources: 25 }
@@ -375,7 +375,7 @@ export async function directorTexts(ctx, g) {
   const card = await ctx.client.modelPrice(model)
   const perAttempt = (msgs) => ((JSON.stringify(msgs).length / 3.2) * Number(card.prompt_token_price || 0.15) + MAX_TOKENS * Number(card.completion_token_price || 0.6)) / 1e6
   const affordable = (msgs, spent) => Math.min(2, Math.floor((CAP_USD - spent) / perAttempt(msgs)))
-  const call = (step, msgs, attempts) => ask(ctx, { stage: 'package', step, messages: msgs, schema: ENTRY_SCHEMA, name: 'submit_entry', description: 'Submit the summary and the director notes of the contest entry.', max_tokens: MAX_TOKENS, attempts })
+  const call = (step, msgs, attempts) => ask(ctx, { stage: 'package', step, messages: msgs, schema: ENTRY_SCHEMA, name: 'submit_entry', description: 'Submit the summary and the director notes of the contest entry.', max_tokens: MAX_TOKENS, effort: 'low', attempts })
   const checkFacts = `${g.facts}\n${g.humanLog}\n${g.title}`
   const roles = rolesIn(g.humanLog)
   const first = affordable(messages, 0)

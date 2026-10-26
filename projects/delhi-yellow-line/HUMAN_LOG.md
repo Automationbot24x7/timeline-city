@@ -6,7 +6,7 @@ done by MiniMax M3.1 flash and logged in `build/director/`.
 
 | Date (UTC) | Who | Decision |
 |---|---|---|
-| 2026-10-23 | Maker | Chose the city: Delhi, his birthplace. |
+| 2026-10-23 | Maker | Chose the city: Delhi. |
 | 2026-10-23 | Maker | Asked for a positive story rather than "the city that died seven times". |
 | 2026-10-23 | Maker + Claude Code | Picked the Yellow Line ride as the frame (Claude Code proposed it, the maker accepted). |
 | 2026-10-23 | Maker | [personal memory removed at the maker's request] |
@@ -21,4 +21,5 @@ done by MiniMax M3.1 flash and logged in `build/director/`.
 | 2026-10-25 | Maker | Reviewed the first cut: asked for a real-looking map (3D OpenStreetMap city, like the chronicle-ink template, with a Google-Earth-style fly-in) and a painting for each major stop, including the Qutb Minar. Approved ~$0.40 for 5 landmark paintings. |
 | 2026-10-26 | Maker | [personal memory removed at the maker's request] The last scene now keeps only its two verified sentences, reordered to end on "Ride on, traveller." (no new text; claim c30 removed). |
 | 2026-10-26 | Maker | [personal memory removed at the maker's request] The film now ends on the city-of-arrivals line and "Ride on, traveller." No new text. |
-| 2026-10-26 | Maker | Asked to keep his GitHub account name off the film and repo link; the repo URL was removed from the end card. |
+| 2026-10-26 | Maker | Asked to drop his old GitHub username from the repo link; he renamed the account himself, so the end card shows github.com/Automationbot24x7/timeline-city. |
+| 2026-10-26 | Claude Code | Shortened M3.1's director notes in entry.json to about 1,300 characters by hand (the package step's own trim had dropped the numbers and the repo link). |

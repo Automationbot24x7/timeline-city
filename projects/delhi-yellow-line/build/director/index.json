@@ -308,15 +308,31 @@
     "step": "package",
     "file": "package.json",
     "model": "minimax/minimax-m3.1-flash",
-    "reasoning_effort": "medium",
-    "at": "2026-10-26T09:17:11.489Z",
+    "reasoning_effort": "low",
+    "at": "2026-10-26T10:56:10.074Z",
     "cached": false,
-    "seconds": 26.9,
+    "seconds": 5,
     "usage": {
-      "prompt_tokens": 5188,
-      "completion_tokens": 7063,
-      "reasoning_tokens": 6203
+      "prompt_tokens": 2758,
+      "completion_tokens": 607,
+      "reasoning_tokens": 5
     },
-    "cost_usd": 0.00502
+    "cost_usd": 0.00078
+  },
+  {
+    "stage": "package",
+    "step": "package.retry",
+    "file": "package.retry.json",
+    "model": "minimax/minimax-m3.1-flash",
+    "reasoning_effort": "low",
+    "at": "2026-10-26T10:56:17.287Z",
+    "cached": false,
+    "seconds": 7.2,
+    "usage": {
+      "prompt_tokens": 3386,
+      "completion_tokens": 1157,
+      "reasoning_tokens": 606
+    },
+    "cost_usd": 0.0012
   }
 ]

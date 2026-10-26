@@ -156,8 +156,14 @@ Wikidata item), plus everything inside a lit site's own outline up to 2 km². Co
                                                // (deterministic per OSM id; <= 2.5 x footprint width); min_height /
                                                // building:min_level x 3.2 lift the base (canopies: 3 -> 4.5 m)
       "h_src": "height" | "levels" | "type",
-      "k": "mosque",                           // building type when not "yes" (optional)
+      "k": "mosque",                           // building type when not "yes" (a part: its building:part type) (optional)
       "part": true,                            // a building:part (optional)
+      // look tags, each only when OSM has it (a part takes its outline's where it has none of its own):
+      "use": "residential", "col": "#f2f0ea", "rcol": "#ecd9c8",   // building:use; building:colour / roof:colour as hex
+      "mat": "brick", "roof": "dome", "roof_h": 3.8, "lv": 6,      // building:material; roof:shape (not flat); roof:height; building:levels
+      "am": "place_of_worship", "rel": "muslim", "hist": "monument", "off": "government", "gov": "ministry",
+      "tour": "museum", "shop": "mall", "mm": "tower",             // amenity, religion, historic, office, government, tourism, shop, man_made
+      "lu": "residential",                     // kind of the smallest land use (below) the centroid falls in
       "has_parts": true,                       // an outline whose parts are listed too: draw the parts, not it
       "site_ids": ["site_qutb_minar", "site_qutub_minar_complex"],   // lit sites it belongs to, most specific first
       "name": "Qutb Minar",                    // named monuments only (wikidata/historic)
@@ -180,9 +186,16 @@ Wikidata item), plus everything inside a lit site's own outline up to 2 km². Co
       "area_ha", "bldg_cover": 0.047,                      // share of the area under OSM buildings
       "lanes_km_km2": 21,                                  // mapped streets + paths per km²
       "infill": true },                                    // the area got procedural `fill` blocks
-  "fill": FeatureCollection of Polygon { "h", "min_h": 0, "fill": true }   // NOT OpenStreetMap data (6 dp)
+  "fill": FeatureCollection of Polygon { "h", "min_h": 0, "fill": true, "lu" }   // NOT OpenStreetMap data (6 dp)
 }
 ```
+The 3D city (render/three/city.js) reads the look tags, `lu` and each building's neighbourhood (footprint,
+height, local building cover) into a class (residential, garden bungalow, commercial, office, civic, institution,
+religious, heritage, industrial, transport, hotel, utility) with its own night palette (building:colour /
+roof:colour honoured), procedural lit windows (a deterministic share per storey; warm homes, cooler offices),
+floodlit civic and heritage facades, domes and pitched roofs from roof:shape, and instanced trees in parks,
+woods and the Ridge and along the avenues of low-cover garden suburbs (Lutyens' Delhi). All of it is a pure
+function of the data (hashes of OSM ids and grid cells); only the light (night -> dawn) depends on t.
 `green`/`water` are the small areas (>= 0.03 ha) the base map leaves out; they may overlap geo.json's
 layers (draw geo.json first). Never any administrative boundary.
 `fill`: OSM maps Old Delhi's lanes but few of its houses (4.7% building cover in its 236 ha residential

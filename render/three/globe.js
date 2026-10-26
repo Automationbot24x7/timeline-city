@@ -1,8 +1,11 @@
 // Night-globe fly-in for the TimeLine renderer (three.js, WebGL2).
 // NASA Black Marble 2016 "Earth at night" (public domain; credits in render/assets/earth/CREDITS.md):
-// whole Earth at night with a thin blue atmosphere rim and a faint star field, the target's region
-// turning into view, South Asia's lights filling the frame, then a dive onto the target city's glow, where
-// the lights resolve into the city's real streets (OpenStreetMap layers from geo.json, when given).
+// whole Earth at night with a thin blue atmosphere rim and a faint star field, then a curving dive that tilts
+// to a low pass towards the target with the horizon in view (for Delhi: up the Gangetic plain, the Himalaya on
+// the horizon), noses down onto the city's glow, where the lights resolve into the city's real streets
+// (OpenStreetMap layers from geo.json, when given). The land is moonlit (the map's own relief and snow), the
+// lights are points on it: a lit region never reads as a silhouette map, and no frame looks square-on at a
+// whole region from mid altitude.
 //
 //   import * as THREE from 'three'   // import map: "three": ".../node_modules/three/build/three.module.js" (+ three.core.js beside it)
 //   import { createGlobe } from './three/globe.js'
@@ -35,7 +38,6 @@ export const EARTH_CREDIT = 'Earth at night: NASA Earth Observatory (Black Marbl
 const clamp = (v, a = 0, b = 1) => (v < a ? a : v > b ? b : v)
 const lerp = (a, b, u) => a + (b - a) * u
 const smoother = (u) => ((u = clamp(u)), u * u * u * (u * (u * 6 - 15) + 10))
-const ramp = (x, a, b) => clamp((x - a) / (b - a))
 
 function hermite(p, keys) {
   let i = 0
@@ -82,20 +84,71 @@ function destination(lat, lon, brg, distKm) {
   const λ2 = λ1 + Math.atan2(Math.sin(θ) * Math.sin(δ) * Math.cos(φ1), Math.cos(δ) - Math.sin(φ1) * Math.sin(φ2))
   return { lat: φ2 / D2R, lon: ((((λ2 / D2R + 540) % 360) + 360) % 360) - 180 }
 }
-/** {distKm, brg} from a to b (great circle). */
-function inverse(a, b) {
-  const φ1 = a.lat * D2R
-  const φ2 = b.lat * D2R
-  const dλ = (b.lon - a.lon) * D2R
-  const s = Math.sin((φ2 - φ1) / 2) ** 2 + Math.cos(φ1) * Math.cos(φ2) * Math.sin(dλ / 2) ** 2
-  const distKm = 2 * R_KM * Math.asin(Math.min(1, Math.sqrt(s)))
-  const brg = Math.atan2(Math.sin(dλ) * Math.cos(φ2), Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(dλ)) / D2R
-  return { distKm, brg }
+/** C1 cubic through keys [{p, v}]: Catmull-Rom tangents, or Fritsch-Carlson (monotone, no overshoot). */
+function spline(keys, monotone = false) {
+  const n = keys.length
+  const d = keys.slice(0, -1).map((k, i) => (keys[i + 1].v - k.v) / (keys[i + 1].p - k.p))
+  const m = keys.map((_, i) => (i === 0 ? d[0] : i === n - 1 ? d[n - 2] : (d[i - 1] + d[i]) / 2))
+  if (monotone)
+    for (let i = 0; i < n - 1; i++) {
+      if (d[i] === 0) {
+        m[i] = m[i + 1] = 0
+        continue
+      }
+      const a = m[i] / d[i]
+      const b = m[i + 1] / d[i]
+      if (a < 0) m[i] = 0
+      if (b < 0) m[i + 1] = 0
+      const s = a * a + b * b
+      if (s > 9) {
+        const τ = 3 / Math.sqrt(s)
+        m[i] = τ * a * d[i]
+        m[i + 1] = τ * b * d[i]
+      }
+    }
+  const ks = keys.map((k, i) => ({ p: k.p, v: k.v, m: m[i] }))
+  return (p) => hermite(clamp(p, keys[0].p, keys[n - 1].p), ks)
 }
-/** Offset of `pt` from `origin` as [east, north] in km (azimuthal equidistant). */
-function offsetKm(origin, pt) {
-  const { distKm, brg } = inverse(origin, pt)
-  return [distKm * Math.sin(brg * D2R), distKm * Math.cos(brg * D2R)]
+
+/** Altitude (km) where render/renderer.js hands the opening over to the 3D city (its bisection uses 260). */
+export const HANDOVER_KM = 260
+
+/**
+ * The fly-in as a pure function of progress. Defaults: from the whole Earth (the target's continent in view,
+ * north up, the target well off centre) the view curves in from the east-south-east, tilting towards the
+ * horizon and turning to head west-north-west: for Delhi a low pass up the Gangetic plain with the Himalaya on
+ * the horizon to the right. It then noses down onto the target and reaches HANDOVER_KM (the renderer hands over
+ * to the 3D city there) at p = keys[k].p of the key with that altitude. No frame looks straight down on a whole
+ * region from mid altitude (a lit region seen square-on from there reads as a silhouette map).
+ * keys: [{ p, distKm, brg (deg, look point from the target), altKm, tilt, bearing }] (opts.keys replaces them).
+ * (A portrait frame shows more sky above the horizon of the tilted pass: there it sits behind the title.)
+ */
+export function globePath(target, opts = {}) {
+  const keys = opts.keys || [
+    { p: 0.0, distKm: 3300, brg: 116, altKm: 22000, tilt: 0, bearing: 0 },
+    { p: 0.41, distKm: 1550, brg: 118, altKm: 6400, tilt: 24, bearing: -30 },
+    { p: 0.63, distKm: 640, brg: 120, altKm: 1650, tilt: 54, bearing: -50 },
+    { p: 0.79, distKm: 200, brg: 121, altKm: 600, tilt: 63, bearing: -57 },
+    { p: 0.85, distKm: 60, brg: 121, altKm: 390, tilt: 55, bearing: -58.5 },
+    { p: 0.9, distKm: 0, brg: 121, altKm: HANDOVER_KM, tilt: 42, bearing: -59 },
+    { p: 1.0, distKm: 0, brg: 121, altKm: 110, tilt: 36, bearing: -59 },
+  ]
+  const ch = (f, mono) => spline(keys.map((k) => ({ p: k.p, v: f(k) })), mono)
+  const lnAlt = ch((k) => Math.log(k.altKm), true)
+  const dist = ch((k) => k.distKm, true)
+  const brg = ch((k) => k.brg)
+  const tilt = ch((k) => k.tilt)
+  const bearing = ch((k) => k.bearing)
+  const fov = opts.fov ?? 30
+  function poseAt(progress) {
+    const p = clamp(progress)
+    const altKm = Math.exp(lnAlt(p))
+    const dKm = Math.max(0, dist(p))
+    const look = dKm > 1e-6 ? destination(target.lat, target.lon, brg(p), dKm) : { ...target }
+    const t = clamp(tilt(p), 0, 80)
+    return { lat: look.lat, lon: look.lon, altKm, rangeKm: altKm / Math.cos(t * D2R), tilt: t, bearing: bearing(p), fov, progress: p }
+  }
+  return { poseAt, keys }
 }
 
 /** Seeded PRNG (mulberry32). */
@@ -136,9 +189,15 @@ uniform vec2 uW0;  // feather (deg), weight
 uniform vec2 uW1;
 uniform vec3 uCam;
 uniform vec3 uSun;
-uniform float uBase;    // gain on the whole image (land relief, ocean)
-uniform float uBoost;   // extra emissive gain on city lights
-uniform float uLand;    // gain on the dim (non-light) part: keeps the blue relief readable
+uniform float uLightGain;   // gain on the lights (points: no emissive boost of whole lit regions)
+uniform float uLightCurve;  // exponent on the separated light (sRGB 0..1): high keeps a dense plain's diffuse glow low
+uniform vec3 uLightCol;     // linear colour of the lights (warm sodium); the brightest cores go whiter
+uniform float uMoon;        // brightness of the moonlit land
+uniform vec3 uMoonTint;     // its tint (sRGB multiplier, cool)
+uniform float uNearLook;    // 0..1: towards the hand-over the lights go back to the emissive look the 3D city matches
+uniform float uBase;        // (near look) gain on the whole image
+uniform float uBoost;       // (near look) extra emissive gain on city lights
+uniform float uLand;        // (near look) gain on the dim part
 uniform vec3 uAtmo;
 uniform vec3 uWarm;
 uniform float uRim;
@@ -215,12 +274,24 @@ void main() {
   c = patchMix(c, uPatch0, uSize0, uLod, uB0, uW0, lon, lat);
   c = patchMix(c, uPatch1, uSize1, 2.6 * uLod, uB1, uW1, lon, lat);
 
-  // emissive boost: lights glow, the dark-blue relief stays dim
   float L = dot(c, vec3(0.2126, 0.7152, 0.0722));
   float lit = smoothstep(0.035, 0.55, L);
-  vec3 col = c * mix(uLand, uBase, lit) + c * uBoost * lit * lit;
-  // warm the sodium lights a touch towards the film's gold
-  col *= mix(vec3(1.0), vec3(1.06, 0.98, 0.86), lit);
+  // The Black Marble colour maps are blue land (its own relief and snow, r ~ 0.55 b in sRGB) under warm/white
+  // lights: split them, so all land reads as land at night (moonlit), however dark its lights, and the lights
+  // read as points of light on it rather than one glowing shape. The ocean is one flat navy in these maps.
+  vec3 s = pow(max(c, vec3(0.0)), vec3(1.0 / 2.2));
+  float aL = clamp((s.r - 0.55 * s.b) / 0.67, 0.0, 1.0);   // 0 .. 0.69 (a saturated white core)
+  float m = mix(clamp(s.b - 0.6 * aL, 0.0, 1.0), 0.15, smoothstep(0.25, 0.6, aL));  // under a city: a plain
+  float landK = smoothstep(0.012, 0.035, length(s - vec3(0.02, 0.02, 0.059)));
+  // forest and farmland stay a dim slate (never black), deserts paler, snow and ice silver
+  float mg = 0.11 + 0.14 * smoothstep(0.06, 0.30, m) + 0.15 * smoothstep(0.24, 0.37, m);
+  vec3 moon = pow(mg * uMoonTint, vec3(2.2)) * uMoon;
+  float aw = pow(smoothstep(0.03, 0.69, aL), uLightCurve);
+  vec3 lights = aw * mix(uLightCol, vec3(1.0, 0.86, 0.66), aw * aw) * uLightGain;
+  vec3 col = mix(c, moon, landK) + lights;
+  // near the hand-over: the emissive look the 3D city's own ground lights are matched to (warm pools, soft edges)
+  vec3 nearCol = (c * mix(uLand, uBase, lit) + c * uBoost * lit * lit) * mix(vec3(1.0), vec3(1.06, 0.98, 0.86), lit);
+  col = mix(col, nearCol, uNearLook);
   // near the ground the lights fill the frame: a dim amber haze (by light level) under the real streets
   // (a deep blue-grey night ground everywhere, as in the 3D city, plus a warm glow that rises with the light)
   float Lh = pow(clamp(L, 0.0, 1.0), 1.7);
@@ -388,54 +459,22 @@ void main() {
  *       city { bbox [s, w, n, e], roads, water, green (GeoJSON FeatureCollections), line [[lon, lat]...], lineColor }
  *         (geo.json's layers + line: the real streets the lights resolve into; never pass the boundary layer),
  *       patches 'auto' | [] | [{url, bounds, fadeKm, featherDeg}],
- *       start {lat, lon, altKm}, mid {lat, lon, altKm, p}, end {altKm, tilt, bearing} (deg; tilt 0 = straight down),
- *       fov (deg on the frame's short side, default 30), bearingDrift (deg), exposure, bloom {strength, threshold, knee},
+ *       keys [{p, distKm, brg, altKm, tilt, bearing}] (the camera path, see globePath),
+ *       fov (deg on the frame's short side, default 30), exposure, bloom {strength, threshold, knee},
  *       starSeed.
  * Renders with its own HalfFloat MSAA target + bloom chain and writes sRGB to the canvas (renderer.toneMapping and
  * outputColorSpace are not used); restores the renderer's render target, autoClear and clear colour afterwards.
  */
 export function createGlobe(THREE, renderer, opts = {}) {
   const target = { lat: opts.target?.lat ?? 28.6139, lon: opts.target?.lon ?? 77.209 }
-  const start = { lat: target.lat - 14, lon: target.lon + 42, altKm: 24000, ...opts.start }
-  // mid: the region's lights fill the frame, the city up and left of centre (a straight-ish path in)
-  const midDefault = destination(target.lat, target.lon, inverse(target, start).brg + 22, 650)
-  const mid = { ...midDefault, altKm: 3600, p: 0.55, ...opts.mid }
-  const end = { altKm: 35, tilt: 32, bearing: 0, ...opts.end }
   const fovShort = opts.fov ?? 30
-  const bearingDrift = opts.bearingDrift ?? 12
   const bloomOpt = { strength: 1, threshold: 0, knee: 0.35, ...opts.bloom } // strength scales the altitude model; threshold adds to it
   const exposure = opts.exposure ?? 1.0
 
   // ---------- camera path (pure function of progress)
-  const pm = mid.p
-  const la0 = Math.log(start.altKm)
-  const la1 = Math.log(mid.altKm)
-  const la2 = Math.log(end.altKm)
-  const altKeys = [
-    { p: 0, v: la0, m: -1.2 }, // a gentle push-in from the first frame
-    { p: pm, v: la1, m: -0.9 * ((la1 - la2) / (1 - pm)) },
-    { p: 1, v: la2, m: 0 },
-  ]
-  // target offset from the city, in units of the camera altitude: the city's place on screen moves smoothly
-  const u0 = scale(offsetKm(target, start), 1 / start.altKm)
-  const um = scale(offsetKm(target, mid), 1 / mid.altKm)
-  const uKeys = [
-    { p: 0, v: u0, m: scale(add(um, u0, -1), 1.0 / pm) },
-    { p: pm, v: um, m: scale(um, -1.0 / (1 - pm)) },
-    { p: 1, v: [0, 0], m: [0, 0] },
-  ]
-
-  function poseAt(progress) {
-    const p = clamp(progress)
-    const altKm = Math.exp(hermite(p, altKeys))
-    const u = hermite(p, uKeys)
-    const dKm = Math.hypot(u[0], u[1]) * altKm
-    const look = dKm > 1e-6 ? destination(target.lat, target.lon, Math.atan2(u[0], u[1]) / D2R, dKm) : { ...target }
-    const tilt = end.tilt * smoother(ramp(p, 0.58, 1))
-    const bearing = end.bearing + bearingDrift * (1 - smoother(p))
-    const rangeKm = altKm / Math.cos(tilt * D2R)
-    return { lat: look.lat, lon: look.lon, altKm, rangeKm, tilt, bearing, fov: fovShort, progress: p }
-  }
+  const { poseAt } = globePath(target, { ...opts, fov: fovShort })
+  const start = poseAt(0)
+  const end = poseAt(1)
 
   // ---------- scene
   const earthScene = new THREE.Scene()
@@ -459,9 +498,15 @@ export function createGlobe(THREE, renderer, opts = {}) {
     uW1: { value: new THREE.Vector2(1, 0) },
     uCam: { value: new THREE.Vector3() },
     uSun: { value: sun },
-    uBase: { value: 1.25 },
-    uBoost: { value: 2.4 },
-    uLand: { value: 1.35 },
+    uLightGain: { value: 1.5 },
+    uLightCurve: { value: 2.6 },
+    uLightCol: { value: new THREE.Color(1.0, 0.68, 0.38) },
+    uMoon: { value: 1 },
+    uNearLook: { value: 0 },
+    uBase: { value: 0.85 },
+    uBoost: { value: 0.15 },
+    uLand: { value: 1.1 },
+    uMoonTint: { value: new THREE.Vector3(0.84, 0.92, 1.1) },
     uAtmo: { value: atmo },
     uWarm: { value: warm },
     uRim: { value: 0.2 },
@@ -812,6 +857,15 @@ export function createGlobe(THREE, renderer, opts = {}) {
       earthUniforms.uHazeLo.value.setRGB(lerp(0.35, 0.07, nightK), lerp(0.12, 0.085, nightK), lerp(0.05, 0.12, nightK))
       earthUniforms.uHazeHi.value.setRGB(lerp(1.0, 0.8, nightK), lerp(0.48, 0.46, nightK), lerp(0.14, 0.24, nightK))
       const cityK = smoother((Math.log(700) - la) / (Math.log(700) - Math.log(110)))
+      // lights stay points of light on moonlit land: a modest gain (a little more far away, where a town is a
+      // pixel), a steep curve on the dim diffuse glow, little bloom
+      earthUniforms.uLightGain.value = lerp(lerp(1.2, 1.6, farK), 1.0, nearK)
+      earthUniforms.uLightCurve.value = lerp(2.7, 2.3, nearK)
+      // (the land a touch brighter from far away, where the vignette and the small disc would sink it)
+      earthUniforms.uMoon.value = lerp(lerp(1.0, 1.6, farK), 0.9, nearK)
+      // from ~700 km down the lights blend back to the emissive look the city's ground lights are matched to
+      const nearLook = smoother((Math.log(700) - la) / (Math.log(700) - Math.log(290)))
+      earthUniforms.uNearLook.value = nearLook
       earthUniforms.uBoost.value = lerp(lerp(0.9, 2.4, farK), 0.15, nearK)
       earthUniforms.uBase.value = lerp(1.2, 0.85, nearK)
       earthUniforms.uLand.value = lerp(1.35, 1.1, nearK)
@@ -823,12 +877,13 @@ export function createGlobe(THREE, renderer, opts = {}) {
       earthUniforms.uRoadGain.value = 0.95 * cityK
       earthUniforms.uOW.value.y = smoother((Math.log(450) - la) / (Math.log(450) - Math.log(110)))
       earthUniforms.uLineGain.value = 1.6 * smoother((Math.log(220) - la) / (Math.log(220) - Math.log(45)))
-      compMat.uniforms.uBloom.value = bloomOpt.strength * lerp(lerp(0.55, 0.85, farK), 0.22, nearK)
-      brightMat.uniforms.uThreshold.value = bloomOpt.threshold + lerp(0.55, 0.75, nearK)
-      // the rim belongs to the far view; near the ground it would only grey the lights
-      earthUniforms.uHaze.value = clamp((pose.altKm - 150) / 2500)
+      compMat.uniforms.uBloom.value = bloomOpt.strength * lerp(lerp(lerp(0.3, 0.42, farK), 0.18, nearK), lerp(lerp(0.55, 0.85, farK), 0.22, nearK), nearLook)
+      brightMat.uniforms.uThreshold.value = bloomOpt.threshold + lerp(lerp(0.7, 0.8, nearK), lerp(0.55, 0.75, nearK), nearLook)
+      // the rim belongs to the far view and to the horizon of a tilted view; near the ground it would only grey the lights
+      const skyK = smoother((pose.tilt - 35) / 22)
+      earthUniforms.uHaze.value = Math.max(clamp((pose.altKm - 150) / 2500), 0.55 * skyK * clamp((pose.altKm - 250) / 250))
       starMat.uniforms.uScale.value = Math.min(W, H) / 1080
-      starMat.uniforms.uFade.value = clamp((pose.altKm - 300) / 3000)
+      starMat.uniforms.uFade.value = Math.max(clamp((pose.altKm - 300) / 3000), 0.6 * skyK)
       // patches fade in with altitude
       patchDefs.forEach((d, i) => {
         const [far, near] = d.fadeKm
